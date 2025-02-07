@@ -4,6 +4,11 @@
   "description": "Digital Edu Management UI components",
   "main": "src/index.js",
   "module": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/temuujin-0/dem-design.git"
+  },
+  "homepage": "https://github.com/temuujin-0/dem-design#readme",
   "scripts": {
     "build": "npx babel src --out-dir dist && esbuild src/index.js --bundle --outfile=dist/bundle.js --loader:.js=jsx",
     "prepare": "npm run build",
