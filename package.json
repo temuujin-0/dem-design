@@ -1,0 +1,45 @@
+{
+  "name": "dem-design",
+  "version": "0.1.9",
+  "description": "Digital Edu Management UI components",
+  "main": "src/index.js",
+  "module": "src/index.js",
+  "scripts": {
+    "build": "npx babel src --out-dir dist && esbuild src/index.js --bundle --outfile=dist/bundle.js --loader:.js=jsx",
+    "prepare": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "src/components",
+    "src/styles",
+    "dist"
+  ],
+  "keywords": [
+    "react",
+    "ui",
+    "tree",
+    "component-library"
+  ],
+  "babel": {
+    "presets": ["@babel/preset-env", "@babel/preset-react"],
+    "plugins": []
+  },
+  "author": "Temuujin",
+  "license": "ISC",
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^6.4.3",
+    "object-assign": "^4.1.1",
+    "rc-tree": "^5.13.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.26.4",
+    "@babel/core": "^7.26.7",
+    "@babel/preset-env": "^7.26.7",
+    "@babel/preset-react": "^7.26.3",
+    "esbuild": "^0.24.2"
+  }
+}
