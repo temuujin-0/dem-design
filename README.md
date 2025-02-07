@@ -1,6 +1,6 @@
 # Digital Edu Management UI Components
 
-Энэхүү төсөл нь боловсролын менежментийн системд зориулсан UI бүрэлдэхүүн хэсгүүдийг агуулдаг.
+Digital Edu Management UI Components.
 
 ## Суулгах
 
