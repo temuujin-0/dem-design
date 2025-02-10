@@ -10,13 +10,11 @@
   },
   "homepage": "https://github.com/temuujin-0/dem-design#readme",
   "scripts": {
-    "build": "npx babel src --out-dir dist --presets @babel/preset-env,@babel/preset-react",
+    "build": "node esbuild.config.js",
     "prepare": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "files": [
-    "src/components",
-    "src/styles",
     "dist"
   ],
   "keywords": [
