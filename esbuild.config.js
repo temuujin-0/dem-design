@@ -12,4 +12,5 @@ esbuild.build({
     '.js': 'jsx',
     '.jsx': 'jsx'
   },
+  jsx: "automatic",
 }).catch(() => process.exit(1));
