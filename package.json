@@ -1,6 +1,6 @@
 {
   "name": "dem-design",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "Digital Edu Management UI components",
   "main": "dist/index.js",
   "module": "dist/index.js",
