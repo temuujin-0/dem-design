@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import RCTree from 'rc-tree';
 import assign from 'object-assign';
 import { ClickAwayListener } from "@mui/material";
-import "../dist/tree.css";
+import "../styles/tree.css";
 
 const Tree = ({
     treeData = [],
