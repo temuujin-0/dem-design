@@ -32,6 +32,11 @@ const App = () => {
 
 export default App;
 ```
+
+## 🔧 Compatibility
+
+- This project works with **React version 18.2.0**.
+
 ## ⌨️ Development
 
 Git Clone
@@ -62,6 +67,12 @@ npm version major  # Breaking changes
 🌍Publish Public
 ```sh
 npm publish --access public
+```
+
+🔨Conflicting Packages Fixing
+```sh
+rm -rf node_modules package-lock.json
+npm install
 ```
 
 ## 📜 License
