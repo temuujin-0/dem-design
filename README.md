@@ -5,7 +5,7 @@ Digital Edu Management UI Components.
 ## 📦 Installation
 
 ```sh
-yarn add dem-design
+npm install dem-design
 ```
 
 ## 🚀 Usage
@@ -32,5 +32,38 @@ const App = () => {
 
 export default App;
 ```
+## ⌨️ Development
 
+Git Clone
+```sh
+git clone https://github.com/temuujin-0/dem-design.git or git@github.com:ant-design/ant-design.git
+```
 
+Git Publish
+```sh
+git add .
+git commit -m "any"
+git pull origin main
+git push origin main
+```
+
+🏗Build
+```sh
+npm run build
+```
+
+✨Version update
+```sh
+npm version patch  # Small fixes
+npm version minor  # New features
+npm version major  # Breaking changes
+```
+
+🌍Publish Public
+```sh
+npm publish --access public
+```
+
+## 📜 License
+
+Distributed under the MIT License.
