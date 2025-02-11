@@ -13,4 +13,5 @@ esbuild.build({
     '.jsx': 'jsx'
   },
   jsx: "automatic",
+  external: ["react", "react-dom"]
 }).catch(() => process.exit(1));
