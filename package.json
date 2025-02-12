@@ -28,7 +28,9 @@
   "license": "MIT",
   "dependencies": {
     "object-assign": "^4.1.1",
-    "rc-tree": "^5.13.0"
+    "rc-tree": "^5.13.0",
+    "react-select": "^4.3.1",
+    "react-i18next": "^11.16.7"
   },
   "peerDependencies": {
     "react": "^18.2.0",
