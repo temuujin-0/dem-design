@@ -16,7 +16,7 @@ esbuild.build({
     '.jsx': 'jsx'
   },
   jsx: "automatic",
-  external: ["react", "react-dom", "react-datepicker"]
+  external: ["react", "react-dom", "react-datepicker", "react-select"]
 }).then(() => {
   const stylesDir = path.resolve("src/styles");
   const distDir = path.resolve("dist");
