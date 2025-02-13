@@ -30,7 +30,6 @@ const DatePicker = ({
     selectedDate,
     showTimeInput = true,
     showTimeSelect = false,
-    showHeader = false,
     ...rest
 }) => {
     const [date, setDate] = useState(null);
@@ -75,7 +74,7 @@ const DatePicker = ({
             nextMonthButtonLabel="Дараагийн сар"
             className={className ? className : "modal-input"}
             wrapperClassName={wrapperClassName ? wrapperClassName : ""}
-            renderCustomHeader={showHeader ? CustomHeader : null}
+            renderCustomHeader={CustomHeader}
             showTimeInput={showTimeInput}
             showTimeSelect={showTimeSelect}
             {...rest}

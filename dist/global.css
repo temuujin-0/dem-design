@@ -1,3 +1,4 @@
+/***************** tree css **************/
 .rc-tree {
     margin: 0;
     border: 1px solid transparent;
@@ -10,7 +11,6 @@
     margin: 0;
     padding: 0;
     line-height: 24px;
-    /*white-space: nowrap; old*/
     white-space: break-spaces;
     list-style: none;
     outline: 0;
@@ -21,7 +21,6 @@
     -khtml-user-select: none;
     -webkit-user-select: none;
     user-select: none;
-    /* Required to make elements draggable in old WebKit */
     -khtml-user-drag: element;
     -webkit-user-drag: element;
 }
@@ -54,7 +53,7 @@
 .rc-tree .rc-tree-treenode .rc-tree-node-content-wrapper {
     position: relative;
     /*display: inline-block; old*/
-    display: inline-table; /* new*/
+    display: inline-table;
     height: 24px;
     margin: 0;
     padding: 0;
@@ -195,7 +194,6 @@
 }
 .rc-tree-title {
     color: #1e1e2d;
-    /*display: inline-block; old*/
 }
 .rc-tree-indent {
     display: inline-block;
@@ -251,22 +249,379 @@
     font-size: 1rem;
 }
 
-/***************** Tree switcher icon style **************/
-.icon-with-tree .rc-tree.rc-tree-show-line .rc-tree-list .rc-tree-title {
-    color: black;
-    margin-left: 10px;
+    /*** Tree switcher icon style ***/
+    .icon-with-tree .rc-tree.rc-tree-show-line .rc-tree-list .rc-tree-title {
+        color: black;
+        margin-left: 10px;
+    }
+
+    .icon-with-tree .rc-tree.rc-tree-show-line .rc-tree-list .rc-tree-switcher img {
+        position: relative;
+        left: 14px;
+        top: 2px;
+    }
+
+    .rc-tree-title {
+        color: #505050;
+        font-size: 14px !important;
+        font-family: Mulish;
+    }
+
+    /*** Tree switcher icon style ***/
+/***************** tree css end **************/
+
+/***************** date-picker-range css **************/
+.date-picker-range-container {
+    width: auto;
+    display: inline-flex;
 }
 
-.icon-with-tree .rc-tree.rc-tree-show-line .rc-tree-list .rc-tree-switcher img {
+.date-picker-range-container .first-datepicker {
+    height: 38px !important;
+    border-right-width: 0 !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border: 1px solid rgb(204, 204, 204) !important;
+}
+
+.date-picker-range-container .last-datepicker {
+    height: 38px !important;
+    border-left-width: 0 !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border: 1px solid rgb(204, 204, 204) !important;
+}
+
+.date-picker-range-container .first-timepicker {
+    height: 38px !important;
+    border-right-width: 0 !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border: 1px solid rgb(204, 204, 204) !important;
+}
+
+.date-picker-range-container .last-timepicker {
+    height: 38px !important;
+    border-left-width: 0 !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border: 1px solid rgb(204, 204, 204) !important;
+}
+
+.date-picker-range-container .react-datepicker-wrapper:nth-child(2) {
+    font-size: 1.3rem;
+    width: auto !important;
+}
+
+.date-picker-range-container .react-datepicker-with-icon {
+    font-size: 1.37rem !important;
+}
+  /***************** date-picker-range css end **************/
+
+  /***************** date-picker css **************/
+
+.modal-input {
+    width: 260px;
+    height: 38px;
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 4px;
+    padding-left: 12px;
+    &:focus {
+        outline-color: #2684ff;
+    }
+
+    &.search {
+        width: 206px;
+    }
+
+    &.text-area {
+        height: 85px;
+    }
+
+    &.quiz {
+        width: 130px;
+    }
+
+    &.grow {
+        max-width: 500px;
+        flex: 1;
+        flex-grow: 1;
+    }
+
+    &.point {
+        width: 100px;
+    }
+
+    &.first-datepicker {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    &.last-datepicker {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}
+
+.modal-input-lg {
+    width: 350px;
+    height: 38px;
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 4px;
+    padding-left: 12px;
+    &:focus {
+        outline-color: #2684ff;
+    }
+
+    &.search {
+        width: 266px;
+    }
+
+    &.text-area {
+        height: 85px;
+    }
+
+    &.quiz {
+        width: 130px;
+    }
+
+    &.grow {
+        max-width: 500px;
+        flex: 1;
+        flex-grow: 1;
+    }
+
+    &.point {
+        width: 100px;
+    }
+
+    &.first-datepicker {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    &.last-datepicker {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}
+  /***************** date-picker css end **************/
+
+  /***************** time-picker css **************/
+  .timePickerContainer {
+    position: absolute;
+    width: 100%;
+}
+
+.timePickerInput {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    padding: .65rem 1rem;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ebedf2;
+    border-radius: .25rem;
+    -webkit-transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+}
+
+div.timePickerContainer>div.timePickerPopout {
+    padding: 4px;
+    width: 175px;
+    box-shadow: 0 0 15px 1px rgba(81, 77, 92, .2);
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 1000;
+    background-color: #fff;
+    border-radius: 6px;
+}
+
+div.timePickerContainer>div.timePickerPopout>table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #575962;
+    table-layout: fixed;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+}
+
+div.timePickerContainer>div.timePickerPopout>table td {
+    text-align: center;
+    height: 30px;
+    margin: 0;
+    padding: 2px;
+}
+
+div.timePickerContainer>div.timePickerPopout>table>tbody>tr>td:nth-of-type(2) {
+    width: 20px;
+}
+
+div.timePickerContainer>div.timePickerPopout>table td>div {
+    width: 100%;
+    display: flex;
+    margin: 0;
+    padding: 8px 0;
+    outline: 0;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+}
+
+div.timePickerContainer>div.timePickerPopout>table td>div:hover {
+    background: #ebedf2;
+    cursor: pointer;
+}
+  /***************** time-picker css end **************/
+
+  /***************** select css **************/
+.eschool-select > div > div:nth-child(2) div:first-child svg:not(.MuiSvgIcon-root)  {
     position: relative;
-    left: 14px;
-    top: 2px;
+    left: 10px;
 }
 
-.rc-tree-title {
-    color: #505050;
-    font-size: 14px !important;
-    font-family: Mulish;
+.eschool-select.is-invalid>div:first-of-type {
+    border: 1px solid #F64E60 !important;
+    box-shadow: none;
+}
+.podcast-forms-style .eschool-select, .podcast-forms-style input.form-control, .podcast-forms-style .eschool-checkbox {
+    width: 540px;
+}
+.hideSelectArrow.eschool-select{
+    border: 1px solid rgba(235, 237, 242, 1);
+    transition:cubic-bezier(1, 0, 0, 1);
+    opacity: 1;
+    visibility: show;
+    border-radius: 12px;
 }
 
-/***************** Tree switcher icon style **************/
+.hideSelectArrow.eschool-select .my-className-prefix__control{
+    border: 1px solid #EBEDF2;
+    border-style: none;
+    border-radius: 12px;
+}
+
+.hideSelectArrow.eschool-select .my-className-prefix__control:hover{
+    border: 1px solid #ff5b1d !important;
+    box-shadow: none;
+    border-radius: 12px;
+}
+
+.hideSelectArrow.eschool-select .my-className-prefix__value-container {
+    color: #868AA8 !important;
+    justify-content: left;
+    font-size: 14px;
+    overflow: visible;
+    white-space: inherit;
+    cursor: pointer;
+    text-align: center;
+    font-family: MulishBold;
+}
+
+.hideSelectArrow.eschool-select .my-className-prefix__option--is-selected {
+    font-weight: 700;
+    color: black !important;
+}
+
+.hideSelectArrow.eschool-select .css-1pahdxg-control {
+    box-shadow: none;
+}
+
+.hideSelectArrow.eschool-select .my-className-prefix__option {
+    background-color: transparent !important;
+    color: #7c7c7c;
+}
+
+.hideSelectArrow.eschool-select .my-className-prefix__option:not(:last-child) {
+    border-bottom: 1px solid rgba(124, 124, 124, 0.1);
+}
+
+.hideSelectArrow.eschool-select .my-className-prefix__option:hover {
+    background-color: transparent !important;
+    cursor: pointer;
+    color: #ff5b1d;
+}
+
+.hideSelectArrow.eschool-select.class .my-className-prefix__value-container:after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-top: 1px solid #868aa8;
+    border-right: 1px solid #868aa8;
+    transform: rotate(45deg);
+    bottom: initial;
+    top: 14px;
+    left: initial;
+    right: 1rem;
+    top: calc(50% - 3px);
+}
+
+.hideSelectArrow.eschool-select .my-className-prefix__single-value {
+    color: #868AA8 !important;
+    font-family: MulishBold;
+}
+
+.hideSelectArrow.eschool-select .my-className-prefix__placeholder {
+    color: #868AA8 !important;
+    font-family: MulishBold;
+}
+
+.hideSelectArrow.eschool-select .my-className-prefix__indicator-separator {
+    visibility: hidden;
+}
+
+.hideSelectArrow.eschool-select .my-className-prefix__menu{
+    box-shadow: 0 6px 10px rgba(0, 0, 0, .1) !important;
+    border: none !important;
+}
+
+.hideSelectArrow.eschool-select .my-className-prefix__menu-list{
+    box-shadow: 0 6px 10px rgba(0, 0, 0, .1) !important;
+    border: none !important;
+}
+
+.modal-select {
+    width: 260px;
+
+    .eschool-select .css-1pahdxg-control:hover {
+        border-color: red !important;
+    }
+
+    &:hover {
+    }
+
+    &.quiz {
+        width: 200px;
+    }
+}
+
+.modal-select-lg {
+width: 350px;
+
+    .eschool-select .css-1pahdxg-control:hover {
+        border-color: red !important;
+    }
+
+    &:hover {
+    }
+
+    &.quiz {
+        width: 260px;
+    }
+}
+
+  /***************** select css end **************/

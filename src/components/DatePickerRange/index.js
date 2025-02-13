@@ -3,7 +3,6 @@ import format from "date-fns/format";
 import DatePicker from "react-datepicker";
 import mn from "date-fns/locale/mn";
 import CustomHeader from "./CustomHeader";
-import "react-datepicker/dist/react-datepicker.css";
 
 const CustomIcon = forwardRef(({ onClick, className = "" }, ref) => {
     return (
@@ -34,7 +33,6 @@ const DatePickerRange = ({
     minDateEnd,
     maxDateEnd,
     isFilter,
-    showHeader = false,
     ...rest
 }) => {
     const [startDate, setStartDate] = useState(null);
@@ -167,7 +165,7 @@ const DatePickerRange = ({
                 placeholderText={firstPlaceHolder ? firstPlaceHolder : ""}
                 showTimeInput={showTimeInput || false}
                 showTimeSelect={showTimeSelect || false}
-                renderCustomHeader={showHeader ? CustomHeader : null}
+                renderCustomHeader={CustomHeader}
                 {...rest}
                 maxDate={isFilter && endDate ? new Date(endDate) : isFilter && selectedEndDate ? new Date(selectedEndDate) : null}
                 minDate={isFilter && maxDateStart ? new Date(maxDateStart) : null}
@@ -186,7 +184,7 @@ const DatePickerRange = ({
                 shouldCloseOnSelect={true}
                 onCalendarOpen={handleCalendarOpen}
                 onCalendarClose={handleMainCalendarClose}
-                renderCustomHeader={showHeader ? CustomHeader : null}
+                renderCustomHeader={CustomHeader}
                 {...rest}
             />
             <DatePicker
@@ -209,7 +207,7 @@ const DatePickerRange = ({
                 className={`last-datepicker ${rest?.disabled ? 'datepicker-disable' : ''}` + ' ' + className} 
                 onCalendarClose={handleLastCalendarClose}
                 placeholderText={lastPlaceHolder ? lastPlaceHolder : ""}
-                renderCustomHeader={showHeader ? CustomHeader : null}
+                renderCustomHeader={CustomHeader}
                 showTimeInput={showTimeInput || false}
                 showTimeSelect={showTimeSelect || false}
                 {...rest}

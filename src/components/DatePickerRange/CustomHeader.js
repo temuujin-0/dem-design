@@ -1,6 +1,6 @@
 import React from "react";
 import ChevronLeftIcon from "../../assets/icons/ChevronLeftIcon";
-import ChevronRightIcon from "../../assets/icons/ChevronLeftIcon";
+import ChevronRightIcon from "../../assets/icons/ChevronRightIcon";
 
 export default function CustomHeader({
   monthDate,
