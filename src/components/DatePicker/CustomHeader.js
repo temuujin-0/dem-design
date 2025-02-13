@@ -17,27 +17,25 @@ export default function CustomHeader({
   const data = date.split(" ");
 
   return (
-    <>
-      <div
-        style={{
-          margin: 10,
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
-        <div onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
-          <ChevronLeftIcon />
-        </div>
-
-        <span>
-          {getTranslatedDate(data[0])} {data[1]}
-        </span>
-
-        <div onClick={increaseMonth} disabled={nextMonthButtonDisabled}>
-          <ChevronRightIcon />
-        </div>
+    <div
+      style={{
+        margin: 10,
+        display: "flex",
+        justifyContent: "space-between",
+      }}
+    >
+      <div onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
+        <ChevronLeftIcon />
       </div>
-    </>
+
+      <span>
+        {getTranslatedDate(data[0])} {data[1]}
+      </span>
+
+      <div onClick={increaseMonth} disabled={nextMonthButtonDisabled}>
+        <ChevronRightIcon />
+      </div>
+    </div>
   );
 }
 
