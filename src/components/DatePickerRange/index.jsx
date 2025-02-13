@@ -3,6 +3,7 @@ import format from "date-fns/format";
 import DatePicker from "react-datepicker";
 import mn from "date-fns/locale/mn";
 import CustomHeader from "./CustomHeader";
+import "react-datepicker/dist/react-datepicker.css";
 
 const CustomIcon = forwardRef(({ onClick, className = "" }, ref) => {
     return (
