@@ -13,7 +13,7 @@ npm install dem-design
 ```jsx
 import React from "react";
 import { Tree } from "dem-design";
-import "dem-design/styles/tree.css"; // CSS file
+import "dem-design/styles/global.css"; // CSS file
 
 const treeData = [
   {
