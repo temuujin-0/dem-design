@@ -1,4 +1,3 @@
-/* eslint-disable no-nested-ternary */
 import React, { forwardRef, useEffect, useState } from "react";
 import Picker from "react-datepicker";
 import format from "date-fns/format";
@@ -10,7 +9,6 @@ const CustomInput = forwardRef(({ value, onClick, className = "" }, ref) => {
     const { t } = useTranslation();
 
     return (
-        // eslint-disable-next-line react/button-has-type
         <button
             onClick={onClick}
             ref={ref}

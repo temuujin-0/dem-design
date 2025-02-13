@@ -1,4 +1,3 @@
-/* eslint-disable no-nested-ternary */
 import React, { forwardRef, useState, useEffect } from "react";
 import format from "date-fns/format";
 import DatePicker from "react-datepicker";
@@ -7,7 +6,6 @@ import CustomHeader from "./CustomHeader";
 
 const CustomIcon = forwardRef(({ onClick, className = "" }, ref) => {
     return (
-        // eslint-disable-next-line react/button-has-type
         <button
             type="button"
             ref={ref}
