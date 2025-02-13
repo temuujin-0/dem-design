@@ -175,7 +175,7 @@ var require_react_is_development = __commonJS({
         var ContextProvider = REACT_PROVIDER_TYPE;
         var Element2 = REACT_ELEMENT_TYPE;
         var ForwardRef2 = REACT_FORWARD_REF_TYPE;
-        var Fragment5 = REACT_FRAGMENT_TYPE2;
+        var Fragment3 = REACT_FRAGMENT_TYPE2;
         var Lazy = REACT_LAZY_TYPE;
         var Memo = REACT_MEMO_TYPE;
         var Portal = REACT_PORTAL_TYPE;
@@ -243,7 +243,7 @@ var require_react_is_development = __commonJS({
         exports.ContextProvider = ContextProvider;
         exports.Element = Element2;
         exports.ForwardRef = ForwardRef2;
-        exports.Fragment = Fragment5;
+        exports.Fragment = Fragment3;
         exports.Lazy = Lazy;
         exports.Memo = Memo;
         exports.Portal = Portal;
@@ -423,7 +423,7 @@ var require_react_is_development2 = __commonJS({
         var ContextProvider = REACT_PROVIDER_TYPE;
         var Element2 = REACT_ELEMENT_TYPE;
         var ForwardRef2 = REACT_FORWARD_REF_TYPE;
-        var Fragment5 = REACT_FRAGMENT_TYPE2;
+        var Fragment3 = REACT_FRAGMENT_TYPE2;
         var Lazy = REACT_LAZY_TYPE;
         var Memo = REACT_MEMO_TYPE;
         var Portal = REACT_PORTAL_TYPE;
@@ -482,7 +482,7 @@ var require_react_is_development2 = __commonJS({
         exports.ContextProvider = ContextProvider;
         exports.Element = Element2;
         exports.ForwardRef = ForwardRef2;
-        exports.Fragment = Fragment5;
+        exports.Fragment = Fragment3;
         exports.Lazy = Lazy;
         exports.Memo = Memo;
         exports.Portal = Portal;
@@ -19260,7 +19260,7 @@ function ChevronLeftIcon({ stroke = "#FF5B1D" }) {
 }
 
 // src/components/DatePicker/CustomHeader.js
-import { Fragment as Fragment3, jsx as jsx4, jsxs as jsxs2 } from "react/jsx-runtime";
+import { jsx as jsx4, jsxs as jsxs2 } from "react/jsx-runtime";
 function CustomHeader({
   monthDate,
   decreaseMonth,
@@ -19273,7 +19273,7 @@ function CustomHeader({
     year: "numeric"
   });
   const data = date.split(" ");
-  return /* @__PURE__ */ jsx4(Fragment3, { children: /* @__PURE__ */ jsxs2(
+  return /* @__PURE__ */ jsxs2(
     "div",
     {
       style: {
@@ -19291,7 +19291,7 @@ function CustomHeader({
         /* @__PURE__ */ jsx4("div", { onClick: increaseMonth, disabled: nextMonthButtonDisabled, children: /* @__PURE__ */ jsx4(ChevronLeftIcon, {}) })
       ]
     }
-  ) });
+  );
 }
 var getTranslatedDate = (month) => {
   switch (month) {
@@ -19872,7 +19872,7 @@ var mn_default = locale;
 
 // src/components/DatePickerRange/CustomHeader.js
 import React49 from "react";
-import { Fragment as Fragment4, jsx as jsx6, jsxs as jsxs3 } from "react/jsx-runtime";
+import { jsx as jsx6, jsxs as jsxs3 } from "react/jsx-runtime";
 function CustomHeader2({
   monthDate,
   decreaseMonth,
@@ -19885,7 +19885,7 @@ function CustomHeader2({
     year: "numeric"
   });
   const data = date.split(" ");
-  return /* @__PURE__ */ jsx6(Fragment4, { children: /* @__PURE__ */ jsxs3(
+  return /* @__PURE__ */ jsxs3(
     "div",
     {
       style: {
@@ -19903,7 +19903,7 @@ function CustomHeader2({
         /* @__PURE__ */ jsx6("div", { onClick: increaseMonth, disabled: nextMonthButtonDisabled, children: /* @__PURE__ */ jsx6(ChevronLeftIcon, {}) })
       ]
     }
-  ) });
+  );
 }
 var getTranslatedDate2 = (month) => {
   switch (month) {
