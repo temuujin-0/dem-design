@@ -1,0 +1,48 @@
+/***************** date-picker-range-container css **************/
+.date-picker-range-container {
+  width: auto;
+  display: inline-flex;
+}
+
+.date-picker-range-container .first-datepicker {
+  height: 38px !important;
+  border-right-width: 0 !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border: 1px solid rgb(204, 204, 204) !important;
+}
+
+.date-picker-range-container .last-datepicker {
+  height: 38px !important;
+  border-left-width: 0 !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border: 1px solid rgb(204, 204, 204) !important;
+}
+
+.date-picker-range-container .first-timepicker {
+  height: 38px !important;
+  border-right-width: 0 !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border: 1px solid rgb(204, 204, 204) !important;
+}
+
+.date-picker-range-container .last-timepicker {
+  height: 38px !important;
+  border-left-width: 0 !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border: 1px solid rgb(204, 204, 204) !important;
+}
+
+.date-picker-range-container .react-datepicker-wrapper:nth-child(2) {
+  font-size: 1.3rem;
+  width: auto !important;
+}
+
+.date-picker-range-container .react-datepicker-with-icon {
+  font-size: 1.37rem !important;
+}
+
+/***************** date-picker-range-container css end **************/
