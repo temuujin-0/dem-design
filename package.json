@@ -20,16 +20,24 @@
   "keywords": [
     "react",
     "ui",
-    "tree",
     "component-library"
   ],
   "author": "Temuujin",
   "license": "MIT",
   "dependencies": {
+    "@ckeditor/ckeditor5-react": "^5.0.6",
+    "@mui/x-date-pickers": "^7.18.0",
+    "ckeditor5-build-classic-mathtype": "^1.0.0",
     "date-fns": "^2.29.3",
+    "dayjs": "^1.11.7",
     "object-assign": "^4.1.1",
     "rc-tree": "^5.13.0",
-    "react-i18next": "^11.16.7"
+    "react-bootstrap": "^2.10.4",
+    "react-color": "^2.19.3",
+    "react-contenteditable": "^3.3.7",
+    "react-day-picker": "^7.3.0",
+    "react-i18next": "^11.16.7",
+    "react-resize-context": "^3.0.0"
   },
   "peerDependencies": {
     "@emotion/react": "^11.14.0",
@@ -37,8 +45,8 @@
     "@mui/icons-material": "^6.4.4",
     "@mui/material": "^6.4.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "react-datepicker": "^4.10.0",
+    "react-dom": "^18.2.0",
     "react-select": "^5.10.0"
   },
   "devDependencies": {
