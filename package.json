@@ -4,7 +4,6 @@
   "description": "Digital Edu Management UI components",
   "main": "dist/index.js",
   "module": "dist/index.js",
-  "type": "module",
   "exports": {
     "import": "./dist/index.js",
     "require": "./dist/index.js"
@@ -39,17 +38,17 @@
     "rc-tree": "^5.13.0"
   },
   "peerDependencies": {
-    "@ckeditor/ckeditor5-react": "^5.0.6",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+    "@ckeditor/ckeditor5-react": "^5.0.6",
     "ckeditor5-build-classic-mathtype": "^1.0.0",
     "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-day-picker": "^7.3.0",
+    "react-datepicker": "^4.10.0",
     "react-bootstrap": "^2.10.4",
     "react-color": "^2.19.3",
     "react-contenteditable": "^3.3.7",
-    "react-datepicker": "^4.10.0",
-    "react-dom": "^18.2.0",
     "react-i18next": "^11.16.7",
     "react-resize-context": "^3.0.0",
     "react-select": "^5.10.0"

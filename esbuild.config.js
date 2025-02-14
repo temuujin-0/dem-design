@@ -1,49 +1,44 @@
-import { readdirSync, copyFileSync } from "fs";
-import { resolve, join } from "path";
-import { fileURLToPath } from "url";
-import esbuild from "esbuild";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = resolve(__filename, "..");
+const fs = require("fs");
+const path = require("path");
+const esbuild = require('esbuild');
 
 esbuild.build({
-  entryPoints: ["src/index.js"],
+  entryPoints: ['src/index.js'],
   outfile: "dist/index.js",
   bundle: true,
   minify: false,
   sourcemap: true,
-  format: "esm",
-  target: ["esnext"],
+  format: 'esm',
+  target: ['esnext'],
   loader: {
-    ".js": "jsx",
-    ".jsx": "jsx"
+    '.js': 'jsx',
+    '.jsx': 'jsx'
   },
   jsx: "automatic",
   external: [
+    "@ckeditor/ckeditor5-react",
     "@emotion/react", 
     "@emotion/styled",
+    "ckeditor5-build-classic-mathtype",
     "react", 
     "react-dom", 
     "react/jsx-runtime", 
     "react-datepicker", 
     "react-day-picker",
-    "react-select",
-    "react-i18next",
     "react-bootstrap",
     "react-color",
     "react-contenteditable",
-    "react-resize-context"
+    "react-i18next",
+    "react-resize-context",
+    "react-select",
   ]
 }).then(() => {
-  const stylesDir = resolve(__dirname, "src/styles");
-  const distDir = resolve(__dirname, "dist");
+  const stylesDir = path.resolve("src/styles");
+  const distDir = path.resolve("dist");
 
-  readdirSync(stylesDir).forEach(file => {
+  fs.readdirSync(stylesDir).forEach(file => {
     if (file.endsWith(".css")) {
-      copyFileSync(join(stylesDir, file), join(distDir, file));
+      fs.copyFileSync(path.join(stylesDir, file), path.join(distDir, file));
     }
   });
-}).catch((err) => {
-  console.error("Build failed:", err);
-  process.exit(1);
-});
+}).catch(() => process.exit(1));
