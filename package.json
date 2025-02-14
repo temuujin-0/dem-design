@@ -4,6 +4,7 @@
   "description": "Digital Edu Management UI components",
   "main": "dist/index.js",
   "module": "dist/index.js",
+  "type": "module",
   "exports": {
     "import": "./dist/index.js",
     "require": "./dist/index.js"
