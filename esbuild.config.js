@@ -1,24 +1,28 @@
-const fs = require("fs");
-const path = require("path");
+import { readdirSync, copyFileSync } from "fs";
+import { resolve, join } from "path";
+import { fileURLToPath } from "url";
+import esbuild from "esbuild";
 
-const esbuild = require('esbuild');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = resolve(__filename, "..");
 
 esbuild.build({
-  entryPoints: ['src/index.js'],
+  entryPoints: ["src/index.js"],
   outfile: "dist/index.js",
   bundle: true,
   minify: false,
   sourcemap: true,
-  format: 'esm',
-  target: ['esnext'],
+  format: "esm",
+  target: ["esnext"],
   loader: {
-    '.js': 'jsx',
-    '.jsx': 'jsx'
+    ".js": "jsx",
+    ".jsx": "jsx"
   },
   jsx: "automatic",
   external: [
     "react", 
     "react-dom", 
+    "react/jsx-runtime", 
     "react-datepicker", 
     "react-select",
     "@mui/material", 
@@ -31,15 +35,18 @@ esbuild.build({
     "react-bootstrap",
     "react-color",
     "react-contenteditable",
-    "react-resize-context",
+    "react-resize-context"
   ]
 }).then(() => {
-  const stylesDir = path.resolve("src/styles");
-  const distDir = path.resolve("dist");
+  const stylesDir = resolve(__dirname, "src/styles");
+  const distDir = resolve(__dirname, "dist");
 
-  fs.readdirSync(stylesDir).forEach(file => {
+  readdirSync(stylesDir).forEach(file => {
     if (file.endsWith(".css")) {
-      fs.copyFileSync(path.join(stylesDir, file), path.join(distDir, file));
+      copyFileSync(join(stylesDir, file), join(distDir, file));
     }
   });
-}).catch(() => process.exit(1));
+}).catch((err) => {
+  console.error("Build failed:", err);
+  process.exit(1);
+});
