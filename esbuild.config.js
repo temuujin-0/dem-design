@@ -31,6 +31,17 @@ esbuild.build({
     "react-i18next",
     "react-resize-context",
     "react-select",
+    "react-bootstrap-table-next",
+    "react-bootstrap-table2-editor",
+    "react-bootstrap-table2-filter",
+    "react-bootstrap-table2-paginator",
+    "react-bootstrap-table2-toolkit",
+    "react-dnd",
+    "react-dnd-html5-backend",
+    "react-redux",
+    "react-to-print",
+    "xlsx",
+    "xlsx-js-style"
   ]
 }).then(() => {
   const stylesDir = path.resolve("src/styles");

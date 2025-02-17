@@ -73,7 +73,7 @@ npm publish --access public
 ```sh
 rm -rf node_modules package-lock.json
 npm cache clean --force
-npm install
+npm -f install
 ```
 
 ## 📜 License
