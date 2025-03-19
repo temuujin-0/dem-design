@@ -41,7 +41,7 @@ export default App;
 
 Git Clone
 ```sh
-git clone https://github.com/temuujin-0/dem-design.git or git@github.com:ant-design/ant-design.git
+git clone https://github.com/temuujin-0/dem-design.git or git@github.com:temuujin-0/dem-design.git
 ```
 
 Git Publish
