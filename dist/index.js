@@ -447,10 +447,10 @@ var require_lodash = __commonJS({
         }
         return result;
       }
-      function arrayPush(array, values4) {
-        var index3 = -1, length = values4.length, offset2 = array.length;
+      function arrayPush(array, values5) {
+        var index3 = -1, length = values5.length, offset2 = array.length;
         while (++index3 < length) {
-          array[offset2 + index3] = values4[index3];
+          array[offset2 + index3] = values5[index3];
         }
         return array;
       }
@@ -616,7 +616,7 @@ var require_lodash = __commonJS({
       function escapeStringChar(chr) {
         return "\\" + stringEscapes[chr];
       }
-      function getValue2(object, key) {
+      function getValue3(object, key) {
         return object == null ? undefined2 : object[key];
       }
       function hasUnicode(string) {
@@ -1016,11 +1016,11 @@ var require_lodash = __commonJS({
         MapCache.prototype.get = mapCacheGet;
         MapCache.prototype.has = mapCacheHas;
         MapCache.prototype.set = mapCacheSet;
-        function SetCache(values5) {
-          var index3 = -1, length = values5 == null ? 0 : values5.length;
+        function SetCache(values6) {
+          var index3 = -1, length = values6 == null ? 0 : values6.length;
           this.__data__ = new MapCache();
           while (++index3 < length) {
-            this.add(values5[index3]);
+            this.add(values6[index3]);
           }
         }
         function setCacheAdd(value) {
@@ -1244,21 +1244,21 @@ var require_lodash = __commonJS({
             func.apply(undefined2, args);
           }, wait);
         }
-        function baseDifference(array, values5, iteratee2, comparator) {
-          var index3 = -1, includes2 = arrayIncludes2, isCommon = true, length = array.length, result2 = [], valuesLength = values5.length;
+        function baseDifference(array, values6, iteratee2, comparator) {
+          var index3 = -1, includes2 = arrayIncludes2, isCommon = true, length = array.length, result2 = [], valuesLength = values6.length;
           if (!length) {
             return result2;
           }
           if (iteratee2) {
-            values5 = arrayMap(values5, baseUnary(iteratee2));
+            values6 = arrayMap(values6, baseUnary(iteratee2));
           }
           if (comparator) {
             includes2 = arrayIncludesWith;
             isCommon = false;
-          } else if (values5.length >= LARGE_ARRAY_SIZE) {
+          } else if (values6.length >= LARGE_ARRAY_SIZE) {
             includes2 = cacheHas;
             isCommon = false;
-            values5 = new SetCache(values5);
+            values6 = new SetCache(values6);
           }
           outer:
             while (++index3 < length) {
@@ -1267,12 +1267,12 @@ var require_lodash = __commonJS({
               if (isCommon && computed === computed) {
                 var valuesIndex = valuesLength;
                 while (valuesIndex--) {
-                  if (values5[valuesIndex] === computed) {
+                  if (values6[valuesIndex] === computed) {
                     continue outer;
                   }
                 }
                 result2.push(value);
-              } else if (!includes2(values5, computed, comparator)) {
+              } else if (!includes2(values6, computed, comparator)) {
                 result2.push(value);
               }
             }
@@ -1632,7 +1632,7 @@ var require_lodash = __commonJS({
               } else {
                 newValue = [];
               }
-            } else if (isPlainObject3(srcValue) || isArguments(srcValue)) {
+            } else if (isPlainObject4(srcValue) || isArguments(srcValue)) {
               newValue = objValue;
               if (isArguments(objValue)) {
                 newValue = toPlainObject(objValue);
@@ -1703,16 +1703,16 @@ var require_lodash = __commonJS({
             return baseGet(object, path);
           };
         }
-        function basePullAll(array, values5, iteratee2, comparator) {
-          var indexOf2 = comparator ? baseIndexOfWith : baseIndexOf, index3 = -1, length = values5.length, seen = array;
-          if (array === values5) {
-            values5 = copyArray(values5);
+        function basePullAll(array, values6, iteratee2, comparator) {
+          var indexOf2 = comparator ? baseIndexOfWith : baseIndexOf, index3 = -1, length = values6.length, seen = array;
+          if (array === values6) {
+            values6 = copyArray(values6);
           }
           if (iteratee2) {
             seen = arrayMap(array, baseUnary(iteratee2));
           }
           while (++index3 < length) {
-            var fromIndex = 0, value = values5[index3], computed = iteratee2 ? iteratee2(value) : value;
+            var fromIndex = 0, value = values6[index3], computed = iteratee2 ? iteratee2(value) : value;
             while ((fromIndex = indexOf2(seen, computed, fromIndex, comparator)) > -1) {
               if (seen !== array) {
                 splice.call(seen, fromIndex, 1);
@@ -1768,10 +1768,10 @@ var require_lodash = __commonJS({
           return setToString(overRest(func, start2, identity), func + "");
         }
         function baseSample(collection) {
-          return arraySample(values4(collection));
+          return arraySample(values5(collection));
         }
         function baseSampleSize(collection, n) {
-          var array = values4(collection);
+          var array = values5(collection);
           return shuffleSelf(array, baseClamp(n, 0, array.length));
         }
         function baseSet(object, path, value, customizer) {
@@ -1810,7 +1810,7 @@ var require_lodash = __commonJS({
           });
         };
         function baseShuffle(collection) {
-          return shuffleSelf(values4(collection));
+          return shuffleSelf(values5(collection));
         }
         function baseSlice(array, start2, end2) {
           var index3 = -1, length = array.length;
@@ -1994,10 +1994,10 @@ var require_lodash = __commonJS({
           }
           return baseUniq(baseFlatten(result2, 1), iteratee2, comparator);
         }
-        function baseZipObject(props, values5, assignFunc) {
-          var index3 = -1, length = props.length, valsLength = values5.length, result2 = {};
+        function baseZipObject(props, values6, assignFunc) {
+          var index3 = -1, length = props.length, valsLength = values6.length, result2 = {};
           while (++index3 < length) {
-            var value = index3 < valsLength ? values5[index3] : undefined2;
+            var value = index3 < valsLength ? values6[index3] : undefined2;
             assignFunc(result2, props[index3], value);
           }
           return result2;
@@ -2499,8 +2499,8 @@ var require_lodash = __commonJS({
             return func(number);
           };
         }
-        var createSet = !(Set2 && 1 / setToArray(new Set2([, -0]))[1] == INFINITY) ? noop6 : function(values5) {
-          return new Set2(values5);
+        var createSet = !(Set2 && 1 / setToArray(new Set2([, -0]))[1] == INFINITY) ? noop6 : function(values6) {
+          return new Set2(values6);
         };
         function createToPairs(keysFunc) {
           return function(object) {
@@ -2583,7 +2583,7 @@ var require_lodash = __commonJS({
           return objValue;
         }
         function customOmitClone(value) {
-          return isPlainObject3(value) ? undefined2 : value;
+          return isPlainObject4(value) ? undefined2 : value;
         }
         function equalArrays(array, other, bitmask, customizer, equalFunc, stack) {
           var isPartial = bitmask & COMPARE_PARTIAL_FLAG, arrLength = array.length, othLength = other.length;
@@ -2761,7 +2761,7 @@ var require_lodash = __commonJS({
           return result2;
         }
         function getNative(object, key) {
-          var value = getValue2(object, key);
+          var value = getValue3(object, key);
           return baseIsNative(value) ? value : undefined2;
         }
         function getRawTag(value) {
@@ -2977,7 +2977,7 @@ var require_lodash = __commonJS({
           };
         }
         function memoizeCapped(func) {
-          var result2 = memoize5(func, function(key) {
+          var result2 = memoize6(func, function(key) {
             if (cache3.size === MAX_MEMOIZE_SIZE) {
               cache3.clear();
             }
@@ -3191,22 +3191,22 @@ var require_lodash = __commonJS({
           }
           return arrayPush(isArray(array) ? copyArray(array) : [array], baseFlatten(args, 1));
         }
-        var difference = baseRest(function(array, values5) {
-          return isArrayLikeObject(array) ? baseDifference(array, baseFlatten(values5, 1, isArrayLikeObject, true)) : [];
+        var difference = baseRest(function(array, values6) {
+          return isArrayLikeObject(array) ? baseDifference(array, baseFlatten(values6, 1, isArrayLikeObject, true)) : [];
         });
-        var differenceBy = baseRest(function(array, values5) {
-          var iteratee2 = last(values5);
+        var differenceBy = baseRest(function(array, values6) {
+          var iteratee2 = last(values6);
           if (isArrayLikeObject(iteratee2)) {
             iteratee2 = undefined2;
           }
-          return isArrayLikeObject(array) ? baseDifference(array, baseFlatten(values5, 1, isArrayLikeObject, true), getIteratee(iteratee2, 2)) : [];
+          return isArrayLikeObject(array) ? baseDifference(array, baseFlatten(values6, 1, isArrayLikeObject, true), getIteratee(iteratee2, 2)) : [];
         });
-        var differenceWith = baseRest(function(array, values5) {
-          var comparator = last(values5);
+        var differenceWith = baseRest(function(array, values6) {
+          var comparator = last(values6);
           if (isArrayLikeObject(comparator)) {
             comparator = undefined2;
           }
-          return isArrayLikeObject(array) ? baseDifference(array, baseFlatten(values5, 1, isArrayLikeObject, true), undefined2, comparator) : [];
+          return isArrayLikeObject(array) ? baseDifference(array, baseFlatten(values6, 1, isArrayLikeObject, true), undefined2, comparator) : [];
         });
         function drop(array, n, guard) {
           var length = array == null ? 0 : array.length;
@@ -3351,14 +3351,14 @@ var require_lodash = __commonJS({
           return array && array.length ? baseNth(array, toInteger2(n)) : undefined2;
         }
         var pull = baseRest(pullAll);
-        function pullAll(array, values5) {
-          return array && array.length && values5 && values5.length ? basePullAll(array, values5) : array;
+        function pullAll(array, values6) {
+          return array && array.length && values6 && values6.length ? basePullAll(array, values6) : array;
         }
-        function pullAllBy(array, values5, iteratee2) {
-          return array && array.length && values5 && values5.length ? basePullAll(array, values5, getIteratee(iteratee2, 2)) : array;
+        function pullAllBy(array, values6, iteratee2) {
+          return array && array.length && values6 && values6.length ? basePullAll(array, values6, getIteratee(iteratee2, 2)) : array;
         }
-        function pullAllWith(array, values5, comparator) {
-          return array && array.length && values5 && values5.length ? basePullAll(array, values5, undefined2, comparator) : array;
+        function pullAllWith(array, values6, comparator) {
+          return array && array.length && values6 && values6.length ? basePullAll(array, values6, undefined2, comparator) : array;
         }
         var pullAt = flatRest(function(array, indexes) {
           var length = array == null ? 0 : array.length, result2 = baseAt(array, indexes);
@@ -3517,8 +3517,8 @@ var require_lodash = __commonJS({
             return apply(iteratee2, undefined2, group);
           });
         }
-        var without = baseRest(function(array, values5) {
-          return isArrayLikeObject(array) ? baseDifference(array, values5) : [];
+        var without = baseRest(function(array, values6) {
+          return isArrayLikeObject(array) ? baseDifference(array, values6) : [];
         });
         var xor = baseRest(function(arrays) {
           return baseXor(arrayFilter(arrays, isArrayLikeObject));
@@ -3536,11 +3536,11 @@ var require_lodash = __commonJS({
           return baseXor(arrayFilter(arrays, isArrayLikeObject), undefined2, comparator);
         });
         var zip = baseRest(unzip);
-        function zipObject(props, values5) {
-          return baseZipObject(props || [], values5 || [], assignValue);
+        function zipObject(props, values6) {
+          return baseZipObject(props || [], values6 || [], assignValue);
         }
-        function zipObjectDeep(props, values5) {
-          return baseZipObject(props || [], values5 || [], baseSet);
+        function zipObjectDeep(props, values6) {
+          return baseZipObject(props || [], values6 || [], baseSet);
         }
         var zipWith = baseRest(function(arrays) {
           var length = arrays.length, iteratee2 = length > 1 ? arrays[length - 1] : undefined2;
@@ -3678,7 +3678,7 @@ var require_lodash = __commonJS({
           }
         });
         function includes(collection, value, fromIndex, guard) {
-          collection = isArrayLike(collection) ? collection : values4(collection);
+          collection = isArrayLike(collection) ? collection : values5(collection);
           fromIndex = fromIndex && !guard ? toInteger2(fromIndex) : 0;
           var length = collection.length;
           if (fromIndex < 0) {
@@ -3932,7 +3932,7 @@ var require_lodash = __commonJS({
         function flip2(func) {
           return createWrap(func, WRAP_FLIP_FLAG);
         }
-        function memoize5(func, resolver) {
+        function memoize6(func, resolver) {
           if (typeof func != "function" || resolver != null && typeof resolver != "function") {
             throw new TypeError2(FUNC_ERROR_TEXT);
           }
@@ -3945,10 +3945,10 @@ var require_lodash = __commonJS({
             memoized.cache = cache3.set(key, result2) || cache3;
             return result2;
           };
-          memoized.cache = new (memoize5.Cache || MapCache)();
+          memoized.cache = new (memoize6.Cache || MapCache)();
           return memoized;
         }
-        memoize5.Cache = MapCache;
+        memoize6.Cache = MapCache;
         function negate(predicate) {
           if (typeof predicate != "function") {
             throw new TypeError2(FUNC_ERROR_TEXT);
@@ -4084,7 +4084,7 @@ var require_lodash = __commonJS({
         var isBuffer = nativeIsBuffer || stubFalse;
         var isDate2 = nodeIsDate ? baseUnary(nodeIsDate) : baseIsDate;
         function isElement2(value) {
-          return isObjectLike(value) && value.nodeType === 1 && !isPlainObject3(value);
+          return isObjectLike(value) && value.nodeType === 1 && !isPlainObject4(value);
         }
         function isEmpty5(value) {
           if (value == null) {
@@ -4120,7 +4120,7 @@ var require_lodash = __commonJS({
             return false;
           }
           var tag = baseGetTag(value);
-          return tag == errorTag || tag == domExcTag || typeof value.message == "string" && typeof value.name == "string" && !isPlainObject3(value);
+          return tag == errorTag || tag == domExcTag || typeof value.message == "string" && typeof value.name == "string" && !isPlainObject4(value);
         }
         function isFinite(value) {
           return typeof value == "number" && nativeIsFinite(value);
@@ -4171,7 +4171,7 @@ var require_lodash = __commonJS({
         function isNumber(value) {
           return typeof value == "number" || isObjectLike(value) && baseGetTag(value) == numberTag;
         }
-        function isPlainObject3(value) {
+        function isPlainObject4(value) {
           if (!isObjectLike(value) || baseGetTag(value) != objectTag) {
             return false;
           }
@@ -4217,7 +4217,7 @@ var require_lodash = __commonJS({
           if (symIterator && value[symIterator]) {
             return iteratorToArray(value[symIterator]());
           }
-          var tag = getTag(value), func = tag == mapTag ? mapToArray : tag == setTag ? setToArray : values4;
+          var tag = getTag(value), func = tag == mapTag ? mapToArray : tag == setTag ? setToArray : values5;
           return func(value);
         }
         function toFinite(value) {
@@ -4286,9 +4286,9 @@ var require_lodash = __commonJS({
           copyObject(source, keys(source), object, customizer);
         });
         var at2 = flatRest(baseAt);
-        function create(prototype, properties2) {
+        function create(prototype, properties3) {
           var result2 = baseCreate(prototype);
-          return properties2 == null ? result2 : baseAssign(result2, properties2);
+          return properties3 == null ? result2 : baseAssign(result2, properties3);
         }
         var defaults = baseRest(function(object, sources) {
           object = Object2(object);
@@ -4390,7 +4390,7 @@ var require_lodash = __commonJS({
           });
           return result2;
         }
-        var merge2 = createAssigner(function(object, source, srcIndex) {
+        var merge3 = createAssigner(function(object, source, srcIndex) {
           baseMerge(object, source, srcIndex);
         });
         var mergeWith = createAssigner(function(object, source, srcIndex, customizer) {
@@ -4489,7 +4489,7 @@ var require_lodash = __commonJS({
           customizer = typeof customizer == "function" ? customizer : undefined2;
           return object == null ? object : baseUpdate(object, path, castFunction(updater), customizer);
         }
-        function values4(object) {
+        function values5(object) {
           return object == null ? [] : baseValues(object, keys(object));
         }
         function valuesIn(object) {
@@ -4559,9 +4559,9 @@ var require_lodash = __commonJS({
         }
         var camelCase2 = createCompounder(function(result2, word, index3) {
           word = word.toLowerCase();
-          return result2 + (index3 ? capitalize3(word) : word);
+          return result2 + (index3 ? capitalize4(word) : word);
         });
-        function capitalize3(string) {
+        function capitalize4(string) {
           return upperFirst(toString(string).toLowerCase());
         }
         function deburr(string) {
@@ -5079,8 +5079,8 @@ var require_lodash = __commonJS({
         lodash.mapValues = mapValues;
         lodash.matches = matches;
         lodash.matchesProperty = matchesProperty;
-        lodash.memoize = memoize5;
-        lodash.merge = merge2;
+        lodash.memoize = memoize6;
+        lodash.merge = merge3;
         lodash.mergeWith = mergeWith;
         lodash.method = method;
         lodash.methodOf = methodOf;
@@ -5150,7 +5150,7 @@ var require_lodash = __commonJS({
         lodash.unzipWith = unzipWith;
         lodash.update = update2;
         lodash.updateWith = updateWith;
-        lodash.values = values4;
+        lodash.values = values5;
         lodash.valuesIn = valuesIn;
         lodash.without = without;
         lodash.words = words;
@@ -5170,7 +5170,7 @@ var require_lodash = __commonJS({
         lodash.add = add;
         lodash.attempt = attempt;
         lodash.camelCase = camelCase2;
-        lodash.capitalize = capitalize3;
+        lodash.capitalize = capitalize4;
         lodash.ceil = ceil;
         lodash.clamp = clamp2;
         lodash.clone = clone;
@@ -5237,7 +5237,7 @@ var require_lodash = __commonJS({
         lodash.isNumber = isNumber;
         lodash.isObject = isObject;
         lodash.isObjectLike = isObjectLike;
-        lodash.isPlainObject = isPlainObject3;
+        lodash.isPlainObject = isPlainObject4;
         lodash.isRegExp = isRegExp;
         lodash.isSafeInteger = isSafeInteger;
         lodash.isSet = isSet;
@@ -5530,7 +5530,7 @@ var require_react_is_development = __commonJS({
         var REACT_FUNDAMENTAL_TYPE = hasSymbol2 ? Symbol.for("react.fundamental") : 60117;
         var REACT_RESPONDER_TYPE = hasSymbol2 ? Symbol.for("react.responder") : 60118;
         var REACT_SCOPE_TYPE = hasSymbol2 ? Symbol.for("react.scope") : 60119;
-        function isValidElementType2(type) {
+        function isValidElementType3(type) {
           return typeof type === "string" || typeof type === "function" || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
           type === REACT_FRAGMENT_TYPE2 || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === "object" && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
         }
@@ -5652,7 +5652,7 @@ var require_react_is_development = __commonJS({
         exports.isProfiler = isProfiler;
         exports.isStrictMode = isStrictMode;
         exports.isSuspense = isSuspense;
-        exports.isValidElementType = isValidElementType2;
+        exports.isValidElementType = isValidElementType3;
         exports.typeOf = typeOf;
       })();
     }
@@ -5781,7 +5781,7 @@ var require_checkPropTypes = __commonJS({
     var ReactPropTypesSecret;
     var loggedTypeFailures;
     var has;
-    function checkPropTypes(typeSpecs, values4, location, componentName, getStack) {
+    function checkPropTypes(typeSpecs, values5, location, componentName, getStack) {
       if (true) {
         for (var typeSpecName in typeSpecs) {
           if (has(typeSpecs, typeSpecName)) {
@@ -5794,7 +5794,7 @@ var require_checkPropTypes = __commonJS({
                 err.name = "Invariant Violation";
                 throw err;
               }
-              error = typeSpecs[typeSpecName](values4, typeSpecName, componentName, location, null, ReactPropTypesSecret);
+              error = typeSpecs[typeSpecName](values5, typeSpecName, componentName, location, null, ReactPropTypesSecret);
             } catch (ex) {
               error = ex;
             }
@@ -5849,7 +5849,7 @@ var require_factoryWithTypeCheckers = __commonJS({
     function emptyFunctionThatReturnsNull() {
       return null;
     }
-    module.exports = function(isValidElement17, throwOnDirectAccess) {
+    module.exports = function(isValidElement18, throwOnDirectAccess) {
       var ITERATOR_SYMBOL = typeof Symbol === "function" && Symbol.iterator;
       var FAUX_ITERATOR_SYMBOL = "@@iterator";
       function getIteratorFn(maybeIterable) {
@@ -5977,7 +5977,7 @@ var require_factoryWithTypeCheckers = __commonJS({
       function createElementTypeChecker() {
         function validate(props, propName, componentName, location, propFullName) {
           var propValue = props[propName];
-          if (!isValidElement17(propValue)) {
+          if (!isValidElement18(propValue)) {
             var propType = getPropType(propValue);
             return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement."));
           }
@@ -6165,7 +6165,7 @@ var require_factoryWithTypeCheckers = __commonJS({
             if (Array.isArray(propValue)) {
               return propValue.every(isNode);
             }
-            if (propValue === null || isValidElement17(propValue)) {
+            if (propValue === null || isValidElement18(propValue)) {
               return true;
             }
             var iteratorFn = getIteratorFn(propValue);
@@ -6297,6 +6297,7 @@ var require_react_is_development2 = __commonJS({
                 case REACT_STRICT_MODE_TYPE:
                 case REACT_SUSPENSE_TYPE:
                 case REACT_SUSPENSE_LIST_TYPE:
+                case REACT_VIEW_TRANSITION_TYPE:
                   return object;
                 default:
                   switch (object = object && object.$$typeof, object) {
@@ -6318,7 +6319,7 @@ var require_react_is_development2 = __commonJS({
       }
       var REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE2 = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler");
       Symbol.for("react.provider");
-      var REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy"), REACT_OFFSCREEN_TYPE = Symbol.for("react.offscreen"), REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference");
+      var REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy"), REACT_VIEW_TRANSITION_TYPE = Symbol.for("react.view_transition"), REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference");
       exports.ContextConsumer = REACT_CONSUMER_TYPE;
       exports.ContextProvider = REACT_CONTEXT_TYPE;
       exports.Element = REACT_ELEMENT_TYPE;
@@ -6368,7 +6369,7 @@ var require_react_is_development2 = __commonJS({
         return typeOf(object) === REACT_SUSPENSE_LIST_TYPE;
       };
       exports.isValidElementType = function(type) {
-        return "string" === typeof type || "function" === typeof type || type === REACT_FRAGMENT_TYPE2 || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || type === REACT_OFFSCREEN_TYPE || "object" === typeof type && null !== type && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_CONSUMER_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_CLIENT_REFERENCE || void 0 !== type.getModuleId) ? true : false;
+        return "string" === typeof type || "function" === typeof type || type === REACT_FRAGMENT_TYPE2 || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || "object" === typeof type && null !== type && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_CONSUMER_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_CLIENT_REFERENCE || void 0 !== type.getModuleId) ? true : false;
       };
       exports.typeOf = typeOf;
     })();
@@ -6484,8 +6485,8 @@ var require_buildFormatLongFn = __commonJS({
     function buildFormatLongFn2(args) {
       return function() {
         var options = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
-        var width2 = options.width ? String(options.width) : args.defaultWidth;
-        var format2 = args.formats[width2] || args.formats[args.defaultWidth];
+        var width3 = options.width ? String(options.width) : args.defaultWidth;
+        var format2 = args.formats[width3] || args.formats[args.defaultWidth];
         return format2;
       };
     }
@@ -6580,8 +6581,8 @@ var require_buildLocalizeFn = __commonJS({
         var valuesArray;
         if (context === "formatting" && args.formattingValues) {
           var defaultWidth = args.defaultFormattingWidth || args.defaultWidth;
-          var width2 = options !== null && options !== void 0 && options.width ? String(options.width) : defaultWidth;
-          valuesArray = args.formattingValues[width2] || args.formattingValues[defaultWidth];
+          var width3 = options !== null && options !== void 0 && options.width ? String(options.width) : defaultWidth;
+          valuesArray = args.formattingValues[width3] || args.formattingValues[defaultWidth];
         } else {
           var _defaultWidth = args.defaultWidth;
           var _width = options !== null && options !== void 0 && options.width ? String(options.width) : args.defaultWidth;
@@ -6785,14 +6786,14 @@ var require_buildMatchFn = __commonJS({
     function buildMatchFn2(args) {
       return function(string) {
         var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-        var width2 = options.width;
-        var matchPattern = width2 && args.matchPatterns[width2] || args.matchPatterns[args.defaultMatchWidth];
+        var width3 = options.width;
+        var matchPattern = width3 && args.matchPatterns[width3] || args.matchPatterns[args.defaultMatchWidth];
         var matchResult = string.match(matchPattern);
         if (!matchResult) {
           return null;
         }
         var matchedString = matchResult[0];
-        var parsePatterns = width2 && args.parsePatterns[width2] || args.parsePatterns[args.defaultParseWidth];
+        var parsePatterns = width3 && args.parsePatterns[width3] || args.parsePatterns[args.defaultParseWidth];
         var key = Array.isArray(parsePatterns) ? findIndex2(parsePatterns, function(pattern) {
           return pattern.test(matchedString);
         }) : findKey2(parsePatterns, function(pattern) {
@@ -7596,7 +7597,7 @@ var require_react_is_development3 = __commonJS({
         {
           REACT_MODULE_REFERENCE = Symbol.for("react.module.reference");
         }
-        function isValidElementType2(type) {
+        function isValidElementType3(type) {
           if (typeof type === "string" || typeof type === "function") {
             return true;
           }
@@ -7741,7 +7742,7 @@ var require_react_is_development3 = __commonJS({
         exports.isStrictMode = isStrictMode;
         exports.isSuspense = isSuspense;
         exports.isSuspenseList = isSuspenseList;
-        exports.isValidElementType = isValidElementType2;
+        exports.isValidElementType = isValidElementType3;
         exports.typeOf = typeOf;
       })();
     }
@@ -7762,7 +7763,7 @@ var require_react_is3 = __commonJS({
 
 // src/modules/Table/index.js
 var import_lodash = __toESM(require_lodash());
-import React102, { useState as useState16, useRef as useRef26, useEffect as useEffect19 } from "react";
+import React102, { useState as useState16, useRef as useRef27, useEffect as useEffect19 } from "react";
 import BootstrapTable from "react-bootstrap-table-next";
 import paginationFactory, {
   PaginationProvider,
@@ -7916,7 +7917,7 @@ var grey_default = grey;
 // node_modules/@mui/material/styles/identifier.js
 var identifier_default = "$$material";
 
-// node_modules/@mui/styled-engine/index.js
+// node_modules/@mui/material/node_modules/@mui/styled-engine/index.js
 import emStyled from "@emotion/styled";
 
 // node_modules/@emotion/hash/dist/emotion-hash.esm.js
@@ -8184,10 +8185,10 @@ function serializeStyles(args, registered, mergedProps) {
   };
 }
 
-// node_modules/@mui/styled-engine/index.js
+// node_modules/@mui/material/node_modules/@mui/styled-engine/index.js
 import { ThemeContext, keyframes, css } from "@emotion/react";
 
-// node_modules/@mui/styled-engine/GlobalStyles/GlobalStyles.js
+// node_modules/@mui/material/node_modules/@mui/styled-engine/GlobalStyles/GlobalStyles.js
 var import_prop_types = __toESM(require_prop_types());
 import * as React from "react";
 import { Global } from "@emotion/react";
@@ -8210,7 +8211,7 @@ true ? GlobalStyles.propTypes = {
   styles: import_prop_types.default.oneOfType([import_prop_types.default.array, import_prop_types.default.string, import_prop_types.default.object, import_prop_types.default.func])
 } : void 0;
 
-// node_modules/@mui/styled-engine/index.js
+// node_modules/@mui/material/node_modules/@mui/styled-engine/index.js
 function styled(tag, options) {
   const stylesFactory = emStyled(tag, options);
   if (true) {
@@ -8218,7 +8219,7 @@ function styled(tag, options) {
       const component = typeof tag === "string" ? `"${tag}"` : "component";
       if (styles5.length === 0) {
         console.error([`MUI: Seems like you called \`styled(${component})()\` without a \`style\` argument.`, 'You must provide a `styles` argument: `styled("div")(styleYouForgotToPass)`.'].join("\n"));
-      } else if (styles5.some((style4) => style4 === void 0)) {
+      } else if (styles5.some((style6) => style6 === void 0)) {
         console.error(`MUI: the styled(${component})(...args) API requires all its args to be defined.`);
       }
       return stylesFactory(...styles5);
@@ -8237,7 +8238,7 @@ function internal_serializeStyles(styles5) {
   return serializeStyles(wrapper);
 }
 
-// node_modules/@mui/system/esm/GlobalStyles/GlobalStyles.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/GlobalStyles/GlobalStyles.js
 var import_prop_types3 = __toESM(require_prop_types());
 import * as React4 from "react";
 
@@ -8284,11 +8285,11 @@ function deepmerge(target, source, options = {
   return output;
 }
 
-// node_modules/@mui/system/esm/createBreakpoints/createBreakpoints.js
-var sortBreakpointsValues = (values4) => {
-  const breakpointsAsArray = Object.keys(values4).map((key) => ({
+// node_modules/@mui/material/node_modules/@mui/system/esm/createBreakpoints/createBreakpoints.js
+var sortBreakpointsValues = (values5) => {
+  const breakpointsAsArray = Object.keys(values5).map((key) => ({
     key,
-    val: values4[key]
+    val: values5[key]
   })) || [];
   breakpointsAsArray.sort((breakpoint1, breakpoint2) => breakpoint1.val - breakpoint2.val);
   return breakpointsAsArray.reduce((acc, obj) => {
@@ -8302,7 +8303,7 @@ function createBreakpoints(breakpoints) {
   const {
     // The breakpoint **start** at this value.
     // For instance with the first breakpoint xs: [xs, sm).
-    values: values4 = {
+    values: values5 = {
       xs: 0,
       // phone
       sm: 600,
@@ -8318,19 +8319,19 @@ function createBreakpoints(breakpoints) {
     step = 5,
     ...other
   } = breakpoints;
-  const sortedValues = sortBreakpointsValues(values4);
+  const sortedValues = sortBreakpointsValues(values5);
   const keys = Object.keys(sortedValues);
   function up(key) {
-    const value = typeof values4[key] === "number" ? values4[key] : key;
+    const value = typeof values5[key] === "number" ? values5[key] : key;
     return `@media (min-width:${value}${unit})`;
   }
   function down(key) {
-    const value = typeof values4[key] === "number" ? values4[key] : key;
+    const value = typeof values5[key] === "number" ? values5[key] : key;
     return `@media (max-width:${value - step / 100}${unit})`;
   }
   function between(start2, end2) {
     const endIndex = keys.indexOf(end2);
-    return `@media (min-width:${typeof values4[start2] === "number" ? values4[start2] : start2}${unit}) and (max-width:${(endIndex !== -1 && typeof values4[keys[endIndex]] === "number" ? values4[keys[endIndex]] : end2) - step / 100}${unit})`;
+    return `@media (min-width:${typeof values5[start2] === "number" ? values5[start2] : start2}${unit}) and (max-width:${(endIndex !== -1 && typeof values5[keys[endIndex]] === "number" ? values5[keys[endIndex]] : end2) - step / 100}${unit})`;
   }
   function only(key) {
     if (keys.indexOf(key) + 1 < keys.length) {
@@ -8361,7 +8362,7 @@ function createBreakpoints(breakpoints) {
   };
 }
 
-// node_modules/@mui/system/esm/cssContainerQueries/cssContainerQueries.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/cssContainerQueries/cssContainerQueries.js
 function sortContainerQueries(theme, css3) {
   if (!theme.containerQueries) {
     return css3;
@@ -8425,18 +8426,18 @@ function cssContainerQueries(themeInput) {
   };
 }
 
-// node_modules/@mui/system/esm/createTheme/shape.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/createTheme/shape.js
 var shape = {
   borderRadius: 4
 };
 var shape_default = shape;
 
-// node_modules/@mui/system/esm/responsivePropType/responsivePropType.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/responsivePropType/responsivePropType.js
 var import_prop_types2 = __toESM(require_prop_types());
 var responsivePropType = true ? import_prop_types2.default.oneOfType([import_prop_types2.default.number, import_prop_types2.default.string, import_prop_types2.default.object, import_prop_types2.default.array]) : {};
 var responsivePropType_default = responsivePropType;
 
-// node_modules/@mui/system/esm/merge/merge.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/merge/merge.js
 function merge(acc, item) {
   if (!item) {
     return acc;
@@ -8448,7 +8449,7 @@ function merge(acc, item) {
 }
 var merge_default = merge;
 
-// node_modules/@mui/system/esm/breakpoints/breakpoints.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/breakpoints/breakpoints.js
 var values2 = {
   xs: 0,
   // phone
@@ -8516,7 +8517,7 @@ function createEmptyBreakpointObject(breakpointsInput = {}) {
   }, {});
   return breakpointsInOrder || {};
 }
-function removeUnusedBreakpoints(breakpointKeys, style4) {
+function removeUnusedBreakpoints(breakpointKeys, style6) {
   return breakpointKeys.reduce((acc, key) => {
     const breakpointOutput = acc[key];
     const isBreakpointUnused = !breakpointOutput || Object.keys(breakpointOutput).length === 0;
@@ -8524,7 +8525,7 @@ function removeUnusedBreakpoints(breakpointKeys, style4) {
       delete acc[key];
     }
     return acc;
-  }, style4);
+  }, style6);
 }
 
 // node_modules/@mui/utils/esm/capitalize/capitalize.js
@@ -8535,7 +8536,7 @@ function capitalize(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-// node_modules/@mui/system/esm/style/style.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/style/style.js
 function getPath(obj, path, checkVars = true) {
   if (!path || typeof path !== "string") {
     return null;
@@ -8603,7 +8604,7 @@ function style(options) {
 }
 var style_default = style;
 
-// node_modules/@mui/system/esm/memoize/memoize.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/memoize/memoize.js
 function memoize2(fn2) {
   const cache3 = {};
   return (arg2) => {
@@ -8614,7 +8615,7 @@ function memoize2(fn2) {
   };
 }
 
-// node_modules/@mui/system/esm/spacing/spacing.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/spacing/spacing.js
 var properties = {
   m: "margin",
   p: "padding"
@@ -8751,14 +8752,14 @@ spacing.propTypes = true ? spacingKeys.reduce((obj, key) => {
 }, {}) : {};
 spacing.filterProps = spacingKeys;
 
-// node_modules/@mui/system/esm/createTheme/createSpacing.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/createTheme/createSpacing.js
 function createSpacing(spacingInput = 8, transform2 = createUnarySpacing({
   spacing: spacingInput
 })) {
   if (spacingInput.mui) {
     return spacingInput;
   }
-  const spacing2 = (...argsInput) => {
+  const spacing3 = (...argsInput) => {
     if (true) {
       if (!(argsInput.length <= 4)) {
         console.error(`MUI: Too many arguments provided, expected between 0 and 4, got ${argsInput.length}`);
@@ -8770,15 +8771,15 @@ function createSpacing(spacingInput = 8, transform2 = createUnarySpacing({
       return typeof output === "number" ? `${output}px` : output;
     }).join(" ");
   };
-  spacing2.mui = true;
-  return spacing2;
+  spacing3.mui = true;
+  return spacing3;
 }
 
-// node_modules/@mui/system/esm/compose/compose.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/compose/compose.js
 function compose(...styles5) {
-  const handlers = styles5.reduce((acc, style4) => {
-    style4.filterProps.forEach((prop) => {
-      acc[prop] = style4;
+  const handlers = styles5.reduce((acc, style6) => {
+    style6.filterProps.forEach((prop) => {
+      acc[prop] = style6;
     });
     return acc;
   }, {});
@@ -8790,13 +8791,13 @@ function compose(...styles5) {
       return acc;
     }, {});
   };
-  fn2.propTypes = true ? styles5.reduce((acc, style4) => Object.assign(acc, style4.propTypes), {}) : {};
-  fn2.filterProps = styles5.reduce((acc, style4) => acc.concat(style4.filterProps), []);
+  fn2.propTypes = true ? styles5.reduce((acc, style6) => Object.assign(acc, style6.propTypes), {}) : {};
+  fn2.filterProps = styles5.reduce((acc, style6) => acc.concat(style6.filterProps), []);
   return fn2;
 }
 var compose_default = compose;
 
-// node_modules/@mui/system/esm/borders/borders.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/borders/borders.js
 function borderTransform(value) {
   if (typeof value !== "number") {
     return value;
@@ -8838,7 +8839,7 @@ borderRadius.propTypes = true ? {
 borderRadius.filterProps = ["borderRadius"];
 var borders = compose_default(border, borderTop, borderRight, borderBottom, borderLeft, borderColor, borderTopColor, borderRightColor, borderBottomColor, borderLeftColor, borderRadius, outline, outlineColor);
 
-// node_modules/@mui/system/esm/cssGrid/cssGrid.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/cssGrid/cssGrid.js
 var gap = (props) => {
   if (props.gap !== void 0 && props.gap !== null) {
     const transformer = createUnaryUnit(props.theme, "spacing", 8, "gap");
@@ -8910,7 +8911,7 @@ var gridArea = style_default({
 });
 var grid = compose_default(gap, columnGap, rowGap, gridColumn, gridRow, gridAutoFlow, gridAutoColumns, gridAutoRows, gridTemplateColumns, gridTemplateRows, gridTemplateAreas, gridArea);
 
-// node_modules/@mui/system/esm/palette/palette.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/palette/palette.js
 function paletteTransform(value, userValue) {
   if (userValue === "grey") {
     return userValue;
@@ -8935,7 +8936,7 @@ var backgroundColor = style_default({
 });
 var palette = compose_default(color, bgcolor, backgroundColor);
 
-// node_modules/@mui/system/esm/sizing/sizing.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/sizing/sizing.js
 function sizingTransform(value) {
   return value <= 1 && value !== 0 ? `${value * 100}%` : value;
 }
@@ -8997,7 +8998,7 @@ var boxSizing = style_default({
 });
 var sizing = compose_default(width, maxWidth, minWidth, height, maxHeight, minHeight, boxSizing);
 
-// node_modules/@mui/system/esm/styleFunctionSx/defaultSxConfig.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/styleFunctionSx/defaultSxConfig.js
 var defaultSxConfig = {
   // borders
   border: {
@@ -9288,7 +9289,7 @@ var defaultSxConfig = {
 };
 var defaultSxConfig_default = defaultSxConfig;
 
-// node_modules/@mui/system/esm/styleFunctionSx/styleFunctionSx.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/styleFunctionSx/styleFunctionSx.js
 function objectsHaveSameKeys(...objects) {
   const allKeys = objects.reduce((keys, object) => keys.concat(Object.keys(object)), []);
   const union = new Set(allKeys);
@@ -9313,7 +9314,7 @@ function unstable_createStyleFunctionSx() {
       cssProperty = prop,
       themeKey,
       transform: transform2,
-      style: style4
+      style: style6
     } = options;
     if (val == null) {
       return null;
@@ -9324,8 +9325,8 @@ function unstable_createStyleFunctionSx() {
       };
     }
     const themeMapping = getPath(theme, themeKey) || {};
-    if (style4) {
-      return style4(props);
+    if (style6) {
+      return style6(props);
     }
     const styleFromPropValue = (propValueFinal) => {
       let value = getStyleValue(themeMapping, transform2, propValueFinal);
@@ -9341,7 +9342,7 @@ function unstable_createStyleFunctionSx() {
     };
     return handleBreakpoints(props, val, styleFromPropValue);
   }
-  function styleFunctionSx2(props) {
+  function styleFunctionSx3(props) {
     const {
       sx,
       theme = {}
@@ -9376,7 +9377,7 @@ function unstable_createStyleFunctionSx() {
                 [styleKey]: x2
               }));
               if (objectsHaveSameKeys(breakpointsValues, value)) {
-                css3[styleKey] = styleFunctionSx2({
+                css3[styleKey] = styleFunctionSx3({
                   sx: value,
                   theme
                 });
@@ -9393,13 +9394,13 @@ function unstable_createStyleFunctionSx() {
     }
     return Array.isArray(sx) ? sx.map(traverse) : traverse(sx);
   }
-  return styleFunctionSx2;
+  return styleFunctionSx3;
 }
 var styleFunctionSx = unstable_createStyleFunctionSx();
 styleFunctionSx.filterProps = ["sx"];
 var styleFunctionSx_default = styleFunctionSx;
 
-// node_modules/@mui/system/esm/createTheme/applyStyles.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/createTheme/applyStyles.js
 function applyStyles(key, styles5) {
   const theme = this;
   if (theme.vars) {
@@ -9423,7 +9424,7 @@ function applyStyles(key, styles5) {
   return {};
 }
 
-// node_modules/@mui/system/esm/createTheme/createTheme.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/createTheme/createTheme.js
 function createTheme(options = {}, ...args) {
   const {
     breakpoints: breakpointsInput = {},
@@ -9433,7 +9434,7 @@ function createTheme(options = {}, ...args) {
     ...other
   } = options;
   const breakpoints = createBreakpoints(breakpointsInput);
-  const spacing2 = createSpacing(spacingInput);
+  const spacing3 = createSpacing(spacingInput);
   let muiTheme = deepmerge({
     breakpoints,
     direction: "ltr",
@@ -9443,7 +9444,7 @@ function createTheme(options = {}, ...args) {
       mode: "light",
       ...paletteInput
     },
-    spacing: spacing2,
+    spacing: spacing3,
     shape: {
       ...shape_default,
       ...shapeInput
@@ -9466,7 +9467,7 @@ function createTheme(options = {}, ...args) {
 }
 var createTheme_default = createTheme;
 
-// node_modules/@mui/system/esm/useThemeWithoutDefault/useThemeWithoutDefault.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/useThemeWithoutDefault/useThemeWithoutDefault.js
 import * as React3 from "react";
 function isObjectEmpty(obj) {
   return Object.keys(obj).length === 0;
@@ -9477,14 +9478,14 @@ function useTheme(defaultTheme2 = null) {
 }
 var useThemeWithoutDefault_default = useTheme;
 
-// node_modules/@mui/system/esm/useTheme/useTheme.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/useTheme/useTheme.js
 var systemDefaultTheme = createTheme_default();
 function useTheme2(defaultTheme2 = systemDefaultTheme) {
   return useThemeWithoutDefault_default(defaultTheme2);
 }
 var useTheme_default = useTheme2;
 
-// node_modules/@mui/system/esm/GlobalStyles/GlobalStyles.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/GlobalStyles/GlobalStyles.js
 import { jsx as _jsx2 } from "react/jsx-runtime";
 function GlobalStyles2({
   styles: styles5,
@@ -9517,7 +9518,7 @@ true ? GlobalStyles2.propTypes = {
 } : void 0;
 var GlobalStyles_default = GlobalStyles2;
 
-// node_modules/@mui/system/esm/styleFunctionSx/extendSxProp.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/styleFunctionSx/extendSxProp.js
 var splitProps = (props) => {
   const result = {
     systemProps: {},
@@ -9664,18 +9665,18 @@ function getDisplayName(Component5) {
   return void 0;
 }
 
-// node_modules/@mui/system/esm/preprocessStyles.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/preprocessStyles.js
 function preprocessStyles(input) {
   const {
     variants,
-    ...style4
+    ...style6
   } = input;
   const result = {
     variants,
-    style: internal_serializeStyles(style4),
+    style: internal_serializeStyles(style6),
     isProcessed: true
   };
-  if (result.style === style4) {
+  if (result.style === style6) {
     return result;
   }
   if (variants) {
@@ -9688,7 +9689,7 @@ function preprocessStyles(input) {
   return result;
 }
 
-// node_modules/@mui/system/esm/createStyled/createStyled.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/createStyled/createStyled.js
 var systemDefaultTheme2 = createTheme_default();
 function shouldForwardProp(prop) {
   return prop !== "ownerState" && prop !== "theme" && prop !== "sx" && prop !== "as";
@@ -9702,8 +9703,8 @@ function defaultOverridesResolver(slot) {
 function attachTheme(props, themeId, defaultTheme2) {
   props.theme = isObjectEmpty2(props.theme) ? defaultTheme2 : props.theme[themeId] || props.theme;
 }
-function processStyle(props, style4) {
-  const resolvedStyle = typeof style4 === "function" ? style4(props) : style4;
+function processStyle(props, style6) {
+  const resolvedStyle = typeof style6 === "function" ? style6(props) : style6;
   if (Array.isArray(resolvedStyle)) {
     return resolvedStyle.flatMap((subStyle) => processStyle(props, subStyle));
   }
@@ -9769,7 +9770,7 @@ function createStyled(input = {}) {
     attachTheme(props, themeId, defaultTheme2);
   }
   const styled3 = (tag, inputOptions = {}) => {
-    internal_mutateStyles(tag, (styles5) => styles5.filter((style4) => style4 !== styleFunctionSx_default));
+    internal_mutateStyles(tag, (styles5) => styles5.filter((style6) => style6 !== styleFunctionSx_default));
     const {
       name: componentName,
       slot: componentSlot,
@@ -9799,14 +9800,14 @@ function createStyled(input = {}) {
       label: generateStyledLabel(componentName, componentSlot),
       ...options
     });
-    const transformStyle = (style4) => {
-      if (typeof style4 === "function" && style4.__emotion_real !== style4) {
+    const transformStyle = (style6) => {
+      if (typeof style6 === "function" && style6.__emotion_real !== style6) {
         return function styleFunctionProcessor(props) {
-          return processStyle(props, style4);
+          return processStyle(props, style6);
         };
       }
-      if (isPlainObject(style4)) {
-        const serialized = preprocessStyles(style4);
+      if (isPlainObject(style6)) {
+        const serialized = preprocessStyles(style6);
         if (!serialized.variants) {
           return serialized.style;
         }
@@ -9814,7 +9815,7 @@ function createStyled(input = {}) {
           return processStyle(props, serialized);
         };
       }
-      return style4;
+      return style6;
     };
     const muiStyledResolver = (...expressionsInput) => {
       const expressionsHead = [];
@@ -9949,7 +9950,7 @@ function resolveProps(defaultProps2, props) {
   return output;
 }
 
-// node_modules/@mui/system/esm/useThemeProps/getThemeProps.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/useThemeProps/getThemeProps.js
 function getThemeProps(params) {
   const {
     theme,
@@ -9962,7 +9963,7 @@ function getThemeProps(params) {
   return resolveProps(theme.components[name].defaultProps, props);
 }
 
-// node_modules/@mui/system/esm/useThemeProps/useThemeProps.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/useThemeProps/useThemeProps.js
 function useThemeProps({
   props,
   name,
@@ -9980,7 +9981,7 @@ function useThemeProps({
   });
 }
 
-// node_modules/@mui/system/esm/useMediaQuery/useMediaQuery.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/useMediaQuery/useMediaQuery.js
 import * as React6 from "react";
 
 // node_modules/@mui/utils/esm/useEnhancedEffect/useEnhancedEffect.js
@@ -9988,7 +9989,7 @@ import * as React5 from "react";
 var useEnhancedEffect = typeof window !== "undefined" ? React5.useLayoutEffect : React5.useEffect;
 var useEnhancedEffect_default = useEnhancedEffect;
 
-// node_modules/@mui/system/esm/useMediaQuery/useMediaQuery.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/useMediaQuery/useMediaQuery.js
 function useMediaQueryOld(query, defaultMatches, matchMedia, ssrMatchMedia, noSsr) {
   const [match4, setMatch] = React6.useState(() => {
     if (noSsr && matchMedia) {
@@ -10095,7 +10096,7 @@ function clamp(val, min2 = Number.MIN_SAFE_INTEGER, max2 = Number.MAX_SAFE_INTEG
 }
 var clamp_default = clamp;
 
-// node_modules/@mui/system/esm/colorManipulator/colorManipulator.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/colorManipulator/colorManipulator.js
 function clampWrapper(value, min2 = 0, max2 = 1) {
   if (true) {
     if (value < min2 || value > max2) {
@@ -10104,118 +10105,118 @@ function clampWrapper(value, min2 = 0, max2 = 1) {
   }
   return clamp_default(value, min2, max2);
 }
-function hexToRgb(color2) {
-  color2 = color2.slice(1);
-  const re = new RegExp(`.{1,${color2.length >= 6 ? 2 : 1}}`, "g");
-  let colors = color2.match(re);
+function hexToRgb(color3) {
+  color3 = color3.slice(1);
+  const re = new RegExp(`.{1,${color3.length >= 6 ? 2 : 1}}`, "g");
+  let colors = color3.match(re);
   if (colors && colors[0].length === 1) {
     colors = colors.map((n) => n + n);
   }
   if (true) {
-    if (color2.length !== color2.trim().length) {
-      console.error(`MUI: The color: "${color2}" is invalid. Make sure the color input doesn't contain leading/trailing space.`);
+    if (color3.length !== color3.trim().length) {
+      console.error(`MUI: The color: "${color3}" is invalid. Make sure the color input doesn't contain leading/trailing space.`);
     }
   }
   return colors ? `rgb${colors.length === 4 ? "a" : ""}(${colors.map((n, index3) => {
     return index3 < 3 ? parseInt(n, 16) : Math.round(parseInt(n, 16) / 255 * 1e3) / 1e3;
   }).join(", ")})` : "";
 }
-function decomposeColor(color2) {
-  if (color2.type) {
-    return color2;
+function decomposeColor(color3) {
+  if (color3.type) {
+    return color3;
   }
-  if (color2.charAt(0) === "#") {
-    return decomposeColor(hexToRgb(color2));
+  if (color3.charAt(0) === "#") {
+    return decomposeColor(hexToRgb(color3));
   }
-  const marker = color2.indexOf("(");
-  const type = color2.substring(0, marker);
+  const marker = color3.indexOf("(");
+  const type = color3.substring(0, marker);
   if (!["rgb", "rgba", "hsl", "hsla", "color"].includes(type)) {
-    throw new Error(true ? `MUI: Unsupported \`${color2}\` color.
-The following formats are supported: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla(), color().` : formatMuiErrorMessage(9, color2));
+    throw new Error(true ? `MUI: Unsupported \`${color3}\` color.
+The following formats are supported: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla(), color().` : formatMuiErrorMessage(9, color3));
   }
-  let values4 = color2.substring(marker + 1, color2.length - 1);
+  let values5 = color3.substring(marker + 1, color3.length - 1);
   let colorSpace;
   if (type === "color") {
-    values4 = values4.split(" ");
-    colorSpace = values4.shift();
-    if (values4.length === 4 && values4[3].charAt(0) === "/") {
-      values4[3] = values4[3].slice(1);
+    values5 = values5.split(" ");
+    colorSpace = values5.shift();
+    if (values5.length === 4 && values5[3].charAt(0) === "/") {
+      values5[3] = values5[3].slice(1);
     }
     if (!["srgb", "display-p3", "a98-rgb", "prophoto-rgb", "rec-2020"].includes(colorSpace)) {
       throw new Error(true ? `MUI: unsupported \`${colorSpace}\` color space.
 The following color spaces are supported: srgb, display-p3, a98-rgb, prophoto-rgb, rec-2020.` : formatMuiErrorMessage(10, colorSpace));
     }
   } else {
-    values4 = values4.split(",");
+    values5 = values5.split(",");
   }
-  values4 = values4.map((value) => parseFloat(value));
+  values5 = values5.map((value) => parseFloat(value));
   return {
     type,
-    values: values4,
+    values: values5,
     colorSpace
   };
 }
-var colorChannel = (color2) => {
-  const decomposedColor = decomposeColor(color2);
+var colorChannel = (color3) => {
+  const decomposedColor = decomposeColor(color3);
   return decomposedColor.values.slice(0, 3).map((val, idx) => decomposedColor.type.includes("hsl") && idx !== 0 ? `${val}%` : val).join(" ");
 };
-var private_safeColorChannel = (color2, warning3) => {
+var private_safeColorChannel = (color3, warning3) => {
   try {
-    return colorChannel(color2);
+    return colorChannel(color3);
   } catch (error) {
     if (warning3 && true) {
       console.warn(warning3);
     }
-    return color2;
+    return color3;
   }
 };
-function recomposeColor(color2) {
+function recomposeColor(color3) {
   const {
     type,
     colorSpace
-  } = color2;
+  } = color3;
   let {
-    values: values4
-  } = color2;
+    values: values5
+  } = color3;
   if (type.includes("rgb")) {
-    values4 = values4.map((n, i2) => i2 < 3 ? parseInt(n, 10) : n);
+    values5 = values5.map((n, i2) => i2 < 3 ? parseInt(n, 10) : n);
   } else if (type.includes("hsl")) {
-    values4[1] = `${values4[1]}%`;
-    values4[2] = `${values4[2]}%`;
+    values5[1] = `${values5[1]}%`;
+    values5[2] = `${values5[2]}%`;
   }
   if (type.includes("color")) {
-    values4 = `${colorSpace} ${values4.join(" ")}`;
+    values5 = `${colorSpace} ${values5.join(" ")}`;
   } else {
-    values4 = `${values4.join(", ")}`;
+    values5 = `${values5.join(", ")}`;
   }
-  return `${type}(${values4})`;
+  return `${type}(${values5})`;
 }
-function hslToRgb(color2) {
-  color2 = decomposeColor(color2);
+function hslToRgb(color3) {
+  color3 = decomposeColor(color3);
   const {
-    values: values4
-  } = color2;
-  const h3 = values4[0];
-  const s3 = values4[1] / 100;
-  const l = values4[2] / 100;
+    values: values5
+  } = color3;
+  const h3 = values5[0];
+  const s3 = values5[1] / 100;
+  const l = values5[2] / 100;
   const a3 = s3 * Math.min(l, 1 - l);
   const f = (n, k2 = (n + h3 / 30) % 12) => l - a3 * Math.max(Math.min(k2 - 3, 9 - k2, 1), -1);
   let type = "rgb";
   const rgb = [Math.round(f(0) * 255), Math.round(f(8) * 255), Math.round(f(4) * 255)];
-  if (color2.type === "hsla") {
+  if (color3.type === "hsla") {
     type += "a";
-    rgb.push(values4[3]);
+    rgb.push(values5[3]);
   }
   return recomposeColor({
     type,
     values: rgb
   });
 }
-function getLuminance(color2) {
-  color2 = decomposeColor(color2);
-  let rgb = color2.type === "hsl" || color2.type === "hsla" ? decomposeColor(hslToRgb(color2)).values : color2.values;
+function getLuminance(color3) {
+  color3 = decomposeColor(color3);
+  let rgb = color3.type === "hsl" || color3.type === "hsla" ? decomposeColor(hslToRgb(color3)).values : color3.values;
   rgb = rgb.map((val) => {
-    if (color2.type !== "color") {
+    if (color3.type !== "color") {
       val /= 255;
     }
     return val <= 0.03928 ? val / 12.92 : ((val + 0.055) / 1.055) ** 2.4;
@@ -10227,88 +10228,88 @@ function getContrastRatio(foreground, background) {
   const lumB = getLuminance(background);
   return (Math.max(lumA, lumB) + 0.05) / (Math.min(lumA, lumB) + 0.05);
 }
-function alpha(color2, value) {
-  color2 = decomposeColor(color2);
+function alpha(color3, value) {
+  color3 = decomposeColor(color3);
   value = clampWrapper(value);
-  if (color2.type === "rgb" || color2.type === "hsl") {
-    color2.type += "a";
+  if (color3.type === "rgb" || color3.type === "hsl") {
+    color3.type += "a";
   }
-  if (color2.type === "color") {
-    color2.values[3] = `/${value}`;
+  if (color3.type === "color") {
+    color3.values[3] = `/${value}`;
   } else {
-    color2.values[3] = value;
+    color3.values[3] = value;
   }
-  return recomposeColor(color2);
+  return recomposeColor(color3);
 }
-function private_safeAlpha(color2, value, warning3) {
+function private_safeAlpha(color3, value, warning3) {
   try {
-    return alpha(color2, value);
+    return alpha(color3, value);
   } catch (error) {
     if (warning3 && true) {
       console.warn(warning3);
     }
-    return color2;
+    return color3;
   }
 }
-function darken(color2, coefficient) {
-  color2 = decomposeColor(color2);
+function darken(color3, coefficient) {
+  color3 = decomposeColor(color3);
   coefficient = clampWrapper(coefficient);
-  if (color2.type.includes("hsl")) {
-    color2.values[2] *= 1 - coefficient;
-  } else if (color2.type.includes("rgb") || color2.type.includes("color")) {
+  if (color3.type.includes("hsl")) {
+    color3.values[2] *= 1 - coefficient;
+  } else if (color3.type.includes("rgb") || color3.type.includes("color")) {
     for (let i2 = 0; i2 < 3; i2 += 1) {
-      color2.values[i2] *= 1 - coefficient;
+      color3.values[i2] *= 1 - coefficient;
     }
   }
-  return recomposeColor(color2);
+  return recomposeColor(color3);
 }
-function private_safeDarken(color2, coefficient, warning3) {
+function private_safeDarken(color3, coefficient, warning3) {
   try {
-    return darken(color2, coefficient);
+    return darken(color3, coefficient);
   } catch (error) {
     if (warning3 && true) {
       console.warn(warning3);
     }
-    return color2;
+    return color3;
   }
 }
-function lighten(color2, coefficient) {
-  color2 = decomposeColor(color2);
+function lighten(color3, coefficient) {
+  color3 = decomposeColor(color3);
   coefficient = clampWrapper(coefficient);
-  if (color2.type.includes("hsl")) {
-    color2.values[2] += (100 - color2.values[2]) * coefficient;
-  } else if (color2.type.includes("rgb")) {
+  if (color3.type.includes("hsl")) {
+    color3.values[2] += (100 - color3.values[2]) * coefficient;
+  } else if (color3.type.includes("rgb")) {
     for (let i2 = 0; i2 < 3; i2 += 1) {
-      color2.values[i2] += (255 - color2.values[i2]) * coefficient;
+      color3.values[i2] += (255 - color3.values[i2]) * coefficient;
     }
-  } else if (color2.type.includes("color")) {
+  } else if (color3.type.includes("color")) {
     for (let i2 = 0; i2 < 3; i2 += 1) {
-      color2.values[i2] += (1 - color2.values[i2]) * coefficient;
+      color3.values[i2] += (1 - color3.values[i2]) * coefficient;
     }
   }
-  return recomposeColor(color2);
+  return recomposeColor(color3);
 }
-function private_safeLighten(color2, coefficient, warning3) {
+function private_safeLighten(color3, coefficient, warning3) {
   try {
-    return lighten(color2, coefficient);
+    return lighten(color3, coefficient);
   } catch (error) {
     if (warning3 && true) {
       console.warn(warning3);
     }
-    return color2;
+    return color3;
   }
 }
-function emphasize(color2, coefficient = 0.15) {
-  return getLuminance(color2) > 0.5 ? darken(color2, coefficient) : lighten(color2, coefficient);
+function emphasize(color3, coefficient = 0.15) {
+  return getLuminance(color3) > 0.5 ? darken(color3, coefficient) : lighten(color3, coefficient);
 }
-function private_safeEmphasize(color2, coefficient, warning3) {
+function private_safeEmphasize(color3, coefficient, warning3) {
   try {
-    return emphasize(color2, coefficient);
+    return emphasize(color3, coefficient);
   } catch (error) {
     if (warning3 && true) {
       console.warn(warning3);
     }
-    return color2;
+    return color3;
   }
 }
 
@@ -10574,14 +10575,40 @@ var useEventCallback_default = useEventCallback;
 // node_modules/@mui/utils/esm/useForkRef/useForkRef.js
 import * as React11 from "react";
 function useForkRef(...refs) {
+  const cleanupRef = React11.useRef(void 0);
+  const refEffect = React11.useCallback((instance) => {
+    const cleanups = refs.map((ref) => {
+      if (ref == null) {
+        return null;
+      }
+      if (typeof ref === "function") {
+        const refCallback = ref;
+        const refCleanup = refCallback(instance);
+        return typeof refCleanup === "function" ? refCleanup : () => {
+          refCallback(null);
+        };
+      }
+      ref.current = instance;
+      return () => {
+        ref.current = null;
+      };
+    });
+    return () => {
+      cleanups.forEach((refCleanup) => refCleanup?.());
+    };
+  }, refs);
   return React11.useMemo(() => {
     if (refs.every((ref) => ref == null)) {
       return null;
     }
-    return (instance) => {
-      refs.forEach((ref) => {
-        setRef(ref, instance);
-      });
+    return (value) => {
+      if (cleanupRef.current) {
+        cleanupRef.current();
+        cleanupRef.current = void 0;
+      }
+      if (value != null) {
+        cleanupRef.current = refEffect(value);
+      }
     };
   }, refs);
 }
@@ -10892,7 +10919,7 @@ function getReactElementRef(element) {
   return element?.ref || null;
 }
 
-// node_modules/@mui/system/esm/RtlProvider/index.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/RtlProvider/index.js
 var import_prop_types7 = __toESM(require_prop_types());
 import * as React15 from "react";
 import { jsx as _jsx3 } from "react/jsx-runtime";
@@ -10915,7 +10942,7 @@ var useRtl = () => {
   return value ?? false;
 };
 
-// node_modules/@mui/system/esm/DefaultPropsProvider/DefaultPropsProvider.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/DefaultPropsProvider/DefaultPropsProvider.js
 var import_prop_types8 = __toESM(require_prop_types());
 import * as React16 from "react";
 import { jsx as _jsx4 } from "react/jsx-runtime";
@@ -10976,7 +11003,7 @@ function useDefaultProps({
 }
 var DefaultPropsProvider_default = DefaultPropsProvider;
 
-// node_modules/@mui/system/esm/memoTheme.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/memoTheme.js
 var arg = {
   theme: void 0
 };
@@ -10995,7 +11022,7 @@ function unstable_memoTheme(styleFn) {
   };
 }
 
-// node_modules/@mui/system/esm/cssVars/createGetCssVar.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/cssVars/createGetCssVar.js
 function createGetCssVar(prefix2 = "") {
   function appendVar(...vars) {
     if (!vars.length) {
@@ -11013,7 +11040,7 @@ function createGetCssVar(prefix2 = "") {
   return getCssVar;
 }
 
-// node_modules/@mui/system/esm/cssVars/cssVarsParser.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/cssVars/cssVarsParser.js
 var assignNestedKeys = (obj, keys, value, arrayKeys = []) => {
   let temp = obj;
   keys.forEach((k2, index3) => {
@@ -11093,7 +11120,7 @@ function cssVarsParser(theme, options) {
   };
 }
 
-// node_modules/@mui/system/esm/cssVars/prepareCssVars.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/cssVars/prepareCssVars.js
 function prepareCssVars(theme, parserConfig = {}) {
   const {
     getSelector = defaultGetSelector,
@@ -11242,7 +11269,7 @@ function prepareCssVars(theme, parserConfig = {}) {
 }
 var prepareCssVars_default = prepareCssVars;
 
-// node_modules/@mui/system/esm/cssVars/getColorSchemeSelector.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/cssVars/getColorSchemeSelector.js
 function createGetColorSchemeSelector(selector) {
   return function getColorSchemeSelector(colorScheme) {
     if (selector === "media") {
@@ -11438,19 +11465,19 @@ function getDefaultWarning(mode = "light") {
     dark: orange_default[900]
   };
 }
-function createPalette(palette2) {
+function createPalette(palette3) {
   const {
     mode = "light",
     contrastThreshold = 3,
     tonalOffset = 0.2,
     ...other
-  } = palette2;
-  const primary = palette2.primary || getDefaultPrimary(mode);
-  const secondary = palette2.secondary || getDefaultSecondary(mode);
-  const error = palette2.error || getDefaultError(mode);
-  const info = palette2.info || getDefaultInfo(mode);
-  const success = palette2.success || getDefaultSuccess(mode);
-  const warning3 = palette2.warning || getDefaultWarning(mode);
+  } = palette3;
+  const primary = palette3.primary || getDefaultPrimary(mode);
+  const secondary = palette3.secondary || getDefaultSecondary(mode);
+  const error = palette3.error || getDefaultError(mode);
+  const info = palette3.info || getDefaultInfo(mode);
+  const success = palette3.success || getDefaultSuccess(mode);
+  const warning3 = palette3.warning || getDefaultWarning(mode);
   function getContrastText(background) {
     const contrastText = getContrastRatio(background, dark.text.primary) >= contrastThreshold ? dark.text.primary : light.text.primary;
     if (true) {
@@ -11462,25 +11489,25 @@ function createPalette(palette2) {
     return contrastText;
   }
   const augmentColor = ({
-    color: color2,
+    color: color3,
     name,
     mainShade = 500,
     lightShade = 300,
     darkShade = 700
   }) => {
-    color2 = {
-      ...color2
+    color3 = {
+      ...color3
     };
-    if (!color2.main && color2[mainShade]) {
-      color2.main = color2[mainShade];
+    if (!color3.main && color3[mainShade]) {
+      color3.main = color3[mainShade];
     }
-    if (!color2.hasOwnProperty("main")) {
+    if (!color3.hasOwnProperty("main")) {
       throw new Error(true ? `MUI: The color${name ? ` (${name})` : ""} provided to augmentColor(color) is invalid.
 The color object needs to have a \`main\` property or a \`${mainShade}\` property.` : formatMuiErrorMessage(11, name ? ` (${name})` : "", mainShade));
     }
-    if (typeof color2.main !== "string") {
+    if (typeof color3.main !== "string") {
       throw new Error(true ? `MUI: The color${name ? ` (${name})` : ""} provided to augmentColor(color) is invalid.
-\`color.main\` should be a string, but \`${JSON.stringify(color2.main)}\` was provided instead.
+\`color.main\` should be a string, but \`${JSON.stringify(color3.main)}\` was provided instead.
 
 Did you intend to use one of the following approaches?
 
@@ -11492,14 +11519,14 @@ const theme1 = createTheme({ palette: {
 
 const theme2 = createTheme({ palette: {
   primary: { main: green[500] },
-} });` : formatMuiErrorMessage(12, name ? ` (${name})` : "", JSON.stringify(color2.main)));
+} });` : formatMuiErrorMessage(12, name ? ` (${name})` : "", JSON.stringify(color3.main)));
     }
-    addLightOrDark(color2, "light", lightShade, tonalOffset);
-    addLightOrDark(color2, "dark", darkShade, tonalOffset);
-    if (!color2.contrastText) {
-      color2.contrastText = getContrastText(color2.main);
+    addLightOrDark(color3, "light", lightShade, tonalOffset);
+    addLightOrDark(color3, "dark", darkShade, tonalOffset);
+    if (!color3.contrastText) {
+      color3.contrastText = getContrastText(color3.main);
     }
-    return color2;
+    return color3;
   };
   let modeHydrated;
   if (mode === "light") {
@@ -11572,7 +11599,7 @@ const theme2 = createTheme({ palette: {
   return paletteOutput;
 }
 
-// node_modules/@mui/system/esm/cssVars/prepareTypographyVars.js
+// node_modules/@mui/material/node_modules/@mui/system/esm/cssVars/prepareTypographyVars.js
 function prepareTypographyVars(typography) {
   const vars = {};
   const entries = Object.entries(typography);
@@ -11611,7 +11638,7 @@ var caseAllCaps = {
   textTransform: "uppercase"
 };
 var defaultFontFamily = '"Roboto", "Helvetica", "Arial", sans-serif';
-function createTypography(palette2, typography) {
+function createTypography(palette3, typography) {
   const {
     fontFamily = defaultFontFamily,
     // The default font size of the Material Specification.
@@ -11628,7 +11655,7 @@ function createTypography(palette2, typography) {
     allVariants,
     pxToRem: pxToRem2,
     ...other
-  } = typeof typography === "function" ? typography(palette2) : typography;
+  } = typeof typography === "function" ? typography(palette3) : typography;
   if (true) {
     if (typeof fontSize !== "number") {
       console.error("MUI: `fontSize` is required to be a number.");
@@ -11730,11 +11757,11 @@ var duration = {
 function formatMs(milliseconds) {
   return `${Math.round(milliseconds)}ms`;
 }
-function getAutoHeightDuration(height2) {
-  if (!height2) {
+function getAutoHeightDuration(height3) {
+  if (!height3) {
     return 0;
   }
-  const constant = height2 / 36;
+  const constant = height3 / 36;
   return Math.min(Math.round((4 + 15 * constant ** 0.25 + constant / 5) * 10), 3e3);
 }
 function createTransitions(inputTransitions) {
@@ -11844,17 +11871,19 @@ function createThemeNoVars(options = {}, ...args) {
     shape: shapeInput,
     ...other
   } = options;
-  if (options.vars) {
-    throw new Error(true ? "MUI: `vars` is a private field used for CSS variables support.\nPlease use another name." : formatMuiErrorMessage(20));
+  if (options.vars && // The error should throw only for the root theme creation because user is not allowed to use a custom node `vars`.
+  // `generateThemeVars` is the closest identifier for checking that the `options` is a result of `createTheme` with CSS variables so that user can create new theme for nested ThemeProvider.
+  options.generateThemeVars === void 0) {
+    throw new Error(true ? "MUI: `vars` is a private field used for CSS variables support.\nPlease use another name or follow the [docs](https://mui.com/material-ui/customization/css-theme-variables/usage/) to enable the feature." : formatMuiErrorMessage(20));
   }
-  const palette2 = createPalette(paletteInput);
+  const palette3 = createPalette(paletteInput);
   const systemTheme = createTheme_default(options);
   let muiTheme = deepmerge(systemTheme, {
     mixins: createMixins(systemTheme.breakpoints, mixinsInput),
-    palette: palette2,
+    palette: palette3,
     // Don't use [...shadows] until you've verified its transpiled code is not invoking the iterator protocol.
     shadows: shadows_default.slice(),
-    typography: createTypography(palette2, typographyInput),
+    typography: createTypography(palette3, typographyInput),
     transitions: createTransitions(transitionsInput),
     zIndex: {
       ...zIndex_default
@@ -11943,14 +11972,14 @@ function createColorScheme(options) {
     overlays,
     ...rest
   } = options;
-  const palette2 = createPalette(paletteInput);
+  const palette3 = createPalette(paletteInput);
   return {
-    palette: palette2,
+    palette: palette3,
     opacity: {
-      ...getOpacity(palette2.mode),
+      ...getOpacity(palette3.mode),
       ...opacity
     },
-    overlays: overlays || getOverlays(palette2.mode),
+    overlays: overlays || getOverlays(palette3.mode),
     ...rest
   };
 }
@@ -12038,11 +12067,11 @@ function setColor(obj, key, defaultValue) {
     obj[key] = defaultValue;
   }
 }
-function toRgb(color2) {
-  if (typeof color2 !== "string" || !color2.startsWith("hsl")) {
-    return color2;
+function toRgb(color3) {
+  if (typeof color3 !== "string" || !color3.startsWith("hsl")) {
+    return color3;
   }
-  return hslToRgb(color2);
+  return hslToRgb(color3);
 }
 function setColorChannel(obj, key) {
   if (!(`${key}Channel` in obj)) {
@@ -12084,7 +12113,7 @@ function attachColorScheme(colorSchemes, scheme, restTheme, colorScheme) {
     return void 0;
   }
   const {
-    palette: palette2,
+    palette: palette3,
     ...muiTheme
   } = createThemeNoVars_default({
     ...restTheme,
@@ -12095,7 +12124,7 @@ function attachColorScheme(colorSchemes, scheme, restTheme, colorScheme) {
   });
   colorSchemes[colorScheme] = {
     ...scheme,
-    palette: palette2,
+    palette: palette3,
     opacity: {
       ...getOpacity(mode),
       ...scheme?.opacity
@@ -12158,176 +12187,176 @@ function createThemeWithVars(options = {}, ...args) {
     spacing: getSpacingVal(input.spacing)
   };
   Object.keys(theme.colorSchemes).forEach((key) => {
-    const palette2 = theme.colorSchemes[key].palette;
+    const palette3 = theme.colorSchemes[key].palette;
     const setCssVarColor = (cssVar) => {
       const tokens = cssVar.split("-");
-      const color2 = tokens[1];
+      const color3 = tokens[1];
       const colorToken = tokens[2];
-      return getCssVar(cssVar, palette2[color2][colorToken]);
+      return getCssVar(cssVar, palette3[color3][colorToken]);
     };
-    if (palette2.mode === "light") {
-      setColor(palette2.common, "background", "#fff");
-      setColor(palette2.common, "onBackground", "#000");
+    if (palette3.mode === "light") {
+      setColor(palette3.common, "background", "#fff");
+      setColor(palette3.common, "onBackground", "#000");
     }
-    if (palette2.mode === "dark") {
-      setColor(palette2.common, "background", "#000");
-      setColor(palette2.common, "onBackground", "#fff");
+    if (palette3.mode === "dark") {
+      setColor(palette3.common, "background", "#000");
+      setColor(palette3.common, "onBackground", "#fff");
     }
-    assignNode(palette2, ["Alert", "AppBar", "Avatar", "Button", "Chip", "FilledInput", "LinearProgress", "Skeleton", "Slider", "SnackbarContent", "SpeedDialAction", "StepConnector", "StepContent", "Switch", "TableCell", "Tooltip"]);
-    if (palette2.mode === "light") {
-      setColor(palette2.Alert, "errorColor", private_safeDarken(palette2.error.light, 0.6));
-      setColor(palette2.Alert, "infoColor", private_safeDarken(palette2.info.light, 0.6));
-      setColor(palette2.Alert, "successColor", private_safeDarken(palette2.success.light, 0.6));
-      setColor(palette2.Alert, "warningColor", private_safeDarken(palette2.warning.light, 0.6));
-      setColor(palette2.Alert, "errorFilledBg", setCssVarColor("palette-error-main"));
-      setColor(palette2.Alert, "infoFilledBg", setCssVarColor("palette-info-main"));
-      setColor(palette2.Alert, "successFilledBg", setCssVarColor("palette-success-main"));
-      setColor(palette2.Alert, "warningFilledBg", setCssVarColor("palette-warning-main"));
-      setColor(palette2.Alert, "errorFilledColor", silent(() => palette2.getContrastText(palette2.error.main)));
-      setColor(palette2.Alert, "infoFilledColor", silent(() => palette2.getContrastText(palette2.info.main)));
-      setColor(palette2.Alert, "successFilledColor", silent(() => palette2.getContrastText(palette2.success.main)));
-      setColor(palette2.Alert, "warningFilledColor", silent(() => palette2.getContrastText(palette2.warning.main)));
-      setColor(palette2.Alert, "errorStandardBg", private_safeLighten(palette2.error.light, 0.9));
-      setColor(palette2.Alert, "infoStandardBg", private_safeLighten(palette2.info.light, 0.9));
-      setColor(palette2.Alert, "successStandardBg", private_safeLighten(palette2.success.light, 0.9));
-      setColor(palette2.Alert, "warningStandardBg", private_safeLighten(palette2.warning.light, 0.9));
-      setColor(palette2.Alert, "errorIconColor", setCssVarColor("palette-error-main"));
-      setColor(palette2.Alert, "infoIconColor", setCssVarColor("palette-info-main"));
-      setColor(palette2.Alert, "successIconColor", setCssVarColor("palette-success-main"));
-      setColor(palette2.Alert, "warningIconColor", setCssVarColor("palette-warning-main"));
-      setColor(palette2.AppBar, "defaultBg", setCssVarColor("palette-grey-100"));
-      setColor(palette2.Avatar, "defaultBg", setCssVarColor("palette-grey-400"));
-      setColor(palette2.Button, "inheritContainedBg", setCssVarColor("palette-grey-300"));
-      setColor(palette2.Button, "inheritContainedHoverBg", setCssVarColor("palette-grey-A100"));
-      setColor(palette2.Chip, "defaultBorder", setCssVarColor("palette-grey-400"));
-      setColor(palette2.Chip, "defaultAvatarColor", setCssVarColor("palette-grey-700"));
-      setColor(palette2.Chip, "defaultIconColor", setCssVarColor("palette-grey-700"));
-      setColor(palette2.FilledInput, "bg", "rgba(0, 0, 0, 0.06)");
-      setColor(palette2.FilledInput, "hoverBg", "rgba(0, 0, 0, 0.09)");
-      setColor(palette2.FilledInput, "disabledBg", "rgba(0, 0, 0, 0.12)");
-      setColor(palette2.LinearProgress, "primaryBg", private_safeLighten(palette2.primary.main, 0.62));
-      setColor(palette2.LinearProgress, "secondaryBg", private_safeLighten(palette2.secondary.main, 0.62));
-      setColor(palette2.LinearProgress, "errorBg", private_safeLighten(palette2.error.main, 0.62));
-      setColor(palette2.LinearProgress, "infoBg", private_safeLighten(palette2.info.main, 0.62));
-      setColor(palette2.LinearProgress, "successBg", private_safeLighten(palette2.success.main, 0.62));
-      setColor(palette2.LinearProgress, "warningBg", private_safeLighten(palette2.warning.main, 0.62));
-      setColor(palette2.Skeleton, "bg", `rgba(${setCssVarColor("palette-text-primaryChannel")} / 0.11)`);
-      setColor(palette2.Slider, "primaryTrack", private_safeLighten(palette2.primary.main, 0.62));
-      setColor(palette2.Slider, "secondaryTrack", private_safeLighten(palette2.secondary.main, 0.62));
-      setColor(palette2.Slider, "errorTrack", private_safeLighten(palette2.error.main, 0.62));
-      setColor(palette2.Slider, "infoTrack", private_safeLighten(palette2.info.main, 0.62));
-      setColor(palette2.Slider, "successTrack", private_safeLighten(palette2.success.main, 0.62));
-      setColor(palette2.Slider, "warningTrack", private_safeLighten(palette2.warning.main, 0.62));
-      const snackbarContentBackground = private_safeEmphasize(palette2.background.default, 0.8);
-      setColor(palette2.SnackbarContent, "bg", snackbarContentBackground);
-      setColor(palette2.SnackbarContent, "color", silent(() => palette2.getContrastText(snackbarContentBackground)));
-      setColor(palette2.SpeedDialAction, "fabHoverBg", private_safeEmphasize(palette2.background.paper, 0.15));
-      setColor(palette2.StepConnector, "border", setCssVarColor("palette-grey-400"));
-      setColor(palette2.StepContent, "border", setCssVarColor("palette-grey-400"));
-      setColor(palette2.Switch, "defaultColor", setCssVarColor("palette-common-white"));
-      setColor(palette2.Switch, "defaultDisabledColor", setCssVarColor("palette-grey-100"));
-      setColor(palette2.Switch, "primaryDisabledColor", private_safeLighten(palette2.primary.main, 0.62));
-      setColor(palette2.Switch, "secondaryDisabledColor", private_safeLighten(palette2.secondary.main, 0.62));
-      setColor(palette2.Switch, "errorDisabledColor", private_safeLighten(palette2.error.main, 0.62));
-      setColor(palette2.Switch, "infoDisabledColor", private_safeLighten(palette2.info.main, 0.62));
-      setColor(palette2.Switch, "successDisabledColor", private_safeLighten(palette2.success.main, 0.62));
-      setColor(palette2.Switch, "warningDisabledColor", private_safeLighten(palette2.warning.main, 0.62));
-      setColor(palette2.TableCell, "border", private_safeLighten(private_safeAlpha(palette2.divider, 1), 0.88));
-      setColor(palette2.Tooltip, "bg", private_safeAlpha(palette2.grey[700], 0.92));
+    assignNode(palette3, ["Alert", "AppBar", "Avatar", "Button", "Chip", "FilledInput", "LinearProgress", "Skeleton", "Slider", "SnackbarContent", "SpeedDialAction", "StepConnector", "StepContent", "Switch", "TableCell", "Tooltip"]);
+    if (palette3.mode === "light") {
+      setColor(palette3.Alert, "errorColor", private_safeDarken(palette3.error.light, 0.6));
+      setColor(palette3.Alert, "infoColor", private_safeDarken(palette3.info.light, 0.6));
+      setColor(palette3.Alert, "successColor", private_safeDarken(palette3.success.light, 0.6));
+      setColor(palette3.Alert, "warningColor", private_safeDarken(palette3.warning.light, 0.6));
+      setColor(palette3.Alert, "errorFilledBg", setCssVarColor("palette-error-main"));
+      setColor(palette3.Alert, "infoFilledBg", setCssVarColor("palette-info-main"));
+      setColor(palette3.Alert, "successFilledBg", setCssVarColor("palette-success-main"));
+      setColor(palette3.Alert, "warningFilledBg", setCssVarColor("palette-warning-main"));
+      setColor(palette3.Alert, "errorFilledColor", silent(() => palette3.getContrastText(palette3.error.main)));
+      setColor(palette3.Alert, "infoFilledColor", silent(() => palette3.getContrastText(palette3.info.main)));
+      setColor(palette3.Alert, "successFilledColor", silent(() => palette3.getContrastText(palette3.success.main)));
+      setColor(palette3.Alert, "warningFilledColor", silent(() => palette3.getContrastText(palette3.warning.main)));
+      setColor(palette3.Alert, "errorStandardBg", private_safeLighten(palette3.error.light, 0.9));
+      setColor(palette3.Alert, "infoStandardBg", private_safeLighten(palette3.info.light, 0.9));
+      setColor(palette3.Alert, "successStandardBg", private_safeLighten(palette3.success.light, 0.9));
+      setColor(palette3.Alert, "warningStandardBg", private_safeLighten(palette3.warning.light, 0.9));
+      setColor(palette3.Alert, "errorIconColor", setCssVarColor("palette-error-main"));
+      setColor(palette3.Alert, "infoIconColor", setCssVarColor("palette-info-main"));
+      setColor(palette3.Alert, "successIconColor", setCssVarColor("palette-success-main"));
+      setColor(palette3.Alert, "warningIconColor", setCssVarColor("palette-warning-main"));
+      setColor(palette3.AppBar, "defaultBg", setCssVarColor("palette-grey-100"));
+      setColor(palette3.Avatar, "defaultBg", setCssVarColor("palette-grey-400"));
+      setColor(palette3.Button, "inheritContainedBg", setCssVarColor("palette-grey-300"));
+      setColor(palette3.Button, "inheritContainedHoverBg", setCssVarColor("palette-grey-A100"));
+      setColor(palette3.Chip, "defaultBorder", setCssVarColor("palette-grey-400"));
+      setColor(palette3.Chip, "defaultAvatarColor", setCssVarColor("palette-grey-700"));
+      setColor(palette3.Chip, "defaultIconColor", setCssVarColor("palette-grey-700"));
+      setColor(palette3.FilledInput, "bg", "rgba(0, 0, 0, 0.06)");
+      setColor(palette3.FilledInput, "hoverBg", "rgba(0, 0, 0, 0.09)");
+      setColor(palette3.FilledInput, "disabledBg", "rgba(0, 0, 0, 0.12)");
+      setColor(palette3.LinearProgress, "primaryBg", private_safeLighten(palette3.primary.main, 0.62));
+      setColor(palette3.LinearProgress, "secondaryBg", private_safeLighten(palette3.secondary.main, 0.62));
+      setColor(palette3.LinearProgress, "errorBg", private_safeLighten(palette3.error.main, 0.62));
+      setColor(palette3.LinearProgress, "infoBg", private_safeLighten(palette3.info.main, 0.62));
+      setColor(palette3.LinearProgress, "successBg", private_safeLighten(palette3.success.main, 0.62));
+      setColor(palette3.LinearProgress, "warningBg", private_safeLighten(palette3.warning.main, 0.62));
+      setColor(palette3.Skeleton, "bg", `rgba(${setCssVarColor("palette-text-primaryChannel")} / 0.11)`);
+      setColor(palette3.Slider, "primaryTrack", private_safeLighten(palette3.primary.main, 0.62));
+      setColor(palette3.Slider, "secondaryTrack", private_safeLighten(palette3.secondary.main, 0.62));
+      setColor(palette3.Slider, "errorTrack", private_safeLighten(palette3.error.main, 0.62));
+      setColor(palette3.Slider, "infoTrack", private_safeLighten(palette3.info.main, 0.62));
+      setColor(palette3.Slider, "successTrack", private_safeLighten(palette3.success.main, 0.62));
+      setColor(palette3.Slider, "warningTrack", private_safeLighten(palette3.warning.main, 0.62));
+      const snackbarContentBackground = private_safeEmphasize(palette3.background.default, 0.8);
+      setColor(palette3.SnackbarContent, "bg", snackbarContentBackground);
+      setColor(palette3.SnackbarContent, "color", silent(() => palette3.getContrastText(snackbarContentBackground)));
+      setColor(palette3.SpeedDialAction, "fabHoverBg", private_safeEmphasize(palette3.background.paper, 0.15));
+      setColor(palette3.StepConnector, "border", setCssVarColor("palette-grey-400"));
+      setColor(palette3.StepContent, "border", setCssVarColor("palette-grey-400"));
+      setColor(palette3.Switch, "defaultColor", setCssVarColor("palette-common-white"));
+      setColor(palette3.Switch, "defaultDisabledColor", setCssVarColor("palette-grey-100"));
+      setColor(palette3.Switch, "primaryDisabledColor", private_safeLighten(palette3.primary.main, 0.62));
+      setColor(palette3.Switch, "secondaryDisabledColor", private_safeLighten(palette3.secondary.main, 0.62));
+      setColor(palette3.Switch, "errorDisabledColor", private_safeLighten(palette3.error.main, 0.62));
+      setColor(palette3.Switch, "infoDisabledColor", private_safeLighten(palette3.info.main, 0.62));
+      setColor(palette3.Switch, "successDisabledColor", private_safeLighten(palette3.success.main, 0.62));
+      setColor(palette3.Switch, "warningDisabledColor", private_safeLighten(palette3.warning.main, 0.62));
+      setColor(palette3.TableCell, "border", private_safeLighten(private_safeAlpha(palette3.divider, 1), 0.88));
+      setColor(palette3.Tooltip, "bg", private_safeAlpha(palette3.grey[700], 0.92));
     }
-    if (palette2.mode === "dark") {
-      setColor(palette2.Alert, "errorColor", private_safeLighten(palette2.error.light, 0.6));
-      setColor(palette2.Alert, "infoColor", private_safeLighten(palette2.info.light, 0.6));
-      setColor(palette2.Alert, "successColor", private_safeLighten(palette2.success.light, 0.6));
-      setColor(palette2.Alert, "warningColor", private_safeLighten(palette2.warning.light, 0.6));
-      setColor(palette2.Alert, "errorFilledBg", setCssVarColor("palette-error-dark"));
-      setColor(palette2.Alert, "infoFilledBg", setCssVarColor("palette-info-dark"));
-      setColor(palette2.Alert, "successFilledBg", setCssVarColor("palette-success-dark"));
-      setColor(palette2.Alert, "warningFilledBg", setCssVarColor("palette-warning-dark"));
-      setColor(palette2.Alert, "errorFilledColor", silent(() => palette2.getContrastText(palette2.error.dark)));
-      setColor(palette2.Alert, "infoFilledColor", silent(() => palette2.getContrastText(palette2.info.dark)));
-      setColor(palette2.Alert, "successFilledColor", silent(() => palette2.getContrastText(palette2.success.dark)));
-      setColor(palette2.Alert, "warningFilledColor", silent(() => palette2.getContrastText(palette2.warning.dark)));
-      setColor(palette2.Alert, "errorStandardBg", private_safeDarken(palette2.error.light, 0.9));
-      setColor(palette2.Alert, "infoStandardBg", private_safeDarken(palette2.info.light, 0.9));
-      setColor(palette2.Alert, "successStandardBg", private_safeDarken(palette2.success.light, 0.9));
-      setColor(palette2.Alert, "warningStandardBg", private_safeDarken(palette2.warning.light, 0.9));
-      setColor(palette2.Alert, "errorIconColor", setCssVarColor("palette-error-main"));
-      setColor(palette2.Alert, "infoIconColor", setCssVarColor("palette-info-main"));
-      setColor(palette2.Alert, "successIconColor", setCssVarColor("palette-success-main"));
-      setColor(palette2.Alert, "warningIconColor", setCssVarColor("palette-warning-main"));
-      setColor(palette2.AppBar, "defaultBg", setCssVarColor("palette-grey-900"));
-      setColor(palette2.AppBar, "darkBg", setCssVarColor("palette-background-paper"));
-      setColor(palette2.AppBar, "darkColor", setCssVarColor("palette-text-primary"));
-      setColor(palette2.Avatar, "defaultBg", setCssVarColor("palette-grey-600"));
-      setColor(palette2.Button, "inheritContainedBg", setCssVarColor("palette-grey-800"));
-      setColor(palette2.Button, "inheritContainedHoverBg", setCssVarColor("palette-grey-700"));
-      setColor(palette2.Chip, "defaultBorder", setCssVarColor("palette-grey-700"));
-      setColor(palette2.Chip, "defaultAvatarColor", setCssVarColor("palette-grey-300"));
-      setColor(palette2.Chip, "defaultIconColor", setCssVarColor("palette-grey-300"));
-      setColor(palette2.FilledInput, "bg", "rgba(255, 255, 255, 0.09)");
-      setColor(palette2.FilledInput, "hoverBg", "rgba(255, 255, 255, 0.13)");
-      setColor(palette2.FilledInput, "disabledBg", "rgba(255, 255, 255, 0.12)");
-      setColor(palette2.LinearProgress, "primaryBg", private_safeDarken(palette2.primary.main, 0.5));
-      setColor(palette2.LinearProgress, "secondaryBg", private_safeDarken(palette2.secondary.main, 0.5));
-      setColor(palette2.LinearProgress, "errorBg", private_safeDarken(palette2.error.main, 0.5));
-      setColor(palette2.LinearProgress, "infoBg", private_safeDarken(palette2.info.main, 0.5));
-      setColor(palette2.LinearProgress, "successBg", private_safeDarken(palette2.success.main, 0.5));
-      setColor(palette2.LinearProgress, "warningBg", private_safeDarken(palette2.warning.main, 0.5));
-      setColor(palette2.Skeleton, "bg", `rgba(${setCssVarColor("palette-text-primaryChannel")} / 0.13)`);
-      setColor(palette2.Slider, "primaryTrack", private_safeDarken(palette2.primary.main, 0.5));
-      setColor(palette2.Slider, "secondaryTrack", private_safeDarken(palette2.secondary.main, 0.5));
-      setColor(palette2.Slider, "errorTrack", private_safeDarken(palette2.error.main, 0.5));
-      setColor(palette2.Slider, "infoTrack", private_safeDarken(palette2.info.main, 0.5));
-      setColor(palette2.Slider, "successTrack", private_safeDarken(palette2.success.main, 0.5));
-      setColor(palette2.Slider, "warningTrack", private_safeDarken(palette2.warning.main, 0.5));
-      const snackbarContentBackground = private_safeEmphasize(palette2.background.default, 0.98);
-      setColor(palette2.SnackbarContent, "bg", snackbarContentBackground);
-      setColor(palette2.SnackbarContent, "color", silent(() => palette2.getContrastText(snackbarContentBackground)));
-      setColor(palette2.SpeedDialAction, "fabHoverBg", private_safeEmphasize(palette2.background.paper, 0.15));
-      setColor(palette2.StepConnector, "border", setCssVarColor("palette-grey-600"));
-      setColor(palette2.StepContent, "border", setCssVarColor("palette-grey-600"));
-      setColor(palette2.Switch, "defaultColor", setCssVarColor("palette-grey-300"));
-      setColor(palette2.Switch, "defaultDisabledColor", setCssVarColor("palette-grey-600"));
-      setColor(palette2.Switch, "primaryDisabledColor", private_safeDarken(palette2.primary.main, 0.55));
-      setColor(palette2.Switch, "secondaryDisabledColor", private_safeDarken(palette2.secondary.main, 0.55));
-      setColor(palette2.Switch, "errorDisabledColor", private_safeDarken(palette2.error.main, 0.55));
-      setColor(palette2.Switch, "infoDisabledColor", private_safeDarken(palette2.info.main, 0.55));
-      setColor(palette2.Switch, "successDisabledColor", private_safeDarken(palette2.success.main, 0.55));
-      setColor(palette2.Switch, "warningDisabledColor", private_safeDarken(palette2.warning.main, 0.55));
-      setColor(palette2.TableCell, "border", private_safeDarken(private_safeAlpha(palette2.divider, 1), 0.68));
-      setColor(palette2.Tooltip, "bg", private_safeAlpha(palette2.grey[700], 0.92));
+    if (palette3.mode === "dark") {
+      setColor(palette3.Alert, "errorColor", private_safeLighten(palette3.error.light, 0.6));
+      setColor(palette3.Alert, "infoColor", private_safeLighten(palette3.info.light, 0.6));
+      setColor(palette3.Alert, "successColor", private_safeLighten(palette3.success.light, 0.6));
+      setColor(palette3.Alert, "warningColor", private_safeLighten(palette3.warning.light, 0.6));
+      setColor(palette3.Alert, "errorFilledBg", setCssVarColor("palette-error-dark"));
+      setColor(palette3.Alert, "infoFilledBg", setCssVarColor("palette-info-dark"));
+      setColor(palette3.Alert, "successFilledBg", setCssVarColor("palette-success-dark"));
+      setColor(palette3.Alert, "warningFilledBg", setCssVarColor("palette-warning-dark"));
+      setColor(palette3.Alert, "errorFilledColor", silent(() => palette3.getContrastText(palette3.error.dark)));
+      setColor(palette3.Alert, "infoFilledColor", silent(() => palette3.getContrastText(palette3.info.dark)));
+      setColor(palette3.Alert, "successFilledColor", silent(() => palette3.getContrastText(palette3.success.dark)));
+      setColor(palette3.Alert, "warningFilledColor", silent(() => palette3.getContrastText(palette3.warning.dark)));
+      setColor(palette3.Alert, "errorStandardBg", private_safeDarken(palette3.error.light, 0.9));
+      setColor(palette3.Alert, "infoStandardBg", private_safeDarken(palette3.info.light, 0.9));
+      setColor(palette3.Alert, "successStandardBg", private_safeDarken(palette3.success.light, 0.9));
+      setColor(palette3.Alert, "warningStandardBg", private_safeDarken(palette3.warning.light, 0.9));
+      setColor(palette3.Alert, "errorIconColor", setCssVarColor("palette-error-main"));
+      setColor(palette3.Alert, "infoIconColor", setCssVarColor("palette-info-main"));
+      setColor(palette3.Alert, "successIconColor", setCssVarColor("palette-success-main"));
+      setColor(palette3.Alert, "warningIconColor", setCssVarColor("palette-warning-main"));
+      setColor(palette3.AppBar, "defaultBg", setCssVarColor("palette-grey-900"));
+      setColor(palette3.AppBar, "darkBg", setCssVarColor("palette-background-paper"));
+      setColor(palette3.AppBar, "darkColor", setCssVarColor("palette-text-primary"));
+      setColor(palette3.Avatar, "defaultBg", setCssVarColor("palette-grey-600"));
+      setColor(palette3.Button, "inheritContainedBg", setCssVarColor("palette-grey-800"));
+      setColor(palette3.Button, "inheritContainedHoverBg", setCssVarColor("palette-grey-700"));
+      setColor(palette3.Chip, "defaultBorder", setCssVarColor("palette-grey-700"));
+      setColor(palette3.Chip, "defaultAvatarColor", setCssVarColor("palette-grey-300"));
+      setColor(palette3.Chip, "defaultIconColor", setCssVarColor("palette-grey-300"));
+      setColor(palette3.FilledInput, "bg", "rgba(255, 255, 255, 0.09)");
+      setColor(palette3.FilledInput, "hoverBg", "rgba(255, 255, 255, 0.13)");
+      setColor(palette3.FilledInput, "disabledBg", "rgba(255, 255, 255, 0.12)");
+      setColor(palette3.LinearProgress, "primaryBg", private_safeDarken(palette3.primary.main, 0.5));
+      setColor(palette3.LinearProgress, "secondaryBg", private_safeDarken(palette3.secondary.main, 0.5));
+      setColor(palette3.LinearProgress, "errorBg", private_safeDarken(palette3.error.main, 0.5));
+      setColor(palette3.LinearProgress, "infoBg", private_safeDarken(palette3.info.main, 0.5));
+      setColor(palette3.LinearProgress, "successBg", private_safeDarken(palette3.success.main, 0.5));
+      setColor(palette3.LinearProgress, "warningBg", private_safeDarken(palette3.warning.main, 0.5));
+      setColor(palette3.Skeleton, "bg", `rgba(${setCssVarColor("palette-text-primaryChannel")} / 0.13)`);
+      setColor(palette3.Slider, "primaryTrack", private_safeDarken(palette3.primary.main, 0.5));
+      setColor(palette3.Slider, "secondaryTrack", private_safeDarken(palette3.secondary.main, 0.5));
+      setColor(palette3.Slider, "errorTrack", private_safeDarken(palette3.error.main, 0.5));
+      setColor(palette3.Slider, "infoTrack", private_safeDarken(palette3.info.main, 0.5));
+      setColor(palette3.Slider, "successTrack", private_safeDarken(palette3.success.main, 0.5));
+      setColor(palette3.Slider, "warningTrack", private_safeDarken(palette3.warning.main, 0.5));
+      const snackbarContentBackground = private_safeEmphasize(palette3.background.default, 0.98);
+      setColor(palette3.SnackbarContent, "bg", snackbarContentBackground);
+      setColor(palette3.SnackbarContent, "color", silent(() => palette3.getContrastText(snackbarContentBackground)));
+      setColor(palette3.SpeedDialAction, "fabHoverBg", private_safeEmphasize(palette3.background.paper, 0.15));
+      setColor(palette3.StepConnector, "border", setCssVarColor("palette-grey-600"));
+      setColor(palette3.StepContent, "border", setCssVarColor("palette-grey-600"));
+      setColor(palette3.Switch, "defaultColor", setCssVarColor("palette-grey-300"));
+      setColor(palette3.Switch, "defaultDisabledColor", setCssVarColor("palette-grey-600"));
+      setColor(palette3.Switch, "primaryDisabledColor", private_safeDarken(palette3.primary.main, 0.55));
+      setColor(palette3.Switch, "secondaryDisabledColor", private_safeDarken(palette3.secondary.main, 0.55));
+      setColor(palette3.Switch, "errorDisabledColor", private_safeDarken(palette3.error.main, 0.55));
+      setColor(palette3.Switch, "infoDisabledColor", private_safeDarken(palette3.info.main, 0.55));
+      setColor(palette3.Switch, "successDisabledColor", private_safeDarken(palette3.success.main, 0.55));
+      setColor(palette3.Switch, "warningDisabledColor", private_safeDarken(palette3.warning.main, 0.55));
+      setColor(palette3.TableCell, "border", private_safeDarken(private_safeAlpha(palette3.divider, 1), 0.68));
+      setColor(palette3.Tooltip, "bg", private_safeAlpha(palette3.grey[700], 0.92));
     }
-    setColorChannel(palette2.background, "default");
-    setColorChannel(palette2.background, "paper");
-    setColorChannel(palette2.common, "background");
-    setColorChannel(palette2.common, "onBackground");
-    setColorChannel(palette2, "divider");
-    Object.keys(palette2).forEach((color2) => {
-      const colors = palette2[color2];
-      if (color2 !== "tonalOffset" && colors && typeof colors === "object") {
+    setColorChannel(palette3.background, "default");
+    setColorChannel(palette3.background, "paper");
+    setColorChannel(palette3.common, "background");
+    setColorChannel(palette3.common, "onBackground");
+    setColorChannel(palette3, "divider");
+    Object.keys(palette3).forEach((color3) => {
+      const colors = palette3[color3];
+      if (color3 !== "tonalOffset" && colors && typeof colors === "object") {
         if (colors.main) {
-          setColor(palette2[color2], "mainChannel", private_safeColorChannel(toRgb(colors.main)));
+          setColor(palette3[color3], "mainChannel", private_safeColorChannel(toRgb(colors.main)));
         }
         if (colors.light) {
-          setColor(palette2[color2], "lightChannel", private_safeColorChannel(toRgb(colors.light)));
+          setColor(palette3[color3], "lightChannel", private_safeColorChannel(toRgb(colors.light)));
         }
         if (colors.dark) {
-          setColor(palette2[color2], "darkChannel", private_safeColorChannel(toRgb(colors.dark)));
+          setColor(palette3[color3], "darkChannel", private_safeColorChannel(toRgb(colors.dark)));
         }
         if (colors.contrastText) {
-          setColor(palette2[color2], "contrastTextChannel", private_safeColorChannel(toRgb(colors.contrastText)));
+          setColor(palette3[color3], "contrastTextChannel", private_safeColorChannel(toRgb(colors.contrastText)));
         }
-        if (color2 === "text") {
-          setColorChannel(palette2[color2], "primary");
-          setColorChannel(palette2[color2], "secondary");
+        if (color3 === "text") {
+          setColorChannel(palette3[color3], "primary");
+          setColorChannel(palette3[color3], "secondary");
         }
-        if (color2 === "action") {
+        if (color3 === "action") {
           if (colors.active) {
-            setColorChannel(palette2[color2], "active");
+            setColorChannel(palette3[color3], "active");
           }
           if (colors.selected) {
-            setColorChannel(palette2[color2], "selected");
+            setColorChannel(palette3[color3], "selected");
           }
         }
       }
@@ -12389,22 +12418,22 @@ function attachColorScheme2(theme, scheme, colorScheme) {
 }
 function createTheme2(options = {}, ...args) {
   const {
-    palette: palette2,
+    palette: palette3,
     cssVariables = false,
-    colorSchemes: initialColorSchemes = !palette2 ? {
+    colorSchemes: initialColorSchemes = !palette3 ? {
       light: true
     } : void 0,
-    defaultColorScheme: initialDefaultColorScheme = palette2?.mode,
+    defaultColorScheme: initialDefaultColorScheme = palette3?.mode,
     ...rest
   } = options;
   const defaultColorSchemeInput = initialDefaultColorScheme || "light";
   const defaultScheme = initialColorSchemes?.[defaultColorSchemeInput];
   const colorSchemesInput = {
     ...initialColorSchemes,
-    ...palette2 ? {
+    ...palette3 ? {
       [defaultColorSchemeInput]: {
         ...typeof defaultScheme !== "boolean" && defaultScheme,
-        palette: palette2
+        palette: palette3
       }
     } : void 0
   };
@@ -12412,7 +12441,7 @@ function createTheme2(options = {}, ...args) {
     if (!("colorSchemes" in options)) {
       return createThemeNoVars_default(options, ...args);
     }
-    let paletteOptions = palette2;
+    let paletteOptions = palette3;
     if (!("palette" in options)) {
       if (colorSchemesInput[defaultColorSchemeInput]) {
         if (colorSchemesInput[defaultColorSchemeInput] !== true) {
@@ -12446,7 +12475,7 @@ function createTheme2(options = {}, ...args) {
     }
     return theme;
   }
-  if (!palette2 && !("light" in colorSchemesInput) && defaultColorSchemeInput === "light") {
+  if (!palette3 && !("light" in colorSchemesInput) && defaultColorSchemeInput === "light") {
     colorSchemesInput.light = true;
   }
   return createThemeWithVars({
@@ -12600,12 +12629,12 @@ var svgIconClasses = generateUtilityClasses("MuiSvgIcon", ["root", "colorPrimary
 import { jsx as _jsx8, jsxs as _jsxs } from "react/jsx-runtime";
 var useUtilityClasses = (ownerState) => {
   const {
-    color: color2,
+    color: color3,
     fontSize,
     classes
   } = ownerState;
   const slots = {
-    root: ["root", color2 !== "inherit" && `color${capitalize_default(color2)}`, `fontSize${capitalize_default(fontSize)}`]
+    root: ["root", color3 !== "inherit" && `color${capitalize_default(color3)}`, `fontSize${capitalize_default(fontSize)}`]
   };
   return composeClasses(slots, getSvgIconUtilityClass, classes);
 };
@@ -12671,12 +12700,12 @@ var SvgIconRoot = styled_default("svg", {
       }
     },
     // TODO v5 deprecate color prop, v6 remove for sx
-    ...Object.entries((theme.vars ?? theme).palette).filter(([, value]) => value && value.main).map(([color2]) => ({
+    ...Object.entries((theme.vars ?? theme).palette).filter(([, value]) => value && value.main).map(([color3]) => ({
       props: {
-        color: color2
+        color: color3
       },
       style: {
-        color: (theme.vars ?? theme).palette?.[color2]?.main
+        color: (theme.vars ?? theme).palette?.[color3]?.main
       }
     })),
     {
@@ -12713,7 +12742,7 @@ var SvgIcon = /* @__PURE__ */ React21.forwardRef(function SvgIcon2(inProps, ref)
   const {
     children,
     className,
-    color: color2 = "inherit",
+    color: color3 = "inherit",
     component = "svg",
     fontSize = "medium",
     htmlColor,
@@ -12725,7 +12754,7 @@ var SvgIcon = /* @__PURE__ */ React21.forwardRef(function SvgIcon2(inProps, ref)
   const hasSvgAsChild = /* @__PURE__ */ React21.isValidElement(children) && children.type === "svg";
   const ownerState = {
     ...props,
-    color: color2,
+    color: color3,
     component,
     fontSize,
     instanceFontSize: inProps.fontSize,
@@ -12877,6 +12906,57 @@ var useEventCallback_default2 = useEventCallback_default;
 
 // node_modules/@mui/material/utils/useForkRef.js
 var useForkRef_default = useForkRef;
+
+// node_modules/@mui/material/utils/mergeSlotProps.js
+function mergeSlotProps2(externalSlotProps, defaultSlotProps) {
+  if (!externalSlotProps) {
+    return defaultSlotProps;
+  }
+  if (typeof externalSlotProps === "function" || typeof defaultSlotProps === "function") {
+    return (ownerState) => {
+      const defaultSlotPropsValue = typeof defaultSlotProps === "function" ? defaultSlotProps(ownerState) : defaultSlotProps;
+      const externalSlotPropsValue = typeof externalSlotProps === "function" ? externalSlotProps({
+        ...ownerState,
+        ...defaultSlotPropsValue
+      }) : externalSlotProps;
+      const className2 = clsx_default(ownerState?.className, defaultSlotPropsValue?.className, externalSlotPropsValue?.className);
+      return {
+        ...defaultSlotPropsValue,
+        ...externalSlotPropsValue,
+        ...!!className2 && {
+          className: className2
+        },
+        ...defaultSlotPropsValue?.style && externalSlotPropsValue?.style && {
+          style: {
+            ...defaultSlotPropsValue.style,
+            ...externalSlotPropsValue.style
+          }
+        },
+        ...defaultSlotPropsValue?.sx && externalSlotPropsValue?.sx && {
+          sx: [...Array.isArray(defaultSlotPropsValue.sx) ? defaultSlotPropsValue.sx : [defaultSlotPropsValue.sx], ...Array.isArray(externalSlotPropsValue.sx) ? externalSlotPropsValue.sx : [externalSlotPropsValue.sx]]
+        }
+      };
+    };
+  }
+  const typedDefaultSlotProps = defaultSlotProps;
+  const className = clsx_default(typedDefaultSlotProps?.className, externalSlotProps?.className);
+  return {
+    ...defaultSlotProps,
+    ...externalSlotProps,
+    ...!!className && {
+      className
+    },
+    ...typedDefaultSlotProps?.style && externalSlotProps?.style && {
+      style: {
+        ...typedDefaultSlotProps.style,
+        ...externalSlotProps.style
+      }
+    },
+    ...typedDefaultSlotProps?.sx && externalSlotProps?.sx && {
+      sx: [...Array.isArray(typedDefaultSlotProps.sx) ? typedDefaultSlotProps.sx : [typedDefaultSlotProps.sx], ...Array.isArray(externalSlotProps.sx) ? externalSlotProps.sx : [externalSlotProps.sx]]
+    }
+  };
+}
 
 // node_modules/@babel/runtime/helpers/esm/extends.js
 function _extends() {
@@ -13901,12 +13981,12 @@ function getTransitionProps(props, options) {
   const {
     timeout: timeout2,
     easing: easing2,
-    style: style4 = {}
+    style: style6 = {}
   } = props;
   return {
-    duration: style4.transitionDuration ?? (typeof timeout2 === "number" ? timeout2 : timeout2[options.mode] || 0),
-    easing: style4.transitionTimingFunction ?? (typeof easing2 === "object" ? easing2[options.mode] : easing2),
-    delay: style4.transitionDelay
+    duration: style6.transitionDuration ?? (typeof timeout2 === "number" ? timeout2 : timeout2[options.mode] || 0),
+    easing: style6.transitionTimingFunction ?? (typeof easing2 === "object" ? easing2[options.mode] : easing2),
+    delay: style6.transitionDelay
   };
 }
 
@@ -15079,11 +15159,11 @@ var useUtilityClasses4 = (ownerState) => {
   const {
     classes,
     variant,
-    color: color2,
+    color: color3,
     disableShrink
   } = ownerState;
   const slots = {
-    root: ["root", variant, `color${capitalize_default(color2)}`],
+    root: ["root", variant, `color${capitalize_default(color3)}`],
     svg: ["svg"],
     circle: ["circle", `circle${capitalize_default(variant)}`, disableShrink && "circleDisableShrink"]
   };
@@ -15116,12 +15196,12 @@ var CircularProgressRoot = styled_default("span", {
     style: rotateAnimation || {
       animation: `${circularRotateKeyframe} 1.4s linear infinite`
     }
-  }, ...Object.entries(theme.palette).filter(createSimplePaletteValueFilter()).map(([color2]) => ({
+  }, ...Object.entries(theme.palette).filter(createSimplePaletteValueFilter()).map(([color3]) => ({
     props: {
-      color: color2
+      color: color3
     },
     style: {
-      color: (theme.vars || theme).palette[color2].main
+      color: (theme.vars || theme).palette[color3].main
     }
   }))]
 })));
@@ -15180,10 +15260,10 @@ var CircularProgress = /* @__PURE__ */ React32.forwardRef(function CircularProgr
   });
   const {
     className,
-    color: color2 = "primary",
+    color: color3 = "primary",
     disableShrink = false,
     size = 40,
-    style: style4,
+    style: style6,
     thickness = 3.6,
     value = 0,
     variant = "indeterminate",
@@ -15191,7 +15271,7 @@ var CircularProgress = /* @__PURE__ */ React32.forwardRef(function CircularProgr
   } = props;
   const ownerState = {
     ...props,
-    color: color2,
+    color: color3,
     disableShrink,
     size,
     thickness,
@@ -15215,7 +15295,7 @@ var CircularProgress = /* @__PURE__ */ React32.forwardRef(function CircularProgr
       width: size,
       height: size,
       ...rootStyle,
-      ...style4
+      ...style6
     },
     ownerState,
     ref,
@@ -15318,13 +15398,13 @@ var useUtilityClasses5 = (ownerState) => {
   const {
     classes,
     disabled,
-    color: color2,
+    color: color3,
     edge,
     size,
     loading
   } = ownerState;
   const slots = {
-    root: ["root", loading && "loading", disabled && "disabled", color2 !== "default" && `color${capitalize_default(color2)}`, edge && `edge${capitalize_default(edge)}`, `size${capitalize_default(size)}`],
+    root: ["root", loading && "loading", disabled && "disabled", color3 !== "default" && `color${capitalize_default(color3)}`, edge && `edge${capitalize_default(edge)}`, `size${capitalize_default(size)}`],
     loadingIndicator: ["loadingIndicator"],
     loadingWrapper: ["loadingWrapper"]
   };
@@ -15404,19 +15484,19 @@ var IconButtonRoot = styled_default(ButtonBase_default, {
     style: {
       color: "inherit"
     }
-  }, ...Object.entries(theme.palette).filter(createSimplePaletteValueFilter()).map(([color2]) => ({
+  }, ...Object.entries(theme.palette).filter(createSimplePaletteValueFilter()).map(([color3]) => ({
     props: {
-      color: color2
+      color: color3
     },
     style: {
-      color: (theme.vars || theme).palette[color2].main
+      color: (theme.vars || theme).palette[color3].main
     }
-  })), ...Object.entries(theme.palette).filter(createSimplePaletteValueFilter()).map(([color2]) => ({
+  })), ...Object.entries(theme.palette).filter(createSimplePaletteValueFilter()).map(([color3]) => ({
     props: {
-      color: color2
+      color: color3
     },
     style: {
-      "--IconButton-hoverBg": theme.vars ? `rgba(${(theme.vars || theme).palette[color2].mainChannel} / ${theme.vars.palette.action.hoverOpacity})` : alpha((theme.vars || theme).palette[color2].main, theme.palette.action.hoverOpacity)
+      "--IconButton-hoverBg": theme.vars ? `rgba(${(theme.vars || theme).palette[color3].mainChannel} / ${theme.vars.palette.action.hoverOpacity})` : alpha((theme.vars || theme).palette[color3].main, theme.palette.action.hoverOpacity)
     }
   })), {
     props: {
@@ -15475,7 +15555,7 @@ var IconButton = /* @__PURE__ */ React33.forwardRef(function IconButton2(inProps
     edge = false,
     children,
     className,
-    color: color2 = "default",
+    color: color3 = "default",
     disabled = false,
     disableFocusRipple = false,
     size = "medium",
@@ -15484,16 +15564,16 @@ var IconButton = /* @__PURE__ */ React33.forwardRef(function IconButton2(inProps
     loadingIndicator: loadingIndicatorProp,
     ...other
   } = props;
-  const id = useId_default(idProp);
+  const loadingId = useId_default(idProp);
   const loadingIndicator = loadingIndicatorProp ?? /* @__PURE__ */ _jsx15(CircularProgress_default, {
-    "aria-labelledby": id,
+    "aria-labelledby": loadingId,
     color: "inherit",
     size: 16
   });
   const ownerState = {
     ...props,
     edge,
-    color: color2,
+    color: color3,
     disabled,
     disableFocusRipple,
     loading,
@@ -15502,7 +15582,7 @@ var IconButton = /* @__PURE__ */ React33.forwardRef(function IconButton2(inProps
   };
   const classes = useUtilityClasses5(ownerState);
   return /* @__PURE__ */ _jsxs3(IconButtonRoot, {
-    id,
+    id: loading ? loadingId : idProp,
     className: clsx_default(classes.root, className),
     centerRipple: true,
     focusRipple: !disableFocusRipple,
@@ -15676,19 +15756,19 @@ var TypographyRoot = styled_default("span", {
       variant
     },
     style: value
-  })), ...Object.entries(theme.palette).filter(createSimplePaletteValueFilter()).map(([color2]) => ({
+  })), ...Object.entries(theme.palette).filter(createSimplePaletteValueFilter()).map(([color3]) => ({
     props: {
-      color: color2
+      color: color3
     },
     style: {
-      color: (theme.vars || theme).palette[color2].main
+      color: (theme.vars || theme).palette[color3].main
     }
-  })), ...Object.entries(theme.palette?.text || {}).filter(([, value]) => typeof value === "string").map(([color2]) => ({
+  })), ...Object.entries(theme.palette?.text || {}).filter(([, value]) => typeof value === "string").map(([color3]) => ({
     props: {
-      color: `text${capitalize_default(color2)}`
+      color: `text${capitalize_default(color3)}`
     },
     style: {
-      color: (theme.vars || theme).palette.text[color2]
+      color: (theme.vars || theme).palette.text[color3]
     }
   })), {
     props: ({
@@ -15737,17 +15817,17 @@ var defaultVariantMapping = {
 };
 var Typography = /* @__PURE__ */ React34.forwardRef(function Typography2(inProps, ref) {
   const {
-    color: color2,
+    color: color3,
     ...themeProps
   } = useDefaultProps2({
     props: inProps,
     name: "MuiTypography"
   });
-  const isSxColor = !v6Colors[color2];
+  const isSxColor = !v6Colors[color3];
   const props = extendSxProp2({
     ...themeProps,
     ...isSxColor && {
-      color: color2
+      color: color3
     }
   });
   const {
@@ -15764,7 +15844,7 @@ var Typography = /* @__PURE__ */ React34.forwardRef(function Typography2(inProps
   const ownerState = {
     ...props,
     align,
-    color: color2,
+    color: color3,
     className,
     component,
     gutterBottom,
@@ -15952,13 +16032,13 @@ function isShadowRoot(node) {
 function applyStyles2(_ref) {
   var state = _ref.state;
   Object.keys(state.elements).forEach(function(name) {
-    var style4 = state.styles[name] || {};
+    var style6 = state.styles[name] || {};
     var attributes2 = state.attributes[name] || {};
     var element = state.elements[name];
     if (!isHTMLElement(element) || !getNodeName(element)) {
       return;
     }
-    Object.assign(element.style, style4);
+    Object.assign(element.style, style6);
     Object.keys(attributes2).forEach(function(name2) {
       var value = attributes2[name2];
       if (value === false) {
@@ -15993,14 +16073,14 @@ function effect(_ref2) {
       var element = state.elements[name];
       var attributes2 = state.attributes[name] || {};
       var styleProperties = Object.keys(state.styles.hasOwnProperty(name) ? state.styles[name] : initialStyles[name]);
-      var style4 = styleProperties.reduce(function(style5, property) {
-        style5[property] = "";
-        return style5;
+      var style6 = styleProperties.reduce(function(style7, property) {
+        style7[property] = "";
+        return style7;
       }, {});
       if (!isHTMLElement(element) || !getNodeName(element)) {
         return;
       }
-      Object.assign(element.style, style4);
+      Object.assign(element.style, style6);
       Object.keys(attributes2).forEach(function(attribute) {
         element.removeAttribute(attribute);
       });
@@ -16061,14 +16141,14 @@ function getBoundingClientRect(element, includeScale, isFixedStrategy) {
   var addVisualOffsets = !isLayoutViewport() && isFixedStrategy;
   var x2 = (clientRect.left + (addVisualOffsets && visualViewport ? visualViewport.offsetLeft : 0)) / scaleX;
   var y3 = (clientRect.top + (addVisualOffsets && visualViewport ? visualViewport.offsetTop : 0)) / scaleY;
-  var width2 = clientRect.width / scaleX;
-  var height2 = clientRect.height / scaleY;
+  var width3 = clientRect.width / scaleX;
+  var height3 = clientRect.height / scaleY;
   return {
-    width: width2,
-    height: height2,
+    width: width3,
+    height: height3,
     top: y3,
-    right: x2 + width2,
-    bottom: y3 + height2,
+    right: x2 + width3,
+    bottom: y3 + height3,
     left: x2,
     x: x2,
     y: y3
@@ -16078,19 +16158,19 @@ function getBoundingClientRect(element, includeScale, isFixedStrategy) {
 // node_modules/@popperjs/core/lib/dom-utils/getLayoutRect.js
 function getLayoutRect(element) {
   var clientRect = getBoundingClientRect(element);
-  var width2 = element.offsetWidth;
-  var height2 = element.offsetHeight;
-  if (Math.abs(clientRect.width - width2) <= 1) {
-    width2 = clientRect.width;
+  var width3 = element.offsetWidth;
+  var height3 = element.offsetHeight;
+  if (Math.abs(clientRect.width - width3) <= 1) {
+    width3 = clientRect.width;
   }
-  if (Math.abs(clientRect.height - height2) <= 1) {
-    height2 = clientRect.height;
+  if (Math.abs(clientRect.height - height3) <= 1) {
+    height3 = clientRect.height;
   }
   return {
     x: element.offsetLeft,
     y: element.offsetTop,
-    width: width2,
-    height: height2
+    width: width3,
+    height: height3
   };
 }
 
@@ -16227,11 +16307,11 @@ function expandToHashMap(value, keys) {
 }
 
 // node_modules/@popperjs/core/lib/modifiers/arrow.js
-var toPaddingObject = function toPaddingObject2(padding2, state) {
-  padding2 = typeof padding2 === "function" ? padding2(Object.assign({}, state.rects, {
+var toPaddingObject = function toPaddingObject2(padding3, state) {
+  padding3 = typeof padding3 === "function" ? padding3(Object.assign({}, state.rects, {
     placement: state.placement
-  })) : padding2;
-  return mergePaddingObject(typeof padding2 !== "number" ? padding2 : expandToHashMap(padding2, basePlacements));
+  })) : padding3;
+  return mergePaddingObject(typeof padding3 !== "number" ? padding3 : expandToHashMap(padding3, basePlacements));
 };
 function arrow(_ref) {
   var _state$modifiersData$;
@@ -16497,13 +16577,13 @@ function getViewportRect(element, strategy) {
   var win = getWindow(element);
   var html = getDocumentElement(element);
   var visualViewport = win.visualViewport;
-  var width2 = html.clientWidth;
-  var height2 = html.clientHeight;
+  var width3 = html.clientWidth;
+  var height3 = html.clientHeight;
   var x2 = 0;
   var y3 = 0;
   if (visualViewport) {
-    width2 = visualViewport.width;
-    height2 = visualViewport.height;
+    width3 = visualViewport.width;
+    height3 = visualViewport.height;
     var layoutViewport = isLayoutViewport();
     if (layoutViewport || !layoutViewport && strategy === "fixed") {
       x2 = visualViewport.offsetLeft;
@@ -16511,8 +16591,8 @@ function getViewportRect(element, strategy) {
     }
   }
   return {
-    width: width2,
-    height: height2,
+    width: width3,
+    height: height3,
     x: x2 + getWindowScrollBarX(element),
     y: y3
   };
@@ -16524,16 +16604,16 @@ function getDocumentRect(element) {
   var html = getDocumentElement(element);
   var winScroll = getWindowScroll(element);
   var body = (_element$ownerDocumen = element.ownerDocument) == null ? void 0 : _element$ownerDocumen.body;
-  var width2 = max(html.scrollWidth, html.clientWidth, body ? body.scrollWidth : 0, body ? body.clientWidth : 0);
-  var height2 = max(html.scrollHeight, html.clientHeight, body ? body.scrollHeight : 0, body ? body.clientHeight : 0);
+  var width3 = max(html.scrollWidth, html.clientWidth, body ? body.scrollWidth : 0, body ? body.clientWidth : 0);
+  var height3 = max(html.scrollHeight, html.clientHeight, body ? body.scrollHeight : 0, body ? body.clientHeight : 0);
   var x2 = -winScroll.scrollLeft + getWindowScrollBarX(element);
   var y3 = -winScroll.scrollTop;
   if (getComputedStyle2(body || html).direction === "rtl") {
-    x2 += max(html.clientWidth, body ? body.clientWidth : 0) - width2;
+    x2 += max(html.clientWidth, body ? body.clientWidth : 0) - width3;
   }
   return {
-    width: width2,
-    height: height2,
+    width: width3,
+    height: height3,
     x: x2,
     y: y3
   };
@@ -16689,8 +16769,8 @@ function detectOverflow(state, options) {
   if (options === void 0) {
     options = {};
   }
-  var _options = options, _options$placement = _options.placement, placement = _options$placement === void 0 ? state.placement : _options$placement, _options$strategy = _options.strategy, strategy = _options$strategy === void 0 ? state.strategy : _options$strategy, _options$boundary = _options.boundary, boundary = _options$boundary === void 0 ? clippingParents : _options$boundary, _options$rootBoundary = _options.rootBoundary, rootBoundary = _options$rootBoundary === void 0 ? viewport : _options$rootBoundary, _options$elementConte = _options.elementContext, elementContext = _options$elementConte === void 0 ? popper : _options$elementConte, _options$altBoundary = _options.altBoundary, altBoundary = _options$altBoundary === void 0 ? false : _options$altBoundary, _options$padding = _options.padding, padding2 = _options$padding === void 0 ? 0 : _options$padding;
-  var paddingObject = mergePaddingObject(typeof padding2 !== "number" ? padding2 : expandToHashMap(padding2, basePlacements));
+  var _options = options, _options$placement = _options.placement, placement = _options$placement === void 0 ? state.placement : _options$placement, _options$strategy = _options.strategy, strategy = _options$strategy === void 0 ? state.strategy : _options$strategy, _options$boundary = _options.boundary, boundary = _options$boundary === void 0 ? clippingParents : _options$boundary, _options$rootBoundary = _options.rootBoundary, rootBoundary = _options$rootBoundary === void 0 ? viewport : _options$rootBoundary, _options$elementConte = _options.elementContext, elementContext = _options$elementConte === void 0 ? popper : _options$elementConte, _options$altBoundary = _options.altBoundary, altBoundary = _options$altBoundary === void 0 ? false : _options$altBoundary, _options$padding = _options.padding, padding3 = _options$padding === void 0 ? 0 : _options$padding;
+  var paddingObject = mergePaddingObject(typeof padding3 !== "number" ? padding3 : expandToHashMap(padding3, basePlacements));
   var altContext = elementContext === popper ? reference : popper;
   var popperRect = state.rects.popper;
   var element = state.elements[altBoundary ? altContext : elementContext];
@@ -16727,7 +16807,7 @@ function computeAutoPlacement(state, options) {
   if (options === void 0) {
     options = {};
   }
-  var _options = options, placement = _options.placement, boundary = _options.boundary, rootBoundary = _options.rootBoundary, padding2 = _options.padding, flipVariations = _options.flipVariations, _options$allowedAutoP = _options.allowedAutoPlacements, allowedAutoPlacements = _options$allowedAutoP === void 0 ? placements : _options$allowedAutoP;
+  var _options = options, placement = _options.placement, boundary = _options.boundary, rootBoundary = _options.rootBoundary, padding3 = _options.padding, flipVariations = _options.flipVariations, _options$allowedAutoP = _options.allowedAutoPlacements, allowedAutoPlacements = _options$allowedAutoP === void 0 ? placements : _options$allowedAutoP;
   var variation = getVariation(placement);
   var placements2 = variation ? flipVariations ? variationPlacements : variationPlacements.filter(function(placement2) {
     return getVariation(placement2) === variation;
@@ -16743,7 +16823,7 @@ function computeAutoPlacement(state, options) {
       placement: placement2,
       boundary,
       rootBoundary,
-      padding: padding2
+      padding: padding3
     })[getBasePlacement(placement2)];
     return acc;
   }, {});
@@ -16765,7 +16845,7 @@ function flip(_ref) {
   if (state.modifiersData[name]._skip) {
     return;
   }
-  var _options$mainAxis = options.mainAxis, checkMainAxis = _options$mainAxis === void 0 ? true : _options$mainAxis, _options$altAxis = options.altAxis, checkAltAxis = _options$altAxis === void 0 ? true : _options$altAxis, specifiedFallbackPlacements = options.fallbackPlacements, padding2 = options.padding, boundary = options.boundary, rootBoundary = options.rootBoundary, altBoundary = options.altBoundary, _options$flipVariatio = options.flipVariations, flipVariations = _options$flipVariatio === void 0 ? true : _options$flipVariatio, allowedAutoPlacements = options.allowedAutoPlacements;
+  var _options$mainAxis = options.mainAxis, checkMainAxis = _options$mainAxis === void 0 ? true : _options$mainAxis, _options$altAxis = options.altAxis, checkAltAxis = _options$altAxis === void 0 ? true : _options$altAxis, specifiedFallbackPlacements = options.fallbackPlacements, padding3 = options.padding, boundary = options.boundary, rootBoundary = options.rootBoundary, altBoundary = options.altBoundary, _options$flipVariatio = options.flipVariations, flipVariations = _options$flipVariatio === void 0 ? true : _options$flipVariatio, allowedAutoPlacements = options.allowedAutoPlacements;
   var preferredPlacement = state.options.placement;
   var basePlacement = getBasePlacement(preferredPlacement);
   var isBasePlacement = basePlacement === preferredPlacement;
@@ -16775,7 +16855,7 @@ function flip(_ref) {
       placement: placement2,
       boundary,
       rootBoundary,
-      padding: padding2,
+      padding: padding3,
       flipVariations,
       allowedAutoPlacements
     }) : placement2);
@@ -16796,7 +16876,7 @@ function flip(_ref) {
       boundary,
       rootBoundary,
       altBoundary,
-      padding: padding2
+      padding: padding3
     });
     var mainVariationSide = isVertical ? isStartVariation ? right : left : isStartVariation ? bottom : top;
     if (referenceRect[len] > popperRect[len]) {
@@ -16976,11 +17056,11 @@ function getAltAxis(axis) {
 // node_modules/@popperjs/core/lib/modifiers/preventOverflow.js
 function preventOverflow(_ref) {
   var state = _ref.state, options = _ref.options, name = _ref.name;
-  var _options$mainAxis = options.mainAxis, checkMainAxis = _options$mainAxis === void 0 ? true : _options$mainAxis, _options$altAxis = options.altAxis, checkAltAxis = _options$altAxis === void 0 ? false : _options$altAxis, boundary = options.boundary, rootBoundary = options.rootBoundary, altBoundary = options.altBoundary, padding2 = options.padding, _options$tether = options.tether, tether = _options$tether === void 0 ? true : _options$tether, _options$tetherOffset = options.tetherOffset, tetherOffset = _options$tetherOffset === void 0 ? 0 : _options$tetherOffset;
+  var _options$mainAxis = options.mainAxis, checkMainAxis = _options$mainAxis === void 0 ? true : _options$mainAxis, _options$altAxis = options.altAxis, checkAltAxis = _options$altAxis === void 0 ? false : _options$altAxis, boundary = options.boundary, rootBoundary = options.rootBoundary, altBoundary = options.altBoundary, padding3 = options.padding, _options$tether = options.tether, tether = _options$tether === void 0 ? true : _options$tether, _options$tetherOffset = options.tetherOffset, tetherOffset = _options$tetherOffset === void 0 ? 0 : _options$tetherOffset;
   var overflow = detectOverflow(state, {
     boundary,
     rootBoundary,
-    padding: padding2,
+    padding: padding3,
     altBoundary
   });
   var basePlacement = getBasePlacement(state.placement);
@@ -17589,7 +17669,7 @@ var Popper = /* @__PURE__ */ React36.forwardRef(function Popper2(props, forwarde
     placement = "bottom",
     popperOptions = defaultPopperOptions,
     popperRef,
-    style: style4,
+    style: style6,
     transition: transition2 = false,
     slotProps = {},
     slots = {},
@@ -17641,7 +17721,7 @@ var Popper = /* @__PURE__ */ React36.forwardRef(function Popper2(props, forwarde
         top: 0,
         left: 0,
         display,
-        ...style4
+        ...style6
       },
       TransitionProps: transitionProps,
       children
@@ -17985,18 +18065,18 @@ var useUtilityClasses8 = (ownerState) => {
     classes,
     disabled,
     size,
-    color: color2,
+    color: color3,
     iconColor,
     onDelete,
     clickable,
     variant
   } = ownerState;
   const slots = {
-    root: ["root", variant, disabled && "disabled", `size${capitalize_default(size)}`, `color${capitalize_default(color2)}`, clickable && "clickable", clickable && `clickableColor${capitalize_default(color2)}`, onDelete && "deletable", onDelete && `deletableColor${capitalize_default(color2)}`, `${variant}${capitalize_default(color2)}`],
+    root: ["root", variant, disabled && "disabled", `size${capitalize_default(size)}`, `color${capitalize_default(color3)}`, clickable && "clickable", clickable && `clickableColor${capitalize_default(color3)}`, onDelete && "deletable", onDelete && `deletableColor${capitalize_default(color3)}`, `${variant}${capitalize_default(color3)}`],
     label: ["label", `label${capitalize_default(size)}`],
-    avatar: ["avatar", `avatar${capitalize_default(size)}`, `avatarColor${capitalize_default(color2)}`],
+    avatar: ["avatar", `avatar${capitalize_default(size)}`, `avatarColor${capitalize_default(color3)}`],
     icon: ["icon", `icon${capitalize_default(size)}`, `iconColor${capitalize_default(iconColor)}`],
-    deleteIcon: ["deleteIcon", `deleteIcon${capitalize_default(size)}`, `deleteIconColor${capitalize_default(color2)}`, `deleteIcon${capitalize_default(variant)}Color${capitalize_default(color2)}`]
+    deleteIcon: ["deleteIcon", `deleteIcon${capitalize_default(size)}`, `deleteIconColor${capitalize_default(color3)}`, `deleteIcon${capitalize_default(variant)}Color${capitalize_default(color3)}`]
   };
   return composeClasses(slots, getChipUtilityClass, classes);
 };
@@ -18008,7 +18088,7 @@ var ChipRoot = styled_default("div", {
       ownerState
     } = props;
     const {
-      color: color2,
+      color: color3,
       iconColor,
       clickable,
       onDelete,
@@ -18020,7 +18100,7 @@ var ChipRoot = styled_default("div", {
     }, {
       [`& .${chipClasses_default.avatar}`]: styles5[`avatar${capitalize_default(size)}`]
     }, {
-      [`& .${chipClasses_default.avatar}`]: styles5[`avatarColor${capitalize_default(color2)}`]
+      [`& .${chipClasses_default.avatar}`]: styles5[`avatarColor${capitalize_default(color3)}`]
     }, {
       [`& .${chipClasses_default.icon}`]: styles5.icon
     }, {
@@ -18032,10 +18112,10 @@ var ChipRoot = styled_default("div", {
     }, {
       [`& .${chipClasses_default.deleteIcon}`]: styles5[`deleteIcon${capitalize_default(size)}`]
     }, {
-      [`& .${chipClasses_default.deleteIcon}`]: styles5[`deleteIconColor${capitalize_default(color2)}`]
+      [`& .${chipClasses_default.deleteIcon}`]: styles5[`deleteIconColor${capitalize_default(color3)}`]
     }, {
-      [`& .${chipClasses_default.deleteIcon}`]: styles5[`deleteIcon${capitalize_default(variant)}Color${capitalize_default(color2)}`]
-    }, styles5.root, styles5[`size${capitalize_default(size)}`], styles5[`color${capitalize_default(color2)}`], clickable && styles5.clickable, clickable && color2 !== "default" && styles5[`clickableColor${capitalize_default(color2)})`], onDelete && styles5.deletable, onDelete && color2 !== "default" && styles5[`deletableColor${capitalize_default(color2)}`], styles5[variant], styles5[`${variant}${capitalize_default(color2)}`]];
+      [`& .${chipClasses_default.deleteIcon}`]: styles5[`deleteIcon${capitalize_default(variant)}Color${capitalize_default(color3)}`]
+    }, styles5.root, styles5[`size${capitalize_default(size)}`], styles5[`color${capitalize_default(color3)}`], clickable && styles5.clickable, clickable && color3 !== "default" && styles5[`clickableColor${capitalize_default(color3)})`], onDelete && styles5.deletable, onDelete && color3 !== "default" && styles5[`deletableColor${capitalize_default(color3)}`], styles5[variant], styles5[`${variant}${capitalize_default(color3)}`]];
   }
 })(memoTheme_default(({
   theme
@@ -18123,18 +18203,18 @@ var ChipRoot = styled_default("div", {
           marginLeft: -4
         }
       }
-    }, ...Object.entries(theme.palette).filter(createSimplePaletteValueFilter(["contrastText"])).map(([color2]) => {
+    }, ...Object.entries(theme.palette).filter(createSimplePaletteValueFilter(["contrastText"])).map(([color3]) => {
       return {
         props: {
-          color: color2
+          color: color3
         },
         style: {
-          backgroundColor: (theme.vars || theme).palette[color2].main,
-          color: (theme.vars || theme).palette[color2].contrastText,
+          backgroundColor: (theme.vars || theme).palette[color3].main,
+          color: (theme.vars || theme).palette[color3].contrastText,
           [`& .${chipClasses_default.deleteIcon}`]: {
-            color: theme.vars ? `rgba(${theme.vars.palette[color2].contrastTextChannel} / 0.7)` : alpha(theme.palette[color2].contrastText, 0.7),
+            color: theme.vars ? `rgba(${theme.vars.palette[color3].contrastTextChannel} / 0.7)` : alpha(theme.palette[color3].contrastText, 0.7),
             "&:hover, &:active": {
-              color: (theme.vars || theme).palette[color2].contrastText
+              color: (theme.vars || theme).palette[color3].contrastText
             }
           }
         }
@@ -18162,15 +18242,15 @@ var ChipRoot = styled_default("div", {
           backgroundColor: theme.vars ? `rgba(${theme.vars.palette.action.selectedChannel} / calc(${theme.vars.palette.action.selectedOpacity} + ${theme.vars.palette.action.focusOpacity}))` : alpha(theme.palette.action.selected, theme.palette.action.selectedOpacity + theme.palette.action.focusOpacity)
         }
       }
-    }, ...Object.entries(theme.palette).filter(createSimplePaletteValueFilter(["dark"])).map(([color2]) => {
+    }, ...Object.entries(theme.palette).filter(createSimplePaletteValueFilter(["dark"])).map(([color3]) => {
       return {
         props: {
-          color: color2,
+          color: color3,
           onDelete: true
         },
         style: {
           [`&.${chipClasses_default.focusVisible}`]: {
-            background: (theme.vars || theme).palette[color2].dark
+            background: (theme.vars || theme).palette[color3].dark
           }
         }
       };
@@ -18192,14 +18272,14 @@ var ChipRoot = styled_default("div", {
           boxShadow: (theme.vars || theme).shadows[1]
         }
       }
-    }, ...Object.entries(theme.palette).filter(createSimplePaletteValueFilter(["dark"])).map(([color2]) => ({
+    }, ...Object.entries(theme.palette).filter(createSimplePaletteValueFilter(["dark"])).map(([color3]) => ({
       props: {
-        color: color2,
+        color: color3,
         clickable: true
       },
       style: {
         [`&:hover, &.${chipClasses_default.focusVisible}`]: {
-          backgroundColor: (theme.vars || theme).palette[color2].dark
+          backgroundColor: (theme.vars || theme).palette[color3].dark
         }
       }
     })), {
@@ -18234,24 +18314,24 @@ var ChipRoot = styled_default("div", {
           marginRight: 3
         }
       }
-    }, ...Object.entries(theme.palette).filter(createSimplePaletteValueFilter()).map(([color2]) => ({
+    }, ...Object.entries(theme.palette).filter(createSimplePaletteValueFilter()).map(([color3]) => ({
       props: {
         variant: "outlined",
-        color: color2
+        color: color3
       },
       style: {
-        color: (theme.vars || theme).palette[color2].main,
-        border: `1px solid ${theme.vars ? `rgba(${theme.vars.palette[color2].mainChannel} / 0.7)` : alpha(theme.palette[color2].main, 0.7)}`,
+        color: (theme.vars || theme).palette[color3].main,
+        border: `1px solid ${theme.vars ? `rgba(${theme.vars.palette[color3].mainChannel} / 0.7)` : alpha(theme.palette[color3].main, 0.7)}`,
         [`&.${chipClasses_default.clickable}:hover`]: {
-          backgroundColor: theme.vars ? `rgba(${theme.vars.palette[color2].mainChannel} / ${theme.vars.palette.action.hoverOpacity})` : alpha(theme.palette[color2].main, theme.palette.action.hoverOpacity)
+          backgroundColor: theme.vars ? `rgba(${theme.vars.palette[color3].mainChannel} / ${theme.vars.palette.action.hoverOpacity})` : alpha(theme.palette[color3].main, theme.palette.action.hoverOpacity)
         },
         [`&.${chipClasses_default.focusVisible}`]: {
-          backgroundColor: theme.vars ? `rgba(${theme.vars.palette[color2].mainChannel} / ${theme.vars.palette.action.focusOpacity})` : alpha(theme.palette[color2].main, theme.palette.action.focusOpacity)
+          backgroundColor: theme.vars ? `rgba(${theme.vars.palette[color3].mainChannel} / ${theme.vars.palette.action.focusOpacity})` : alpha(theme.palette[color3].main, theme.palette.action.focusOpacity)
         },
         [`& .${chipClasses_default.deleteIcon}`]: {
-          color: theme.vars ? `rgba(${theme.vars.palette[color2].mainChannel} / 0.7)` : alpha(theme.palette[color2].main, 0.7),
+          color: theme.vars ? `rgba(${theme.vars.palette[color3].mainChannel} / 0.7)` : alpha(theme.palette[color3].main, 0.7),
           "&:hover, &:active": {
-            color: (theme.vars || theme).palette[color2].main
+            color: (theme.vars || theme).palette[color3].main
           }
         }
       }
@@ -18315,7 +18395,7 @@ var Chip = /* @__PURE__ */ React39.forwardRef(function Chip2(inProps, ref) {
     avatar: avatarProp,
     className,
     clickable: clickableProp,
-    color: color2 = "default",
+    color: color3 = "default",
     component: ComponentProp,
     deleteIcon: deleteIconProp,
     disabled = false,
@@ -18365,8 +18445,8 @@ var Chip = /* @__PURE__ */ React39.forwardRef(function Chip2(inProps, ref) {
     component,
     disabled,
     size,
-    color: color2,
-    iconColor: /* @__PURE__ */ React39.isValidElement(iconProp) ? iconProp.props.color || color2 : color2,
+    color: color3,
+    iconColor: /* @__PURE__ */ React39.isValidElement(iconProp) ? iconProp.props.color || color3 : color3,
     onDelete: !!onDelete,
     clickable,
     variant
@@ -18569,7 +18649,7 @@ var TextareaAutosize = /* @__PURE__ */ React40.forwardRef(function TextareaAutos
     onChange,
     maxRows,
     minRows = 1,
-    style: style4,
+    style: style6,
     value,
     ...other
   } = props;
@@ -18599,9 +18679,9 @@ var TextareaAutosize = /* @__PURE__ */ React40.forwardRef(function TextareaAutos
     if (hiddenTextarea.value.slice(-1) === "\n") {
       hiddenTextarea.value += " ";
     }
-    const boxSizing2 = computedStyle.boxSizing;
-    const padding2 = getStyleValue2(computedStyle.paddingBottom) + getStyleValue2(computedStyle.paddingTop);
-    const border2 = getStyleValue2(computedStyle.borderBottomWidth) + getStyleValue2(computedStyle.borderTopWidth);
+    const boxSizing3 = computedStyle.boxSizing;
+    const padding3 = getStyleValue2(computedStyle.paddingBottom) + getStyleValue2(computedStyle.paddingTop);
+    const border3 = getStyleValue2(computedStyle.borderBottomWidth) + getStyleValue2(computedStyle.borderTopWidth);
     const innerHeight = hiddenTextarea.scrollHeight;
     hiddenTextarea.value = "x";
     const singleRowHeight = hiddenTextarea.scrollHeight;
@@ -18613,13 +18693,22 @@ var TextareaAutosize = /* @__PURE__ */ React40.forwardRef(function TextareaAutos
       outerHeight = Math.min(Number(maxRows) * singleRowHeight, outerHeight);
     }
     outerHeight = Math.max(outerHeight, singleRowHeight);
-    const outerHeightStyle = outerHeight + (boxSizing2 === "border-box" ? padding2 + border2 : 0);
+    const outerHeightStyle = outerHeight + (boxSizing3 === "border-box" ? padding3 + border3 : 0);
     const overflowing = Math.abs(outerHeight - innerHeight) <= 1;
     return {
       outerHeightStyle,
       overflowing
     };
   }, [maxRows, minRows, props.placeholder]);
+  const didHeightChange = useEventCallback_default(() => {
+    const textarea = textareaRef.current;
+    const textareaStyles = calculateTextareaStyles();
+    if (!textarea || !textareaStyles || isEmpty2(textareaStyles)) {
+      return false;
+    }
+    const outerHeightStyle = textareaStyles.outerHeightStyle;
+    return heightRef.current != null && heightRef.current !== outerHeightStyle;
+  });
   const syncHeight = React40.useCallback(() => {
     const textarea = textareaRef.current;
     const textareaStyles = calculateTextareaStyles();
@@ -18635,34 +18724,36 @@ var TextareaAutosize = /* @__PURE__ */ React40.forwardRef(function TextareaAutos
   }, [calculateTextareaStyles]);
   const frameRef = React40.useRef(-1);
   useEnhancedEffect_default(() => {
-    const debounceHandleResize = debounce(() => syncHeight());
+    const debouncedHandleResize = debounce(syncHeight);
     const textarea = textareaRef?.current;
     if (!textarea) {
       return void 0;
     }
     const containerWindow = ownerWindow(textarea);
-    containerWindow.addEventListener("resize", debounceHandleResize);
+    containerWindow.addEventListener("resize", debouncedHandleResize);
     let resizeObserver2;
     if (typeof ResizeObserver !== "undefined") {
       resizeObserver2 = new ResizeObserver(() => {
-        resizeObserver2.unobserve(textarea);
-        cancelAnimationFrame(frameRef.current);
-        syncHeight();
-        frameRef.current = requestAnimationFrame(() => {
-          resizeObserver2.observe(textarea);
-        });
+        if (didHeightChange()) {
+          resizeObserver2.unobserve(textarea);
+          cancelAnimationFrame(frameRef.current);
+          syncHeight();
+          frameRef.current = requestAnimationFrame(() => {
+            resizeObserver2.observe(textarea);
+          });
+        }
       });
       resizeObserver2.observe(textarea);
     }
     return () => {
-      debounceHandleResize.clear();
+      debouncedHandleResize.clear();
       cancelAnimationFrame(frameRef.current);
-      containerWindow.removeEventListener("resize", debounceHandleResize);
+      containerWindow.removeEventListener("resize", debouncedHandleResize);
       if (resizeObserver2) {
         resizeObserver2.disconnect();
       }
     };
-  }, [calculateTextareaStyles, syncHeight]);
+  }, [calculateTextareaStyles, syncHeight, didHeightChange]);
   useEnhancedEffect_default(() => {
     syncHeight();
   });
@@ -18680,7 +18771,7 @@ var TextareaAutosize = /* @__PURE__ */ React40.forwardRef(function TextareaAutos
       onChange: handleChange,
       ref: handleRef,
       rows: minRows,
-      style: style4,
+      style: style6,
       ...other
     }), /* @__PURE__ */ _jsx21("textarea", {
       "aria-hidden": true,
@@ -18690,7 +18781,7 @@ var TextareaAutosize = /* @__PURE__ */ React40.forwardRef(function TextareaAutos
       tabIndex: -1,
       style: {
         ...styles.shadow,
-        ...style4,
+        ...style6,
         paddingTop: 0,
         paddingBottom: 0
       }
@@ -18807,7 +18898,7 @@ var inputOverridesResolver = (props, styles5) => {
 var useUtilityClasses9 = (ownerState) => {
   const {
     classes,
-    color: color2,
+    color: color3,
     disabled,
     error,
     endAdornment,
@@ -18822,7 +18913,7 @@ var useUtilityClasses9 = (ownerState) => {
     type
   } = ownerState;
   const slots = {
-    root: ["root", `color${capitalize_default(color2)}`, disabled && "disabled", error && "error", fullWidth && "fullWidth", focused && "focused", formControl && "formControl", size && size !== "medium" && `size${capitalize_default(size)}`, multiline && "multiline", startAdornment && "adornedStart", endAdornment && "adornedEnd", hiddenLabel && "hiddenLabel", readOnly && "readOnly"],
+    root: ["root", `color${capitalize_default(color3)}`, disabled && "disabled", error && "error", fullWidth && "fullWidth", focused && "focused", formControl && "formControl", size && size !== "medium" && `size${capitalize_default(size)}`, multiline && "multiline", startAdornment && "adornedStart", endAdornment && "adornedEnd", hiddenLabel && "hiddenLabel", readOnly && "readOnly"],
     input: ["input", disabled && "disabled", type === "search" && "inputTypeSearch", multiline && "inputMultiline", size === "small" && "inputSizeSmall", hiddenLabel && "inputHiddenLabel", startAdornment && "inputAdornedStart", endAdornment && "inputAdornedEnd", readOnly && "readOnly"]
   };
   return composeClasses(slots, getInputBaseUtilityClass, classes);
@@ -19013,7 +19104,7 @@ var InputBase = /* @__PURE__ */ React43.forwardRef(function InputBase2(inProps, 
     autoComplete,
     autoFocus,
     className,
-    color: color2,
+    color: color3,
     components: components2 = {},
     componentsProps = {},
     defaultValue,
@@ -19026,7 +19117,7 @@ var InputBase = /* @__PURE__ */ React43.forwardRef(function InputBase2(inProps, 
     inputComponent = "input",
     inputProps: inputPropsProp = {},
     inputRef: inputRefProp,
-    margin: margin2,
+    margin: margin3,
     maxRows,
     minRows,
     multiline = false,
@@ -19573,7 +19664,7 @@ var Fade = /* @__PURE__ */ React45.forwardRef(function Fade2(props, ref) {
     onExit,
     onExited,
     onExiting,
-    style: style4,
+    style: style6,
     timeout: timeout2 = defaultTimeout,
     // eslint-disable-next-line react/prop-types
     TransitionComponent = Transition_default,
@@ -19596,7 +19687,7 @@ var Fade = /* @__PURE__ */ React45.forwardRef(function Fade2(props, ref) {
   const handleEnter = normalizedTransitionCallback((node, isAppearing) => {
     reflow(node);
     const transitionProps = getTransitionProps({
-      style: style4,
+      style: style6,
       timeout: timeout2,
       easing: easing2
     }, {
@@ -19612,7 +19703,7 @@ var Fade = /* @__PURE__ */ React45.forwardRef(function Fade2(props, ref) {
   const handleExiting = normalizedTransitionCallback(onExiting);
   const handleExit = normalizedTransitionCallback((node) => {
     const transitionProps = getTransitionProps({
-      style: style4,
+      style: style6,
       timeout: timeout2,
       easing: easing2
     }, {
@@ -19652,7 +19743,7 @@ var Fade = /* @__PURE__ */ React45.forwardRef(function Fade2(props, ref) {
           opacity: 0,
           visibility: state === "exited" && !inProp ? "hidden" : void 0,
           ...styles2[state],
-          ...style4,
+          ...style6,
           ...children.props.style
         },
         ref: handleRef,
@@ -19971,7 +20062,7 @@ var ButtonGroupButtonContext_default = ButtonGroupButtonContext;
 import { jsx as _jsx26, jsxs as _jsxs7 } from "react/jsx-runtime";
 var useUtilityClasses11 = (ownerState) => {
   const {
-    color: color2,
+    color: color3,
     disableElevation,
     fullWidth,
     size,
@@ -19981,7 +20072,7 @@ var useUtilityClasses11 = (ownerState) => {
     classes
   } = ownerState;
   const slots = {
-    root: ["root", loading && "loading", variant, `${variant}${capitalize_default(color2)}`, `size${capitalize_default(size)}`, `${variant}Size${capitalize_default(size)}`, `color${capitalize_default(color2)}`, disableElevation && "disableElevation", fullWidth && "fullWidth", loading && `loadingPosition${capitalize_default(loadingPosition)}`],
+    root: ["root", loading && "loading", variant, `${variant}${capitalize_default(color3)}`, `size${capitalize_default(size)}`, `${variant}Size${capitalize_default(size)}`, `color${capitalize_default(color3)}`, disableElevation && "disableElevation", fullWidth && "fullWidth", loading && `loadingPosition${capitalize_default(loadingPosition)}`],
     startIcon: ["icon", "startIcon", `iconSize${capitalize_default(size)}`],
     endIcon: ["icon", "endIcon", `iconSize${capitalize_default(size)}`],
     loadingIndicator: ["loadingIndicator"],
@@ -20102,22 +20193,22 @@ var ButtonRoot = styled_default(ButtonBase_default, {
         color: `var(--variant-textColor)`,
         backgroundColor: `var(--variant-textBg)`
       }
-    }, ...Object.entries(theme.palette).filter(createSimplePaletteValueFilter()).map(([color2]) => ({
+    }, ...Object.entries(theme.palette).filter(createSimplePaletteValueFilter()).map(([color3]) => ({
       props: {
-        color: color2
+        color: color3
       },
       style: {
-        "--variant-textColor": (theme.vars || theme).palette[color2].main,
-        "--variant-outlinedColor": (theme.vars || theme).palette[color2].main,
-        "--variant-outlinedBorder": theme.vars ? `rgba(${theme.vars.palette[color2].mainChannel} / 0.5)` : alpha(theme.palette[color2].main, 0.5),
-        "--variant-containedColor": (theme.vars || theme).palette[color2].contrastText,
-        "--variant-containedBg": (theme.vars || theme).palette[color2].main,
+        "--variant-textColor": (theme.vars || theme).palette[color3].main,
+        "--variant-outlinedColor": (theme.vars || theme).palette[color3].main,
+        "--variant-outlinedBorder": theme.vars ? `rgba(${theme.vars.palette[color3].mainChannel} / 0.5)` : alpha(theme.palette[color3].main, 0.5),
+        "--variant-containedColor": (theme.vars || theme).palette[color3].contrastText,
+        "--variant-containedBg": (theme.vars || theme).palette[color3].main,
         "@media (hover: hover)": {
           "&:hover": {
-            "--variant-containedBg": (theme.vars || theme).palette[color2].dark,
-            "--variant-textBg": theme.vars ? `rgba(${theme.vars.palette[color2].mainChannel} / ${theme.vars.palette.action.hoverOpacity})` : alpha(theme.palette[color2].main, theme.palette.action.hoverOpacity),
-            "--variant-outlinedBorder": (theme.vars || theme).palette[color2].main,
-            "--variant-outlinedBg": theme.vars ? `rgba(${theme.vars.palette[color2].mainChannel} / ${theme.vars.palette.action.hoverOpacity})` : alpha(theme.palette[color2].main, theme.palette.action.hoverOpacity)
+            "--variant-containedBg": (theme.vars || theme).palette[color3].dark,
+            "--variant-textBg": theme.vars ? `rgba(${theme.vars.palette[color3].mainChannel} / ${theme.vars.palette.action.hoverOpacity})` : alpha(theme.palette[color3].main, theme.palette.action.hoverOpacity),
+            "--variant-outlinedBorder": (theme.vars || theme).palette[color3].main,
+            "--variant-outlinedBg": theme.vars ? `rgba(${theme.vars.palette[color3].mainChannel} / ${theme.vars.palette.action.hoverOpacity})` : alpha(theme.palette[color3].main, theme.palette.action.hoverOpacity)
           }
         }
       }
@@ -20431,7 +20522,7 @@ var Button = /* @__PURE__ */ React49.forwardRef(function Button2(inProps, ref) {
   });
   const {
     children,
-    color: color2 = "primary",
+    color: color3 = "primary",
     component = "button",
     className,
     disabled = false,
@@ -20450,15 +20541,15 @@ var Button = /* @__PURE__ */ React49.forwardRef(function Button2(inProps, ref) {
     variant = "text",
     ...other
   } = props;
-  const id = useId_default(idProp);
+  const loadingId = useId_default(idProp);
   const loadingIndicator = loadingIndicatorProp ?? /* @__PURE__ */ _jsx26(CircularProgress_default, {
-    "aria-labelledby": id,
+    "aria-labelledby": loadingId,
     color: "inherit",
     size: 16
   });
   const ownerState = {
     ...props,
-    color: color2,
+    color: color3,
     component,
     disabled,
     disableElevation,
@@ -20512,7 +20603,7 @@ var Button = /* @__PURE__ */ React49.forwardRef(function Button2(inProps, ref) {
     focusVisibleClassName: clsx_default(classes.focusVisible, focusVisibleClassName),
     ref,
     type,
-    id,
+    id: loading ? loadingId : idProp,
     ...other,
     classes,
     children: [startIcon, loadingPosition !== "end" && loader, children, loadingPosition === "end" && loader, endIcon]
@@ -20721,7 +20812,6 @@ var SwitchBase = /* @__PURE__ */ React50.forwardRef(function SwitchBase2(props, 
     autoFocus,
     checked: checkedProp,
     checkedIcon,
-    className,
     defaultChecked,
     disabled: disabledProp,
     disableFocusRipple = false,
@@ -20739,6 +20829,8 @@ var SwitchBase = /* @__PURE__ */ React50.forwardRef(function SwitchBase2(props, 
     tabIndex,
     type,
     value,
+    slots = {},
+    slotProps = {},
     ...other
   } = props;
   const [checked, setCheckedState] = useControlled_default({
@@ -20789,38 +20881,75 @@ var SwitchBase = /* @__PURE__ */ React50.forwardRef(function SwitchBase2(props, 
     edge
   };
   const classes = useUtilityClasses12(ownerState);
-  return /* @__PURE__ */ _jsxs8(SwitchBaseRoot, {
-    component: "span",
-    className: clsx_default(classes.root, className),
-    centerRipple: true,
-    focusRipple: !disableFocusRipple,
-    disabled,
-    tabIndex: null,
-    role: void 0,
-    onFocus: handleFocus,
-    onBlur: handleBlur,
-    ownerState,
+  const externalForwardedProps = {
+    slots,
+    slotProps: {
+      input: inputProps,
+      ...slotProps
+    }
+  };
+  const [RootSlot, rootSlotProps] = useSlot("root", {
     ref,
-    ...other,
-    children: [/* @__PURE__ */ _jsx27(SwitchBaseInput, {
+    elementType: SwitchBaseRoot,
+    className: classes.root,
+    shouldForwardComponentProp: true,
+    externalForwardedProps: {
+      ...externalForwardedProps,
+      component: "span",
+      ...other
+    },
+    getSlotProps: (handlers) => ({
+      ...handlers,
+      onFocus: (event) => {
+        handlers.onFocus?.(event);
+        handleFocus(event);
+      },
+      onBlur: (event) => {
+        handlers.onBlur?.(event);
+        handleBlur(event);
+      }
+    }),
+    ownerState,
+    additionalProps: {
+      centerRipple: true,
+      focusRipple: !disableFocusRipple,
+      disabled,
+      role: void 0,
+      tabIndex: null
+    }
+  });
+  const [InputSlot, inputSlotProps] = useSlot("input", {
+    ref: inputRef,
+    elementType: SwitchBaseInput,
+    className: classes.input,
+    externalForwardedProps,
+    getSlotProps: (handlers) => ({
+      onChange: (event) => {
+        handlers.onChange?.(event);
+        handleInputChange(event);
+      }
+    }),
+    ownerState,
+    additionalProps: {
       autoFocus,
       checked: checkedProp,
       defaultChecked,
-      className: classes.input,
       disabled,
       id: hasLabelFor ? id : void 0,
       name,
-      onChange: handleInputChange,
       readOnly,
-      ref: inputRef,
       required,
-      ownerState,
       tabIndex,
       type,
       ...type === "checkbox" && value === void 0 ? {} : {
         value
-      },
-      ...inputProps
+      }
+    }
+  });
+  return /* @__PURE__ */ _jsxs8(RootSlot, {
+    ...rootSlotProps,
+    children: [/* @__PURE__ */ _jsx27(InputSlot, {
+      ...inputSlotProps
     }), checked ? checkedIcon : icon]
   });
 });
@@ -20911,6 +21040,22 @@ true ? SwitchBase.propTypes = {
    */
   required: import_prop_types32.default.bool,
   /**
+   * The props used for each slot inside.
+   * @default {}
+   */
+  slotProps: import_prop_types32.default.shape({
+    input: import_prop_types32.default.oneOfType([import_prop_types32.default.func, import_prop_types32.default.object]),
+    root: import_prop_types32.default.oneOfType([import_prop_types32.default.func, import_prop_types32.default.object])
+  }),
+  /**
+   * The components used for each slot inside.
+   * @default {}
+   */
+  slots: import_prop_types32.default.shape({
+    input: import_prop_types32.default.elementType,
+    root: import_prop_types32.default.elementType
+  }),
+  /**
    * The system prop that allows defining system overrides as well as additional CSS styles.
    */
   sx: import_prop_types32.default.object,
@@ -20963,11 +21108,11 @@ var useUtilityClasses13 = (ownerState) => {
   const {
     classes,
     indeterminate,
-    color: color2,
+    color: color3,
     size
   } = ownerState;
   const slots = {
-    root: ["root", indeterminate && "indeterminate", `color${capitalize_default(color2)}`, `size${capitalize_default(size)}`]
+    root: ["root", indeterminate && "indeterminate", `color${capitalize_default(color3)}`, `size${capitalize_default(size)}`]
   };
   const composedClasses = composeClasses(slots, getCheckboxUtilityClass, classes);
   return {
@@ -21000,23 +21145,23 @@ var CheckboxRoot = styled_default(SwitchBase_default, {
         backgroundColor: theme.vars ? `rgba(${theme.vars.palette.action.activeChannel} / ${theme.vars.palette.action.hoverOpacity})` : alpha(theme.palette.action.active, theme.palette.action.hoverOpacity)
       }
     }
-  }, ...Object.entries(theme.palette).filter(createSimplePaletteValueFilter()).map(([color2]) => ({
+  }, ...Object.entries(theme.palette).filter(createSimplePaletteValueFilter()).map(([color3]) => ({
     props: {
-      color: color2,
+      color: color3,
       disableRipple: false
     },
     style: {
       "&:hover": {
-        backgroundColor: theme.vars ? `rgba(${theme.vars.palette[color2].mainChannel} / ${theme.vars.palette.action.hoverOpacity})` : alpha(theme.palette[color2].main, theme.palette.action.hoverOpacity)
+        backgroundColor: theme.vars ? `rgba(${theme.vars.palette[color3].mainChannel} / ${theme.vars.palette.action.hoverOpacity})` : alpha(theme.palette[color3].main, theme.palette.action.hoverOpacity)
       }
     }
-  })), ...Object.entries(theme.palette).filter(createSimplePaletteValueFilter()).map(([color2]) => ({
+  })), ...Object.entries(theme.palette).filter(createSimplePaletteValueFilter()).map(([color3]) => ({
     props: {
-      color: color2
+      color: color3
     },
     style: {
       [`&.${checkboxClasses_default.checked}, &.${checkboxClasses_default.indeterminate}`]: {
-        color: (theme.vars || theme).palette[color2].main
+        color: (theme.vars || theme).palette[color3].main
       },
       [`&.${checkboxClasses_default.disabled}`]: {
         color: (theme.vars || theme).palette.action.disabled
@@ -21047,7 +21192,7 @@ var Checkbox = /* @__PURE__ */ React54.forwardRef(function Checkbox2(inProps, re
   });
   const {
     checkedIcon = defaultCheckedIcon,
-    color: color2 = "primary",
+    color: color3 = "primary",
     icon: iconProp = defaultIcon,
     indeterminate = false,
     indeterminateIcon: indeterminateIconProp = defaultIndeterminateIcon,
@@ -21055,6 +21200,8 @@ var Checkbox = /* @__PURE__ */ React54.forwardRef(function Checkbox2(inProps, re
     size = "medium",
     disableRipple = false,
     className,
+    slots = {},
+    slotProps = {},
     ...other
   } = props;
   const icon = indeterminate ? indeterminateIconProp : iconProp;
@@ -21062,28 +21209,42 @@ var Checkbox = /* @__PURE__ */ React54.forwardRef(function Checkbox2(inProps, re
   const ownerState = {
     ...props,
     disableRipple,
-    color: color2,
+    color: color3,
     indeterminate,
     size
   };
   const classes = useUtilityClasses13(ownerState);
-  return /* @__PURE__ */ _jsx31(CheckboxRoot, {
-    type: "checkbox",
-    inputProps: {
-      "data-indeterminate": indeterminate,
-      ...inputProps
-    },
-    icon: /* @__PURE__ */ React54.cloneElement(icon, {
-      fontSize: icon.props.fontSize ?? size
-    }),
-    checkedIcon: /* @__PURE__ */ React54.cloneElement(indeterminateIcon, {
-      fontSize: indeterminateIcon.props.fontSize ?? size
-    }),
-    ownerState,
+  const externalInputProps = slotProps.input ?? inputProps;
+  const [RootSlot, rootSlotProps] = useSlot("root", {
     ref,
+    elementType: CheckboxRoot,
     className: clsx_default(classes.root, className),
-    disableRipple,
-    ...other,
+    shouldForwardComponentProp: true,
+    externalForwardedProps: {
+      slots,
+      slotProps,
+      ...other
+    },
+    ownerState,
+    additionalProps: {
+      type: "checkbox",
+      icon: /* @__PURE__ */ React54.cloneElement(icon, {
+        fontSize: icon.props.fontSize ?? size
+      }),
+      checkedIcon: /* @__PURE__ */ React54.cloneElement(indeterminateIcon, {
+        fontSize: indeterminateIcon.props.fontSize ?? size
+      }),
+      disableRipple,
+      slots,
+      slotProps: {
+        input: mergeSlotProps2(typeof externalInputProps === "function" ? externalInputProps(ownerState) : externalInputProps, {
+          "data-indeterminate": indeterminate
+        })
+      }
+    }
+  });
+  return /* @__PURE__ */ _jsx31(RootSlot, {
+    ...rootSlotProps,
     classes
   });
 });
@@ -21154,12 +21315,9 @@ true ? Checkbox.propTypes = {
   indeterminateIcon: import_prop_types33.default.node,
   /**
    * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.
+   * @deprecated Use `slotProps.input` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
    */
   inputProps: import_prop_types33.default.object,
-  /**
-   * Pass a ref to the `input` element.
-   */
-  inputRef: refType_default,
   /**
    * Callback fired when the state is changed.
    *
@@ -21178,6 +21336,22 @@ true ? Checkbox.propTypes = {
    * @default 'medium'
    */
   size: import_prop_types33.default.oneOfType([import_prop_types33.default.oneOf(["medium", "small"]), import_prop_types33.default.string]),
+  /**
+   * The props used for each slot inside.
+   * @default {}
+   */
+  slotProps: import_prop_types33.default.shape({
+    input: import_prop_types33.default.oneOfType([import_prop_types33.default.func, import_prop_types33.default.object]),
+    root: import_prop_types33.default.oneOfType([import_prop_types33.default.func, import_prop_types33.default.object])
+  }),
+  /**
+   * The components used for each slot inside.
+   * @default {}
+   */
+  slots: import_prop_types33.default.shape({
+    input: import_prop_types33.default.elementType,
+    root: import_prop_types33.default.elementType
+  }),
   /**
    * The system prop that allows defining system overrides as well as additional CSS styles.
    */
@@ -22091,7 +22265,6 @@ var Modal = /* @__PURE__ */ React58.forwardRef(function Modal2(inProps, ref) {
     childProps.onExited = onExited;
   }
   const externalForwardedProps = {
-    ...other,
     slots: {
       root: components2.Root,
       backdrop: components2.Backdrop,
@@ -22103,19 +22276,22 @@ var Modal = /* @__PURE__ */ React58.forwardRef(function Modal2(inProps, ref) {
     }
   };
   const [RootSlot, rootProps] = useSlot("root", {
+    ref,
     elementType: ModalRoot,
-    externalForwardedProps,
-    getSlotProps: getRootProps,
-    additionalProps: {
-      ref,
-      as: component
+    externalForwardedProps: {
+      ...externalForwardedProps,
+      ...other,
+      component
     },
+    getSlotProps: getRootProps,
     ownerState,
     className: clsx_default(className, classes?.root, !ownerState.open && ownerState.exited && classes?.hidden)
   });
   const [BackdropSlot, backdropProps] = useSlot("backdrop", {
+    ref: BackdropProps?.ref,
     elementType: BackdropComponent,
     externalForwardedProps,
+    shouldForwardComponentProp: true,
     additionalProps: BackdropProps,
     getSlotProps: (otherHandlers) => {
       return getBackdropProps({
@@ -22133,7 +22309,6 @@ var Modal = /* @__PURE__ */ React58.forwardRef(function Modal2(inProps, ref) {
     className: clsx_default(BackdropProps?.className, classes?.backdrop),
     ownerState
   });
-  const backdropRef = useForkRef_default(BackdropProps?.ref, backdropProps.ref);
   if (!keepMounted && !open && (!hasTransition || exited)) {
     return null;
   }
@@ -22144,8 +22319,7 @@ var Modal = /* @__PURE__ */ React58.forwardRef(function Modal2(inProps, ref) {
     children: /* @__PURE__ */ _jsxs10(RootSlot, {
       ...rootProps,
       children: [!hideBackdrop && BackdropComponent ? /* @__PURE__ */ _jsx33(BackdropSlot, {
-        ...backdropProps,
-        ref: backdropRef
+        ...backdropProps
       }) : null, /* @__PURE__ */ _jsx33(FocusTrap_default, {
         disableEnforceFocus,
         disableAutoFocus,
@@ -22367,14 +22541,14 @@ var useUtilityClasses15 = (ownerState) => {
   const {
     classes,
     scroll,
-    maxWidth: maxWidth2,
+    maxWidth: maxWidth3,
     fullWidth,
     fullScreen
   } = ownerState;
   const slots = {
     root: ["root"],
     container: ["container", `scroll${capitalize_default(scroll)}`],
-    paper: ["paper", `paperScroll${capitalize_default(scroll)}`, `paperWidth${capitalize_default(String(maxWidth2))}`, fullWidth && "paperFullWidth", fullScreen && "paperFullScreen"]
+    paper: ["paper", `paperScroll${capitalize_default(scroll)}`, `paperWidth${capitalize_default(String(maxWidth3))}`, fullWidth && "paperFullWidth", fullScreen && "paperFullScreen"]
   };
   return composeClasses(slots, getDialogUtilityClass, classes);
 };
@@ -22487,14 +22661,14 @@ var DialogPaper = styled_default(Paper_default, {
         }
       }
     }
-  }, ...Object.keys(theme.breakpoints.values).filter((maxWidth2) => maxWidth2 !== "xs").map((maxWidth2) => ({
+  }, ...Object.keys(theme.breakpoints.values).filter((maxWidth3) => maxWidth3 !== "xs").map((maxWidth3) => ({
     props: {
-      maxWidth: maxWidth2
+      maxWidth: maxWidth3
     },
     style: {
-      maxWidth: `${theme.breakpoints.values[maxWidth2]}${theme.breakpoints.unit}`,
+      maxWidth: `${theme.breakpoints.values[maxWidth3]}${theme.breakpoints.unit}`,
       [`&.${dialogClasses_default.paperScrollBody}`]: {
-        [theme.breakpoints.down(theme.breakpoints.values[maxWidth2] + 32 * 2)]: {
+        [theme.breakpoints.down(theme.breakpoints.values[maxWidth3] + 32 * 2)]: {
           maxWidth: "calc(100% - 64px)"
         }
       }
@@ -22545,7 +22719,7 @@ var Dialog = /* @__PURE__ */ React60.forwardRef(function Dialog2(inProps, ref) {
     disableEscapeKeyDown = false,
     fullScreen = false,
     fullWidth = false,
-    maxWidth: maxWidth2 = "sm",
+    maxWidth: maxWidth3 = "sm",
     onBackdropClick,
     onClick,
     onClose,
@@ -22565,7 +22739,7 @@ var Dialog = /* @__PURE__ */ React60.forwardRef(function Dialog2(inProps, ref) {
     disableEscapeKeyDown,
     fullScreen,
     fullWidth,
-    maxWidth: maxWidth2,
+    maxWidth: maxWidth3,
     scroll
   };
   const classes = useUtilityClasses15(ownerState);
@@ -23415,12 +23589,12 @@ var FilledInputRoot = styled_default(InputBaseRoot, {
 }) => {
   const light2 = theme.palette.mode === "light";
   const bottomLineColor = light2 ? "rgba(0, 0, 0, 0.42)" : "rgba(255, 255, 255, 0.7)";
-  const backgroundColor2 = light2 ? "rgba(0, 0, 0, 0.06)" : "rgba(255, 255, 255, 0.09)";
+  const backgroundColor3 = light2 ? "rgba(0, 0, 0, 0.06)" : "rgba(255, 255, 255, 0.09)";
   const hoverBackground = light2 ? "rgba(0, 0, 0, 0.09)" : "rgba(255, 255, 255, 0.13)";
   const disabledBackground = light2 ? "rgba(0, 0, 0, 0.12)" : "rgba(255, 255, 255, 0.12)";
   return {
     position: "relative",
-    backgroundColor: theme.vars ? theme.vars.palette.FilledInput.bg : backgroundColor2,
+    backgroundColor: theme.vars ? theme.vars.palette.FilledInput.bg : backgroundColor3,
     borderTopLeftRadius: (theme.vars || theme).shape.borderRadius,
     borderTopRightRadius: (theme.vars || theme).shape.borderRadius,
     transition: theme.transitions.create("background-color", {
@@ -23431,11 +23605,11 @@ var FilledInputRoot = styled_default(InputBaseRoot, {
       backgroundColor: theme.vars ? theme.vars.palette.FilledInput.hoverBg : hoverBackground,
       // Reset on touch devices, it doesn't add specificity
       "@media (hover: none)": {
-        backgroundColor: theme.vars ? theme.vars.palette.FilledInput.bg : backgroundColor2
+        backgroundColor: theme.vars ? theme.vars.palette.FilledInput.bg : backgroundColor3
       }
     },
     [`&.${filledInputClasses_default.focused}`]: {
-      backgroundColor: theme.vars ? theme.vars.palette.FilledInput.bg : backgroundColor2
+      backgroundColor: theme.vars ? theme.vars.palette.FilledInput.bg : backgroundColor3
     },
     [`&.${filledInputClasses_default.disabled}`]: {
       backgroundColor: theme.vars ? theme.vars.palette.FilledInput.disabledBg : disabledBackground
@@ -23489,14 +23663,14 @@ var FilledInputRoot = styled_default(InputBaseRoot, {
           borderBottomStyle: "dotted"
         }
       }
-    }, ...Object.entries(theme.palette).filter(createSimplePaletteValueFilter()).map(([color2]) => ({
+    }, ...Object.entries(theme.palette).filter(createSimplePaletteValueFilter()).map(([color3]) => ({
       props: {
         disableUnderline: false,
-        color: color2
+        color: color3
       },
       style: {
         "&::after": {
-          borderBottom: `2px solid ${(theme.vars || theme).palette[color2]?.main}`
+          borderBottom: `2px solid ${(theme.vars || theme).palette[color3]?.main}`
         }
       }
     })), {
@@ -23895,11 +24069,11 @@ import { jsx as _jsx39 } from "react/jsx-runtime";
 var useUtilityClasses20 = (ownerState) => {
   const {
     classes,
-    margin: margin2,
+    margin: margin3,
     fullWidth
   } = ownerState;
   const slots = {
-    root: ["root", margin2 !== "none" && `margin${capitalize_default(margin2)}`, fullWidth && "fullWidth"]
+    root: ["root", margin3 !== "none" && `margin${capitalize_default(margin3)}`, fullWidth && "fullWidth"]
   };
   return composeClasses(slots, getFormControlUtilityClasses, classes);
 };
@@ -23956,14 +24130,14 @@ var FormControl = /* @__PURE__ */ React65.forwardRef(function FormControl2(inPro
   const {
     children,
     className,
-    color: color2 = "primary",
+    color: color3 = "primary",
     component = "div",
     disabled = false,
     error = false,
     focused: visuallyFocused,
     fullWidth = false,
     hiddenLabel = false,
-    margin: margin2 = "none",
+    margin: margin3 = "none",
     required = false,
     size = "medium",
     variant = "outlined",
@@ -23971,13 +24145,13 @@ var FormControl = /* @__PURE__ */ React65.forwardRef(function FormControl2(inPro
   } = props;
   const ownerState = {
     ...props,
-    color: color2,
+    color: color3,
     component,
     disabled,
     error,
     fullWidth,
     hiddenLabel,
-    margin: margin2,
+    margin: margin3,
     required,
     size,
     variant
@@ -24040,7 +24214,7 @@ var FormControl = /* @__PURE__ */ React65.forwardRef(function FormControl2(inPro
     return {
       adornedStart,
       setAdornedStart,
-      color: color2,
+      color: color3,
       disabled,
       error,
       filled,
@@ -24060,7 +24234,7 @@ var FormControl = /* @__PURE__ */ React65.forwardRef(function FormControl2(inPro
       required,
       variant
     };
-  }, [adornedStart, color2, disabled, error, filled, focused, fullWidth, hiddenLabel, registerEffect, onEmpty, onFilled, required, size, variant]);
+  }, [adornedStart, color3, disabled, error, filled, focused, fullWidth, hiddenLabel, registerEffect, onEmpty, onFilled, required, size, variant]);
   return /* @__PURE__ */ _jsx39(FormControlContext_default.Provider, {
     value: childContext,
     children: /* @__PURE__ */ _jsx39(FormControlRoot, {
@@ -24619,7 +24793,7 @@ var FormHelperText = /* @__PURE__ */ React68.forwardRef(function FormHelperText2
     error,
     filled,
     focused,
-    margin: margin2,
+    margin: margin3,
     required,
     variant,
     ...other
@@ -24736,7 +24910,7 @@ import { jsxs as _jsxs12 } from "react/jsx-runtime";
 var useUtilityClasses24 = (ownerState) => {
   const {
     classes,
-    color: color2,
+    color: color3,
     focused,
     disabled,
     error,
@@ -24744,7 +24918,7 @@ var useUtilityClasses24 = (ownerState) => {
     required
   } = ownerState;
   const slots = {
-    root: ["root", `color${capitalize_default(color2)}`, disabled && "disabled", error && "error", filled && "filled", focused && "focused", required && "required"],
+    root: ["root", `color${capitalize_default(color3)}`, disabled && "disabled", error && "error", filled && "filled", focused && "focused", required && "required"],
     asterisk: ["asterisk", error && "error"]
   };
   return composeClasses(slots, getFormLabelUtilityClasses, classes);
@@ -24766,13 +24940,13 @@ var FormLabelRoot = styled_default("label", {
   lineHeight: "1.4375em",
   padding: 0,
   position: "relative",
-  variants: [...Object.entries(theme.palette).filter(createSimplePaletteValueFilter()).map(([color2]) => ({
+  variants: [...Object.entries(theme.palette).filter(createSimplePaletteValueFilter()).map(([color3]) => ({
     props: {
-      color: color2
+      color: color3
     },
     style: {
       [`&.${formLabelClasses_default.focused}`]: {
-        color: (theme.vars || theme).palette[color2].main
+        color: (theme.vars || theme).palette[color3].main
       }
     }
   })), {
@@ -24806,7 +24980,7 @@ var FormLabel = /* @__PURE__ */ React69.forwardRef(function FormLabel2(inProps, 
   const {
     children,
     className,
-    color: color2,
+    color: color3,
     component = "label",
     disabled,
     error,
@@ -24932,7 +25106,7 @@ var Grow = /* @__PURE__ */ React70.forwardRef(function Grow2(props, ref) {
     onExit,
     onExited,
     onExiting,
-    style: style4,
+    style: style6,
     timeout: timeout2 = "auto",
     // eslint-disable-next-line react/prop-types
     TransitionComponent = Transition_default,
@@ -24961,7 +25135,7 @@ var Grow = /* @__PURE__ */ React70.forwardRef(function Grow2(props, ref) {
       delay,
       easing: transitionTimingFunction
     } = getTransitionProps({
-      style: style4,
+      style: style6,
       timeout: timeout2,
       easing: easing2
     }, {
@@ -24994,7 +25168,7 @@ var Grow = /* @__PURE__ */ React70.forwardRef(function Grow2(props, ref) {
       delay,
       easing: transitionTimingFunction
     } = getTransitionProps({
-      style: style4,
+      style: style6,
       timeout: timeout2,
       easing: easing2
     }, {
@@ -25053,7 +25227,7 @@ var Grow = /* @__PURE__ */ React70.forwardRef(function Grow2(props, ref) {
           transform: getScale(0.75),
           visibility: state === "exited" && !inProp ? "hidden" : void 0,
           ...styles3[state],
-          ...style4,
+          ...style6,
           ...children.props.style
         },
         ref: handleRef,
@@ -25249,14 +25423,14 @@ var InputRoot = styled_default(InputBaseRoot, {
           borderBottomStyle: "dotted"
         }
       }
-    }, ...Object.entries(theme.palette).filter(createSimplePaletteValueFilter()).map(([color2]) => ({
+    }, ...Object.entries(theme.palette).filter(createSimplePaletteValueFilter()).map(([color3]) => ({
       props: {
-        color: color2,
+        color: color3,
         disableUnderline: false
       },
       style: {
         "&::after": {
-          borderBottom: `2px solid ${(theme.vars || theme).palette[color2].main}`
+          borderBottom: `2px solid ${(theme.vars || theme).palette[color3].main}`
         }
       }
     }))]
@@ -25862,7 +26036,7 @@ var InputLabel = /* @__PURE__ */ React73.forwardRef(function InputLabel2(inProps
   });
   const {
     disableAnimation = false,
-    margin: margin2,
+    margin: margin3,
     shrink: shrinkProp,
     variant,
     className,
@@ -26935,22 +27109,21 @@ var Popover = /* @__PURE__ */ React79.forwardRef(function Popover2(inProps, ref)
     marginThreshold = 16,
     open,
     PaperProps: PaperPropsProp = {},
+    // TODO: remove in v7
     slots = {},
     slotProps = {},
     transformOrigin = {
       vertical: "top",
       horizontal: "left"
     },
-    TransitionComponent = Grow_default,
+    TransitionComponent,
+    // TODO: remove in v7
     transitionDuration: transitionDurationProp = "auto",
-    TransitionProps: {
-      onEntering,
-      ...TransitionProps
-    } = {},
+    TransitionProps = {},
+    // TODO: remove in v7
     disableScrollLock = false,
     ...other
   } = props;
-  const externalPaperSlotProps = slotProps?.paper ?? PaperPropsProp;
   const paperRef = React79.useRef();
   const ownerState = {
     ...props,
@@ -26958,7 +27131,6 @@ var Popover = /* @__PURE__ */ React79.forwardRef(function Popover2(inProps, ref)
     anchorReference,
     elevation,
     marginThreshold,
-    externalPaperSlotProps,
     transformOrigin,
     TransitionComponent,
     transitionDuration: transitionDurationProp,
@@ -27066,10 +27238,7 @@ var Popover = /* @__PURE__ */ React79.forwardRef(function Popover2(inProps, ref)
     }
     return () => window.removeEventListener("scroll", setPositioningStyles);
   }, [anchorEl, disableScrollLock, setPositioningStyles]);
-  const handleEntering = (element, isAppearing) => {
-    if (onEntering) {
-      onEntering(element, isAppearing);
-    }
+  const handleEntering = () => {
     setPositioningStyles();
   };
   const handleExited = () => {
@@ -27092,7 +27261,7 @@ var Popover = /* @__PURE__ */ React79.forwardRef(function Popover2(inProps, ref)
     const handleResize = debounce_default(() => {
       setPositioningStyles();
     });
-    const containerWindow = ownerWindow_default(anchorEl);
+    const containerWindow = ownerWindow_default(resolveAnchorEl2(anchorEl));
     containerWindow.addEventListener("resize", handleResize);
     return () => {
       handleResize.clear();
@@ -27100,41 +27269,61 @@ var Popover = /* @__PURE__ */ React79.forwardRef(function Popover2(inProps, ref)
     };
   }, [anchorEl, open, setPositioningStyles]);
   let transitionDuration = transitionDurationProp;
-  if (transitionDurationProp === "auto" && !TransitionComponent.muiSupportAuto) {
+  const externalForwardedProps = {
+    slots: {
+      transition: TransitionComponent,
+      ...slots
+    },
+    slotProps: {
+      transition: TransitionProps,
+      paper: PaperPropsProp,
+      ...slotProps
+    }
+  };
+  const [TransitionSlot, transitionSlotProps] = useSlot("transition", {
+    elementType: Grow_default,
+    externalForwardedProps,
+    ownerState,
+    getSlotProps: (handlers) => ({
+      ...handlers,
+      onEntering: (element, isAppearing) => {
+        handlers.onEntering?.(element, isAppearing);
+        handleEntering();
+      },
+      onExited: (element) => {
+        handlers.onExited?.(element);
+        handleExited();
+      }
+    }),
+    additionalProps: {
+      appear: true,
+      in: open
+    }
+  });
+  if (transitionDurationProp === "auto" && !TransitionSlot.muiSupportAuto) {
     transitionDuration = void 0;
   }
   const container = containerProp || (anchorEl ? ownerDocument_default(resolveAnchorEl2(anchorEl)).body : void 0);
-  const externalForwardedProps = {
-    slots,
-    slotProps: {
-      ...slotProps,
-      paper: externalPaperSlotProps
-    }
-  };
-  const [PaperSlot, paperProps] = useSlot("paper", {
-    elementType: PopoverPaper,
-    externalForwardedProps,
-    additionalProps: {
-      elevation,
-      className: clsx_default(classes.paper, externalPaperSlotProps?.className),
-      style: isPositioned ? externalPaperSlotProps.style : {
-        ...externalPaperSlotProps.style,
-        opacity: 0
-      }
-    },
-    ownerState
-  });
   const [RootSlot, {
+    slots: rootSlotsProp,
     slotProps: rootSlotPropsProp,
     ...rootProps
   }] = useSlot("root", {
+    ref,
     elementType: PopoverRoot,
-    externalForwardedProps,
+    externalForwardedProps: {
+      ...externalForwardedProps,
+      ...other
+    },
+    shouldForwardComponentProp: true,
     additionalProps: {
+      slots: {
+        backdrop: slots.backdrop
+      },
       slotProps: {
-        backdrop: {
+        backdrop: mergeSlotProps2(typeof slotProps.backdrop === "function" ? slotProps.backdrop(ownerState) : slotProps.backdrop, {
           invisible: true
-        }
+        })
       },
       container,
       open
@@ -27142,25 +27331,32 @@ var Popover = /* @__PURE__ */ React79.forwardRef(function Popover2(inProps, ref)
     ownerState,
     className: clsx_default(classes.root, className)
   });
-  const handlePaperRef = useForkRef_default(paperRef, paperProps.ref);
+  const [PaperSlot, paperProps] = useSlot("paper", {
+    ref: paperRef,
+    className: classes.paper,
+    elementType: PopoverPaper,
+    externalForwardedProps,
+    shouldForwardComponentProp: true,
+    additionalProps: {
+      elevation,
+      style: isPositioned ? void 0 : {
+        opacity: 0
+      }
+    },
+    ownerState
+  });
   return /* @__PURE__ */ _jsx51(RootSlot, {
     ...rootProps,
     ...!isHostComponent_default2(RootSlot) && {
+      slots: rootSlotsProp,
       slotProps: rootSlotPropsProp,
       disableScrollLock
     },
-    ...other,
-    ref,
-    children: /* @__PURE__ */ _jsx51(TransitionComponent, {
-      appear: true,
-      in: open,
-      onEntering: handleEntering,
-      onExited: handleExited,
+    children: /* @__PURE__ */ _jsx51(TransitionSlot, {
+      ...transitionSlotProps,
       timeout: transitionDuration,
-      ...TransitionProps,
       children: /* @__PURE__ */ _jsx51(PaperSlot, {
         ...paperProps,
-        ref: handlePaperRef,
         children
       })
     })
@@ -27228,8 +27424,7 @@ true ? Popover.propTypes = {
   anchorReference: import_prop_types55.default.oneOf(["anchorEl", "anchorPosition", "none"]),
   /**
    * A backdrop component. This prop enables custom backdrop rendering.
-   * @deprecated Use `slotProps.root.slots.backdrop` instead. While this prop currently works, it will be removed in the next major version.
-   * Use the `slotProps.root.slots.backdrop` prop to make your application ready for the next version of Material UI.
+   * @deprecated Use `slots.backdrop` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
    * @default styled(Backdrop, {
    *   name: 'MuiModal',
    *   slot: 'Backdrop',
@@ -27243,7 +27438,7 @@ true ? Popover.propTypes = {
   BackdropComponent: import_prop_types55.default.elementType,
   /**
    * Props applied to the [`Backdrop`](/material-ui/api/backdrop/) element.
-   * @deprecated Use `slotProps.root.slotProps.backdrop` instead.
+   * @deprecated Use `slotProps.backdrop` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
    */
   BackdropProps: import_prop_types55.default.object,
   /**
@@ -27307,16 +27502,20 @@ true ? Popover.propTypes = {
    * @default {}
    */
   slotProps: import_prop_types55.default.shape({
+    backdrop: import_prop_types55.default.oneOfType([import_prop_types55.default.func, import_prop_types55.default.object]),
     paper: import_prop_types55.default.oneOfType([import_prop_types55.default.func, import_prop_types55.default.object]),
-    root: import_prop_types55.default.oneOfType([import_prop_types55.default.func, import_prop_types55.default.object])
+    root: import_prop_types55.default.oneOfType([import_prop_types55.default.func, import_prop_types55.default.object]),
+    transition: import_prop_types55.default.oneOfType([import_prop_types55.default.func, import_prop_types55.default.object])
   }),
   /**
    * The components used for each slot inside.
    * @default {}
    */
   slots: import_prop_types55.default.shape({
+    backdrop: import_prop_types55.default.elementType,
     paper: import_prop_types55.default.elementType,
-    root: import_prop_types55.default.elementType
+    root: import_prop_types55.default.elementType,
+    transition: import_prop_types55.default.elementType
   }),
   /**
    * The system prop that allows defining system overrides as well as additional CSS styles.
@@ -27341,6 +27540,7 @@ true ? Popover.propTypes = {
   /**
    * The component used for the transition.
    * [Follow this guide](https://mui.com/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
+   * @deprecated use the `slots.transition` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
    * @default Grow
    */
   TransitionComponent: import_prop_types55.default.elementType,
@@ -27356,6 +27556,7 @@ true ? Popover.propTypes = {
   /**
    * Props applied to the transition element.
    * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition/) component.
+   * @deprecated use the `slotProps.transition` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
    * @default {}
    */
   TransitionProps: import_prop_types55.default.object
@@ -27491,20 +27692,43 @@ var Menu = /* @__PURE__ */ React80.forwardRef(function Menu2(inProps, ref) {
       }
     }
   });
-  const PaperSlot = slots.paper ?? MenuPaper;
-  const paperExternalSlotProps = slotProps.paper ?? PaperProps;
+  const externalForwardedProps = {
+    slots,
+    slotProps: {
+      list: MenuListProps,
+      transition: TransitionProps,
+      paper: PaperProps,
+      ...slotProps
+    }
+  };
   const rootSlotProps = useSlotProps_default({
     elementType: slots.root,
     externalSlotProps: slotProps.root,
     ownerState,
     className: [classes.root, className]
   });
-  const paperSlotProps = useSlotProps_default({
-    elementType: PaperSlot,
-    externalSlotProps: paperExternalSlotProps,
-    ownerState,
-    className: classes.paper
+  const [PaperSlot, paperSlotProps] = useSlot("paper", {
+    className: classes.paper,
+    elementType: MenuPaper,
+    externalForwardedProps,
+    shouldForwardComponentProp: true,
+    ownerState
   });
+  const [ListSlot, listSlotProps] = useSlot("list", {
+    className: clsx_default(classes.list, MenuListProps.className),
+    elementType: MenuMenuList,
+    shouldForwardComponentProp: true,
+    externalForwardedProps,
+    getSlotProps: (handlers) => ({
+      ...handlers,
+      onKeyDown: (event) => {
+        handleListKeyDown(event);
+        handlers.onKeyDown?.(event);
+      }
+    }),
+    ownerState
+  });
+  const resolvedTransitionProps = typeof externalForwardedProps.slotProps.transition === "function" ? externalForwardedProps.slotProps.transition(ownerState) : externalForwardedProps.slotProps.transition;
   return /* @__PURE__ */ _jsx52(MenuRoot, {
     onClose,
     anchorOrigin: {
@@ -27513,31 +27737,38 @@ var Menu = /* @__PURE__ */ React80.forwardRef(function Menu2(inProps, ref) {
     },
     transformOrigin: isRtl ? RTL_ORIGIN : LTR_ORIGIN,
     slots: {
+      root: slots.root,
       paper: PaperSlot,
-      root: slots.root
+      backdrop: slots.backdrop,
+      ...slots.transition && {
+        // TODO: pass `slots.transition` directly once `TransitionComponent` is removed from Popover
+        transition: slots.transition
+      }
     },
     slotProps: {
       root: rootSlotProps,
-      paper: paperSlotProps
+      paper: paperSlotProps,
+      backdrop: typeof slotProps.backdrop === "function" ? slotProps.backdrop(ownerState) : slotProps.backdrop,
+      transition: {
+        ...resolvedTransitionProps,
+        onEntering: (...args) => {
+          handleEntering(...args);
+          resolvedTransitionProps?.onEntering?.(...args);
+        }
+      }
     },
     open,
     ref,
     transitionDuration,
-    TransitionProps: {
-      onEntering: handleEntering,
-      ...TransitionProps
-    },
     ownerState,
     ...other,
     classes: PopoverClasses,
-    children: /* @__PURE__ */ _jsx52(MenuMenuList, {
-      onKeyDown: handleListKeyDown,
+    children: /* @__PURE__ */ _jsx52(ListSlot, {
       actions: menuListActionsRef,
       autoFocus: autoFocus && (activeItemIndex === -1 || disableAutoFocusItem),
       autoFocusItem,
       variant,
-      ...MenuListProps,
-      className: clsx_default(classes.list, MenuListProps.className),
+      ...listSlotProps,
       children
     })
   });
@@ -27582,6 +27813,7 @@ true ? Menu.propTypes = {
   disableAutoFocusItem: import_prop_types56.default.bool,
   /**
    * Props applied to the [`MenuList`](https://mui.com/material-ui/api/menu-list/) element.
+   * @deprecated use the `slotProps.list` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
    * @default {}
    */
   MenuListProps: import_prop_types56.default.object,
@@ -27609,16 +27841,22 @@ true ? Menu.propTypes = {
    * @default {}
    */
   slotProps: import_prop_types56.default.shape({
+    backdrop: import_prop_types56.default.oneOfType([import_prop_types56.default.func, import_prop_types56.default.object]),
+    list: import_prop_types56.default.oneOfType([import_prop_types56.default.func, import_prop_types56.default.object]),
     paper: import_prop_types56.default.oneOfType([import_prop_types56.default.func, import_prop_types56.default.object]),
-    root: import_prop_types56.default.oneOfType([import_prop_types56.default.func, import_prop_types56.default.object])
+    root: import_prop_types56.default.oneOfType([import_prop_types56.default.func, import_prop_types56.default.object]),
+    transition: import_prop_types56.default.oneOfType([import_prop_types56.default.func, import_prop_types56.default.object])
   }),
   /**
    * The components used for each slot inside.
    * @default {}
    */
   slots: import_prop_types56.default.shape({
+    backdrop: import_prop_types56.default.elementType,
+    list: import_prop_types56.default.elementType,
     paper: import_prop_types56.default.elementType,
-    root: import_prop_types56.default.elementType
+    root: import_prop_types56.default.elementType,
+    transition: import_prop_types56.default.elementType
   }),
   /**
    * The system prop that allows defining system overrides as well as additional CSS styles.
@@ -27636,6 +27874,7 @@ true ? Menu.propTypes = {
   /**
    * Props applied to the transition element.
    * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition/) component.
+   * @deprecated use the `slotProps.transition` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
    * @default {}
    */
   TransitionProps: import_prop_types56.default.object,
@@ -28343,7 +28582,7 @@ var OutlinedInputRoot = styled_default(InputBaseRoot, {
 })(memoTheme_default(({
   theme
 }) => {
-  const borderColor2 = theme.palette.mode === "light" ? "rgba(0, 0, 0, 0.23)" : "rgba(255, 255, 255, 0.23)";
+  const borderColor3 = theme.palette.mode === "light" ? "rgba(0, 0, 0, 0.23)" : "rgba(255, 255, 255, 0.23)";
   return {
     position: "relative",
     borderRadius: (theme.vars || theme).shape.borderRadius,
@@ -28353,19 +28592,19 @@ var OutlinedInputRoot = styled_default(InputBaseRoot, {
     // Reset on touch devices, it doesn't add specificity
     "@media (hover: none)": {
       [`&:hover .${outlinedInputClasses_default.notchedOutline}`]: {
-        borderColor: theme.vars ? `rgba(${theme.vars.palette.common.onBackgroundChannel} / 0.23)` : borderColor2
+        borderColor: theme.vars ? `rgba(${theme.vars.palette.common.onBackgroundChannel} / 0.23)` : borderColor3
       }
     },
     [`&.${outlinedInputClasses_default.focused} .${outlinedInputClasses_default.notchedOutline}`]: {
       borderWidth: 2
     },
-    variants: [...Object.entries(theme.palette).filter(createSimplePaletteValueFilter()).map(([color2]) => ({
+    variants: [...Object.entries(theme.palette).filter(createSimplePaletteValueFilter()).map(([color3]) => ({
       props: {
-        color: color2
+        color: color3
       },
       style: {
         [`&.${outlinedInputClasses_default.focused} .${outlinedInputClasses_default.notchedOutline}`]: {
-          borderColor: (theme.vars || theme).palette[color2].main
+          borderColor: (theme.vars || theme).palette[color3].main
         }
       }
     })), {
@@ -28418,9 +28657,9 @@ var NotchedOutlineRoot2 = styled_default(NotchedOutline, {
 })(memoTheme_default(({
   theme
 }) => {
-  const borderColor2 = theme.palette.mode === "light" ? "rgba(0, 0, 0, 0.23)" : "rgba(255, 255, 255, 0.23)";
+  const borderColor3 = theme.palette.mode === "light" ? "rgba(0, 0, 0, 0.23)" : "rgba(255, 255, 255, 0.23)";
   return {
-    borderColor: theme.vars ? `rgba(${theme.vars.palette.common.onBackgroundChannel} / 0.23)` : borderColor2
+    borderColor: theme.vars ? `rgba(${theme.vars.palette.common.onBackgroundChannel} / 0.23)` : borderColor3
   };
 }));
 var OutlinedInputInput = styled_default(InputBaseInput, {
@@ -29079,8 +29318,8 @@ var SelectInput = /* @__PURE__ */ React85.forwardRef(function SelectInput2(props
   if (true) {
     React85.useEffect(() => {
       if (!foundMatch && !multiple && value !== "") {
-        const values4 = childrenArray.map((child) => child.props.value);
-        console.warn([`MUI: You have provided an out-of-range value \`${value}\` for the select ${name ? `(name="${name}") ` : ""}component.`, "Consider providing a value that matches one of the available options or ''.", `The available values are ${values4.filter((x2) => x2 != null).map((x2) => `\`${x2}\``).join(", ") || '""'}.`].join("\n"));
+        const values5 = childrenArray.map((child) => child.props.value);
+        console.warn([`MUI: You have provided an out-of-range value \`${value}\` for the select ${name ? `(name="${name}") ` : ""}component.`, "Consider providing a value that matches one of the available options or ''.", `The available values are ${values5.filter((x2) => x2 != null).map((x2) => `\`${x2}\``).join(", ") || '""'}.`].join("\n"));
       }
     }, [foundMatch, childrenArray, multiple, name, value]);
   }
@@ -29188,16 +29427,16 @@ var SelectInput = /* @__PURE__ */ React85.forwardRef(function SelectInput2(props
         horizontal: "center"
       },
       ...MenuProps,
-      MenuListProps: {
-        "aria-labelledby": labelId,
-        role: "listbox",
-        "aria-multiselectable": multiple ? "true" : void 0,
-        disableListWrap: true,
-        id: listboxId,
-        ...MenuProps.MenuListProps
-      },
       slotProps: {
         ...MenuProps.slotProps,
+        list: {
+          "aria-labelledby": labelId,
+          role: "listbox",
+          "aria-multiselectable": multiple ? "true" : void 0,
+          disableListWrap: true,
+          id: listboxId,
+          ...MenuProps.MenuListProps
+        },
         paper: {
           ...paperProps,
           style: {
@@ -30265,7 +30504,7 @@ var TabScrollButton_default = TabScrollButton;
 function getTabsUtilityClass(slot) {
   return generateUtilityClass("MuiTabs", slot);
 }
-var tabsClasses = generateUtilityClasses("MuiTabs", ["root", "vertical", "flexContainer", "flexContainerVertical", "centered", "scroller", "fixed", "scrollableX", "scrollableY", "hideScrollbar", "scrollButtons", "scrollButtonsHideMobile", "indicator"]);
+var tabsClasses = generateUtilityClasses("MuiTabs", ["root", "vertical", "list", "flexContainer", "flexContainerVertical", "centered", "scroller", "fixed", "scrollableX", "scrollableY", "hideScrollbar", "scrollButtons", "scrollButtonsHideMobile", "indicator"]);
 var tabsClasses_default = tabsClasses;
 
 // node_modules/@mui/material/Tabs/Tabs.js
@@ -30321,7 +30560,7 @@ var useUtilityClasses40 = (ownerState) => {
   const slots = {
     root: ["root", vertical && "vertical"],
     scroller: ["scroller", fixed && "fixed", hideScrollbar && "hideScrollbar", scrollableX && "scrollableX", scrollableY && "scrollableY"],
-    flexContainer: ["flexContainer", vertical && "flexContainerVertical", centered && "centered"],
+    list: ["list", "flexContainer", vertical && "flexContainerVertical", vertical && "vertical", centered && "centered"],
     indicator: ["indicator"],
     scrollButtons: ["scrollButtons", scrollButtonsHideMobile && "scrollButtonsHideMobile"],
     scrollableX: [scrollableX && "scrollableX"],
@@ -30423,14 +30662,14 @@ var TabsScroller = styled_default("div", {
     }
   }]
 });
-var FlexContainer = styled_default("div", {
+var List3 = styled_default("div", {
   name: "MuiTabs",
-  slot: "FlexContainer",
+  slot: "List",
   overridesResolver: (props, styles5) => {
     const {
       ownerState
     } = props;
-    return [styles5.flexContainer, ownerState.vertical && styles5.flexContainerVertical, ownerState.centered && styles5.centered];
+    return [styles5.list, styles5.flexContainer, ownerState.vertical && styles5.flexContainerVertical, ownerState.centered && styles5.centered];
   }
 })({
   display: "flex",
@@ -30519,13 +30758,16 @@ var Tabs = /* @__PURE__ */ React92.forwardRef(function Tabs2(inProps, ref) {
     indicatorColor = "primary",
     onChange,
     orientation = "horizontal",
-    ScrollButtonComponent = TabScrollButton_default,
+    ScrollButtonComponent,
+    // TODO: remove in v7 (deprecated in v6)
     scrollButtons = "auto",
     selectionFollowsFocus,
     slots = {},
     slotProps = {},
     TabIndicatorProps = {},
+    // TODO: remove in v7 (deprecated in v6)
     TabScrollButtonProps = {},
+    // TODO: remove in v7 (deprecated in v6)
     textColor = "primary",
     value,
     variant = "standard",
@@ -30585,6 +30827,14 @@ var Tabs = /* @__PURE__ */ React92.forwardRef(function Tabs2(inProps, ref) {
   const valueToIndex = /* @__PURE__ */ new Map();
   const tabsRef = React92.useRef(null);
   const tabListRef = React92.useRef(null);
+  const externalForwardedProps = {
+    slots,
+    slotProps: {
+      indicator: TabIndicatorProps,
+      scrollButton: TabScrollButtonProps,
+      ...slotProps
+    }
+  };
   const getTabsMeta = () => {
     const tabsNode = tabsRef.current;
     let tabsMeta;
@@ -30702,47 +30952,59 @@ var Tabs = /* @__PURE__ */ React92.forwardRef(function Tabs2(inProps, ref) {
   const handleEndScrollClick = () => {
     moveTabsScroll(getScrollSize());
   };
+  const [ScrollbarSlot, {
+    onChange: scrollbarOnChange,
+    ...scrollbarSlotProps
+  }] = useSlot("scrollbar", {
+    className: clsx_default(classes.scrollableX, classes.hideScrollbar),
+    elementType: TabsScrollbarSize,
+    shouldForwardComponentProp: true,
+    externalForwardedProps,
+    ownerState
+  });
   const handleScrollbarSizeChange = React92.useCallback((scrollbarWidth) => {
+    scrollbarOnChange?.(scrollbarWidth);
     setScrollerStyle({
       overflow: null,
       scrollbarWidth
     });
-  }, []);
+  }, [scrollbarOnChange]);
+  const [ScrollButtonsSlot, scrollButtonSlotProps] = useSlot("scrollButtons", {
+    className: clsx_default(classes.scrollButtons, TabScrollButtonProps.className),
+    elementType: TabScrollButton_default,
+    externalForwardedProps,
+    ownerState,
+    additionalProps: {
+      orientation,
+      slots: {
+        StartScrollButtonIcon: slots.startScrollButtonIcon || slots.StartScrollButtonIcon,
+        EndScrollButtonIcon: slots.endScrollButtonIcon || slots.EndScrollButtonIcon
+      },
+      slotProps: {
+        startScrollButtonIcon: startScrollButtonIconProps,
+        endScrollButtonIcon: endScrollButtonIconProps
+      }
+    }
+  });
   const getConditionalElements = () => {
     const conditionalElements2 = {};
-    conditionalElements2.scrollbarSizeListener = scrollable ? /* @__PURE__ */ _jsx63(TabsScrollbarSize, {
-      onChange: handleScrollbarSizeChange,
-      className: clsx_default(classes.scrollableX, classes.hideScrollbar)
+    conditionalElements2.scrollbarSizeListener = scrollable ? /* @__PURE__ */ _jsx63(ScrollbarSlot, {
+      ...scrollbarSlotProps,
+      onChange: handleScrollbarSizeChange
     }) : null;
     const scrollButtonsActive = displayStartScroll || displayEndScroll;
     const showScrollButtons = scrollable && (scrollButtons === "auto" && scrollButtonsActive || scrollButtons === true);
-    conditionalElements2.scrollButtonStart = showScrollButtons ? /* @__PURE__ */ _jsx63(ScrollButtonComponent, {
-      slots: {
-        StartScrollButtonIcon: slots.StartScrollButtonIcon
-      },
-      slotProps: {
-        startScrollButtonIcon: startScrollButtonIconProps
-      },
-      orientation,
+    conditionalElements2.scrollButtonStart = showScrollButtons ? /* @__PURE__ */ _jsx63(ScrollButtonsSlot, {
       direction: isRtl ? "right" : "left",
       onClick: handleStartScrollClick,
       disabled: !displayStartScroll,
-      ...TabScrollButtonProps,
-      className: clsx_default(classes.scrollButtons, TabScrollButtonProps.className)
+      ...scrollButtonSlotProps
     }) : null;
-    conditionalElements2.scrollButtonEnd = showScrollButtons ? /* @__PURE__ */ _jsx63(ScrollButtonComponent, {
-      slots: {
-        EndScrollButtonIcon: slots.EndScrollButtonIcon
-      },
-      slotProps: {
-        endScrollButtonIcon: endScrollButtonIconProps
-      },
-      orientation,
+    conditionalElements2.scrollButtonEnd = showScrollButtons ? /* @__PURE__ */ _jsx63(ScrollButtonsSlot, {
       direction: isRtl ? "left" : "right",
       onClick: handleEndScrollClick,
       disabled: !displayEndScroll,
-      ...TabScrollButtonProps,
-      className: clsx_default(classes.scrollButtons, TabScrollButtonProps.className)
+      ...scrollButtonSlotProps
     }) : null;
     return conditionalElements2;
   };
@@ -30852,14 +31114,17 @@ var Tabs = /* @__PURE__ */ React92.forwardRef(function Tabs2(inProps, ref) {
     updateIndicator: updateIndicatorState,
     updateScrollButtons: updateScrollButtonState
   }), [updateIndicatorState, updateScrollButtonState]);
-  const indicator = /* @__PURE__ */ _jsx63(TabsIndicator, {
-    ...TabIndicatorProps,
+  const [IndicatorSlot, indicatorSlotProps] = useSlot("indicator", {
     className: clsx_default(classes.indicator, TabIndicatorProps.className),
+    elementType: TabsIndicator,
+    externalForwardedProps,
     ownerState,
-    style: {
-      ...indicatorStyle,
-      ...TabIndicatorProps.style
+    additionalProps: {
+      style: indicatorStyle
     }
+  });
+  const indicator = /* @__PURE__ */ _jsx63(IndicatorSlot, {
+    ...indicatorSlotProps
   });
   let childIndex = 0;
   const children = React92.Children.map(childrenProp, (child) => {
@@ -30889,6 +31154,9 @@ var Tabs = /* @__PURE__ */ React92.forwardRef(function Tabs2(inProps, ref) {
     });
   });
   const handleKeyDown = (event) => {
+    if (event.altKey || event.shiftKey || event.ctrlKey || event.metaKey) {
+      return;
+    }
     const list = tabListRef.current;
     const currentFocus = ownerDocument_default(list).activeElement;
     const role = currentFocus.getAttribute("role");
@@ -30923,29 +31191,54 @@ var Tabs = /* @__PURE__ */ React92.forwardRef(function Tabs2(inProps, ref) {
     }
   };
   const conditionalElements = getConditionalElements();
-  return /* @__PURE__ */ _jsxs20(TabsRoot, {
-    className: clsx_default(classes.root, className),
-    ownerState,
+  const [RootSlot, rootSlotProps] = useSlot("root", {
     ref,
-    as: component,
-    ...other,
-    children: [conditionalElements.scrollButtonStart, conditionalElements.scrollbarSizeListener, /* @__PURE__ */ _jsxs20(TabsScroller, {
-      className: classes.scroller,
-      ownerState,
+    className: clsx_default(classes.root, className),
+    elementType: TabsRoot,
+    externalForwardedProps: {
+      ...externalForwardedProps,
+      ...other,
+      component
+    },
+    ownerState
+  });
+  const [ScrollerSlot, scrollerSlotProps] = useSlot("scroller", {
+    ref: tabsRef,
+    className: classes.scroller,
+    elementType: TabsScroller,
+    externalForwardedProps,
+    ownerState,
+    additionalProps: {
       style: {
         overflow: scrollerStyle.overflow,
         [vertical ? `margin${isRtl ? "Left" : "Right"}` : "marginBottom"]: visibleScrollbar ? void 0 : -scrollerStyle.scrollbarWidth
-      },
-      ref: tabsRef,
-      children: [/* @__PURE__ */ _jsx63(FlexContainer, {
+      }
+    }
+  });
+  const [ListSlot, listSlotProps] = useSlot("list", {
+    ref: tabListRef,
+    className: clsx_default(classes.list, classes.flexContainer),
+    elementType: List3,
+    externalForwardedProps,
+    ownerState,
+    getSlotProps: (handlers) => ({
+      ...handlers,
+      onKeyDown: (event) => {
+        handleKeyDown(event);
+        handlers.onKeyDown?.(event);
+      }
+    })
+  });
+  return /* @__PURE__ */ _jsxs20(RootSlot, {
+    ...rootSlotProps,
+    children: [conditionalElements.scrollButtonStart, conditionalElements.scrollbarSizeListener, /* @__PURE__ */ _jsxs20(ScrollerSlot, {
+      ...scrollerSlotProps,
+      children: [/* @__PURE__ */ _jsx63(ListSlot, {
         "aria-label": ariaLabel,
         "aria-labelledby": ariaLabelledBy,
         "aria-orientation": orientation === "vertical" ? "vertical" : null,
-        className: classes.flexContainer,
-        ownerState,
-        onKeyDown: handleKeyDown,
-        ref: tabListRef,
         role: "tablist",
+        ...listSlotProps,
         children
       }), mounted && indicator]
     }), conditionalElements.scrollButtonEnd]
@@ -31021,6 +31314,7 @@ true ? Tabs.propTypes = {
   orientation: import_prop_types66.default.oneOf(["horizontal", "vertical"]),
   /**
    * The component used to render the scroll buttons.
+   * @deprecated use the `slots.scrollButtons` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
    * @default TabScrollButton
    */
   ScrollButtonComponent: import_prop_types66.default.elementType,
@@ -31042,12 +31336,17 @@ true ? Tabs.propTypes = {
    */
   selectionFollowsFocus: import_prop_types66.default.bool,
   /**
-   * The extra props for the slot components.
-   * You can override the existing props or add new ones.
+   * The props used for each slot inside.
    * @default {}
    */
   slotProps: import_prop_types66.default.shape({
     endScrollButtonIcon: import_prop_types66.default.oneOfType([import_prop_types66.default.func, import_prop_types66.default.object]),
+    indicator: import_prop_types66.default.oneOfType([import_prop_types66.default.func, import_prop_types66.default.object]),
+    list: import_prop_types66.default.oneOfType([import_prop_types66.default.func, import_prop_types66.default.object]),
+    root: import_prop_types66.default.oneOfType([import_prop_types66.default.func, import_prop_types66.default.object]),
+    scrollbar: import_prop_types66.default.oneOfType([import_prop_types66.default.func, import_prop_types66.default.object]),
+    scrollButtons: import_prop_types66.default.oneOfType([import_prop_types66.default.func, import_prop_types66.default.object]),
+    scroller: import_prop_types66.default.oneOfType([import_prop_types66.default.func, import_prop_types66.default.object]),
     startScrollButtonIcon: import_prop_types66.default.oneOfType([import_prop_types66.default.func, import_prop_types66.default.object])
   }),
   /**
@@ -31055,7 +31354,15 @@ true ? Tabs.propTypes = {
    * @default {}
    */
   slots: import_prop_types66.default.shape({
+    endScrollButtonIcon: import_prop_types66.default.elementType,
     EndScrollButtonIcon: import_prop_types66.default.elementType,
+    indicator: import_prop_types66.default.elementType,
+    list: import_prop_types66.default.elementType,
+    root: import_prop_types66.default.elementType,
+    scrollbar: import_prop_types66.default.elementType,
+    scrollButtons: import_prop_types66.default.elementType,
+    scroller: import_prop_types66.default.elementType,
+    startScrollButtonIcon: import_prop_types66.default.elementType,
     StartScrollButtonIcon: import_prop_types66.default.elementType
   }),
   /**
@@ -31064,11 +31371,13 @@ true ? Tabs.propTypes = {
   sx: import_prop_types66.default.oneOfType([import_prop_types66.default.arrayOf(import_prop_types66.default.oneOfType([import_prop_types66.default.func, import_prop_types66.default.object, import_prop_types66.default.bool])), import_prop_types66.default.func, import_prop_types66.default.object]),
   /**
    * Props applied to the tab indicator element.
+   * @deprecated use the `slotProps.indicator` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
    * @default  {}
    */
   TabIndicatorProps: import_prop_types66.default.object,
   /**
    * Props applied to the [`TabScrollButton`](https://mui.com/material-ui/api/tab-scroll-button/) element.
+   * @deprecated use the `slotProps.scrollButtons` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
    * @default {}
    */
   TabScrollButtonProps: import_prop_types66.default.object,
@@ -31143,7 +31452,7 @@ var TextField = /* @__PURE__ */ React93.forwardRef(function TextField2(inProps, 
     autoFocus = false,
     children,
     className,
-    color: color2 = "primary",
+    color: color3 = "primary",
     defaultValue,
     disabled = false,
     error = false,
@@ -31178,7 +31487,7 @@ var TextField = /* @__PURE__ */ React93.forwardRef(function TextField2(inProps, 
   const ownerState = {
     ...props,
     autoFocus,
-    color: color2,
+    color: color3,
     disabled,
     error,
     fullWidth,
@@ -31222,6 +31531,25 @@ var TextField = /* @__PURE__ */ React93.forwardRef(function TextField2(inProps, 
     }
     inputAdditionalProps["aria-describedby"] = void 0;
   }
+  const [RootSlot, rootProps] = useSlot("root", {
+    elementType: TextFieldRoot,
+    shouldForwardComponentProp: true,
+    externalForwardedProps: {
+      ...externalForwardedProps,
+      ...other
+    },
+    ownerState,
+    className: clsx_default(classes.root, className),
+    ref,
+    additionalProps: {
+      disabled,
+      error,
+      fullWidth,
+      required,
+      color: color3,
+      variant
+    }
+  });
   const [InputSlot, inputProps] = useSlot("input", {
     elementType: InputComponent,
     externalForwardedProps,
@@ -31273,17 +31601,8 @@ var TextField = /* @__PURE__ */ React93.forwardRef(function TextField2(inProps, 
     },
     ...inputProps
   });
-  return /* @__PURE__ */ _jsxs21(TextFieldRoot, {
-    className: clsx_default(classes.root, className),
-    disabled,
-    error,
-    fullWidth,
-    ref,
-    required,
-    color: color2,
-    variant,
-    ownerState,
-    ...other,
+  return /* @__PURE__ */ _jsxs21(RootSlot, {
+    ...rootProps,
     children: [label != null && label !== "" && /* @__PURE__ */ _jsx64(InputLabelSlot, {
       htmlFor: id,
       id: inputLabelId,
@@ -31485,6 +31804,7 @@ true ? TextField.propTypes = {
     htmlInput: import_prop_types67.default.elementType,
     input: import_prop_types67.default.elementType,
     inputLabel: import_prop_types67.default.elementType,
+    root: import_prop_types67.default.elementType,
     select: import_prop_types67.default.elementType
   }),
   /**
@@ -31868,13 +32188,13 @@ function _createClass(e2, r2, t2) {
 
 // node_modules/jss/dist/jss.esm.js
 var plainObjectConstrurctor = {}.constructor;
-function cloneStyle(style4) {
-  if (style4 == null || typeof style4 !== "object") return style4;
-  if (Array.isArray(style4)) return style4.map(cloneStyle);
-  if (style4.constructor !== plainObjectConstrurctor) return style4;
+function cloneStyle(style6) {
+  if (style6 == null || typeof style6 !== "object") return style6;
+  if (Array.isArray(style6)) return style6.map(cloneStyle);
+  if (style6.constructor !== plainObjectConstrurctor) return style6;
   var newStyle = {};
-  for (var name in style4) {
-    newStyle[name] = cloneStyle(style4[name]);
+  for (var name in style6) {
+    newStyle[name] = cloneStyle(style6[name]);
   }
   return newStyle;
 }
@@ -31934,14 +32254,14 @@ function indentStr(str, indent) {
   }
   return result + str;
 }
-function toCss(selector, style4, options) {
+function toCss(selector, style6, options) {
   if (options === void 0) {
     options = {};
   }
   var result = "";
-  if (!style4) return result;
+  if (!style6) return result;
   var _options = options, _options$indent = _options.indent, indent = _options$indent === void 0 ? 0 : _options$indent;
-  var fallbacks = style4.fallbacks;
+  var fallbacks = style6.fallbacks;
   if (options.format === false) {
     indent = -Infinity;
   }
@@ -31969,8 +32289,8 @@ function toCss(selector, style4, options) {
       }
     }
   }
-  for (var _prop2 in style4) {
-    var _value2 = style4[_prop2];
+  for (var _prop2 in style6) {
+    var _value2 = style6[_prop2];
     if (_value2 != null && _prop2 !== "fallbacks") {
       if (result) result += linebreak;
       result += indentStr(_prop2 + ":" + space + toCssValue(_value2) + ";", indent);
@@ -31988,13 +32308,13 @@ var escape = function(str) {
   return nativeEscape ? nativeEscape(str) : str.replace(escapeRegex, "\\$1");
 };
 var BaseStyleRule = /* @__PURE__ */ function() {
-  function BaseStyleRule2(key, style4, options) {
+  function BaseStyleRule2(key, style6, options) {
     this.type = "style";
     this.isProcessed = false;
     var sheet = options.sheet, Renderer = options.Renderer;
     this.key = key;
     this.options = options;
-    this.style = style4;
+    this.style = style6;
     if (sheet) this.renderer = sheet.renderer;
     else if (Renderer) this.renderer = new Renderer();
   }
@@ -32028,9 +32348,9 @@ var BaseStyleRule = /* @__PURE__ */ function() {
 }();
 var StyleRule = /* @__PURE__ */ function(_BaseStyleRule) {
   _inheritsLoose(StyleRule2, _BaseStyleRule);
-  function StyleRule2(key, style4, options) {
+  function StyleRule2(key, style6, options) {
     var _this;
-    _this = _BaseStyleRule.call(this, key, style4, options) || this;
+    _this = _BaseStyleRule.call(this, key, style6, options) || this;
     var selector = options.selector, scoped = options.scoped, sheet = options.sheet, generateId = options.generateId;
     if (selector) {
       _this.selectorText = selector;
@@ -32087,11 +32407,11 @@ var StyleRule = /* @__PURE__ */ function(_BaseStyleRule) {
   return StyleRule2;
 }(BaseStyleRule);
 var pluginStyleRule = {
-  onCreateRule: function onCreateRule(key, style4, options) {
+  onCreateRule: function onCreateRule(key, style6, options) {
     if (key[0] === "@" || options.parent && options.parent.type === "keyframes") {
       return null;
     }
-    return new StyleRule(key, style4, options);
+    return new StyleRule(key, style6, options);
   }
 };
 var defaultToStringOptions = {
@@ -32123,14 +32443,14 @@ var ConditionalRule = /* @__PURE__ */ function() {
   _proto.indexOf = function indexOf(rule) {
     return this.rules.indexOf(rule);
   };
-  _proto.addRule = function addRule(name, style4, options) {
-    var rule = this.rules.add(name, style4, options);
+  _proto.addRule = function addRule(name, style6, options) {
+    var rule = this.rules.add(name, style6, options);
     if (!rule) return null;
     this.options.jss.plugins.onProcessRule(rule);
     return rule;
   };
-  _proto.replaceRule = function replaceRule(name, style4, options) {
-    var newRule = this.rules.replace(name, style4, options);
+  _proto.replaceRule = function replaceRule(name, style6, options) {
+    var newRule = this.rules.replace(name, style6, options);
     if (newRule) this.options.jss.plugins.onProcessRule(newRule);
     return newRule;
   };
@@ -32217,11 +32537,11 @@ var findReferencedKeyframe = function findReferencedKeyframe2(val, keyframes2) {
   }
   return val;
 };
-var replaceRef = function replaceRef2(style4, prop, keyframes2) {
-  var value = style4[prop];
+var replaceRef = function replaceRef2(style6, prop, keyframes2) {
+  var value = style6[prop];
   var refKeyframe = findReferencedKeyframe(value, keyframes2);
   if (refKeyframe !== value) {
-    style4[prop] = refKeyframe;
+    style6[prop] = refKeyframe;
   }
 };
 var pluginKeyframesRule = {
@@ -32229,11 +32549,11 @@ var pluginKeyframesRule = {
     return typeof key === "string" && keyRegExp$1.test(key) ? new KeyframesRule(key, frames, options) : null;
   },
   // Animation name ref replacer.
-  onProcessStyle: function onProcessStyle(style4, rule, sheet) {
-    if (rule.type !== "style" || !sheet) return style4;
-    if ("animation-name" in style4) replaceRef(style4, "animation-name", sheet.keyframes);
-    if ("animation" in style4) replaceRef(style4, "animation", sheet.keyframes);
-    return style4;
+  onProcessStyle: function onProcessStyle(style6, rule, sheet) {
+    if (rule.type !== "style" || !sheet) return style6;
+    if ("animation-name" in style6) replaceRef(style6, "animation-name", sheet.keyframes);
+    if ("animation" in style6) replaceRef(style6, "animation", sheet.keyframes);
+    return style6;
   },
   onChangeValue: function onChangeValue(val, prop, rule) {
     var sheet = rule.options.sheet;
@@ -32267,20 +32587,20 @@ var KeyframeRule = /* @__PURE__ */ function(_BaseStyleRule) {
   return KeyframeRule2;
 }(BaseStyleRule);
 var pluginKeyframeRule = {
-  onCreateRule: function onCreateRule4(key, style4, options) {
+  onCreateRule: function onCreateRule4(key, style6, options) {
     if (options.parent && options.parent.type === "keyframes") {
-      return new KeyframeRule(key, style4, options);
+      return new KeyframeRule(key, style6, options);
     }
     return null;
   }
 };
 var FontFaceRule = /* @__PURE__ */ function() {
-  function FontFaceRule2(key, style4, options) {
+  function FontFaceRule2(key, style6, options) {
     this.type = "font-face";
     this.at = "@font-face";
     this.isProcessed = false;
     this.key = key;
-    this.style = style4;
+    this.style = style6;
     this.options = options;
   }
   var _proto = FontFaceRule2.prototype;
@@ -32300,17 +32620,17 @@ var FontFaceRule = /* @__PURE__ */ function() {
 }();
 var keyRegExp$2 = /@font-face/;
 var pluginFontFaceRule = {
-  onCreateRule: function onCreateRule5(key, style4, options) {
-    return keyRegExp$2.test(key) ? new FontFaceRule(key, style4, options) : null;
+  onCreateRule: function onCreateRule5(key, style6, options) {
+    return keyRegExp$2.test(key) ? new FontFaceRule(key, style6, options) : null;
   }
 };
 var ViewportRule = /* @__PURE__ */ function() {
-  function ViewportRule2(key, style4, options) {
+  function ViewportRule2(key, style6, options) {
     this.type = "viewport";
     this.at = "@viewport";
     this.isProcessed = false;
     this.key = key;
-    this.style = style4;
+    this.style = style6;
     this.options = options;
   }
   var _proto = ViewportRule2.prototype;
@@ -32320,8 +32640,8 @@ var ViewportRule = /* @__PURE__ */ function() {
   return ViewportRule2;
 }();
 var pluginViewportRule = {
-  onCreateRule: function onCreateRule6(key, style4, options) {
-    return key === "@viewport" || key === "@-ms-viewport" ? new ViewportRule(key, style4, options) : null;
+  onCreateRule: function onCreateRule6(key, style6, options) {
+    return key === "@viewport" || key === "@-ms-viewport" ? new ViewportRule(key, style6, options) : null;
   }
 };
 var SimpleRule = /* @__PURE__ */ function() {
@@ -32483,20 +32803,20 @@ var RuleList = /* @__PURE__ */ function() {
       rule.rules.update(data, options);
       return;
     }
-    var style4 = rule.style;
+    var style6 = rule.style;
     plugins3.onUpdate(data, rule, sheet, options);
-    if (options.process && style4 && style4 !== rule.style) {
+    if (options.process && style6 && style6 !== rule.style) {
       plugins3.onProcessStyle(rule.style, rule, sheet);
       for (var prop in rule.style) {
         var nextValue = rule.style[prop];
-        var prevValue = style4[prop];
+        var prevValue = style6[prop];
         if (nextValue !== prevValue) {
           rule.prop(prop, nextValue, forceUpdateOptions);
         }
       }
-      for (var _prop in style4) {
+      for (var _prop in style6) {
         var _nextValue = rule.style[_prop];
-        var _prevValue = style4[_prop];
+        var _prevValue = style6[_prop];
         if (_nextValue == null && _nextValue !== _prevValue) {
           rule.prop(_prop, null, forceUpdateOptions);
         }
@@ -32672,7 +32992,7 @@ var PluginsRegistry = /* @__PURE__ */ function() {
     if (rule.style) this.onProcessStyle(rule.style, rule, sheet);
     rule.isProcessed = true;
   };
-  _proto.onProcessStyle = function onProcessStyle2(style4, rule, sheet) {
+  _proto.onProcessStyle = function onProcessStyle2(style6, rule, sheet) {
     for (var i2 = 0; i2 < this.registry.onProcessStyle.length; i2++) {
       rule.style = this.registry.onProcessStyle[i2](rule.style, rule, sheet);
     }
@@ -32922,21 +33242,21 @@ function findPrevNode(options) {
   }
   return false;
 }
-function insertStyle(style4, options) {
+function insertStyle(style6, options) {
   var insertionPoint = options.insertionPoint;
   var nextNode = findPrevNode(options);
   if (nextNode !== false && nextNode.parent) {
-    nextNode.parent.insertBefore(style4, nextNode.node);
+    nextNode.parent.insertBefore(style6, nextNode.node);
     return;
   }
   if (insertionPoint && typeof insertionPoint.nodeType === "number") {
     var insertionPointElement = insertionPoint;
     var parentNode = insertionPointElement.parentNode;
-    if (parentNode) parentNode.insertBefore(style4, insertionPointElement.nextSibling);
+    if (parentNode) parentNode.insertBefore(style6, insertionPointElement.nextSibling);
     else true ? tiny_warning_esm_default(false, "[JSS] Insertion point is not in the DOM.") : void 0;
     return;
   }
-  getHead().appendChild(style4);
+  getHead().appendChild(style6);
 }
 var getNonce = memoize3(function() {
   var node = document.querySelector('meta[property="csp-nonce"]');
@@ -33146,15 +33466,15 @@ var Jss = /* @__PURE__ */ function() {
     sheets.remove(sheet);
     return this;
   };
-  _proto.createRule = function createRule$1(name, style4, options) {
-    if (style4 === void 0) {
-      style4 = {};
+  _proto.createRule = function createRule$1(name, style6, options) {
+    if (style6 === void 0) {
+      style6 = {};
     }
     if (options === void 0) {
       options = {};
     }
     if (typeof name === "object") {
-      return this.createRule(void 0, name, style4);
+      return this.createRule(void 0, name, style6);
     }
     var ruleOptions = _extends({}, options, {
       name,
@@ -33164,7 +33484,7 @@ var Jss = /* @__PURE__ */ function() {
     if (!ruleOptions.generateId) ruleOptions.generateId = this.generateId;
     if (!ruleOptions.classes) ruleOptions.classes = {};
     if (!ruleOptions.keyframes) ruleOptions.keyframes = {};
-    var rule = createRule(name, style4, ruleOptions);
+    var rule = createRule(name, style6, ruleOptions);
     if (rule) this.plugins.onProcessRule(rule);
     return rule;
   };
@@ -33216,17 +33536,17 @@ var functionPlugin = function functionPlugin2() {
       rule[fnRuleNs] = decl;
       return rule;
     },
-    onProcessStyle: function onProcessStyle2(style4, rule) {
-      if (fnValuesNs in rule || fnRuleNs in rule) return style4;
+    onProcessStyle: function onProcessStyle2(style6, rule) {
+      if (fnValuesNs in rule || fnRuleNs in rule) return style6;
       var fnValues = {};
-      for (var prop in style4) {
-        var value = style4[prop];
+      for (var prop in style6) {
+        var value = style6[prop];
         if (typeof value !== "function") continue;
-        delete style4[prop];
+        delete style6[prop];
         fnValues[prop] = value;
       }
       rule[fnValuesNs] = fnValues;
-      return style4;
+      return style6;
     },
     onUpdate: function onUpdate(data, rule, sheet, options) {
       var styleRule = rule;
@@ -33275,13 +33595,13 @@ var GlobalContainerRule = /* @__PURE__ */ function() {
   _proto.getRule = function getRule(name) {
     return this.rules.get(name);
   };
-  _proto.addRule = function addRule(name, style4, options) {
-    var rule = this.rules.add(name, style4, options);
+  _proto.addRule = function addRule(name, style6, options) {
+    var rule = this.rules.add(name, style6, options);
     if (rule) this.options.jss.plugins.onProcessRule(rule);
     return rule;
   };
-  _proto.replaceRule = function replaceRule(name, style4, options) {
-    var newRule = this.rules.replace(name, style4, options);
+  _proto.replaceRule = function replaceRule(name, style6, options) {
+    var newRule = this.rules.replace(name, style6, options);
     if (newRule) this.options.jss.plugins.onProcessRule(newRule);
     return newRule;
   };
@@ -33294,14 +33614,14 @@ var GlobalContainerRule = /* @__PURE__ */ function() {
   return GlobalContainerRule2;
 }();
 var GlobalPrefixedRule = /* @__PURE__ */ function() {
-  function GlobalPrefixedRule2(key, style4, options) {
+  function GlobalPrefixedRule2(key, style6, options) {
     this.type = "global";
     this.at = at;
     this.isProcessed = false;
     this.key = key;
     this.options = options;
     var selector = key.substr(atPrefix.length);
-    this.rule = options.jss.createRule(selector, style4, _extends({}, options, {
+    this.rule = options.jss.createRule(selector, style6, _extends({}, options, {
       parent: this
     }));
   }
@@ -33322,25 +33642,25 @@ function addScope(selector, scope) {
   return scoped;
 }
 function handleNestedGlobalContainerRule(rule, sheet) {
-  var options = rule.options, style4 = rule.style;
-  var rules = style4 ? style4[at] : null;
+  var options = rule.options, style6 = rule.style;
+  var rules = style6 ? style6[at] : null;
   if (!rules) return;
   for (var name in rules) {
     sheet.addRule(name, rules[name], _extends({}, options, {
       selector: addScope(name, rule.selector)
     }));
   }
-  delete style4[at];
+  delete style6[at];
 }
 function handlePrefixedGlobalRule(rule, sheet) {
-  var options = rule.options, style4 = rule.style;
-  for (var prop in style4) {
+  var options = rule.options, style6 = rule.style;
+  for (var prop in style6) {
     if (prop[0] !== "@" || prop.substr(0, at.length) !== at) continue;
     var selector = addScope(prop.substr(at.length), rule.selector);
-    sheet.addRule(selector, style4[prop], _extends({}, options, {
+    sheet.addRule(selector, style6[prop], _extends({}, options, {
       selector
     }));
-    delete style4[prop];
+    delete style6[prop];
   }
 }
 function jssGlobal() {
@@ -33418,13 +33738,13 @@ function jssNested() {
     delete options.name;
     return options;
   }
-  function onProcessStyle2(style4, rule, sheet) {
-    if (rule.type !== "style") return style4;
+  function onProcessStyle2(style6, rule, sheet) {
+    if (rule.type !== "style") return style6;
     var styleRule = rule;
     var container = styleRule.options.parent;
     var options;
     var replaceRef3;
-    for (var prop in style4) {
+    for (var prop in style6) {
       var isNested = prop.indexOf("&") !== -1;
       var isNestedConditional = prop[0] === "@";
       if (!isNested && !isNestedConditional) continue;
@@ -33435,22 +33755,22 @@ function jssNested() {
         selector = selector.replace(refRegExp2, replaceRef3);
         var name = styleRule.key + "-" + prop;
         if ("replaceRule" in container) {
-          container.replaceRule(name, style4[prop], _extends({}, options, {
+          container.replaceRule(name, style6[prop], _extends({}, options, {
             selector
           }));
         } else {
-          container.addRule(name, style4[prop], _extends({}, options, {
+          container.addRule(name, style6[prop], _extends({}, options, {
             selector
           }));
         }
       } else if (isNestedConditional) {
-        container.addRule(prop, {}, options).addRule(styleRule.key, style4[prop], {
+        container.addRule(prop, {}, options).addRule(styleRule.key, style6[prop], {
           selector: styleRule.selector
         });
       }
-      delete style4[prop];
+      delete style6[prop];
     }
-    return style4;
+    return style6;
   }
   return {
     onProcessStyle: onProcessStyle2
@@ -33475,27 +33795,27 @@ function hyphenateStyleName(name) {
 var hyphenate_style_name_default = hyphenateStyleName;
 
 // node_modules/jss-plugin-camel-case/dist/jss-plugin-camel-case.esm.js
-function convertCase(style4) {
+function convertCase(style6) {
   var converted = {};
-  for (var prop in style4) {
+  for (var prop in style6) {
     var key = prop.indexOf("--") === 0 ? prop : hyphenate_style_name_default(prop);
-    converted[key] = style4[prop];
+    converted[key] = style6[prop];
   }
-  if (style4.fallbacks) {
-    if (Array.isArray(style4.fallbacks)) converted.fallbacks = style4.fallbacks.map(convertCase);
-    else converted.fallbacks = convertCase(style4.fallbacks);
+  if (style6.fallbacks) {
+    if (Array.isArray(style6.fallbacks)) converted.fallbacks = style6.fallbacks.map(convertCase);
+    else converted.fallbacks = convertCase(style6.fallbacks);
   }
   return converted;
 }
 function camelCase() {
-  function onProcessStyle2(style4) {
-    if (Array.isArray(style4)) {
-      for (var index3 = 0; index3 < style4.length; index3++) {
-        style4[index3] = convertCase(style4[index3]);
+  function onProcessStyle2(style6) {
+    if (Array.isArray(style6)) {
+      for (var index3 = 0; index3 < style6.length; index3++) {
+        style6[index3] = convertCase(style6[index3]);
       }
-      return style4;
+      return style6;
     }
-    return convertCase(style4);
+    return convertCase(style6);
   }
   function onChangeValue2(value, prop, rule) {
     if (prop.indexOf("--") === 0) {
@@ -33712,12 +34032,12 @@ function defaultUnit(options) {
     options = {};
   }
   var camelCasedOptions = addCamelCasedVersion(options);
-  function onProcessStyle2(style4, rule) {
-    if (rule.type !== "style") return style4;
-    for (var prop in style4) {
-      style4[prop] = iterate(prop, style4[prop], camelCasedOptions);
+  function onProcessStyle2(style6, rule) {
+    if (rule.type !== "style") return style6;
+    for (var prop in style6) {
+      style6[prop] = iterate(prop, style6[prop], camelCasedOptions);
     }
-    return style4;
+    return style6;
   }
   function onChangeValue2(value, prop) {
     return iterate(prop, value, camelCasedOptions);
@@ -33778,27 +34098,27 @@ if (module_default) {
     O: "-o-",
     Webkit: "-webkit-"
   };
-  _document$createEleme = document.createElement("p"), style4 = _document$createEleme.style;
+  _document$createEleme = document.createElement("p"), style6 = _document$createEleme.style;
   testProp = "Transform";
   for (key in jsCssMap) {
-    if (key + testProp in style4) {
+    if (key + testProp in style6) {
       js = key;
       css2 = jsCssMap[key];
       break;
     }
   }
-  if (js === "Webkit" && "msHyphens" in style4) {
+  if (js === "Webkit" && "msHyphens" in style6) {
     js = "ms";
     css2 = jsCssMap.ms;
     browser = "edge";
   }
-  if (js === "Webkit" && "-apple-trailing-word" in style4) {
+  if (js === "Webkit" && "-apple-trailing-word" in style6) {
     vendor = "apple";
   }
 }
 var jsCssMap;
 var _document$createEleme;
-var style4;
+var style6;
 var testProp;
 var key;
 var prefix = {
@@ -33841,14 +34161,14 @@ function pascalize(str) {
 }
 var mask = {
   noPrefill: ["mask"],
-  supportedProperty: function supportedProperty3(prop, style4) {
+  supportedProperty: function supportedProperty3(prop, style6) {
     if (!/^mask/.test(prop)) return false;
     if (prefix.js === "Webkit") {
       var longhand = "mask-image";
-      if (camelize(longhand) in style4) {
+      if (camelize(longhand) in style6) {
         return prop;
       }
-      if (prefix.js + pascalize(longhand) in style4) {
+      if (prefix.js + pascalize(longhand) in style6) {
         return prefix.css + prop;
       }
     }
@@ -33867,7 +34187,7 @@ var textOrientation = {
 };
 var transform = {
   noPrefill: ["transform"],
-  supportedProperty: function supportedProperty5(prop, style4, options) {
+  supportedProperty: function supportedProperty5(prop, style6, options) {
     if (prop !== "transform") return false;
     if (options.transform) {
       return prop;
@@ -33877,7 +34197,7 @@ var transform = {
 };
 var transition = {
   noPrefill: ["transition"],
-  supportedProperty: function supportedProperty6(prop, style4, options) {
+  supportedProperty: function supportedProperty6(prop, style6, options) {
     if (prop !== "transition") return false;
     if (options.transition) {
       return prop;
@@ -33906,39 +34226,39 @@ var userSelect = {
   }
 };
 var breakPropsOld = {
-  supportedProperty: function supportedProperty9(prop, style4) {
+  supportedProperty: function supportedProperty9(prop, style6) {
     if (!/^break-/.test(prop)) return false;
     if (prefix.js === "Webkit") {
       var jsProp = "WebkitColumn" + pascalize(prop);
-      return jsProp in style4 ? prefix.css + "column-" + prop : false;
+      return jsProp in style6 ? prefix.css + "column-" + prop : false;
     }
     if (prefix.js === "Moz") {
       var _jsProp = "page" + pascalize(prop);
-      return _jsProp in style4 ? "page-" + prop : false;
+      return _jsProp in style6 ? "page-" + prop : false;
     }
     return false;
   }
 };
 var inlineLogicalOld = {
-  supportedProperty: function supportedProperty10(prop, style4) {
+  supportedProperty: function supportedProperty10(prop, style6) {
     if (!/^(border|margin|padding)-inline/.test(prop)) return false;
     if (prefix.js === "Moz") return prop;
     var newProp = prop.replace("-inline", "");
-    return prefix.js + pascalize(newProp) in style4 ? prefix.css + newProp : false;
+    return prefix.js + pascalize(newProp) in style6 ? prefix.css + newProp : false;
   }
 };
 var unprefixed = {
-  supportedProperty: function supportedProperty11(prop, style4) {
-    return camelize(prop) in style4 ? prop : false;
+  supportedProperty: function supportedProperty11(prop, style6) {
+    return camelize(prop) in style6 ? prop : false;
   }
 };
 var prefixed = {
-  supportedProperty: function supportedProperty12(prop, style4) {
+  supportedProperty: function supportedProperty12(prop, style6) {
     var pascalized = pascalize(prop);
     if (prop[0] === "-") return prop;
     if (prop[0] === "-" && prop[1] === "-") return prop;
-    if (prefix.js + pascalized in style4) return prefix.css + prop;
-    if (prefix.js !== "Webkit" && "Webkit" + pascalized in style4) return "-webkit-" + prop;
+    if (prefix.js + pascalized in style6) return prefix.css + prop;
+    if (prefix.js !== "Webkit" && "Webkit" + pascalized in style6) return "-webkit-" + prop;
     return false;
   }
 };
@@ -33971,10 +34291,10 @@ var propMap = {
   // 'align-self' is handled by 'align-self' plugin.
 };
 var flex2012 = {
-  supportedProperty: function supportedProperty15(prop, style4) {
+  supportedProperty: function supportedProperty15(prop, style6) {
     var newProp = propMap[prop];
     if (!newProp) return false;
-    return prefix.js + pascalize(newProp) in style4 ? prefix.css + newProp : false;
+    return prefix.js + pascalize(newProp) in style6 ? prefix.css + newProp : false;
   }
 };
 var propMap$1 = {
@@ -33991,16 +34311,16 @@ var prefixCss = function prefixCss2(p) {
   return prefix.css + p;
 };
 var flex2009 = {
-  supportedProperty: function supportedProperty16(prop, style4, _ref) {
+  supportedProperty: function supportedProperty16(prop, style6, _ref) {
     var multiple = _ref.multiple;
     if (propKeys.indexOf(prop) > -1) {
       var newProp = propMap$1[prop];
       if (!Array.isArray(newProp)) {
-        return prefix.js + pascalize(newProp) in style4 ? prefix.css + newProp : false;
+        return prefix.js + pascalize(newProp) in style6 ? prefix.css + newProp : false;
       }
       if (!multiple) return false;
       for (var i2 = 0; i2 < newProp.length; i2++) {
-        if (!(prefix.js + pascalize(newProp[0]) in style4)) {
+        if (!(prefix.js + pascalize(newProp[0]) in style6)) {
           return false;
         }
       }
@@ -34115,11 +34435,11 @@ function jssVendorPrefixer() {
       atRule.at = supportedKeyframes(atRule.at);
     }
   }
-  function prefixStyle(style4) {
-    for (var prop in style4) {
-      var value = style4[prop];
+  function prefixStyle(style6) {
+    for (var prop in style6) {
+      var value = style6[prop];
       if (prop === "fallbacks" && Array.isArray(value)) {
-        style4[prop] = value.map(prefixStyle);
+        style6[prop] = value.map(prefixStyle);
         continue;
       }
       var changeProp = false;
@@ -34129,15 +34449,15 @@ function jssVendorPrefixer() {
       var supportedValue$1 = supportedValue(supportedProp, toCssValue(value));
       if (supportedValue$1 && supportedValue$1 !== value) changeValue = true;
       if (changeProp || changeValue) {
-        if (changeProp) delete style4[prop];
-        style4[supportedProp || prop] = supportedValue$1 || value;
+        if (changeProp) delete style6[prop];
+        style6[supportedProp || prop] = supportedValue$1 || value;
       }
     }
-    return style4;
+    return style6;
   }
-  function onProcessStyle2(style4, rule) {
-    if (rule.type !== "style") return style4;
-    return prefixStyle(style4);
+  function onProcessStyle2(style6, rule) {
+    if (rule.type !== "style") return style6;
+    return prefixStyle(style6);
   }
   function onChangeValue2(value, prop) {
     return supportedValue(prop, toCssValue(value)) || value;
@@ -34159,12 +34479,12 @@ function jssPropsSort() {
     return prop0.length - prop1.length;
   };
   return {
-    onProcessStyle: function onProcessStyle2(style4, rule) {
-      if (rule.type !== "style") return style4;
+    onProcessStyle: function onProcessStyle2(style6, rule) {
+      if (rule.type !== "style") return style6;
       var newStyle = {};
-      var props = Object.keys(style4).sort(sort);
+      var props = Object.keys(style6).sort(sort);
       for (var i2 = 0; i2 < props.length; i2++) {
-        newStyle[props[i2]] = style4[props[i2]];
+        newStyle[props[i2]] = style6[props[i2]];
       }
       return newStyle;
     }
@@ -34607,10 +34927,10 @@ function detach({
     }
   }
 }
-function useSynchronousEffect(func, values4) {
+function useSynchronousEffect(func, values5) {
   const key = React99.useRef([]);
   let output;
-  const currentKey = React99.useMemo(() => ({}), values4);
+  const currentKey = React99.useMemo(() => ({}), values5);
   if (key.current !== currentKey) {
     key.current = currentKey;
     output = func();
@@ -35075,15 +35395,15 @@ var Table = ({
   const [sizePerPage, setSizePerPage] = useState16(config.defaultPageOptions.sizePerPage || 10);
   const [searchValue, setSearchValue] = useState16(config.defaultPageOptions.search || "");
   const [date, setDate] = useState16(null);
-  const tableRef = useRef26(null);
-  const anchorRef = useRef26(null);
+  const tableRef = useRef27(null);
+  const anchorRef = useRef27(null);
+  const cmWrapperRoot = useRef27(null);
   const { ExportCSVButton } = CSVExport;
   const { ToggleList } = ColumnToggle;
   const unMountContextMenus = () => {
     const wrapper2 = getWrapper();
     if (wrapper2) {
-      const root = createRoot(wrapper2);
-      root.unmount();
+      cmWrapperRoot.current?.unmount();
     }
   };
   useEffect19(() => {
@@ -35417,34 +35737,30 @@ var Table = ({
     }
     if (availableContextMenus.length) {
       const wrapper2 = getWrapper();
-      const menu = /* @__PURE__ */ jsx4(ClickAwayListener, { onClickAway: unMountContextMenus, children: /* @__PURE__ */ jsx4(
-        "div",
-        {
-          className: "dt-cm-wrapper",
-          style: { top: e2.pageY, left: e2.pageX },
-          children: availableContextMenus.map((menu2) => {
-            return /* @__PURE__ */ jsxs3(
-              "div",
-              {
-                style: menu2?.style ? menu2.style : menu2.key == "view" ? { position: "relative", right: 1 } : {},
-                className: "dt-cm-item",
-                onClick: (event) => {
-                  event.stopPropagation();
-                  unMountContextMenus();
-                  onContextMenuItemClick?.(row.id, menu2.key, row, event);
-                },
-                children: [
-                  /* @__PURE__ */ jsx4("div", { style: { transform: "translate(0px, -2px)" }, children: menu2.icon ? menu2.icon : null }),
-                  /* @__PURE__ */ jsx4("span", { className: "black-color", children: menu2.title })
-                ]
-              },
-              menu2.key
-            );
-          })
+      const menu = /* @__PURE__ */ jsx4(ClickAwayListener, { onClickAway: unMountContextMenus, children: /* @__PURE__ */ jsx4("div", { className: "dt-cm-wrapper", style: { top: e2.pageY, left: e2.pageX }, children: availableContextMenus.map((menu2) => {
+        if (menu2.key == "line") {
+          return /* @__PURE__ */ jsx4("div", { children: /* @__PURE__ */ jsx4("div", { className: "line" }) }, menu2.key);
         }
-      ) });
-      const root = createRoot(wrapper2);
-      root.render(menu);
+        return /* @__PURE__ */ jsx4("div", { children: /* @__PURE__ */ jsxs3(
+          "div",
+          {
+            className: "dt-cm-item",
+            onClick: (event) => {
+              event.stopPropagation();
+              unMountContextMenus();
+              onContextMenuItemClick?.(row.id, menu2.key, row, event);
+            },
+            children: [
+              /* @__PURE__ */ jsx4("div", { children: menu2.icon ? menu2.icon : null }),
+              /* @__PURE__ */ jsx4("div", { children: menu2.title })
+            ]
+          }
+        ) }, menu2.key);
+      }) }) });
+      cmWrapperRoot.current = createRoot(wrapper2);
+      if (cmWrapperRoot?.current) {
+        cmWrapperRoot.current?.render(menu);
+      }
     }
   };
   const getWrapper = () => {
@@ -36031,7 +36347,7 @@ var Table = ({
 var Table_default = Table;
 
 // src/modules/Form/index.js
-import React185, { useState as useState32, useEffect as useEffect41, useImperativeHandle as useImperativeHandle10, useRef as useRef51 } from "react";
+import React187, { useState as useState32, useEffect as useEffect41, useImperativeHandle as useImperativeHandle10, useRef as useRef52 } from "react";
 
 // src/modules/Checkbox/index.js
 import React103 from "react";
@@ -36040,7 +36356,7 @@ import { jsx as jsx5, jsxs as jsxs4 } from "react/jsx-runtime";
 var Checkbox3 = ({
   className = "",
   checked = false,
-  style: style4 = {},
+  style: style6 = {},
   label,
   onChange,
   size = 18,
@@ -36057,7 +36373,7 @@ var Checkbox3 = ({
         display: "flex",
         alignItems: "center",
         height: `${size}px`,
-        ...style4
+        ...style6
       },
       children: [
         /* @__PURE__ */ jsx5(
@@ -36117,15 +36433,15 @@ var Select3 = ({
   labelEntity = false,
   isArrow = true,
   defaultColor = false,
-  style: style4,
+  style: style6,
   ...rest
 }) => {
   const { t: t2 } = useTranslation3();
   const handleChange = (value2, evt) => {
     if (evt?.action === "select-option" || evt?.action === "remove-value") {
       if (Array.isArray(value2)) {
-        const values4 = value2.map((option) => option.value);
-        onChange?.(values4, evt, value2);
+        const values5 = value2.map((option) => option.value);
+        onChange?.(values5, evt, value2);
       } else {
         if (value2) {
           const id = value2.value;
@@ -36155,7 +36471,7 @@ var Select3 = ({
     }
     return false;
   };
-  const getValue2 = () => {
+  const getValue3 = () => {
     if (!value) {
       return null;
     }
@@ -36235,7 +36551,7 @@ var Select3 = ({
       trim: true,
       isSearchable: searchable,
       isMulti: multiple,
-      value: getValue2(),
+      value: getValue3(),
       onChange: handleChange,
       onInputChange: handleInputChange,
       options,
@@ -37447,8 +37763,8 @@ var formatDistance_default = formatDistance;
 function buildFormatLongFn(args) {
   return function() {
     var options = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
-    var width2 = options.width ? String(options.width) : args.defaultWidth;
-    var format2 = args.formats[width2] || args.formats[args.defaultWidth];
+    var width3 = options.width ? String(options.width) : args.defaultWidth;
+    var format2 = args.formats[width3] || args.formats[args.defaultWidth];
     return format2;
   };
 }
@@ -37509,8 +37825,8 @@ function buildLocalizeFn(args) {
     var valuesArray;
     if (context === "formatting" && args.formattingValues) {
       var defaultWidth = args.defaultFormattingWidth || args.defaultWidth;
-      var width2 = options !== null && options !== void 0 && options.width ? String(options.width) : defaultWidth;
-      valuesArray = args.formattingValues[width2] || args.formattingValues[defaultWidth];
+      var width3 = options !== null && options !== void 0 && options.width ? String(options.width) : defaultWidth;
+      valuesArray = args.formattingValues[width3] || args.formattingValues[defaultWidth];
     } else {
       var _defaultWidth = args.defaultWidth;
       var _width = options !== null && options !== void 0 && options.width ? String(options.width) : args.defaultWidth;
@@ -37656,14 +37972,14 @@ var localize_default = localize;
 function buildMatchFn(args) {
   return function(string) {
     var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-    var width2 = options.width;
-    var matchPattern = width2 && args.matchPatterns[width2] || args.matchPatterns[args.defaultMatchWidth];
+    var width3 = options.width;
+    var matchPattern = width3 && args.matchPatterns[width3] || args.matchPatterns[args.defaultMatchWidth];
     var matchResult = string.match(matchPattern);
     if (!matchResult) {
       return null;
     }
     var matchedString = matchResult[0];
-    var parsePatterns = width2 && args.parsePatterns[width2] || args.parsePatterns[args.defaultParseWidth];
+    var parsePatterns = width3 && args.parsePatterns[width3] || args.parsePatterns[args.defaultParseWidth];
     var key = Array.isArray(parsePatterns) ? findIndex(parsePatterns, function(pattern) {
       return pattern.test(matchedString);
     }) : findKey(parsePatterns, function(pattern) {
@@ -38101,11 +38417,11 @@ var DatePicker = ({
 var DatePicker_default = DatePicker;
 
 // src/modules/DateTimePicker/index.js
-import React179 from "react";
+import React181 from "react";
 
 // node_modules/@mui/x-date-pickers/TimeClock/TimeClock.js
-import * as React121 from "react";
-var import_prop_types70 = __toESM(require_prop_types());
+import * as React122 from "react";
+var import_prop_types71 = __toESM(require_prop_types());
 
 // node_modules/@mui/x-date-pickers/internals/hooks/useUtils.js
 import * as React110 from "react";
@@ -38364,41 +38680,64 @@ var useNow = (timezone) => {
 var usePickersTranslations = () => useLocalizationContext().localeText;
 
 // node_modules/@mui/x-date-pickers/internals/components/PickersArrowSwitcher/PickersArrowSwitcher.js
-import * as React112 from "react";
+import * as React113 from "react";
+
+// node_modules/@mui/system/esm/RtlProvider/index.js
+var import_prop_types70 = __toESM(require_prop_types(), 1);
+import * as React111 from "react";
+import { jsx as _jsx70 } from "react/jsx-runtime";
+var RtlContext2 = /* @__PURE__ */ React111.createContext();
+function RtlProvider2({
+  value,
+  ...props
+}) {
+  return /* @__PURE__ */ _jsx70(RtlContext2.Provider, {
+    value: value ?? true,
+    ...props
+  });
+}
+true ? RtlProvider2.propTypes = {
+  children: import_prop_types70.default.node,
+  value: import_prop_types70.default.bool
+} : void 0;
+var useRtl2 = () => {
+  const value = React111.useContext(RtlContext2);
+  return value ?? false;
+};
 
 // node_modules/@mui/x-date-pickers/icons/index.js
-import * as React111 from "react";
-import { jsx as _jsx70, jsxs as _jsxs22 } from "react/jsx-runtime";
-var ArrowDropDownIcon = createSvgIcon(/* @__PURE__ */ _jsx70("path", {
+import * as React112 from "react";
+import { jsx as _jsx71, jsxs as _jsxs22 } from "react/jsx-runtime";
+var ArrowDropDownIcon = createSvgIcon(/* @__PURE__ */ _jsx71("path", {
   d: "M7 10l5 5 5-5z"
 }), "ArrowDropDown");
-var ArrowLeftIcon = createSvgIcon(/* @__PURE__ */ _jsx70("path", {
+var ArrowLeftIcon = createSvgIcon(/* @__PURE__ */ _jsx71("path", {
   d: "M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"
 }), "ArrowLeft");
-var ArrowRightIcon = createSvgIcon(/* @__PURE__ */ _jsx70("path", {
+var ArrowRightIcon = createSvgIcon(/* @__PURE__ */ _jsx71("path", {
   d: "M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
 }), "ArrowRight");
-var CalendarIcon = createSvgIcon(/* @__PURE__ */ _jsx70("path", {
+var CalendarIcon = createSvgIcon(/* @__PURE__ */ _jsx71("path", {
   d: "M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"
 }), "Calendar");
-var ClockIcon = createSvgIcon(/* @__PURE__ */ _jsxs22(React111.Fragment, {
-  children: [/* @__PURE__ */ _jsx70("path", {
+var ClockIcon = createSvgIcon(/* @__PURE__ */ _jsxs22(React112.Fragment, {
+  children: [/* @__PURE__ */ _jsx71("path", {
     d: "M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
-  }), /* @__PURE__ */ _jsx70("path", {
+  }), /* @__PURE__ */ _jsx71("path", {
     d: "M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"
   })]
 }), "Clock");
-var DateRangeIcon = createSvgIcon(/* @__PURE__ */ _jsx70("path", {
+var DateRangeIcon = createSvgIcon(/* @__PURE__ */ _jsx71("path", {
   d: "M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"
 }), "DateRange");
-var TimeIcon = createSvgIcon(/* @__PURE__ */ _jsxs22(React111.Fragment, {
-  children: [/* @__PURE__ */ _jsx70("path", {
+var TimeIcon = createSvgIcon(/* @__PURE__ */ _jsxs22(React112.Fragment, {
+  children: [/* @__PURE__ */ _jsx71("path", {
     d: "M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
-  }), /* @__PURE__ */ _jsx70("path", {
+  }), /* @__PURE__ */ _jsx71("path", {
     d: "M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"
   })]
 }), "Time");
-var ClearIcon = createSvgIcon(/* @__PURE__ */ _jsx70("path", {
+var ClearIcon = createSvgIcon(/* @__PURE__ */ _jsx71("path", {
   d: "M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
 }), "Clear");
 
@@ -38409,7 +38748,7 @@ function getPickersArrowSwitcherUtilityClass(slot) {
 var pickersArrowSwitcherClasses = generateUtilityClasses("MuiPickersArrowSwitcher", ["root", "spacer", "button", "previousIconButton", "nextIconButton", "leftArrowIcon", "rightArrowIcon"]);
 
 // node_modules/@mui/x-date-pickers/internals/components/PickersArrowSwitcher/PickersArrowSwitcher.js
-import { jsx as _jsx71, jsxs as _jsxs23 } from "react/jsx-runtime";
+import { jsx as _jsx72, jsxs as _jsxs23 } from "react/jsx-runtime";
 var _excluded5 = ["children", "className", "slots", "slotProps", "isNextDisabled", "isNextHidden", "onGoToNext", "nextLabel", "isPreviousDisabled", "isPreviousHidden", "onGoToPrevious", "previousLabel", "labelId"];
 var _excluded22 = ["ownerState"];
 var _excluded32 = ["ownerState"];
@@ -38458,8 +38797,8 @@ var useUtilityClasses42 = (ownerState) => {
   };
   return composeClasses(slots, getPickersArrowSwitcherUtilityClass, classes);
 };
-var PickersArrowSwitcher = /* @__PURE__ */ React112.forwardRef(function PickersArrowSwitcher2(inProps, ref) {
-  const isRtl = useRtl();
+var PickersArrowSwitcher = /* @__PURE__ */ React113.forwardRef(function PickersArrowSwitcher2(inProps, ref) {
+  const isRtl = useRtl2();
   const props = useThemeProps2({
     props: inProps,
     name: "MuiPickersArrowSwitcher"
@@ -38552,18 +38891,18 @@ var PickersArrowSwitcher = /* @__PURE__ */ React112.forwardRef(function PickersA
     className: clsx_default(classes.root, className),
     ownerState
   }, other, {
-    children: [/* @__PURE__ */ _jsx71(PreviousIconButton, _extends({}, previousIconButtonProps, {
-      children: isRtl ? /* @__PURE__ */ _jsx71(RightArrowIcon, _extends({}, rightArrowIconProps)) : /* @__PURE__ */ _jsx71(LeftArrowIcon, _extends({}, leftArrowIconProps))
-    })), children ? /* @__PURE__ */ _jsx71(Typography_default, {
+    children: [/* @__PURE__ */ _jsx72(PreviousIconButton, _extends({}, previousIconButtonProps, {
+      children: isRtl ? /* @__PURE__ */ _jsx72(RightArrowIcon, _extends({}, rightArrowIconProps)) : /* @__PURE__ */ _jsx72(LeftArrowIcon, _extends({}, leftArrowIconProps))
+    })), children ? /* @__PURE__ */ _jsx72(Typography_default, {
       variant: "subtitle1",
       component: "span",
       id: labelId,
       children
-    }) : /* @__PURE__ */ _jsx71(PickersArrowSwitcherSpacer, {
+    }) : /* @__PURE__ */ _jsx72(PickersArrowSwitcherSpacer, {
       className: classes.spacer,
       ownerState
-    }), /* @__PURE__ */ _jsx71(NextIconButton, _extends({}, nextIconButtonProps, {
-      children: isRtl ? /* @__PURE__ */ _jsx71(LeftArrowIcon, _extends({}, leftArrowIconProps)) : /* @__PURE__ */ _jsx71(RightArrowIcon, _extends({}, rightArrowIconProps))
+    }), /* @__PURE__ */ _jsx72(NextIconButton, _extends({}, nextIconButtonProps, {
+      children: isRtl ? /* @__PURE__ */ _jsx72(LeftArrowIcon, _extends({}, leftArrowIconProps)) : /* @__PURE__ */ _jsx72(RightArrowIcon, _extends({}, rightArrowIconProps))
     }))]
   }));
 });
@@ -38658,7 +38997,7 @@ var resolveTimeFormat = (utils2, {
 };
 
 // node_modules/@mui/x-date-pickers/internals/hooks/useViews.js
-import * as React113 from "react";
+import * as React114 from "react";
 var warnedOnceNotValidView = false;
 function useViews({
   onChange,
@@ -38682,23 +39021,23 @@ function useViews({
       }
     }
   }
-  const previousOpenTo = React113.useRef(openTo);
-  const previousViews = React113.useRef(views);
-  const defaultView = React113.useRef(views.includes(openTo) ? openTo : views[0]);
+  const previousOpenTo = React114.useRef(openTo);
+  const previousViews = React114.useRef(views);
+  const defaultView = React114.useRef(views.includes(openTo) ? openTo : views[0]);
   const [view, setView] = useControlled({
     name: "useViews",
     state: "view",
     controlled: inView,
     default: defaultView.current
   });
-  const defaultFocusedView = React113.useRef(autoFocus ? view : null);
+  const defaultFocusedView = React114.useRef(autoFocus ? view : null);
   const [focusedView, setFocusedView] = useControlled({
     name: "useViews",
     state: "focusedView",
     controlled: inFocusedView,
     default: defaultFocusedView.current
   });
-  React113.useEffect(() => {
+  React114.useEffect(() => {
     if (previousOpenTo.current && previousOpenTo.current !== openTo || previousViews.current && previousViews.current.some((previousView2) => !views.includes(previousView2))) {
       setView(views.includes(openTo) ? openTo : views[0]);
       previousViews.current = views;
@@ -38767,14 +39106,14 @@ function useViews({
 }
 
 // node_modules/@mui/x-date-pickers/internals/hooks/date-helpers-hooks.js
-import * as React114 from "react";
+import * as React115 from "react";
 function useNextMonthDisabled(month, {
   disableFuture,
   maxDate,
   timezone
 }) {
   const utils2 = useUtils();
-  return React114.useMemo(() => {
+  return React115.useMemo(() => {
     const now2 = utils2.date(void 0, timezone);
     const lastEnabledMonth = utils2.startOfMonth(disableFuture && utils2.isBefore(now2, maxDate) ? now2 : maxDate);
     return !utils2.isAfter(lastEnabledMonth, month);
@@ -38786,7 +39125,7 @@ function usePreviousMonthDisabled(month, {
   timezone
 }) {
   const utils2 = useUtils();
-  return React114.useMemo(() => {
+  return React115.useMemo(() => {
     const now2 = utils2.date(void 0, timezone);
     const firstEnabledMonth = utils2.startOfMonth(disablePast && utils2.isAfter(now2, minDate) ? now2 : minDate);
     return !utils2.isBefore(firstEnabledMonth, month);
@@ -38795,7 +39134,7 @@ function usePreviousMonthDisabled(month, {
 function useMeridiemMode(date, ampm, onChange, selectionState) {
   const utils2 = useUtils();
   const meridiemMode = getMeridiem(date, utils2);
-  const handleMeridiemChange = React114.useCallback((mode) => {
+  const handleMeridiemChange = React115.useCallback((mode) => {
     const timeWithMeridiem = date == null ? null : convertToMeridiem(date, mode, Boolean(ampm), utils2);
     onChange(timeWithMeridiem, selectionState ?? "partial");
   }, [ampm, date, onChange, selectionState, utils2]);
@@ -38831,10 +39170,10 @@ function getTimeClockUtilityClass(slot) {
 var timeClockClasses = generateUtilityClasses("MuiTimeClock", ["root", "arrowSwitcher"]);
 
 // node_modules/@mui/x-date-pickers/TimeClock/Clock.js
-import * as React116 from "react";
+import * as React117 from "react";
 
 // node_modules/@mui/x-date-pickers/TimeClock/ClockPointer.js
-import * as React115 from "react";
+import * as React116 from "react";
 
 // node_modules/@mui/x-date-pickers/TimeClock/shared.js
 var CLOCK_WIDTH = 220;
@@ -38897,7 +39236,7 @@ function getClockPointerUtilityClass(slot) {
 var clockPointerClasses = generateUtilityClasses("MuiClockPointer", ["root", "thumb"]);
 
 // node_modules/@mui/x-date-pickers/TimeClock/ClockPointer.js
-import { jsx as _jsx72 } from "react/jsx-runtime";
+import { jsx as _jsx73 } from "react/jsx-runtime";
 var _excluded6 = ["className", "hasSelected", "isInner", "type", "viewValue"];
 var useUtilityClasses43 = (ownerState) => {
   const {
@@ -38967,8 +39306,8 @@ function ClockPointer(inProps) {
     type,
     viewValue
   } = props, other = _objectWithoutPropertiesLoose(props, _excluded6);
-  const previousType = React115.useRef(type);
-  React115.useEffect(() => {
+  const previousType = React116.useRef(type);
+  React116.useEffect(() => {
     previousType.current = type;
   }, [type]);
   const ownerState = _extends({}, props, {
@@ -38986,12 +39325,12 @@ function ClockPointer(inProps) {
       transform: `rotateZ(${angle}deg)`
     };
   };
-  return /* @__PURE__ */ _jsx72(ClockPointerRoot, _extends({
+  return /* @__PURE__ */ _jsx73(ClockPointerRoot, _extends({
     style: getAngleStyle(),
     className: clsx_default(classes.root, className),
     ownerState
   }, other, {
-    children: /* @__PURE__ */ _jsx72(ClockPointerThumb, {
+    children: /* @__PURE__ */ _jsx73(ClockPointerThumb, {
       ownerState,
       className: classes.thumb
     })
@@ -39127,7 +39466,7 @@ var getWeekdays = (utils2, date) => {
 };
 
 // node_modules/@mui/x-date-pickers/TimeClock/Clock.js
-import { jsx as _jsx73, jsxs as _jsxs24 } from "react/jsx-runtime";
+import { jsx as _jsx74, jsxs as _jsxs24 } from "react/jsx-runtime";
 var useUtilityClasses44 = (ownerState) => {
   const {
     classes,
@@ -39300,7 +39639,7 @@ function Clock(inProps) {
   const ownerState = props;
   const utils2 = useUtils();
   const translations = usePickersTranslations();
-  const isMoving = React116.useRef(false);
+  const isMoving = React117.useRef(false);
   const classes = useUtilityClasses44(ownerState);
   const isSelectedTimeDisabled = isTimeDisabled(viewValue, type);
   const isPointerInner = !ampm && type === "hours" && (viewValue < 1 || viewValue > 12);
@@ -39348,14 +39687,14 @@ function Clock(inProps) {
     }
     setTime(event.nativeEvent, "finish");
   };
-  const hasSelected = React116.useMemo(() => {
+  const hasSelected = React117.useMemo(() => {
     if (type === "hours") {
       return true;
     }
     return viewValue % 5 === 0;
   }, [type, viewValue]);
   const keyboardControlStep = type === "minutes" ? minutesStep : 1;
-  const listboxRef = React116.useRef(null);
+  const listboxRef = React117.useRef(null);
   useEnhancedEffect_default(() => {
     if (autoFocus) {
       listboxRef.current.focus();
@@ -39404,7 +39743,7 @@ function Clock(inProps) {
     className: clsx_default(classes.root, className),
     children: [/* @__PURE__ */ _jsxs24(ClockClock, {
       className: classes.clock,
-      children: [/* @__PURE__ */ _jsx73(ClockSquareMask, {
+      children: [/* @__PURE__ */ _jsx74(ClockSquareMask, {
         onTouchMove: handleTouchSelection,
         onTouchStart: handleTouchSelection,
         onTouchEnd: handleTouchEnd,
@@ -39414,16 +39753,16 @@ function Clock(inProps) {
           disabled
         },
         className: classes.squareMask
-      }), !isSelectedTimeDisabled && /* @__PURE__ */ _jsxs24(React116.Fragment, {
-        children: [/* @__PURE__ */ _jsx73(ClockPin, {
+      }), !isSelectedTimeDisabled && /* @__PURE__ */ _jsxs24(React117.Fragment, {
+        children: [/* @__PURE__ */ _jsx74(ClockPin, {
           className: classes.pin
-        }), value != null && /* @__PURE__ */ _jsx73(ClockPointer, {
+        }), value != null && /* @__PURE__ */ _jsx74(ClockPointer, {
           type,
           viewValue,
           isInner: isPointerInner,
           hasSelected
         })]
-      }), /* @__PURE__ */ _jsx73(ClockWrapper, {
+      }), /* @__PURE__ */ _jsx74(ClockWrapper, {
         "aria-activedescendant": selectedId,
         "aria-label": translations.clockLabelText(type, value, utils2, value == null ? null : utils2.format(value, "fullTime")),
         ref: listboxRef,
@@ -39433,25 +39772,25 @@ function Clock(inProps) {
         className: classes.wrapper,
         children
       })]
-    }), ampm && ampmInClock && /* @__PURE__ */ _jsxs24(React116.Fragment, {
-      children: [/* @__PURE__ */ _jsx73(ClockAmButton, {
+    }), ampm && ampmInClock && /* @__PURE__ */ _jsxs24(React117.Fragment, {
+      children: [/* @__PURE__ */ _jsx74(ClockAmButton, {
         onClick: readOnly ? void 0 : () => handleMeridiemChange("am"),
         disabled: disabled || meridiemMode === null,
         ownerState,
         className: classes.amButton,
         title: formatMeridiem(utils2, "am"),
-        children: /* @__PURE__ */ _jsx73(ClockMeridiemText, {
+        children: /* @__PURE__ */ _jsx74(ClockMeridiemText, {
           variant: "caption",
           className: classes.meridiemText,
           children: formatMeridiem(utils2, "am")
         })
-      }), /* @__PURE__ */ _jsx73(ClockPmButton, {
+      }), /* @__PURE__ */ _jsx74(ClockPmButton, {
         disabled: disabled || meridiemMode === null,
         onClick: readOnly ? void 0 : () => handleMeridiemChange("pm"),
         ownerState,
         className: classes.pmButton,
         title: formatMeridiem(utils2, "pm"),
-        children: /* @__PURE__ */ _jsx73(ClockMeridiemText, {
+        children: /* @__PURE__ */ _jsx74(ClockMeridiemText, {
           variant: "caption",
           className: classes.meridiemText,
           children: formatMeridiem(utils2, "pm")
@@ -39462,10 +39801,10 @@ function Clock(inProps) {
 }
 
 // node_modules/@mui/x-date-pickers/TimeClock/ClockNumbers.js
-import * as React118 from "react";
+import * as React119 from "react";
 
 // node_modules/@mui/x-date-pickers/TimeClock/ClockNumber.js
-import * as React117 from "react";
+import * as React118 from "react";
 
 // node_modules/@mui/x-date-pickers/TimeClock/clockNumberClasses.js
 function getClockNumberUtilityClass(slot) {
@@ -39474,7 +39813,7 @@ function getClockNumberUtilityClass(slot) {
 var clockNumberClasses = generateUtilityClasses("MuiClockNumber", ["root", "selected", "disabled"]);
 
 // node_modules/@mui/x-date-pickers/TimeClock/ClockNumber.js
-import { jsx as _jsx74 } from "react/jsx-runtime";
+import { jsx as _jsx75 } from "react/jsx-runtime";
 var _excluded7 = ["className", "disabled", "index", "inner", "label", "selected"];
 var useUtilityClasses45 = (ownerState) => {
   const {
@@ -39546,7 +39885,7 @@ function ClockNumber(inProps) {
   const length = (CLOCK_WIDTH - CLOCK_HOUR_WIDTH - 2) / 2 * (inner ? 0.65 : 1);
   const x2 = Math.round(Math.cos(angle) * length);
   const y3 = Math.round(Math.sin(angle) * length);
-  return /* @__PURE__ */ _jsx74(ClockNumberRoot, _extends({
+  return /* @__PURE__ */ _jsx75(ClockNumberRoot, _extends({
     className: clsx_default(classes.root, className),
     "aria-disabled": disabled ? true : void 0,
     "aria-selected": selected ? true : void 0,
@@ -39561,7 +39900,7 @@ function ClockNumber(inProps) {
 }
 
 // node_modules/@mui/x-date-pickers/TimeClock/ClockNumbers.js
-import { jsx as _jsx75 } from "react/jsx-runtime";
+import { jsx as _jsx76 } from "react/jsx-runtime";
 var getHourNumbers = ({
   ampm,
   value,
@@ -39594,7 +39933,7 @@ var getHourNumbers = ({
     const inner = !ampm && (hour === 0 || hour > 12);
     label = utils2.formatNumber(label);
     const selected = isSelected(hour);
-    hourNumbers.push(/* @__PURE__ */ _jsx75(ClockNumber, {
+    hourNumbers.push(/* @__PURE__ */ _jsx76(ClockNumber, {
       id: selected ? selectedId : void 0,
       index: hour,
       inner,
@@ -39616,7 +39955,7 @@ var getMinutesNumbers = ({
   const f = utils2.formatNumber;
   return [[5, f("05")], [10, f("10")], [15, f("15")], [20, f("20")], [25, f("25")], [30, f("30")], [35, f("35")], [40, f("40")], [45, f("45")], [50, f("50")], [55, f("55")], [0, f("00")]].map(([numberValue, label], index3) => {
     const selected = numberValue === value;
-    return /* @__PURE__ */ _jsx75(ClockNumber, {
+    return /* @__PURE__ */ _jsx76(ClockNumber, {
       label,
       id: selected ? selectedId : void 0,
       index: index3 + 1,
@@ -39629,7 +39968,7 @@ var getMinutesNumbers = ({
 };
 
 // node_modules/@mui/x-date-pickers/internals/hooks/useValueWithTimezone.js
-import * as React119 from "react";
+import * as React120 from "react";
 var useValueWithTimezone = ({
   timezone: timezoneProp,
   value: valueProp,
@@ -39639,9 +39978,9 @@ var useValueWithTimezone = ({
   valueManager
 }) => {
   const utils2 = useUtils();
-  const firstDefaultValue = React119.useRef(defaultValue);
+  const firstDefaultValue = React120.useRef(defaultValue);
   const inputValue = valueProp ?? firstDefaultValue.current ?? valueManager.emptyValue;
-  const inputTimezone = React119.useMemo(() => valueManager.getTimezone(utils2, inputValue), [utils2, valueManager, inputValue]);
+  const inputTimezone = React120.useMemo(() => valueManager.getTimezone(utils2, inputValue), [utils2, valueManager, inputValue]);
   const setInputTimezone = useEventCallback_default((newValue) => {
     if (inputTimezone == null) {
       return newValue;
@@ -39658,7 +39997,7 @@ var useValueWithTimezone = ({
   } else {
     timezoneToRender = "default";
   }
-  const valueWithTimezoneToRender = React119.useMemo(() => valueManager.setTimezone(utils2, timezoneToRender, inputValue), [valueManager, utils2, timezoneToRender, inputValue]);
+  const valueWithTimezoneToRender = React120.useMemo(() => valueManager.setTimezone(utils2, timezoneToRender, inputValue), [valueManager, utils2, timezoneToRender, inputValue]);
   const handleValueChange = useEventCallback_default((newValue, ...otherParams) => {
     const newValueWithInputTimezone = setInputTimezone(newValue);
     onChange?.(newValueWithInputTimezone, ...otherParams);
@@ -39893,8 +40232,7 @@ var adjustSectionValue = (utils2, timezone, section, keyCode, sectionsValueBound
     });
     const getCleanValue = (value) => cleanDigitSectionValue(utils2, value, sectionBoundaries, localizedDigits, section);
     const step = section.type === "minutes" && stepsAttributes?.minutesStep ? stepsAttributes.minutesStep : 1;
-    const currentSectionValue = parseInt(removeLocalizedDigits(section.value, localizedDigits), 10);
-    let newSectionValueNumber = currentSectionValue + delta * step;
+    let newSectionValueNumber;
     if (shouldSetAbsolute) {
       if (section.type === "year" && !isEnd && !isStart) {
         return utils2.formatByString(utils2.date(void 0, timezone), section.format);
@@ -39904,6 +40242,9 @@ var adjustSectionValue = (utils2, timezone, section, keyCode, sectionsValueBound
       } else {
         newSectionValueNumber = sectionBoundaries.maximum;
       }
+    } else {
+      const currentSectionValue = parseInt(removeLocalizedDigits(section.value, localizedDigits), 10);
+      newSectionValueNumber = currentSectionValue + delta * step;
     }
     if (newSectionValueNumber % step !== 0) {
       if (delta < 0 || isStart) {
@@ -39974,12 +40315,10 @@ var doesSectionFormatHaveLeadingZeros = (utils2, contentType, sectionType, forma
   switch (sectionType) {
     // We can't use `changeSectionValueFormat`, because  `utils.parse('1', 'YYYY')` returns `1971` instead of `1`.
     case "year": {
-      if (isFourDigitYearFormat(utils2, format2)) {
-        const formatted0001 = utils2.formatByString(utils2.setYear(now2, 1), format2);
-        return formatted0001 === "0001";
+      if (utils2.lib === "dayjs" && format2 === "YY") {
+        return true;
       }
-      const formatted2001 = utils2.formatByString(utils2.setYear(now2, 2001), format2);
-      return formatted2001 === "01";
+      return utils2.formatByString(utils2.setYear(now2, 1), format2).startsWith("0");
     }
     case "month": {
       return utils2.formatByString(utils2.startOfYear(now2), format2).length > 1;
@@ -40377,7 +40716,7 @@ var singleItemFieldValueManager = {
 };
 
 // node_modules/@mui/x-date-pickers/internals/hooks/useClockReferenceDate.js
-import * as React120 from "react";
+import * as React121 from "react";
 var useClockReferenceDate = ({
   value,
   referenceDate: referenceDateProp,
@@ -40385,7 +40724,7 @@ var useClockReferenceDate = ({
   props,
   timezone
 }) => {
-  const referenceDate = React120.useMemo(
+  const referenceDate = React121.useMemo(
     () => singleItemValueManager.getInitialReferenceValue({
       value,
       utils: utils2,
@@ -40403,7 +40742,7 @@ var useClockReferenceDate = ({
 };
 
 // node_modules/@mui/x-date-pickers/TimeClock/TimeClock.js
-import { jsx as _jsx76, jsxs as _jsxs25 } from "react/jsx-runtime";
+import { jsx as _jsx77, jsxs as _jsxs25 } from "react/jsx-runtime";
 var _excluded9 = ["ampm", "ampmInClock", "autoFocus", "slots", "slotProps", "value", "defaultValue", "referenceDate", "disableIgnoringDatePartForTimeValidation", "maxTime", "minTime", "disableFuture", "disablePast", "minutesStep", "shouldDisableTime", "showViewSwitcher", "onChange", "view", "views", "openTo", "onViewChange", "focusedView", "onFocusedViewChange", "className", "disabled", "readOnly", "timezone"];
 var useUtilityClasses46 = (ownerState) => {
   const {
@@ -40434,7 +40773,7 @@ var TimeClockArrowSwitcher = styled_default(PickersArrowSwitcher, {
   top: 15
 });
 var TIME_CLOCK_DEFAULT_VIEWS = ["hours", "minutes"];
-var TimeClock = /* @__PURE__ */ React121.forwardRef(function TimeClock2(inProps, ref) {
+var TimeClock = /* @__PURE__ */ React122.forwardRef(function TimeClock2(inProps, ref) {
   const utils2 = useUtils();
   const props = useThemeProps2({
     props: inProps,
@@ -40510,7 +40849,7 @@ var TimeClock = /* @__PURE__ */ React121.forwardRef(function TimeClock2(inProps,
     meridiemMode,
     handleMeridiemChange
   } = useMeridiemMode(valueOrReferenceDate, ampm, setValueAndGoToNextView);
-  const isTimeDisabled = React121.useCallback((rawValue, viewType) => {
+  const isTimeDisabled = React122.useCallback((rawValue, viewType) => {
     const isAfter = createIsAfterIgnoreDatePart(disableIgnoringDatePartForTimeValidation, utils2);
     const shouldCheckPastEnd = viewType === "hours" || viewType === "minutes" && views.includes("seconds");
     const containsValidTime = ({
@@ -40586,7 +40925,7 @@ var TimeClock = /* @__PURE__ */ React121.forwardRef(function TimeClock2(inProps,
     }
   }, [ampm, valueOrReferenceDate, disableIgnoringDatePartForTimeValidation, maxTime, meridiemMode, minTime, minutesStep, shouldDisableTime, utils2, disableFuture, disablePast, now2, views]);
   const selectedId = useId();
-  const viewProps = React121.useMemo(() => {
+  const viewProps = React122.useMemo(() => {
     switch (view) {
       case "hours": {
         const handleHoursChange = (hourValue, isFinish) => {
@@ -40668,7 +41007,7 @@ var TimeClock = /* @__PURE__ */ React121.forwardRef(function TimeClock2(inProps,
     className: clsx_default(classes.root, className),
     ownerState
   }, other, {
-    children: [/* @__PURE__ */ _jsx76(Clock, _extends({
+    children: [/* @__PURE__ */ _jsx77(Clock, _extends({
       autoFocus: autoFocus ?? !!focusedView,
       ampmInClock: ampmInClock && views.includes("hours"),
       value,
@@ -40681,7 +41020,7 @@ var TimeClock = /* @__PURE__ */ React121.forwardRef(function TimeClock2(inProps,
       selectedId,
       disabled,
       readOnly
-    }, viewProps)), showViewSwitcher && /* @__PURE__ */ _jsx76(TimeClockArrowSwitcher, {
+    }, viewProps)), showViewSwitcher && /* @__PURE__ */ _jsx77(TimeClockArrowSwitcher, {
       className: classes.arrowSwitcher,
       slots,
       slotProps,
@@ -40704,68 +41043,68 @@ true ? TimeClock.propTypes = {
    * 12h/24h view for hour selection clock.
    * @default utils.is12HourCycleInCurrentLocale()
    */
-  ampm: import_prop_types70.default.bool,
+  ampm: import_prop_types71.default.bool,
   /**
    * Display ampm controls under the clock (instead of in the toolbar).
    * @default false
    */
-  ampmInClock: import_prop_types70.default.bool,
+  ampmInClock: import_prop_types71.default.bool,
   /**
    * If `true`, the main element is focused during the first mount.
    * This main element is:
    * - the element chosen by the visible view if any (i.e: the selected day on the `day` view).
    * - the `input` element if there is a field rendered.
    */
-  autoFocus: import_prop_types70.default.bool,
+  autoFocus: import_prop_types71.default.bool,
   /**
    * Override or extend the styles applied to the component.
    */
-  classes: import_prop_types70.default.object,
-  className: import_prop_types70.default.string,
+  classes: import_prop_types71.default.object,
+  className: import_prop_types71.default.string,
   /**
    * The default selected value.
    * Used when the component is not controlled.
    */
-  defaultValue: import_prop_types70.default.object,
+  defaultValue: import_prop_types71.default.object,
   /**
    * If `true`, the picker views and text field are disabled.
    * @default false
    */
-  disabled: import_prop_types70.default.bool,
+  disabled: import_prop_types71.default.bool,
   /**
    * If `true`, disable values after the current date for date components, time for time components and both for date time components.
    * @default false
    */
-  disableFuture: import_prop_types70.default.bool,
+  disableFuture: import_prop_types71.default.bool,
   /**
    * Do not ignore date part when validating min/max time.
    * @default false
    */
-  disableIgnoringDatePartForTimeValidation: import_prop_types70.default.bool,
+  disableIgnoringDatePartForTimeValidation: import_prop_types71.default.bool,
   /**
    * If `true`, disable values before the current date for date components, time for time components and both for date time components.
    * @default false
    */
-  disablePast: import_prop_types70.default.bool,
+  disablePast: import_prop_types71.default.bool,
   /**
    * Controlled focused view.
    */
-  focusedView: import_prop_types70.default.oneOf(["hours", "minutes", "seconds"]),
+  focusedView: import_prop_types71.default.oneOf(["hours", "minutes", "seconds"]),
   /**
    * Maximal selectable time.
    * The date part of the object will be ignored unless `props.disableIgnoringDatePartForTimeValidation === true`.
    */
-  maxTime: import_prop_types70.default.object,
+  maxTime: import_prop_types71.default.object,
   /**
    * Minimal selectable time.
    * The date part of the object will be ignored unless `props.disableIgnoringDatePartForTimeValidation === true`.
    */
-  minTime: import_prop_types70.default.object,
+  minTime: import_prop_types71.default.object,
   /**
    * Step over minutes.
    * @default 1
    */
-  minutesStep: import_prop_types70.default.number,
+  minutesStep: import_prop_types71.default.number,
   /**
    * Callback fired when the value changes.
    * @template TValue The value type. It will be the same type as `value` or `null`. It can be in `[start, end]` format in case of range value.
@@ -40774,36 +41113,36 @@ true ? TimeClock.propTypes = {
    * @param {PickerSelectionState | undefined} selectionState Indicates if the date selection is complete.
    * @param {TView | undefined} selectedView Indicates the view in which the selection has been made.
    */
-  onChange: import_prop_types70.default.func,
+  onChange: import_prop_types71.default.func,
   /**
    * Callback fired on focused view change.
    * @template TView
    * @param {TView} view The new view to focus or not.
    * @param {boolean} hasFocus `true` if the view should be focused.
    */
-  onFocusedViewChange: import_prop_types70.default.func,
+  onFocusedViewChange: import_prop_types71.default.func,
   /**
    * Callback fired on view change.
    * @template TView
    * @param {TView} view The new view.
    */
-  onViewChange: import_prop_types70.default.func,
+  onViewChange: import_prop_types71.default.func,
   /**
    * The default visible view.
    * Used when the component view is not controlled.
    * Must be a valid option from `views` list.
    */
-  openTo: import_prop_types70.default.oneOf(["hours", "minutes", "seconds"]),
+  openTo: import_prop_types71.default.oneOf(["hours", "minutes", "seconds"]),
   /**
    * If `true`, the picker views and text field are read-only.
    * @default false
    */
-  readOnly: import_prop_types70.default.bool,
+  readOnly: import_prop_types71.default.bool,
   /**
    * The date used to generate the new value when both `value` and `defaultValue` are empty.
    * @default The closest valid time using the validation props, except callbacks such as `shouldDisableTime`.
    */
-  referenceDate: import_prop_types70.default.object,
+  referenceDate: import_prop_types71.default.object,
   /**
    * Disable specific time.
    * @template TDate
@@ -40811,22 +41150,22 @@ true ? TimeClock.propTypes = {
    * @param {TimeView} view The clock type of the timeValue.
    * @returns {boolean} If `true` the time will be disabled.
    */
-  shouldDisableTime: import_prop_types70.default.func,
-  showViewSwitcher: import_prop_types70.default.bool,
+  shouldDisableTime: import_prop_types71.default.func,
+  showViewSwitcher: import_prop_types71.default.bool,
   /**
    * The props used for each component slot.
    * @default {}
    */
-  slotProps: import_prop_types70.default.object,
+  slotProps: import_prop_types71.default.object,
   /**
    * Overridable component slots.
    * @default {}
    */
-  slots: import_prop_types70.default.object,
+  slots: import_prop_types71.default.object,
   /**
    * The system prop that allows defining system overrides as well as additional CSS styles.
    */
-  sx: import_prop_types70.default.oneOfType([import_prop_types70.default.arrayOf(import_prop_types70.default.oneOfType([import_prop_types70.default.func, import_prop_types70.default.object, import_prop_types70.default.bool])), import_prop_types70.default.func, import_prop_types70.default.object]),
+  sx: import_prop_types71.default.oneOfType([import_prop_types71.default.arrayOf(import_prop_types71.default.oneOfType([import_prop_types71.default.func, import_prop_types71.default.object, import_prop_types71.default.bool])), import_prop_types71.default.func, import_prop_types71.default.object]),
   /**
    * Choose which timezone to use for the value.
    * Example: "default", "system", "UTC", "America/New_York".
@@ -40834,28 +41173,28 @@ true ? TimeClock.propTypes = {
    * @see See the {@link https://mui.com/x/react-date-pickers/timezone/ timezones documentation} for more details.
    * @default The timezone of the `value` or `defaultValue` prop is defined, 'default' otherwise.
    */
-  timezone: import_prop_types70.default.string,
+  timezone: import_prop_types71.default.string,
   /**
    * The selected value.
    * Used when the component is controlled.
    */
-  value: import_prop_types70.default.object,
+  value: import_prop_types71.default.object,
   /**
    * The visible view.
    * Used when the component view is controlled.
    * Must be a valid option from `views` list.
    */
-  view: import_prop_types70.default.oneOf(["hours", "minutes", "seconds"]),
+  view: import_prop_types71.default.oneOf(["hours", "minutes", "seconds"]),
   /**
    * Available views.
    * @default ['hours', 'minutes']
    */
-  views: import_prop_types70.default.arrayOf(import_prop_types70.default.oneOf(["hours", "minutes", "seconds"]).isRequired)
+  views: import_prop_types71.default.arrayOf(import_prop_types71.default.oneOf(["hours", "minutes", "seconds"]).isRequired)
 } : void 0;
 
 // node_modules/@mui/x-date-pickers/DigitalClock/DigitalClock.js
-import * as React122 from "react";
-var import_prop_types71 = __toESM(require_prop_types());
+import * as React123 from "react";
+var import_prop_types72 = __toESM(require_prop_types());
 
 // node_modules/@mui/x-date-pickers/DigitalClock/digitalClockClasses.js
 function getDigitalClockUtilityClass(slot) {
@@ -40897,7 +41236,7 @@ var getFocusedListItemIndex = (listElement) => {
 var DEFAULT_DESKTOP_MODE_MEDIA_QUERY = "@media (pointer: fine)";
 
 // node_modules/@mui/x-date-pickers/DigitalClock/DigitalClock.js
-import { jsx as _jsx77 } from "react/jsx-runtime";
+import { jsx as _jsx78 } from "react/jsx-runtime";
 var _excluded10 = ["ampm", "timeStep", "autoFocus", "slots", "slotProps", "value", "defaultValue", "referenceDate", "disableIgnoringDatePartForTimeValidation", "maxTime", "minTime", "disableFuture", "disablePast", "minutesStep", "shouldDisableTime", "onChange", "view", "openTo", "onViewChange", "focusedView", "onFocusedViewChange", "className", "disabled", "readOnly", "views", "skipDisabled", "timezone"];
 var useUtilityClasses47 = (ownerState) => {
   const {
@@ -40965,11 +41304,11 @@ var DigitalClockItem = styled_default(MenuItem_default, {
     backgroundColor: theme.vars ? `rgba(${theme.vars.palette.primary.mainChannel} / ${theme.vars.palette.action.focusOpacity})` : alpha(theme.palette.primary.main, theme.palette.action.focusOpacity)
   }
 }));
-var DigitalClock = /* @__PURE__ */ React122.forwardRef(function DigitalClock2(inProps, ref) {
+var DigitalClock = /* @__PURE__ */ React123.forwardRef(function DigitalClock2(inProps, ref) {
   const utils2 = useUtils();
-  const containerRef = React122.useRef(null);
+  const containerRef = React123.useRef(null);
   const handleRef = useForkRef(ref, containerRef);
-  const listRef = React122.useRef(null);
+  const listRef = React123.useRef(null);
   const props = useThemeProps2({
     props: inProps,
     name: "MuiDigitalClock"
@@ -41018,7 +41357,7 @@ var DigitalClock = /* @__PURE__ */ React122.forwardRef(function DigitalClock2(in
   });
   const translations = usePickersTranslations();
   const now2 = useNow(timezone);
-  const ownerState = React122.useMemo(() => _extends({}, props, {
+  const ownerState = React123.useMemo(() => _extends({}, props, {
     alreadyRendered: !!containerRef.current
   }), [props]);
   const classes = useUtilityClasses47(ownerState);
@@ -41051,7 +41390,7 @@ var DigitalClock = /* @__PURE__ */ React122.forwardRef(function DigitalClock2(in
   const handleItemSelect = useEventCallback_default((newValue) => {
     setValueAndGoToNextView(newValue, "finish");
   });
-  React122.useEffect(() => {
+  React123.useEffect(() => {
     if (containerRef.current === null) {
       return;
     }
@@ -41065,7 +41404,7 @@ var DigitalClock = /* @__PURE__ */ React122.forwardRef(function DigitalClock2(in
     }
     containerRef.current.scrollTop = offsetTop - 4;
   });
-  const isTimeDisabled = React122.useCallback((valueToCheck) => {
+  const isTimeDisabled = React123.useCallback((valueToCheck) => {
     const isAfter = createIsAfterIgnoreDatePart(disableIgnoringDatePartForTimeValidation, utils2);
     const containsValidTime = () => {
       if (minTime && isAfter(minTime, valueToCheck)) {
@@ -41093,7 +41432,7 @@ var DigitalClock = /* @__PURE__ */ React122.forwardRef(function DigitalClock2(in
     };
     return !containsValidTime() || !isValidValue();
   }, [disableIgnoringDatePartForTimeValidation, utils2, minTime, maxTime, disableFuture, now2, disablePast, minutesStep, shouldDisableTime]);
-  const timeOptions = React122.useMemo(() => {
+  const timeOptions = React123.useMemo(() => {
     const result = [];
     const startOfDay = utils2.startOfDay(valueOrReferenceDate);
     let nextTimeStepOption = startOfDay;
@@ -41131,12 +41470,12 @@ var DigitalClock = /* @__PURE__ */ React122.forwardRef(function DigitalClock2(in
       default:
     }
   };
-  return /* @__PURE__ */ _jsx77(DigitalClockRoot, _extends({
+  return /* @__PURE__ */ _jsx78(DigitalClockRoot, _extends({
     ref: handleRef,
     className: clsx_default(classes.root, className),
     ownerState
   }, other, {
-    children: /* @__PURE__ */ _jsx77(DigitalClockList, {
+    children: /* @__PURE__ */ _jsx78(DigitalClockList, {
       ref: listRef,
       role: "listbox",
       "aria-label": translations.timePickerToolbarTitle,
@@ -41149,7 +41488,7 @@ var DigitalClock = /* @__PURE__ */ React122.forwardRef(function DigitalClock2(in
         const isSelected = utils2.isEqual(option, value);
         const formattedValue = utils2.format(option, ampm ? "fullTime12h" : "fullTime24h");
         const tabIndex = focusedOptionIndex === index3 || focusedOptionIndex === -1 && index3 === 0 ? 0 : -1;
-        return /* @__PURE__ */ _jsx77(ClockItem, _extends({
+        return /* @__PURE__ */ _jsx78(ClockItem, _extends({
           onClick: () => !readOnly && handleItemSelect(option),
           selected: isSelected,
           disabled: disabled || isTimeDisabled(option),
@@ -41174,63 +41513,63 @@ true ? DigitalClock.propTypes = {
    * 12h/24h view for hour selection clock.
    * @default utils.is12HourCycleInCurrentLocale()
    */
-  ampm: import_prop_types71.default.bool,
+  ampm: import_prop_types72.default.bool,
   /**
    * If `true`, the main element is focused during the first mount.
    * This main element is:
    * - the element chosen by the visible view if any (i.e: the selected day on the `day` view).
    * - the `input` element if there is a field rendered.
    */
-  autoFocus: import_prop_types71.default.bool,
+  autoFocus: import_prop_types72.default.bool,
   /**
    * Override or extend the styles applied to the component.
    */
-  classes: import_prop_types71.default.object,
-  className: import_prop_types71.default.string,
+  classes: import_prop_types72.default.object,
+  className: import_prop_types72.default.string,
   /**
    * The default selected value.
    * Used when the component is not controlled.
    */
-  defaultValue: import_prop_types71.default.object,
+  defaultValue: import_prop_types72.default.object,
   /**
    * If `true`, the picker views and text field are disabled.
    * @default false
    */
-  disabled: import_prop_types71.default.bool,
+  disabled: import_prop_types72.default.bool,
   /**
    * If `true`, disable values after the current date for date components, time for time components and both for date time components.
    * @default false
    */
-  disableFuture: import_prop_types71.default.bool,
+  disableFuture: import_prop_types72.default.bool,
   /**
    * Do not ignore date part when validating min/max time.
    * @default false
    */
-  disableIgnoringDatePartForTimeValidation: import_prop_types71.default.bool,
+  disableIgnoringDatePartForTimeValidation: import_prop_types72.default.bool,
   /**
    * If `true`, disable values before the current date for date components, time for time components and both for date time components.
    * @default false
    */
-  disablePast: import_prop_types71.default.bool,
+  disablePast: import_prop_types72.default.bool,
   /**
    * Controlled focused view.
    */
-  focusedView: import_prop_types71.default.oneOf(["hours"]),
+  focusedView: import_prop_types72.default.oneOf(["hours"]),
   /**
    * Maximal selectable time.
    * The date part of the object will be ignored unless `props.disableIgnoringDatePartForTimeValidation === true`.
    */
-  maxTime: import_prop_types71.default.object,
+  maxTime: import_prop_types72.default.object,
   /**
    * Minimal selectable time.
    * The date part of the object will be ignored unless `props.disableIgnoringDatePartForTimeValidation === true`.
    */
-  minTime: import_prop_types71.default.object,
+  minTime: import_prop_types72.default.object,
   /**
    * Step over minutes.
    * @default 1
    */
-  minutesStep: import_prop_types71.default.number,
+  minutesStep: import_prop_types72.default.number,
   /**
    * Callback fired when the value changes.
    * @template TValue The value type. It will be the same type as `value` or `null`. It can be in `[start, end]` format in case of range value.
@@ -41239,36 +41578,36 @@ true ? DigitalClock.propTypes = {
    * @param {PickerSelectionState | undefined} selectionState Indicates if the date selection is complete.
    * @param {TView | undefined} selectedView Indicates the view in which the selection has been made.
    */
-  onChange: import_prop_types71.default.func,
+  onChange: import_prop_types72.default.func,
   /**
    * Callback fired on focused view change.
    * @template TView
    * @param {TView} view The new view to focus or not.
    * @param {boolean} hasFocus `true` if the view should be focused.
    */
-  onFocusedViewChange: import_prop_types71.default.func,
+  onFocusedViewChange: import_prop_types72.default.func,
   /**
    * Callback fired on view change.
    * @template TView
    * @param {TView} view The new view.
    */
-  onViewChange: import_prop_types71.default.func,
+  onViewChange: import_prop_types72.default.func,
   /**
    * The default visible view.
    * Used when the component view is not controlled.
    * Must be a valid option from `views` list.
    */
-  openTo: import_prop_types71.default.oneOf(["hours"]),
+  openTo: import_prop_types72.default.oneOf(["hours"]),
   /**
    * If `true`, the picker views and text field are read-only.
    * @default false
    */
-  readOnly: import_prop_types71.default.bool,
+  readOnly: import_prop_types72.default.bool,
   /**
    * The date used to generate the new value when both `value` and `defaultValue` are empty.
    * @default The closest valid time using the validation props, except callbacks such as `shouldDisableTime`.
    */
-  referenceDate: import_prop_types71.default.object,
+  referenceDate: import_prop_types72.default.object,
   /**
    * Disable specific time.
    * @template TDate
@@ -41276,32 +41615,32 @@ true ? DigitalClock.propTypes = {
    * @param {TimeView} view The clock type of the timeValue.
    * @returns {boolean} If `true` the time will be disabled.
    */
-  shouldDisableTime: import_prop_types71.default.func,
+  shouldDisableTime: import_prop_types72.default.func,
   /**
    * If `true`, disabled digital clock items will not be rendered.
    * @default false
    */
-  skipDisabled: import_prop_types71.default.bool,
+  skipDisabled: import_prop_types72.default.bool,
   /**
    * The props used for each component slot.
    * @default {}
    */
-  slotProps: import_prop_types71.default.object,
+  slotProps: import_prop_types72.default.object,
   /**
    * Overrideable component slots.
    * @default {}
    */
-  slots: import_prop_types71.default.object,
+  slots: import_prop_types72.default.object,
   /**
    * The system prop that allows defining system overrides as well as additional CSS styles.
    */
-  sx: import_prop_types71.default.oneOfType([import_prop_types71.default.arrayOf(import_prop_types71.default.oneOfType([import_prop_types71.default.func, import_prop_types71.default.object, import_prop_types71.default.bool])), import_prop_types71.default.func, import_prop_types71.default.object]),
+  sx: import_prop_types72.default.oneOfType([import_prop_types72.default.arrayOf(import_prop_types72.default.oneOfType([import_prop_types72.default.func, import_prop_types72.default.object, import_prop_types72.default.bool])), import_prop_types72.default.func, import_prop_types72.default.object]),
   /**
    * The time steps between two time options.
    * For example, if `timeStep = 45`, then the available time options will be `[00:00, 00:45, 01:30, 02:15, 03:00, etc.]`.
    * @default 30
    */
-  timeStep: import_prop_types71.default.number,
+  timeStep: import_prop_types72.default.number,
   /**
    * Choose which timezone to use for the value.
    * Example: "default", "system", "UTC", "America/New_York".
@@ -41309,28 +41648,28 @@ true ? DigitalClock.propTypes = {
    * @see See the {@link https://mui.com/x/react-date-pickers/timezone/ timezones documentation} for more details.
    * @default The timezone of the `value` or `defaultValue` prop is defined, 'default' otherwise.
    */
-  timezone: import_prop_types71.default.string,
+  timezone: import_prop_types72.default.string,
   /**
    * The selected value.
    * Used when the component is controlled.
    */
-  value: import_prop_types71.default.object,
+  value: import_prop_types72.default.object,
   /**
    * The visible view.
    * Used when the component view is controlled.
    * Must be a valid option from `views` list.
    */
-  view: import_prop_types71.default.oneOf(["hours"]),
+  view: import_prop_types72.default.oneOf(["hours"]),
   /**
    * Available views.
    * @default ['hours']
    */
-  views: import_prop_types71.default.arrayOf(import_prop_types71.default.oneOf(["hours"]))
+  views: import_prop_types72.default.arrayOf(import_prop_types72.default.oneOf(["hours"]))
 } : void 0;
 
 // node_modules/@mui/x-date-pickers/MultiSectionDigitalClock/MultiSectionDigitalClock.js
-import * as React124 from "react";
-var import_prop_types72 = __toESM(require_prop_types());
+import * as React125 from "react";
+var import_prop_types73 = __toESM(require_prop_types());
 
 // node_modules/@mui/x-date-pickers/MultiSectionDigitalClock/multiSectionDigitalClockClasses.js
 function getMultiSectionDigitalClockUtilityClass(slot) {
@@ -41339,7 +41678,7 @@ function getMultiSectionDigitalClockUtilityClass(slot) {
 var multiSectionDigitalClockClasses = generateUtilityClasses("MuiMultiSectionDigitalClock", ["root"]);
 
 // node_modules/@mui/x-date-pickers/MultiSectionDigitalClock/MultiSectionDigitalClockSection.js
-import * as React123 from "react";
+import * as React124 from "react";
 
 // node_modules/@mui/x-date-pickers/MultiSectionDigitalClock/multiSectionDigitalClockSectionClasses.js
 function getMultiSectionDigitalClockSectionUtilityClass(slot) {
@@ -41348,7 +41687,7 @@ function getMultiSectionDigitalClockSectionUtilityClass(slot) {
 var multiSectionDigitalClockSectionClasses = generateUtilityClasses("MuiMultiSectionDigitalClockSection", ["root", "item"]);
 
 // node_modules/@mui/x-date-pickers/MultiSectionDigitalClock/MultiSectionDigitalClockSection.js
-import { jsx as _jsx78 } from "react/jsx-runtime";
+import { jsx as _jsx79 } from "react/jsx-runtime";
 var _excluded11 = ["autoFocus", "onChange", "className", "disabled", "readOnly", "items", "active", "slots", "slotProps", "skipDisabled"];
 var useUtilityClasses48 = (ownerState) => {
   const {
@@ -41430,10 +41769,10 @@ var MultiSectionDigitalClockSectionItem = styled_default(MenuItem_default, {
     backgroundColor: theme.vars ? `rgba(${theme.vars.palette.primary.mainChannel} / ${theme.vars.palette.action.focusOpacity})` : alpha(theme.palette.primary.main, theme.palette.action.focusOpacity)
   }
 }));
-var MultiSectionDigitalClockSection = /* @__PURE__ */ React123.forwardRef(function MultiSectionDigitalClockSection2(inProps, ref) {
-  const containerRef = React123.useRef(null);
+var MultiSectionDigitalClockSection = /* @__PURE__ */ React124.forwardRef(function MultiSectionDigitalClockSection2(inProps, ref) {
+  const containerRef = React124.useRef(null);
   const handleRef = useForkRef(ref, containerRef);
-  const previousActive = React123.useRef(null);
+  const previousActive = React124.useRef(null);
   const props = useThemeProps2({
     props: inProps,
     name: "MuiMultiSectionDigitalClockSection"
@@ -41450,12 +41789,12 @@ var MultiSectionDigitalClockSection = /* @__PURE__ */ React123.forwardRef(functi
     slotProps,
     skipDisabled
   } = props, other = _objectWithoutPropertiesLoose(props, _excluded11);
-  const ownerState = React123.useMemo(() => _extends({}, props, {
+  const ownerState = React124.useMemo(() => _extends({}, props, {
     alreadyRendered: !!containerRef.current
   }), [props]);
   const classes = useUtilityClasses48(ownerState);
   const DigitalClockSectionItem = slots?.digitalClockSectionItem ?? MultiSectionDigitalClockSectionItem;
-  React123.useEffect(() => {
+  React124.useEffect(() => {
     if (containerRef.current === null) {
       return;
     }
@@ -41498,7 +41837,7 @@ var MultiSectionDigitalClockSection = /* @__PURE__ */ React123.forwardRef(functi
       default:
     }
   };
-  return /* @__PURE__ */ _jsx78(MultiSectionDigitalClockSectionRoot, _extends({
+  return /* @__PURE__ */ _jsx79(MultiSectionDigitalClockSectionRoot, _extends({
     ref: handleRef,
     className: clsx_default(classes.root, className),
     ownerState,
@@ -41514,7 +41853,7 @@ var MultiSectionDigitalClockSection = /* @__PURE__ */ React123.forwardRef(functi
       }
       const isSelected = option.isSelected(option.value);
       const tabIndex = focusedOptionIndex === index3 || focusedOptionIndex === -1 && index3 === 0 ? 0 : -1;
-      return /* @__PURE__ */ _jsx78(DigitalClockSectionItem, _extends({
+      return /* @__PURE__ */ _jsx79(DigitalClockSectionItem, _extends({
         onClick: () => !readOnly && onChange(option.value),
         selected: isSelected,
         disabled: isDisabled,
@@ -41611,7 +41950,7 @@ var getTimeSectionOptions = ({
 };
 
 // node_modules/@mui/x-date-pickers/MultiSectionDigitalClock/MultiSectionDigitalClock.js
-import { jsx as _jsx79 } from "react/jsx-runtime";
+import { jsx as _jsx80 } from "react/jsx-runtime";
 var _excluded12 = ["ampm", "timeSteps", "autoFocus", "slots", "slotProps", "value", "defaultValue", "referenceDate", "disableIgnoringDatePartForTimeValidation", "maxTime", "minTime", "disableFuture", "disablePast", "minutesStep", "shouldDisableTime", "onChange", "view", "views", "openTo", "onViewChange", "focusedView", "onFocusedViewChange", "className", "disabled", "readOnly", "skipDisabled", "timezone"];
 var useUtilityClasses49 = (ownerState) => {
   const {
@@ -41634,9 +41973,9 @@ var MultiSectionDigitalClockRoot = styled_default(PickerViewRoot, {
   width: "100%",
   borderBottom: `1px solid ${(theme.vars || theme).palette.divider}`
 }));
-var MultiSectionDigitalClock = /* @__PURE__ */ React124.forwardRef(function MultiSectionDigitalClock2(inProps, ref) {
+var MultiSectionDigitalClock = /* @__PURE__ */ React125.forwardRef(function MultiSectionDigitalClock2(inProps, ref) {
   const utils2 = useUtils();
-  const isRtl = useRtl();
+  const isRtl = useRtl2();
   const props = useThemeProps2({
     props: inProps,
     name: "MuiMultiSectionDigitalClock"
@@ -41685,7 +42024,7 @@ var MultiSectionDigitalClock = /* @__PURE__ */ React124.forwardRef(function Mult
   });
   const translations = usePickersTranslations();
   const now2 = useNow(timezone);
-  const timeSteps = React124.useMemo(() => _extends({
+  const timeSteps = React125.useMemo(() => _extends({
     hours: 1,
     minutes: 5,
     seconds: 5
@@ -41698,7 +42037,7 @@ var MultiSectionDigitalClock = /* @__PURE__ */ React124.forwardRef(function Mult
     timezone
   });
   const handleValueChange = useEventCallback_default((newValue, selectionState, selectedView) => handleRawValueChange(newValue, selectionState, selectedView));
-  const views = React124.useMemo(() => {
+  const views = React125.useMemo(() => {
     if (!ampm || !inViews.includes("hours")) {
       return inViews;
     }
@@ -41724,7 +42063,7 @@ var MultiSectionDigitalClock = /* @__PURE__ */ React124.forwardRef(function Mult
     meridiemMode,
     handleMeridiemChange
   } = useMeridiemMode(valueOrReferenceDate, ampm, handleMeridiemValueChange, "finish");
-  const isTimeDisabled = React124.useCallback((rawValue, viewType) => {
+  const isTimeDisabled = React125.useCallback((rawValue, viewType) => {
     const isAfter = createIsAfterIgnoreDatePart(disableIgnoringDatePartForTimeValidation, utils2);
     const shouldCheckPastEnd = viewType === "hours" || viewType === "minutes" && views.includes("seconds");
     const containsValidTime = ({
@@ -41799,7 +42138,7 @@ var MultiSectionDigitalClock = /* @__PURE__ */ React124.forwardRef(function Mult
         throw new Error("not supported");
     }
   }, [ampm, valueOrReferenceDate, disableIgnoringDatePartForTimeValidation, maxTime, meridiemMode, minTime, minutesStep, shouldDisableTime, utils2, disableFuture, disablePast, now2, views]);
-  const buildViewProps = React124.useCallback((viewToBuild) => {
+  const buildViewProps = React125.useCallback((viewToBuild) => {
     switch (viewToBuild) {
       case "hours": {
         return {
@@ -41875,7 +42214,7 @@ var MultiSectionDigitalClock = /* @__PURE__ */ React124.forwardRef(function Mult
         throw new Error(`Unknown view: ${viewToBuild} found.`);
     }
   }, [now2, value, ampm, utils2, timeSteps.hours, timeSteps.minutes, timeSteps.seconds, translations.hoursClockNumberText, translations.minutesClockNumberText, translations.secondsClockNumberText, meridiemMode, setValueAndGoToNextView, valueOrReferenceDate, isTimeDisabled, handleMeridiemChange]);
-  const viewsToRender = React124.useMemo(() => {
+  const viewsToRender = React125.useMemo(() => {
     if (!isRtl) {
       return views;
     }
@@ -41886,7 +42225,7 @@ var MultiSectionDigitalClock = /* @__PURE__ */ React124.forwardRef(function Mult
     }
     return digitViews;
   }, [isRtl, views]);
-  const viewTimeOptions = React124.useMemo(() => {
+  const viewTimeOptions = React125.useMemo(() => {
     return views.reduce((result, currentView) => {
       return _extends({}, result, {
         [currentView]: buildViewProps(currentView)
@@ -41895,13 +42234,13 @@ var MultiSectionDigitalClock = /* @__PURE__ */ React124.forwardRef(function Mult
   }, [views, buildViewProps]);
   const ownerState = props;
   const classes = useUtilityClasses49(ownerState);
-  return /* @__PURE__ */ _jsx79(MultiSectionDigitalClockRoot, _extends({
+  return /* @__PURE__ */ _jsx80(MultiSectionDigitalClockRoot, _extends({
     ref,
     className: clsx_default(classes.root, className),
     ownerState,
     role: "group"
   }, other, {
-    children: viewsToRender.map((timeView) => /* @__PURE__ */ _jsx79(MultiSectionDigitalClockSection, {
+    children: viewsToRender.map((timeView) => /* @__PURE__ */ _jsx80(MultiSectionDigitalClockSection, {
       items: viewTimeOptions[timeView].items,
       onChange: viewTimeOptions[timeView].onChange,
       active: view === timeView,
@@ -41924,63 +42263,63 @@ true ? MultiSectionDigitalClock.propTypes = {
    * 12h/24h view for hour selection clock.
    * @default utils.is12HourCycleInCurrentLocale()
    */
-  ampm: import_prop_types72.default.bool,
+  ampm: import_prop_types73.default.bool,
   /**
    * If `true`, the main element is focused during the first mount.
    * This main element is:
    * - the element chosen by the visible view if any (i.e: the selected day on the `day` view).
    * - the `input` element if there is a field rendered.
    */
-  autoFocus: import_prop_types72.default.bool,
+  autoFocus: import_prop_types73.default.bool,
   /**
    * Override or extend the styles applied to the component.
    */
-  classes: import_prop_types72.default.object,
-  className: import_prop_types72.default.string,
+  classes: import_prop_types73.default.object,
+  className: import_prop_types73.default.string,
   /**
    * The default selected value.
    * Used when the component is not controlled.
    */
-  defaultValue: import_prop_types72.default.object,
+  defaultValue: import_prop_types73.default.object,
   /**
    * If `true`, the picker views and text field are disabled.
    * @default false
    */
-  disabled: import_prop_types72.default.bool,
+  disabled: import_prop_types73.default.bool,
   /**
    * If `true`, disable values after the current date for date components, time for time components and both for date time components.
    * @default false
    */
-  disableFuture: import_prop_types72.default.bool,
+  disableFuture: import_prop_types73.default.bool,
   /**
    * Do not ignore date part when validating min/max time.
    * @default false
    */
-  disableIgnoringDatePartForTimeValidation: import_prop_types72.default.bool,
+  disableIgnoringDatePartForTimeValidation: import_prop_types73.default.bool,
   /**
    * If `true`, disable values before the current date for date components, time for time components and both for date time components.
    * @default false
    */
-  disablePast: import_prop_types72.default.bool,
+  disablePast: import_prop_types73.default.bool,
   /**
    * Controlled focused view.
    */
-  focusedView: import_prop_types72.default.oneOf(["hours", "meridiem", "minutes", "seconds"]),
+  focusedView: import_prop_types73.default.oneOf(["hours", "meridiem", "minutes", "seconds"]),
   /**
    * Maximal selectable time.
    * The date part of the object will be ignored unless `props.disableIgnoringDatePartForTimeValidation === true`.
    */
-  maxTime: import_prop_types72.default.object,
+  maxTime: import_prop_types73.default.object,
   /**
    * Minimal selectable time.
    * The date part of the object will be ignored unless `props.disableIgnoringDatePartForTimeValidation === true`.
    */
-  minTime: import_prop_types72.default.object,
+  minTime: import_prop_types73.default.object,
   /**
    * Step over minutes.
    * @default 1
    */
-  minutesStep: import_prop_types72.default.number,
+  minutesStep: import_prop_types73.default.number,
   /**
    * Callback fired when the value changes.
    * @template TValue The value type. It will be the same type as `value` or `null`. It can be in `[start, end]` format in case of range value.
@@ -41989,36 +42328,36 @@ true ? MultiSectionDigitalClock.propTypes = {
    * @param {PickerSelectionState | undefined} selectionState Indicates if the date selection is complete.
    * @param {TView | undefined} selectedView Indicates the view in which the selection has been made.
    */
-  onChange: import_prop_types72.default.func,
+  onChange: import_prop_types73.default.func,
   /**
    * Callback fired on focused view change.
    * @template TView
    * @param {TView} view The new view to focus or not.
    * @param {boolean} hasFocus `true` if the view should be focused.
    */
-  onFocusedViewChange: import_prop_types72.default.func,
+  onFocusedViewChange: import_prop_types73.default.func,
   /**
    * Callback fired on view change.
    * @template TView
    * @param {TView} view The new view.
    */
-  onViewChange: import_prop_types72.default.func,
+  onViewChange: import_prop_types73.default.func,
   /**
    * The default visible view.
    * Used when the component view is not controlled.
    * Must be a valid option from `views` list.
    */
-  openTo: import_prop_types72.default.oneOf(["hours", "meridiem", "minutes", "seconds"]),
+  openTo: import_prop_types73.default.oneOf(["hours", "meridiem", "minutes", "seconds"]),
   /**
    * If `true`, the picker views and text field are read-only.
    * @default false
    */
-  readOnly: import_prop_types72.default.bool,
+  readOnly: import_prop_types73.default.bool,
   /**
    * The date used to generate the new value when both `value` and `defaultValue` are empty.
    * @default The closest valid time using the validation props, except callbacks such as `shouldDisableTime`.
    */
-  referenceDate: import_prop_types72.default.object,
+  referenceDate: import_prop_types73.default.object,
   /**
    * Disable specific time.
    * @template TDate
@@ -42026,35 +42365,35 @@ true ? MultiSectionDigitalClock.propTypes = {
    * @param {TimeView} view The clock type of the timeValue.
    * @returns {boolean} If `true` the time will be disabled.
    */
-  shouldDisableTime: import_prop_types72.default.func,
+  shouldDisableTime: import_prop_types73.default.func,
   /**
    * If `true`, disabled digital clock items will not be rendered.
    * @default false
    */
-  skipDisabled: import_prop_types72.default.bool,
+  skipDisabled: import_prop_types73.default.bool,
   /**
    * The props used for each component slot.
    * @default {}
    */
-  slotProps: import_prop_types72.default.object,
+  slotProps: import_prop_types73.default.object,
   /**
    * Overrideable component slots.
    * @default {}
    */
-  slots: import_prop_types72.default.object,
+  slots: import_prop_types73.default.object,
   /**
    * The system prop that allows defining system overrides as well as additional CSS styles.
    */
-  sx: import_prop_types72.default.oneOfType([import_prop_types72.default.arrayOf(import_prop_types72.default.oneOfType([import_prop_types72.default.func, import_prop_types72.default.object, import_prop_types72.default.bool])), import_prop_types72.default.func, import_prop_types72.default.object]),
+  sx: import_prop_types73.default.oneOfType([import_prop_types73.default.arrayOf(import_prop_types73.default.oneOfType([import_prop_types73.default.func, import_prop_types73.default.object, import_prop_types73.default.bool])), import_prop_types73.default.func, import_prop_types73.default.object]),
   /**
    * The time steps between two time unit options.
    * For example, if `timeStep.minutes = 8`, then the available minute options will be `[0, 8, 16, 24, 32, 40, 48, 56]`.
    * @default{ hours: 1, minutes: 5, seconds: 5 }
    */
-  timeSteps: import_prop_types72.default.shape({
-    hours: import_prop_types72.default.number,
-    minutes: import_prop_types72.default.number,
-    seconds: import_prop_types72.default.number
+  timeSteps: import_prop_types73.default.shape({
+    hours: import_prop_types73.default.number,
+    minutes: import_prop_types73.default.number,
+    seconds: import_prop_types73.default.number
   }),
   /**
    * Choose which timezone to use for the value.
@@ -42063,28 +42402,28 @@ true ? MultiSectionDigitalClock.propTypes = {
    * @see See the {@link https://mui.com/x/react-date-pickers/timezone/ timezones documentation} for more details.
    * @default The timezone of the `value` or `defaultValue` prop is defined, 'default' otherwise.
    */
-  timezone: import_prop_types72.default.string,
+  timezone: import_prop_types73.default.string,
   /**
    * The selected value.
    * Used when the component is controlled.
    */
-  value: import_prop_types72.default.object,
+  value: import_prop_types73.default.object,
   /**
    * The visible view.
    * Used when the component view is controlled.
    * Must be a valid option from `views` list.
    */
-  view: import_prop_types72.default.oneOf(["hours", "meridiem", "minutes", "seconds"]),
+  view: import_prop_types73.default.oneOf(["hours", "meridiem", "minutes", "seconds"]),
   /**
    * Available views.
    * @default ['hours', 'minutes']
    */
-  views: import_prop_types72.default.arrayOf(import_prop_types72.default.oneOf(["hours", "meridiem", "minutes", "seconds"]).isRequired)
+  views: import_prop_types73.default.arrayOf(import_prop_types73.default.oneOf(["hours", "meridiem", "minutes", "seconds"]).isRequired)
 } : void 0;
 
 // node_modules/@mui/x-date-pickers/PickersDay/PickersDay.js
-var import_prop_types73 = __toESM(require_prop_types());
-import * as React125 from "react";
+var import_prop_types74 = __toESM(require_prop_types());
+import * as React126 from "react";
 
 // node_modules/@mui/x-date-pickers/PickersDay/pickersDayClasses.js
 function getPickersDayUtilityClass(slot) {
@@ -42093,7 +42432,7 @@ function getPickersDayUtilityClass(slot) {
 var pickersDayClasses = generateUtilityClasses("MuiPickersDay", ["root", "dayWithMargin", "dayOutsideMonth", "hiddenDaySpacingFiller", "today", "selected", "disabled"]);
 
 // node_modules/@mui/x-date-pickers/PickersDay/PickersDay.js
-import { jsx as _jsx80 } from "react/jsx-runtime";
+import { jsx as _jsx81 } from "react/jsx-runtime";
 var _excluded13 = ["autoFocus", "className", "day", "disabled", "disableHighlightToday", "disableMargin", "hidden", "isAnimating", "onClick", "onDaySelect", "onFocus", "onBlur", "onKeyDown", "onMouseDown", "onMouseEnter", "outsideCurrentMonth", "selected", "showDaysOutsideCurrentMonth", "children", "today", "isFirstVisibleCell", "isLastVisibleCell"];
 var useUtilityClasses50 = (ownerState) => {
   const {
@@ -42206,7 +42545,7 @@ var PickersDayFiller = styled_default("div", {
 }));
 var noop3 = () => {
 };
-var PickersDayRaw = /* @__PURE__ */ React125.forwardRef(function PickersDay(inProps, forwardedRef) {
+var PickersDayRaw = /* @__PURE__ */ React126.forwardRef(function PickersDay(inProps, forwardedRef) {
   const props = useThemeProps2({
     props: inProps,
     name: "MuiPickersDay"
@@ -42243,7 +42582,7 @@ var PickersDayRaw = /* @__PURE__ */ React125.forwardRef(function PickersDay(inPr
   });
   const classes = useUtilityClasses50(ownerState);
   const utils2 = useUtils();
-  const ref = React125.useRef(null);
+  const ref = React126.useRef(null);
   const handleRef = useForkRef(ref, forwardedRef);
   useEnhancedEffect_default(() => {
     if (autoFocus && !disabled && !isAnimating && !outsideCurrentMonth) {
@@ -42268,13 +42607,13 @@ var PickersDayRaw = /* @__PURE__ */ React125.forwardRef(function PickersDay(inPr
     }
   };
   if (outsideCurrentMonth && !showDaysOutsideCurrentMonth) {
-    return /* @__PURE__ */ _jsx80(PickersDayFiller, {
+    return /* @__PURE__ */ _jsx81(PickersDayFiller, {
       className: clsx_default(classes.root, classes.hiddenDaySpacingFiller, className),
       ownerState,
       role: other.role
     });
   }
-  return /* @__PURE__ */ _jsx80(PickersDayRoot, _extends({
+  return /* @__PURE__ */ _jsx81(PickersDayRoot, _extends({
     className: clsx_default(classes.root, className),
     ref: handleRef,
     centerRipple: true,
@@ -42300,9 +42639,9 @@ true ? PickersDayRaw.propTypes = {
    * A ref for imperative actions.
    * It currently only supports `focusVisible()` action.
    */
-  action: import_prop_types73.default.oneOfType([import_prop_types73.default.func, import_prop_types73.default.shape({
-    current: import_prop_types73.default.shape({
-      focusVisible: import_prop_types73.default.func.isRequired
+  action: import_prop_types74.default.oneOfType([import_prop_types74.default.func, import_prop_types74.default.shape({
+    current: import_prop_types74.default.shape({
+      focusVisible: import_prop_types74.default.func.isRequired
     })
   })]),
   /**
@@ -42310,32 +42649,32 @@ true ? PickersDayRaw.propTypes = {
    * They won't start at the cursor interaction position.
    * @default false
    */
-  centerRipple: import_prop_types73.default.bool,
+  centerRipple: import_prop_types74.default.bool,
   /**
    * Override or extend the styles applied to the component.
    */
-  classes: import_prop_types73.default.object,
-  className: import_prop_types73.default.string,
-  component: import_prop_types73.default.elementType,
+  classes: import_prop_types74.default.object,
+  className: import_prop_types74.default.string,
+  component: import_prop_types74.default.elementType,
   /**
    * The date to show.
    */
-  day: import_prop_types73.default.object.isRequired,
+  day: import_prop_types74.default.object.isRequired,
   /**
    * If `true`, renders as disabled.
    * @default false
    */
-  disabled: import_prop_types73.default.bool,
+  disabled: import_prop_types74.default.bool,
   /**
    * If `true`, today's date is rendering without highlighting with circle.
    * @default false
    */
-  disableHighlightToday: import_prop_types73.default.bool,
+  disableHighlightToday: import_prop_types74.default.bool,
   /**
    * If `true`, days are rendering without margin. Useful for displaying linked range of days.
    * @default false
    */
-  disableMargin: import_prop_types73.default.bool,
+  disableMargin: import_prop_types74.default.bool,
   /**
    * If `true`, the ripple effect is disabled.
    *
@@ -42343,17 +42682,17 @@ true ? PickersDayRaw.propTypes = {
    * to highlight the element by applying separate styles with the `.Mui-focusVisible` class.
    * @default false
    */
-  disableRipple: import_prop_types73.default.bool,
+  disableRipple: import_prop_types74.default.bool,
   /**
    * If `true`, the touch ripple effect is disabled.
    * @default false
    */
-  disableTouchRipple: import_prop_types73.default.bool,
+  disableTouchRipple: import_prop_types74.default.bool,
   /**
    * If `true`, the base button will have a keyboard focus ripple.
    * @default false
    */
-  focusRipple: import_prop_types73.default.bool,
+  focusRipple: import_prop_types74.default.bool,
   /**
    * This prop can help identify which element has keyboard focus.
    * The class name will be applied when the element gains the focus through keyboard interaction.
@@ -42362,37 +42701,37 @@ true ? PickersDayRaw.propTypes = {
    * A [polyfill can be used](https://github.com/WICG/focus-visible) to apply a `focus-visible` class to other components
    * if needed.
    */
-  focusVisibleClassName: import_prop_types73.default.string,
-  isAnimating: import_prop_types73.default.bool,
+  focusVisibleClassName: import_prop_types74.default.string,
+  isAnimating: import_prop_types74.default.bool,
   /**
    * If `true`, day is the first visible cell of the month.
    * Either the first day of the month or the first day of the week depending on `showDaysOutsideCurrentMonth`.
    */
-  isFirstVisibleCell: import_prop_types73.default.bool.isRequired,
+  isFirstVisibleCell: import_prop_types74.default.bool.isRequired,
   /**
    * If `true`, day is the last visible cell of the month.
    * Either the last day of the month or the last day of the week depending on `showDaysOutsideCurrentMonth`.
    */
-  isLastVisibleCell: import_prop_types73.default.bool.isRequired,
-  onBlur: import_prop_types73.default.func,
-  onDaySelect: import_prop_types73.default.func.isRequired,
-  onFocus: import_prop_types73.default.func,
+  isLastVisibleCell: import_prop_types74.default.bool.isRequired,
+  onBlur: import_prop_types74.default.func,
+  onDaySelect: import_prop_types74.default.func.isRequired,
+  onFocus: import_prop_types74.default.func,
   /**
    * Callback fired when the component is focused with a keyboard.
    * We trigger a `onFocus` callback too.
    */
-  onFocusVisible: import_prop_types73.default.func,
-  onKeyDown: import_prop_types73.default.func,
-  onMouseEnter: import_prop_types73.default.func,
+  onFocusVisible: import_prop_types74.default.func,
+  onKeyDown: import_prop_types74.default.func,
+  onMouseEnter: import_prop_types74.default.func,
   /**
    * If `true`, day is outside of month and will be hidden.
    */
-  outsideCurrentMonth: import_prop_types73.default.bool.isRequired,
+  outsideCurrentMonth: import_prop_types74.default.bool.isRequired,
   /**
    * If `true`, renders as selected.
    * @default false
    */
-  selected: import_prop_types73.default.bool,
+  selected: import_prop_types74.default.bool,
   /**
    * If `true`, days outside the current month are rendered:
    *
@@ -42403,40 +42742,40 @@ true ? PickersDayRaw.propTypes = {
    * - ignored if `calendars` equals more than `1` on range pickers.
    * @default false
    */
-  showDaysOutsideCurrentMonth: import_prop_types73.default.bool,
-  style: import_prop_types73.default.object,
+  showDaysOutsideCurrentMonth: import_prop_types74.default.bool,
+  style: import_prop_types74.default.object,
   /**
    * The system prop that allows defining system overrides as well as additional CSS styles.
    */
-  sx: import_prop_types73.default.oneOfType([import_prop_types73.default.arrayOf(import_prop_types73.default.oneOfType([import_prop_types73.default.func, import_prop_types73.default.object, import_prop_types73.default.bool])), import_prop_types73.default.func, import_prop_types73.default.object]),
+  sx: import_prop_types74.default.oneOfType([import_prop_types74.default.arrayOf(import_prop_types74.default.oneOfType([import_prop_types74.default.func, import_prop_types74.default.object, import_prop_types74.default.bool])), import_prop_types74.default.func, import_prop_types74.default.object]),
   /**
    * @default 0
    */
-  tabIndex: import_prop_types73.default.number,
+  tabIndex: import_prop_types74.default.number,
   /**
    * If `true`, renders as today date.
    * @default false
    */
-  today: import_prop_types73.default.bool,
+  today: import_prop_types74.default.bool,
   /**
    * Props applied to the `TouchRipple` element.
    */
-  TouchRippleProps: import_prop_types73.default.object,
+  TouchRippleProps: import_prop_types74.default.object,
   /**
    * A ref that points to the `TouchRipple` element.
    */
-  touchRippleRef: import_prop_types73.default.oneOfType([import_prop_types73.default.func, import_prop_types73.default.shape({
-    current: import_prop_types73.default.shape({
-      pulsate: import_prop_types73.default.func.isRequired,
-      start: import_prop_types73.default.func.isRequired,
-      stop: import_prop_types73.default.func.isRequired
+  touchRippleRef: import_prop_types74.default.oneOfType([import_prop_types74.default.func, import_prop_types74.default.shape({
+    current: import_prop_types74.default.shape({
+      pulsate: import_prop_types74.default.func.isRequired,
+      start: import_prop_types74.default.func.isRequired,
+      stop: import_prop_types74.default.func.isRequired
     })
   })])
 } : void 0;
-var PickersDay2 = /* @__PURE__ */ React125.memo(PickersDayRaw);
+var PickersDay2 = /* @__PURE__ */ React126.memo(PickersDayRaw);
 
 // node_modules/@mui/x-date-pickers/internals/hooks/useField/useField.js
-import * as React131 from "react";
+import * as React132 from "react";
 
 // node_modules/@mui/x-date-pickers/validation/validateDate.js
 var validateDate = ({
@@ -42565,7 +42904,7 @@ var extractValidationProps = (props) => VALIDATION_PROP_NAMES.reduce((extractedP
 }, {});
 
 // node_modules/@mui/x-date-pickers/validation/useValidation.js
-import * as React126 from "react";
+import * as React127 from "react";
 function useValidation(options) {
   const {
     props,
@@ -42575,7 +42914,7 @@ function useValidation(options) {
     onError
   } = options;
   const adapter = useLocalizationContext();
-  const previousValidationErrorRef = React126.useRef(validator2.valueManager.defaultErrorState);
+  const previousValidationErrorRef = React127.useRef(validator2.valueManager.defaultErrorState);
   const validationError = validator2({
     adapter,
     value,
@@ -42583,7 +42922,7 @@ function useValidation(options) {
     props
   });
   const hasValidationError = validator2.valueManager.hasError(validationError);
-  React126.useEffect(() => {
+  React127.useEffect(() => {
     if (onError && !validator2.valueManager.isSameError(validationError, previousValidationErrorRef.current)) {
       onError(validationError, value);
     }
@@ -42605,7 +42944,7 @@ function useValidation(options) {
 }
 
 // node_modules/@mui/x-date-pickers/internals/hooks/useField/useFieldState.js
-import * as React127 from "react";
+import * as React128 from "react";
 
 // node_modules/@mui/x-date-pickers/internals/hooks/useField/buildSectionsFromFormat.js
 var expandFormat = ({
@@ -42843,7 +43182,7 @@ var useFieldState = (params) => {
   const utils2 = useUtils();
   const translations = usePickersTranslations();
   const adapter = useLocalizationContext();
-  const isRtl = useRtl();
+  const isRtl = useRtl2();
   const {
     valueManager,
     fieldValueManager,
@@ -42876,9 +43215,9 @@ var useFieldState = (params) => {
     onChange,
     valueManager
   });
-  const localizedDigits = React127.useMemo(() => getLocalizedDigits(utils2), [utils2]);
-  const sectionsValueBoundaries = React127.useMemo(() => getSectionsBoundaries(utils2, localizedDigits, timezone), [utils2, localizedDigits, timezone]);
-  const getSectionsFromValue = React127.useCallback((value, fallbackSections = null) => fieldValueManager.getSectionsFromValue(utils2, value, fallbackSections, (date) => buildSectionsFromFormat({
+  const localizedDigits = React128.useMemo(() => getLocalizedDigits(utils2), [utils2]);
+  const sectionsValueBoundaries = React128.useMemo(() => getSectionsBoundaries(utils2, localizedDigits, timezone), [utils2, localizedDigits, timezone]);
+  const getSectionsFromValue = React128.useCallback((value, fallbackSections = null) => fieldValueManager.getSectionsFromValue(utils2, value, fallbackSections, (date) => buildSectionsFromFormat({
     utils: utils2,
     localeText: translations,
     localizedDigits,
@@ -42889,7 +43228,7 @@ var useFieldState = (params) => {
     enableAccessibleFieldDOMStructure,
     isRtl
   })), [fieldValueManager, format2, translations, localizedDigits, isRtl, shouldRespectLeadingZeros, utils2, formatDensity, enableAccessibleFieldDOMStructure]);
-  const [state, setState] = React127.useState(() => {
+  const [state, setState] = React128.useState(() => {
     const sections = getSectionsFromValue(valueFromTheOutside);
     validateSections(sections, valueType);
     const stateWithoutReferenceDate = {
@@ -42921,7 +43260,7 @@ var useFieldState = (params) => {
     innerSetSelectedSections(newSelectedSections);
     onSelectedSectionsChange?.(newSelectedSections);
   };
-  const parsedSelectedSections = React127.useMemo(() => parseSelectedSections(selectedSections, state.sections), [selectedSections, state.sections]);
+  const parsedSelectedSections = React128.useMemo(() => parseSelectedSections(selectedSections, state.sections), [selectedSections, state.sections]);
   const activeSectionIndex = parsedSelectedSections === "all" ? 0 : parsedSelectedSections;
   const publishValue = ({
     value,
@@ -43016,22 +43355,22 @@ var useFieldState = (params) => {
     const newSections = setSectionValue(activeSectionIndex, newSectionValue);
     const newActiveDateSections = activeDateManager.getSections(newSections);
     const newActiveDate = getDateFromDateSections(utils2, newActiveDateSections, localizedDigits);
-    let values4;
+    let values5;
     let shouldPublish;
     if (newActiveDate != null && utils2.isValid(newActiveDate)) {
       const mergedDate = mergeDateIntoReferenceDate(utils2, newActiveDate, newActiveDateSections, activeDateManager.referenceDate, true);
-      values4 = activeDateManager.getNewValuesFromNewActiveDate(mergedDate);
+      values5 = activeDateManager.getNewValuesFromNewActiveDate(mergedDate);
       shouldPublish = true;
     } else {
-      values4 = activeDateManager.getNewValuesFromNewActiveDate(newActiveDate);
+      values5 = activeDateManager.getNewValuesFromNewActiveDate(newActiveDate);
       shouldPublish = (newActiveDate != null && !utils2.isValid(newActiveDate)) !== (activeDateManager.date != null && !utils2.isValid(activeDateManager.date));
     }
     if (shouldPublish) {
-      return publishValue(_extends({}, values4, {
+      return publishValue(_extends({}, values5, {
         sections: newSections
       }));
     }
-    return setState((prevState) => _extends({}, prevState, values4, {
+    return setState((prevState) => _extends({}, prevState, values5, {
       sections: newSections,
       tempValueStrAndroid: null
     }));
@@ -43039,14 +43378,14 @@ var useFieldState = (params) => {
   const setTempAndroidValueStr = (tempValueStrAndroid) => setState((prev) => _extends({}, prev, {
     tempValueStrAndroid
   }));
-  React127.useEffect(() => {
+  React128.useEffect(() => {
     const sections = getSectionsFromValue(state.value);
     validateSections(sections, valueType);
     setState((prevState) => _extends({}, prevState, {
       sections
     }));
   }, [format2, utils2.locale, isRtl]);
-  React127.useEffect(() => {
+  React128.useEffect(() => {
     let shouldUpdate;
     if (!valueManager.areValuesEqual(utils2, state.value, valueFromTheOutside)) {
       shouldUpdate = true;
@@ -43079,7 +43418,7 @@ var useFieldState = (params) => {
 };
 
 // node_modules/@mui/x-date-pickers/internals/hooks/useField/useFieldCharacterEditing.js
-import * as React128 from "react";
+import * as React129 from "react";
 var QUERY_LIFE_DURATION_MS = 5e3;
 var isQueryResponseWithoutValue = (response) => response.saveQuery != null;
 var useFieldCharacterEditing = ({
@@ -43091,14 +43430,14 @@ var useFieldCharacterEditing = ({
   timezone
 }) => {
   const utils2 = useUtils();
-  const [query, setQuery] = React128.useState(null);
+  const [query, setQuery] = React129.useState(null);
   const resetQuery = useEventCallback_default(() => setQuery(null));
-  React128.useEffect(() => {
+  React129.useEffect(() => {
     if (query != null && sections[query.sectionIndex]?.type !== query.sectionType) {
       resetQuery();
     }
   }, [sections, query, resetQuery]);
-  React128.useEffect(() => {
+  React129.useEffect(() => {
     if (query != null) {
       const timeout2 = setTimeout(() => resetQuery(), QUERY_LIFE_DURATION_MS);
       return () => {
@@ -43284,7 +43623,7 @@ var useFieldCharacterEditing = ({
 };
 
 // node_modules/@mui/x-date-pickers/internals/hooks/useField/useFieldV7TextField.js
-import * as React129 from "react";
+import * as React130 from "react";
 var useFieldV7TextField = (params) => {
   const {
     internalProps: {
@@ -43315,13 +43654,13 @@ var useFieldV7TextField = (params) => {
     areAllSectionsEmpty,
     sectionsValueBoundaries
   } = params;
-  const sectionListRef = React129.useRef(null);
+  const sectionListRef = React130.useRef(null);
   const handleSectionListRef = useForkRef(inSectionListRef, sectionListRef);
   const translations = usePickersTranslations();
   const utils2 = useUtils();
   const id = useId();
-  const [focused, setFocused] = React129.useState(false);
-  const interactions = React129.useMemo(() => ({
+  const [focused, setFocused] = React130.useState(false);
+  const interactions = React130.useMemo(() => ({
     syncSelectionToDOM: () => {
       if (!sectionListRef.current) {
         return;
@@ -43367,7 +43706,8 @@ var useFieldV7TextField = (params) => {
       return sectionListRef.current.getSectionIndexFromDOMElement(activeElement);
     },
     focusField: (newSelectedSections = 0) => {
-      if (!sectionListRef.current) {
+      if (!sectionListRef.current || // if the field is already focused, we don't need to focus it again
+      interactions.getActiveSectionIndexFromDOM() != null) {
         return;
       }
       const newParsedSelectedSections = parseSelectedSections(newSelectedSections, state.sections);
@@ -43573,7 +43913,7 @@ var useFieldV7TextField = (params) => {
       }
     }
   }, [parsedSelectedSections, focused]);
-  const sectionBoundaries = React129.useMemo(() => {
+  const sectionBoundaries = React130.useMemo(() => {
     return state.sections.reduce((acc, next) => {
       acc[next.type] = sectionsValueBoundaries[next.type]({
         currentDate: null,
@@ -43584,7 +43924,7 @@ var useFieldV7TextField = (params) => {
     }, {});
   }, [sectionsValueBoundaries, state.sections]);
   const isContainerEditable = parsedSelectedSections === "all";
-  const elements = React129.useMemo(() => {
+  const elements = React130.useMemo(() => {
     return state.sections.map((section, index3) => {
       const isEditable = !isContainerEditable && !disabled && !readOnly;
       return {
@@ -43608,7 +43948,7 @@ var useFieldV7TextField = (params) => {
           spellCheck: isEditable ? false : void 0,
           autoCapitalize: isEditable ? "off" : void 0,
           autoCorrect: isEditable ? "off" : void 0,
-          [parseInt(React129.version, 10) >= 17 ? "enterKeyHint" : "enterkeyhint"]: isEditable ? "next" : void 0,
+          [parseInt(React130.version, 10) >= 17 ? "enterKeyHint" : "enterkeyhint"]: isEditable ? "next" : void 0,
           children: section.value || section.placeholder,
           onInput: handleInputContentInput,
           onPaste: handleInputContentPaste,
@@ -43629,8 +43969,8 @@ var useFieldV7TextField = (params) => {
   const handleValueStrChange = useEventCallback_default((event) => {
     updateValueFromValueStr(event.target.value);
   });
-  const valueStr = React129.useMemo(() => areAllSectionsEmpty ? "" : fieldValueManager.getV7HiddenInputValueFromSections(state.sections), [areAllSectionsEmpty, state.sections, fieldValueManager]);
-  React129.useEffect(() => {
+  const valueStr = React130.useMemo(() => areAllSectionsEmpty ? "" : fieldValueManager.getV7HiddenInputValueFromSections(state.sections), [areAllSectionsEmpty, state.sections, fieldValueManager]);
+  React130.useEffect(() => {
     if (sectionListRef.current == null) {
       throw new Error(["MUI X: The `sectionListRef` prop has not been initialized by `PickersSectionList`", "You probably tried to pass a component to the `textField` slot that contains an `<input />` element instead of a `PickersSectionList`.", "", "If you want to keep using an `<input />` HTML element for the editing, please remove the `enableAccessibleFieldDOMStructure` prop from your picker or field component:", "", "<DatePicker slots={{ textField: MyCustomTextField }} />", "", "Learn more about the field accessible DOM structure on the MUI documentation: https://mui.com/x/react-date-pickers/fields/#fields-to-edit-a-single-element"].join("\n"));
     }
@@ -43665,7 +44005,7 @@ var useFieldV7TextField = (params) => {
 };
 
 // node_modules/@mui/x-date-pickers/internals/hooks/useField/useFieldV6TextField.js
-import * as React130 from "react";
+import * as React131 from "react";
 var cleanString = (dirtyString) => dirtyString.replace(/[\u2066\u2067\u2068\u2069]/g, "");
 var addPositionPropertiesToSections = (sections, localizedDigits, isRtl) => {
   let position = 0;
@@ -43692,9 +44032,9 @@ var addPositionPropertiesToSections = (sections, localizedDigits, isRtl) => {
   return newSections;
 };
 var useFieldV6TextField = (params) => {
-  const isRtl = useRtl();
-  const focusTimeoutRef = React130.useRef(void 0);
-  const selectionSyncTimeoutRef = React130.useRef(void 0);
+  const isRtl = useRtl2();
+  const focusTimeoutRef = React131.useRef(void 0);
+  const selectionSyncTimeoutRef = React131.useRef(void 0);
   const {
     forwardedProps: {
       onFocus,
@@ -43725,10 +44065,10 @@ var useFieldV6TextField = (params) => {
     areAllSectionsEmpty,
     localizedDigits
   } = params;
-  const inputRef = React130.useRef(null);
+  const inputRef = React131.useRef(null);
   const handleRef = useForkRef(inputRefProp, inputRef);
-  const sections = React130.useMemo(() => addPositionPropertiesToSections(state.sections, localizedDigits, isRtl), [state.sections, localizedDigits, isRtl]);
-  const interactions = React130.useMemo(() => ({
+  const sections = React131.useMemo(() => addPositionPropertiesToSections(state.sections, localizedDigits, isRtl), [state.sections, localizedDigits, isRtl]);
+  const interactions = React131.useMemo(() => ({
     syncSelectionToDOM: () => {
       if (!inputRef.current) {
         return;
@@ -43775,6 +44115,9 @@ var useFieldV6TextField = (params) => {
       return nextSectionIndex === -1 ? sections.length - 1 : nextSectionIndex - 1;
     },
     focusField: (newSelectedSection = 0) => {
+      if (getActiveElement(document) === inputRef.current) {
+        return;
+      }
       inputRef.current?.focus();
       setSelectedSections(newSelectedSection);
     },
@@ -43912,14 +44255,14 @@ var useFieldV6TextField = (params) => {
       sectionIndex: activeSectionIndex
     });
   });
-  const placeholder = React130.useMemo(() => {
+  const placeholder = React131.useMemo(() => {
     if (inPlaceholder !== void 0) {
       return inPlaceholder;
     }
     return fieldValueManager.getV6InputValueFromSections(getSectionsFromValue(valueManager.emptyValue), localizedDigits, isRtl);
   }, [inPlaceholder, fieldValueManager, getSectionsFromValue, valueManager.emptyValue, localizedDigits, isRtl]);
-  const valueStr = React130.useMemo(() => state.tempValueStrAndroid ?? fieldValueManager.getV6InputValueFromSections(state.sections, localizedDigits, isRtl), [state.sections, fieldValueManager, state.tempValueStrAndroid, localizedDigits, isRtl]);
-  React130.useEffect(() => {
+  const valueStr = React131.useMemo(() => state.tempValueStrAndroid ?? fieldValueManager.getV6InputValueFromSections(state.sections, localizedDigits, isRtl), [state.sections, fieldValueManager, state.tempValueStrAndroid, localizedDigits, isRtl]);
+  React131.useEffect(() => {
     if (inputRef.current && inputRef.current === getActiveElement(document)) {
       setSelectedSections("all");
     }
@@ -43928,7 +44271,7 @@ var useFieldV6TextField = (params) => {
       clearTimeout(selectionSyncTimeoutRef.current);
     };
   }, []);
-  const inputMode = React130.useMemo(() => {
+  const inputMode = React131.useMemo(() => {
     if (activeSectionIndex == null) {
       return "text";
     }
@@ -43982,7 +44325,7 @@ var useField = (params) => {
     valueManager,
     validator: validator2
   } = params;
-  const isRtl = useRtl();
+  const isRtl = useRtl2();
   const stateResponse = useFieldState(params);
   const {
     state,
@@ -44010,7 +44353,7 @@ var useField = (params) => {
   } = characterEditingResponse;
   const areAllSectionsEmpty = valueManager.areValuesEqual(utils2, state.value, valueManager.emptyValue);
   const useFieldTextField = enableAccessibleFieldDOMStructure ? useFieldV7TextField : useFieldV6TextField;
-  const sectionOrder = React131.useMemo(() => getSectionOrder(state.sections, isRtl && !enableAccessibleFieldDOMStructure), [state.sections, isRtl, enableAccessibleFieldDOMStructure]);
+  const sectionOrder = React132.useMemo(() => getSectionOrder(state.sections, isRtl && !enableAccessibleFieldDOMStructure), [state.sections, isRtl, enableAccessibleFieldDOMStructure]);
   const {
     returnedValue,
     interactions
@@ -44109,24 +44452,24 @@ var useField = (params) => {
     value: state.value,
     onError: internalProps.onError
   });
-  const inputError = React131.useMemo(() => {
+  const inputError = React132.useMemo(() => {
     if (error !== void 0) {
       return error;
     }
     return hasValidationError;
   }, [hasValidationError, error]);
-  React131.useEffect(() => {
+  React132.useEffect(() => {
     if (!inputError && activeSectionIndex == null) {
       resetCharacterQuery();
     }
   }, [state.referenceValue, activeSectionIndex, inputError]);
-  React131.useEffect(() => {
+  React132.useEffect(() => {
     if (state.tempValueStrAndroid != null && activeSectionIndex != null) {
       resetCharacterQuery();
       clearActiveSection();
     }
   }, [state.sections]);
-  React131.useImperativeHandle(unstableFieldRef, () => ({
+  React132.useImperativeHandle(unstableFieldRef, () => ({
     getSections: () => state.sections,
     getActiveSectionIndex: interactions.getActiveSectionIndexFromDOM,
     setSelectedSections: interactions.setSelectedSections,
@@ -44157,8 +44500,8 @@ var useField = (params) => {
 };
 
 // node_modules/@mui/x-date-pickers/hooks/useClearableField.js
-import * as React132 from "react";
-import { jsx as _jsx81, jsxs as _jsxs26 } from "react/jsx-runtime";
+import * as React133 from "react";
+import { jsx as _jsx82, jsxs as _jsxs26 } from "react/jsx-runtime";
 var _excluded14 = ["clearable", "onClear", "InputProps", "sx", "slots", "slotProps"];
 var _excluded23 = ["ownerState"];
 var useClearableField = (props) => {
@@ -44189,15 +44532,15 @@ var useClearableField = (props) => {
   });
   return _extends({}, other, {
     InputProps: _extends({}, InputProps, {
-      endAdornment: /* @__PURE__ */ _jsxs26(React132.Fragment, {
-        children: [clearable && /* @__PURE__ */ _jsx81(InputAdornment_default, {
+      endAdornment: /* @__PURE__ */ _jsxs26(React133.Fragment, {
+        children: [clearable && /* @__PURE__ */ _jsx82(InputAdornment_default, {
           position: "end",
           sx: {
             marginRight: InputProps?.endAdornment ? -1 : -1.5
           },
-          children: /* @__PURE__ */ _jsx81(IconButton3, _extends({}, iconButtonProps, {
+          children: /* @__PURE__ */ _jsx82(IconButton3, _extends({}, iconButtonProps, {
             onClick: onClear,
-            children: /* @__PURE__ */ _jsx81(EndClearIcon, _extends({
+            children: /* @__PURE__ */ _jsx82(EndClearIcon, _extends({
               fontSize: "small"
             }, endClearIconProps))
           }))
@@ -44223,10 +44566,10 @@ var useClearableField = (props) => {
 };
 
 // node_modules/@mui/x-date-pickers/hooks/useSplitFieldProps.js
-import * as React133 from "react";
+import * as React134 from "react";
 var SHARED_FIELD_INTERNAL_PROP_NAMES = ["value", "defaultValue", "referenceDate", "format", "formatDensity", "onChange", "timezone", "onError", "shouldRespectLeadingZeros", "selectedSections", "onSelectedSectionsChange", "unstableFieldRef", "enableAccessibleFieldDOMStructure", "disabled", "readOnly", "dateSeparator"];
 var useSplitFieldProps = (props, valueType) => {
-  return React133.useMemo(() => {
+  return React134.useMemo(() => {
     const forwardedProps = _extends({}, props);
     const internalProps = {};
     const extractProp = (propName) => {
@@ -44253,18 +44596,18 @@ var useSplitFieldProps = (props, valueType) => {
 };
 
 // node_modules/@mui/x-date-pickers/internals/components/PickersProvider.js
-import * as React134 from "react";
-import { jsx as _jsx82 } from "react/jsx-runtime";
-var PickersContext = /* @__PURE__ */ React134.createContext(null);
+import * as React135 from "react";
+import { jsx as _jsx83 } from "react/jsx-runtime";
+var PickersContext = /* @__PURE__ */ React135.createContext(null);
 function PickersProvider(props) {
   const {
     contextValue,
     localeText,
     children
   } = props;
-  return /* @__PURE__ */ _jsx82(PickersContext.Provider, {
+  return /* @__PURE__ */ _jsx83(PickersContext.Provider, {
     value: contextValue,
-    children: /* @__PURE__ */ _jsx82(LocalizationProvider, {
+    children: /* @__PURE__ */ _jsx83(LocalizationProvider, {
       localeText,
       children
     })
@@ -44290,8 +44633,8 @@ var useDefaultizedDateTimeField = (props) => {
 };
 
 // node_modules/@mui/x-date-pickers/PickersTextField/PickersTextField.js
-var import_prop_types79 = __toESM(require_prop_types());
-import * as React141 from "react";
+var import_prop_types81 = __toESM(require_prop_types());
+import * as React143 from "react";
 
 // node_modules/@mui/x-date-pickers/PickersTextField/pickersTextFieldClasses.js
 function getPickersTextFieldUtilityClass(slot) {
@@ -44300,12 +44643,12 @@ function getPickersTextFieldUtilityClass(slot) {
 var pickersTextFieldClasses = generateUtilityClasses("MuiPickersTextField", ["root", "focused", "disabled", "error", "required"]);
 
 // node_modules/@mui/x-date-pickers/PickersTextField/PickersOutlinedInput/PickersOutlinedInput.js
-var import_prop_types76 = __toESM(require_prop_types());
-import * as React138 from "react";
+var import_prop_types77 = __toESM(require_prop_types());
+import * as React139 from "react";
 
 // node_modules/@mui/x-date-pickers/PickersTextField/PickersInputBase/PickersInputBase.js
-var import_prop_types75 = __toESM(require_prop_types());
-import * as React136 from "react";
+var import_prop_types76 = __toESM(require_prop_types());
+import * as React137 from "react";
 
 // node_modules/@mui/x-date-pickers/PickersTextField/PickersInputBase/pickersInputBaseClasses.js
 function getPickersInputBaseUtilityClass(slot) {
@@ -44314,8 +44657,8 @@ function getPickersInputBaseUtilityClass(slot) {
 var pickersInputBaseClasses = generateUtilityClasses("MuiPickersInputBase", ["root", "focused", "disabled", "error", "notchedOutline", "sectionContent", "sectionBefore", "sectionAfter", "adornedStart", "adornedEnd", "input"]);
 
 // node_modules/@mui/x-date-pickers/PickersSectionList/PickersSectionList.js
-var import_prop_types74 = __toESM(require_prop_types());
-import * as React135 from "react";
+var import_prop_types75 = __toESM(require_prop_types());
+import * as React136 from "react";
 
 // node_modules/@mui/x-date-pickers/PickersSectionList/pickersSectionListClasses.js
 function getPickersSectionListUtilityClass(slot) {
@@ -44324,7 +44667,7 @@ function getPickersSectionListUtilityClass(slot) {
 var pickersSectionListClasses = generateUtilityClasses("MuiPickersSectionList", ["root", "section", "sectionContent"]);
 
 // node_modules/@mui/x-date-pickers/PickersSectionList/PickersSectionList.js
-import { jsx as _jsx83, jsxs as _jsxs27 } from "react/jsx-runtime";
+import { jsx as _jsx84, jsxs as _jsxs27 } from "react/jsx-runtime";
 var _excluded15 = ["slots", "slotProps", "elements", "sectionListRef"];
 var PickersSectionListRoot = styled_default("div", {
   name: "MuiPickersSectionList",
@@ -44408,7 +44751,7 @@ function PickersSection(props) {
     }
   });
   return /* @__PURE__ */ _jsxs27(Section, _extends({}, sectionProps, {
-    children: [/* @__PURE__ */ _jsx83(SectionSeparator, _extends({}, sectionSeparatorBeforeProps)), /* @__PURE__ */ _jsx83(SectionContent, _extends({}, sectionContentProps)), /* @__PURE__ */ _jsx83(SectionSeparator, _extends({}, sectionSeparatorAfterProps))]
+    children: [/* @__PURE__ */ _jsx84(SectionSeparator, _extends({}, sectionSeparatorBeforeProps)), /* @__PURE__ */ _jsx84(SectionContent, _extends({}, sectionContentProps)), /* @__PURE__ */ _jsx84(SectionSeparator, _extends({}, sectionSeparatorAfterProps))]
   }));
 }
 true ? PickersSection.propTypes = {
@@ -44416,23 +44759,23 @@ true ? PickersSection.propTypes = {
   // | These PropTypes are generated from the TypeScript type definitions |
   // | To update them edit the TypeScript types and run "pnpm proptypes"  |
   // ----------------------------------------------------------------------
-  classes: import_prop_types74.default.object.isRequired,
-  element: import_prop_types74.default.shape({
-    after: import_prop_types74.default.object.isRequired,
-    before: import_prop_types74.default.object.isRequired,
-    container: import_prop_types74.default.object.isRequired,
-    content: import_prop_types74.default.object.isRequired
+  classes: import_prop_types75.default.object.isRequired,
+  element: import_prop_types75.default.shape({
+    after: import_prop_types75.default.object.isRequired,
+    before: import_prop_types75.default.object.isRequired,
+    container: import_prop_types75.default.object.isRequired,
+    content: import_prop_types75.default.object.isRequired
   }).isRequired,
   /**
    * The props used for each component slot.
    */
-  slotProps: import_prop_types74.default.object,
+  slotProps: import_prop_types75.default.object,
   /**
    * Overridable component slots.
    */
-  slots: import_prop_types74.default.object
+  slots: import_prop_types75.default.object
 } : void 0;
-var PickersSectionList = /* @__PURE__ */ React135.forwardRef(function PickersSectionList2(inProps, ref) {
+var PickersSectionList = /* @__PURE__ */ React136.forwardRef(function PickersSectionList2(inProps, ref) {
   const props = useThemeProps2({
     props: inProps,
     name: "MuiPickersSectionList"
@@ -44444,7 +44787,7 @@ var PickersSectionList = /* @__PURE__ */ React135.forwardRef(function PickersSec
     sectionListRef
   } = props, other = _objectWithoutPropertiesLoose(props, _excluded15);
   const classes = useUtilityClasses51(props);
-  const rootRef = React135.useRef(null);
+  const rootRef = React136.useRef(null);
   const handleRootRef = useForkRef(ref, rootRef);
   const getRoot = (methodName) => {
     if (!rootRef.current) {
@@ -44452,7 +44795,7 @@ var PickersSectionList = /* @__PURE__ */ React135.forwardRef(function PickersSec
     }
     return rootRef.current;
   };
-  React135.useImperativeHandle(sectionListRef, () => ({
+  React136.useImperativeHandle(sectionListRef, () => ({
     getRoot() {
       return getRoot("getRoot");
     },
@@ -44493,13 +44836,13 @@ var PickersSectionList = /* @__PURE__ */ React135.forwardRef(function PickersSec
     className: classes.root,
     ownerState: {}
   });
-  return /* @__PURE__ */ _jsx83(Root, _extends({}, rootProps, {
+  return /* @__PURE__ */ _jsx84(Root, _extends({}, rootProps, {
     children: rootProps.contentEditable ? elements.map(({
       content,
       before,
       after
-    }) => `${before.children}${content.children}${after.children}`).join("") : /* @__PURE__ */ _jsx83(React135.Fragment, {
-      children: elements.map((element, elementIndex) => /* @__PURE__ */ _jsx83(PickersSection, {
+    }) => `${before.children}${content.children}${after.children}`).join("") : /* @__PURE__ */ _jsx84(React136.Fragment, {
+      children: elements.map((element, elementIndex) => /* @__PURE__ */ _jsx84(PickersSection, {
         slots,
         slotProps,
         element,
@@ -44516,42 +44859,42 @@ true ? PickersSectionList.propTypes = {
   /**
    * Override or extend the styles applied to the component.
    */
-  classes: import_prop_types74.default.object,
+  classes: import_prop_types75.default.object,
   /**
    * If true, the whole element is editable.
    * Useful when all the sections are selected.
    */
-  contentEditable: import_prop_types74.default.bool.isRequired,
+  contentEditable: import_prop_types75.default.bool.isRequired,
   /**
    * The elements to render.
    * Each element contains the prop to edit a section of the value.
    */
-  elements: import_prop_types74.default.arrayOf(import_prop_types74.default.shape({
-    after: import_prop_types74.default.object.isRequired,
-    before: import_prop_types74.default.object.isRequired,
-    container: import_prop_types74.default.object.isRequired,
-    content: import_prop_types74.default.object.isRequired
+  elements: import_prop_types75.default.arrayOf(import_prop_types75.default.shape({
+    after: import_prop_types75.default.object.isRequired,
+    before: import_prop_types75.default.object.isRequired,
+    container: import_prop_types75.default.object.isRequired,
+    content: import_prop_types75.default.object.isRequired
   })).isRequired,
-  sectionListRef: import_prop_types74.default.oneOfType([import_prop_types74.default.func, import_prop_types74.default.shape({
-    current: import_prop_types74.default.shape({
-      getRoot: import_prop_types74.default.func.isRequired,
-      getSectionContainer: import_prop_types74.default.func.isRequired,
-      getSectionContent: import_prop_types74.default.func.isRequired,
-      getSectionIndexFromDOMElement: import_prop_types74.default.func.isRequired
+  sectionListRef: import_prop_types75.default.oneOfType([import_prop_types75.default.func, import_prop_types75.default.shape({
+    current: import_prop_types75.default.shape({
+      getRoot: import_prop_types75.default.func.isRequired,
+      getSectionContainer: import_prop_types75.default.func.isRequired,
+      getSectionContent: import_prop_types75.default.func.isRequired,
+      getSectionIndexFromDOMElement: import_prop_types75.default.func.isRequired
     })
   })]),
   /**
    * The props used for each component slot.
    */
-  slotProps: import_prop_types74.default.object,
+  slotProps: import_prop_types75.default.object,
   /**
    * Overridable component slots.
    */
-  slots: import_prop_types74.default.object
+  slots: import_prop_types75.default.object
 } : void 0;
 
 // node_modules/@mui/x-date-pickers/PickersTextField/PickersInputBase/PickersInputBase.js
-import { jsx as _jsx84, jsxs as _jsxs28 } from "react/jsx-runtime";
+import { jsx as _jsx85, jsxs as _jsxs28 } from "react/jsx-runtime";
 var _excluded16 = ["elements", "areAllSectionsEmpty", "defaultValue", "label", "value", "onChange", "id", "autoFocus", "endAdornment", "startAdornment", "renderSuffix", "slots", "slotProps", "contentEditable", "tabIndex", "onInput", "onPaste", "onKeyDown", "fullWidth", "name", "readOnly", "inputProps", "inputRef", "sectionListRef"];
 var round3 = (value) => Math.round(value * 1e5) / 1e5;
 var PickersInputBaseRoot = styled_default("div", {
@@ -44689,13 +45032,13 @@ var useUtilityClasses52 = (ownerState) => {
     classes,
     fullWidth,
     readOnly,
-    color: color2,
+    color: color3,
     size,
     endAdornment,
     startAdornment
   } = ownerState;
   const slots = {
-    root: ["root", focused && !disabled && "focused", disabled && "disabled", readOnly && "readOnly", error && "error", fullWidth && "fullWidth", `color${capitalize(color2)}`, size === "small" && "inputSizeSmall", Boolean(startAdornment) && "adornedStart", Boolean(endAdornment) && "adornedEnd"],
+    root: ["root", focused && !disabled && "focused", disabled && "disabled", readOnly && "readOnly", error && "error", fullWidth && "fullWidth", `color${capitalize(color3)}`, size === "small" && "inputSizeSmall", Boolean(startAdornment) && "adornedStart", Boolean(endAdornment) && "adornedEnd"],
     notchedOutline: ["notchedOutline"],
     input: ["input"],
     sectionsContainer: ["sectionsContainer"],
@@ -44705,7 +45048,7 @@ var useUtilityClasses52 = (ownerState) => {
   };
   return composeClasses(slots, getPickersInputBaseUtilityClass, classes);
 };
-var PickersInputBase = /* @__PURE__ */ React136.forwardRef(function PickersInputBase2(inProps, ref) {
+var PickersInputBase = /* @__PURE__ */ React137.forwardRef(function PickersInputBase2(inProps, ref) {
   const props = useThemeProps2({
     props: inProps,
     name: "MuiPickersInputBase"
@@ -44732,10 +45075,10 @@ var PickersInputBase = /* @__PURE__ */ React136.forwardRef(function PickersInput
     inputRef,
     sectionListRef
   } = props, other = _objectWithoutPropertiesLoose(props, _excluded16);
-  const rootRef = React136.useRef(null);
+  const rootRef = React137.useRef(null);
   const handleRootRef = useForkRef(ref, rootRef);
   const handleInputRef = useForkRef(inputProps?.ref, inputRef);
-  const isRtl = useRtl();
+  const isRtl = useRtl2();
   const muiFormControl = useFormControl();
   if (!muiFormControl) {
     throw new Error("MUI X: PickersInputBase should always be used inside a PickersTextField component");
@@ -44747,12 +45090,12 @@ var PickersInputBase = /* @__PURE__ */ React136.forwardRef(function PickersInput
     }
     muiFormControl.onFocus?.(event);
   };
-  React136.useEffect(() => {
+  React137.useEffect(() => {
     if (muiFormControl) {
       muiFormControl.setAdornedStart(Boolean(startAdornment));
     }
   }, [muiFormControl, startAdornment]);
-  React136.useEffect(() => {
+  React137.useEffect(() => {
     if (!muiFormControl) {
       return;
     }
@@ -44780,7 +45123,7 @@ var PickersInputBase = /* @__PURE__ */ React136.forwardRef(function PickersInput
   });
   const InputSectionsContainer = slots?.input || PickersInputBaseSectionsContainer;
   return /* @__PURE__ */ _jsxs28(InputRoot2, _extends({}, inputRootProps, {
-    children: [startAdornment, /* @__PURE__ */ _jsx84(PickersSectionList, {
+    children: [startAdornment, /* @__PURE__ */ _jsx85(PickersSectionList, {
       sectionListRef,
       elements,
       contentEditable,
@@ -44810,7 +45153,7 @@ var PickersInputBase = /* @__PURE__ */ React136.forwardRef(function PickersInput
           className: position === "before" ? pickersInputBaseClasses.sectionBefore : pickersInputBaseClasses.sectionAfter
         })
       }
-    }), endAdornment, renderSuffix ? renderSuffix(_extends({}, muiFormControl)) : null, /* @__PURE__ */ _jsx84(PickersInputBaseInput, _extends({
+    }), endAdornment, renderSuffix ? renderSuffix(_extends({}, muiFormControl)) : null, /* @__PURE__ */ _jsx85(PickersInputBaseInput, _extends({
       name,
       className: classes.input,
       value,
@@ -44836,70 +45179,70 @@ true ? PickersInputBase.propTypes = {
    * For a single item value, it means that `value === null`
    * For a range value, it means that `value === [null, null]`
    */
-  areAllSectionsEmpty: import_prop_types75.default.bool.isRequired,
-  className: import_prop_types75.default.string,
+  areAllSectionsEmpty: import_prop_types76.default.bool.isRequired,
+  className: import_prop_types76.default.string,
   /**
    * The component used for the root node.
    * Either a string to use a HTML element or a component.
    */
-  component: import_prop_types75.default.elementType,
+  component: import_prop_types76.default.elementType,
   /**
    * If true, the whole element is editable.
    * Useful when all the sections are selected.
    */
-  contentEditable: import_prop_types75.default.bool.isRequired,
+  contentEditable: import_prop_types76.default.bool.isRequired,
   /**
    * The elements to render.
    * Each element contains the prop to edit a section of the value.
    */
-  elements: import_prop_types75.default.arrayOf(import_prop_types75.default.shape({
-    after: import_prop_types75.default.object.isRequired,
-    before: import_prop_types75.default.object.isRequired,
-    container: import_prop_types75.default.object.isRequired,
-    content: import_prop_types75.default.object.isRequired
+  elements: import_prop_types76.default.arrayOf(import_prop_types76.default.shape({
+    after: import_prop_types76.default.object.isRequired,
+    before: import_prop_types76.default.object.isRequired,
+    container: import_prop_types76.default.object.isRequired,
+    content: import_prop_types76.default.object.isRequired
   })).isRequired,
-  endAdornment: import_prop_types75.default.node,
-  fullWidth: import_prop_types75.default.bool,
-  id: import_prop_types75.default.string,
-  inputProps: import_prop_types75.default.object,
+  endAdornment: import_prop_types76.default.node,
+  fullWidth: import_prop_types76.default.bool,
+  id: import_prop_types76.default.string,
+  inputProps: import_prop_types76.default.object,
   inputRef: refType_default,
-  label: import_prop_types75.default.node,
-  margin: import_prop_types75.default.oneOf(["dense", "none", "normal"]),
-  name: import_prop_types75.default.string,
-  onChange: import_prop_types75.default.func.isRequired,
-  onClick: import_prop_types75.default.func.isRequired,
-  onInput: import_prop_types75.default.func.isRequired,
-  onKeyDown: import_prop_types75.default.func.isRequired,
-  onPaste: import_prop_types75.default.func.isRequired,
-  ownerState: import_prop_types75.default.any,
-  readOnly: import_prop_types75.default.bool,
-  renderSuffix: import_prop_types75.default.func,
-  sectionListRef: import_prop_types75.default.oneOfType([import_prop_types75.default.func, import_prop_types75.default.shape({
-    current: import_prop_types75.default.shape({
-      getRoot: import_prop_types75.default.func.isRequired,
-      getSectionContainer: import_prop_types75.default.func.isRequired,
-      getSectionContent: import_prop_types75.default.func.isRequired,
-      getSectionIndexFromDOMElement: import_prop_types75.default.func.isRequired
+  label: import_prop_types76.default.node,
+  margin: import_prop_types76.default.oneOf(["dense", "none", "normal"]),
+  name: import_prop_types76.default.string,
+  onChange: import_prop_types76.default.func.isRequired,
+  onClick: import_prop_types76.default.func.isRequired,
+  onInput: import_prop_types76.default.func.isRequired,
+  onKeyDown: import_prop_types76.default.func.isRequired,
+  onPaste: import_prop_types76.default.func.isRequired,
+  ownerState: import_prop_types76.default.any,
+  readOnly: import_prop_types76.default.bool,
+  renderSuffix: import_prop_types76.default.func,
+  sectionListRef: import_prop_types76.default.oneOfType([import_prop_types76.default.func, import_prop_types76.default.shape({
+    current: import_prop_types76.default.shape({
+      getRoot: import_prop_types76.default.func.isRequired,
+      getSectionContainer: import_prop_types76.default.func.isRequired,
+      getSectionContent: import_prop_types76.default.func.isRequired,
+      getSectionIndexFromDOMElement: import_prop_types76.default.func.isRequired
     })
   })]),
   /**
    * The props used for each component slot.
    * @default {}
    */
-  slotProps: import_prop_types75.default.object,
+  slotProps: import_prop_types76.default.object,
   /**
    * The components used for each slot inside.
    *
    * @default {}
    */
-  slots: import_prop_types75.default.object,
-  startAdornment: import_prop_types75.default.node,
-  style: import_prop_types75.default.object,
+  slots: import_prop_types76.default.object,
+  startAdornment: import_prop_types76.default.node,
+  style: import_prop_types76.default.object,
   /**
    * The system prop that allows defining system overrides as well as additional CSS styles.
    */
-  sx: import_prop_types75.default.oneOfType([import_prop_types75.default.arrayOf(import_prop_types75.default.oneOfType([import_prop_types75.default.func, import_prop_types75.default.object, import_prop_types75.default.bool])), import_prop_types75.default.func, import_prop_types75.default.object]),
-  value: import_prop_types75.default.string.isRequired
+  sx: import_prop_types76.default.oneOfType([import_prop_types76.default.arrayOf(import_prop_types76.default.oneOfType([import_prop_types76.default.func, import_prop_types76.default.object, import_prop_types76.default.bool])), import_prop_types76.default.func, import_prop_types76.default.object]),
+  value: import_prop_types76.default.string.isRequired
 } : void 0;
 
 // node_modules/@mui/x-date-pickers/PickersTextField/PickersOutlinedInput/pickersOutlinedInputClasses.js
@@ -44909,8 +45252,8 @@ function getPickersOutlinedInputUtilityClass(slot) {
 var pickersOutlinedInputClasses = _extends({}, pickersInputBaseClasses, generateUtilityClasses("MuiPickersOutlinedInput", ["root", "notchedOutline", "input"]));
 
 // node_modules/@mui/x-date-pickers/PickersTextField/PickersOutlinedInput/Outline.js
-import * as React137 from "react";
-import { jsx as _jsx85 } from "react/jsx-runtime";
+import * as React138 from "react";
+import { jsx as _jsx86 } from "react/jsx-runtime";
 var _excluded17 = ["children", "className", "label", "notched", "shrink"];
 var OutlineRoot = styled_default("fieldset", {
   name: "MuiPickersOutlinedInput",
@@ -44919,7 +45262,7 @@ var OutlineRoot = styled_default("fieldset", {
 })(({
   theme
 }) => {
-  const borderColor2 = theme.palette.mode === "light" ? "rgba(0, 0, 0, 0.23)" : "rgba(255, 255, 255, 0.23)";
+  const borderColor3 = theme.palette.mode === "light" ? "rgba(0, 0, 0, 0.23)" : "rgba(255, 255, 255, 0.23)";
   return {
     textAlign: "left",
     position: "absolute",
@@ -44935,7 +45278,7 @@ var OutlineRoot = styled_default("fieldset", {
     borderWidth: 1,
     overflow: "hidden",
     minWidth: "0%",
-    borderColor: theme.vars ? `rgba(${theme.vars.palette.common.onBackgroundChannel} / 0.23)` : borderColor2
+    borderColor: theme.vars ? `rgba(${theme.vars.palette.common.onBackgroundChannel} / 0.23)` : borderColor3
   };
 });
 var OutlineLabel = styled_default("span")(({
@@ -45016,18 +45359,18 @@ function Outline(props) {
   const ownerState = _extends({}, props, {
     withLabel
   });
-  return /* @__PURE__ */ _jsx85(OutlineRoot, _extends({
+  return /* @__PURE__ */ _jsx86(OutlineRoot, _extends({
     "aria-hidden": true,
     className
   }, other, {
     ownerState,
-    children: /* @__PURE__ */ _jsx85(OutlineLegend, {
+    children: /* @__PURE__ */ _jsx86(OutlineLegend, {
       ownerState,
-      children: withLabel ? /* @__PURE__ */ _jsx85(OutlineLabel, {
+      children: withLabel ? /* @__PURE__ */ _jsx86(OutlineLabel, {
         children: label
       }) : (
         // notranslate needed while Google Translate will not fix zero-width space issue
-        /* @__PURE__ */ _jsx85(OutlineLabel, {
+        /* @__PURE__ */ _jsx86(OutlineLabel, {
           className: "notranslate",
           children: "\u200B"
         })
@@ -45037,7 +45380,7 @@ function Outline(props) {
 }
 
 // node_modules/@mui/x-date-pickers/PickersTextField/PickersOutlinedInput/PickersOutlinedInput.js
-import { jsxs as _jsxs29, jsx as _jsx86 } from "react/jsx-runtime";
+import { jsxs as _jsxs29, jsx as _jsx87 } from "react/jsx-runtime";
 var _excluded18 = ["label", "autoFocus", "ownerState", "notched"];
 var PickersOutlinedInputRoot = styled_default(PickersInputBaseRoot, {
   name: "MuiPickersOutlinedInput",
@@ -45046,7 +45389,7 @@ var PickersOutlinedInputRoot = styled_default(PickersInputBaseRoot, {
 })(({
   theme
 }) => {
-  const borderColor2 = theme.palette.mode === "light" ? "rgba(0, 0, 0, 0.23)" : "rgba(255, 255, 255, 0.23)";
+  const borderColor3 = theme.palette.mode === "light" ? "rgba(0, 0, 0, 0.23)" : "rgba(255, 255, 255, 0.23)";
   return {
     padding: "0 14px",
     borderRadius: (theme.vars || theme).shape.borderRadius,
@@ -45056,7 +45399,7 @@ var PickersOutlinedInputRoot = styled_default(PickersInputBaseRoot, {
     // Reset on touch devices, it doesn't add specificity
     "@media (hover: none)": {
       [`&:hover .${pickersOutlinedInputClasses.notchedOutline}`]: {
-        borderColor: theme.vars ? `rgba(${theme.vars.palette.common.onBackgroundChannel} / 0.23)` : borderColor2
+        borderColor: theme.vars ? `rgba(${theme.vars.palette.common.onBackgroundChannel} / 0.23)` : borderColor3
       }
     },
     [`&.${pickersOutlinedInputClasses.focused} .${pickersOutlinedInputClasses.notchedOutline}`]: {
@@ -45074,14 +45417,14 @@ var PickersOutlinedInputRoot = styled_default(PickersInputBaseRoot, {
     [`&.${pickersOutlinedInputClasses.error} .${pickersOutlinedInputClasses.notchedOutline}`]: {
       borderColor: (theme.vars || theme).palette.error.main
     },
-    variants: Object.keys((theme.vars ?? theme).palette).filter((key) => (theme.vars ?? theme).palette[key]?.main ?? false).map((color2) => ({
+    variants: Object.keys((theme.vars ?? theme).palette).filter((key) => (theme.vars ?? theme).palette[key]?.main ?? false).map((color3) => ({
       props: {
-        color: color2
+        color: color3
       },
       style: {
         [`&.${pickersOutlinedInputClasses.focused}:not(.${pickersOutlinedInputClasses.error}) .${pickersOutlinedInputClasses.notchedOutline}`]: {
           // @ts-ignore
-          borderColor: (theme.vars || theme).palette[color2].main
+          borderColor: (theme.vars || theme).palette[color3].main
         }
       }
     }))
@@ -45114,7 +45457,7 @@ var useUtilityClasses53 = (ownerState) => {
   const composedClasses = composeClasses(slots, getPickersOutlinedInputUtilityClass, classes);
   return _extends({}, classes, composedClasses);
 };
-var PickersOutlinedInput = /* @__PURE__ */ React138.forwardRef(function PickersOutlinedInput2(inProps, ref) {
+var PickersOutlinedInput = /* @__PURE__ */ React139.forwardRef(function PickersOutlinedInput2(inProps, ref) {
   const props = useThemeProps2({
     props: inProps,
     name: "MuiPickersOutlinedInput"
@@ -45129,16 +45472,16 @@ var PickersOutlinedInput = /* @__PURE__ */ React138.forwardRef(function PickersO
     color: muiFormControl?.color || "primary"
   });
   const classes = useUtilityClasses53(ownerState);
-  return /* @__PURE__ */ _jsx86(PickersInputBase, _extends({
+  return /* @__PURE__ */ _jsx87(PickersInputBase, _extends({
     slots: {
       root: PickersOutlinedInputRoot,
       input: PickersOutlinedInputSectionsContainer
     },
-    renderSuffix: (state) => /* @__PURE__ */ _jsx86(Outline, {
+    renderSuffix: (state) => /* @__PURE__ */ _jsx87(Outline, {
       shrink: Boolean(notched || state.adornedStart || state.focused || state.filled),
       notched: Boolean(notched || state.adornedStart || state.focused || state.filled),
       className: classes.notchedOutline,
-      label: label != null && label !== "" && muiFormControl?.required ? /* @__PURE__ */ _jsxs29(React138.Fragment, {
+      label: label != null && label !== "" && muiFormControl?.required ? /* @__PURE__ */ _jsxs29(React139.Fragment, {
         children: [label, "\u2009", "*"]
       }) : label,
       ownerState
@@ -45159,77 +45502,1317 @@ true ? PickersOutlinedInput.propTypes = {
    * For a single item value, it means that `value === null`
    * For a range value, it means that `value === [null, null]`
    */
-  areAllSectionsEmpty: import_prop_types76.default.bool.isRequired,
-  className: import_prop_types76.default.string,
+  areAllSectionsEmpty: import_prop_types77.default.bool.isRequired,
+  className: import_prop_types77.default.string,
   /**
    * The component used for the root node.
    * Either a string to use a HTML element or a component.
    */
-  component: import_prop_types76.default.elementType,
+  component: import_prop_types77.default.elementType,
   /**
    * If true, the whole element is editable.
    * Useful when all the sections are selected.
    */
-  contentEditable: import_prop_types76.default.bool.isRequired,
+  contentEditable: import_prop_types77.default.bool.isRequired,
   /**
    * The elements to render.
    * Each element contains the prop to edit a section of the value.
    */
-  elements: import_prop_types76.default.arrayOf(import_prop_types76.default.shape({
-    after: import_prop_types76.default.object.isRequired,
-    before: import_prop_types76.default.object.isRequired,
-    container: import_prop_types76.default.object.isRequired,
-    content: import_prop_types76.default.object.isRequired
+  elements: import_prop_types77.default.arrayOf(import_prop_types77.default.shape({
+    after: import_prop_types77.default.object.isRequired,
+    before: import_prop_types77.default.object.isRequired,
+    container: import_prop_types77.default.object.isRequired,
+    content: import_prop_types77.default.object.isRequired
   })).isRequired,
-  endAdornment: import_prop_types76.default.node,
-  fullWidth: import_prop_types76.default.bool,
-  id: import_prop_types76.default.string,
-  inputProps: import_prop_types76.default.object,
+  endAdornment: import_prop_types77.default.node,
+  fullWidth: import_prop_types77.default.bool,
+  id: import_prop_types77.default.string,
+  inputProps: import_prop_types77.default.object,
   inputRef: refType_default,
-  label: import_prop_types76.default.node,
-  margin: import_prop_types76.default.oneOf(["dense", "none", "normal"]),
-  name: import_prop_types76.default.string,
-  notched: import_prop_types76.default.bool,
-  onChange: import_prop_types76.default.func.isRequired,
-  onClick: import_prop_types76.default.func.isRequired,
-  onInput: import_prop_types76.default.func.isRequired,
-  onKeyDown: import_prop_types76.default.func.isRequired,
-  onPaste: import_prop_types76.default.func.isRequired,
-  ownerState: import_prop_types76.default.any,
-  readOnly: import_prop_types76.default.bool,
-  renderSuffix: import_prop_types76.default.func,
-  sectionListRef: import_prop_types76.default.oneOfType([import_prop_types76.default.func, import_prop_types76.default.shape({
-    current: import_prop_types76.default.shape({
-      getRoot: import_prop_types76.default.func.isRequired,
-      getSectionContainer: import_prop_types76.default.func.isRequired,
-      getSectionContent: import_prop_types76.default.func.isRequired,
-      getSectionIndexFromDOMElement: import_prop_types76.default.func.isRequired
+  label: import_prop_types77.default.node,
+  margin: import_prop_types77.default.oneOf(["dense", "none", "normal"]),
+  name: import_prop_types77.default.string,
+  notched: import_prop_types77.default.bool,
+  onChange: import_prop_types77.default.func.isRequired,
+  onClick: import_prop_types77.default.func.isRequired,
+  onInput: import_prop_types77.default.func.isRequired,
+  onKeyDown: import_prop_types77.default.func.isRequired,
+  onPaste: import_prop_types77.default.func.isRequired,
+  ownerState: import_prop_types77.default.any,
+  readOnly: import_prop_types77.default.bool,
+  renderSuffix: import_prop_types77.default.func,
+  sectionListRef: import_prop_types77.default.oneOfType([import_prop_types77.default.func, import_prop_types77.default.shape({
+    current: import_prop_types77.default.shape({
+      getRoot: import_prop_types77.default.func.isRequired,
+      getSectionContainer: import_prop_types77.default.func.isRequired,
+      getSectionContent: import_prop_types77.default.func.isRequired,
+      getSectionIndexFromDOMElement: import_prop_types77.default.func.isRequired
     })
   })]),
   /**
    * The props used for each component slot.
    * @default {}
    */
-  slotProps: import_prop_types76.default.object,
+  slotProps: import_prop_types77.default.object,
   /**
    * The components used for each slot inside.
    *
    * @default {}
    */
-  slots: import_prop_types76.default.object,
-  startAdornment: import_prop_types76.default.node,
-  style: import_prop_types76.default.object,
+  slots: import_prop_types77.default.object,
+  startAdornment: import_prop_types77.default.node,
+  style: import_prop_types77.default.object,
   /**
    * The system prop that allows defining system overrides as well as additional CSS styles.
    */
-  sx: import_prop_types76.default.oneOfType([import_prop_types76.default.arrayOf(import_prop_types76.default.oneOfType([import_prop_types76.default.func, import_prop_types76.default.object, import_prop_types76.default.bool])), import_prop_types76.default.func, import_prop_types76.default.object]),
-  value: import_prop_types76.default.string.isRequired
+  sx: import_prop_types77.default.oneOfType([import_prop_types77.default.arrayOf(import_prop_types77.default.oneOfType([import_prop_types77.default.func, import_prop_types77.default.object, import_prop_types77.default.bool])), import_prop_types77.default.func, import_prop_types77.default.object]),
+  value: import_prop_types77.default.string.isRequired
 } : void 0;
 PickersOutlinedInput.muiName = "Input";
 
 // node_modules/@mui/x-date-pickers/PickersTextField/PickersFilledInput/PickersFilledInput.js
-var import_prop_types77 = __toESM(require_prop_types());
-import * as React139 from "react";
+var import_prop_types79 = __toESM(require_prop_types());
+import * as React141 from "react";
+
+// node_modules/@mui/system/node_modules/@mui/utils/esm/deepmerge/deepmerge.js
+var import_react_is8 = __toESM(require_react_is2(), 1);
+import * as React140 from "react";
+function isPlainObject3(item) {
+  if (typeof item !== "object" || item === null) {
+    return false;
+  }
+  const prototype = Object.getPrototypeOf(item);
+  return (prototype === null || prototype === Object.prototype || Object.getPrototypeOf(prototype) === null) && !(Symbol.toStringTag in item) && !(Symbol.iterator in item);
+}
+function deepClone3(source) {
+  if (/* @__PURE__ */ React140.isValidElement(source) || (0, import_react_is8.isValidElementType)(source) || !isPlainObject3(source)) {
+    return source;
+  }
+  const output = {};
+  Object.keys(source).forEach((key) => {
+    output[key] = deepClone3(source[key]);
+  });
+  return output;
+}
+function deepmerge3(target, source, options = {
+  clone: true
+}) {
+  const output = options.clone ? {
+    ...target
+  } : target;
+  if (isPlainObject3(target) && isPlainObject3(source)) {
+    Object.keys(source).forEach((key) => {
+      if (/* @__PURE__ */ React140.isValidElement(source[key]) || (0, import_react_is8.isValidElementType)(source[key])) {
+        output[key] = source[key];
+      } else if (isPlainObject3(source[key]) && // Avoid prototype pollution
+      Object.prototype.hasOwnProperty.call(target, key) && isPlainObject3(target[key])) {
+        output[key] = deepmerge3(target[key], source[key], options);
+      } else if (options.clone) {
+        output[key] = isPlainObject3(source[key]) ? deepClone3(source[key]) : source[key];
+      } else {
+        output[key] = source[key];
+      }
+    });
+  }
+  return output;
+}
+
+// node_modules/@mui/system/esm/createBreakpoints/createBreakpoints.js
+var sortBreakpointsValues2 = (values5) => {
+  const breakpointsAsArray = Object.keys(values5).map((key) => ({
+    key,
+    val: values5[key]
+  })) || [];
+  breakpointsAsArray.sort((breakpoint1, breakpoint2) => breakpoint1.val - breakpoint2.val);
+  return breakpointsAsArray.reduce((acc, obj) => {
+    return {
+      ...acc,
+      [obj.key]: obj.val
+    };
+  }, {});
+};
+function createBreakpoints2(breakpoints) {
+  const {
+    // The breakpoint **start** at this value.
+    // For instance with the first breakpoint xs: [xs, sm).
+    values: values5 = {
+      xs: 0,
+      // phone
+      sm: 600,
+      // tablet
+      md: 900,
+      // small laptop
+      lg: 1200,
+      // desktop
+      xl: 1536
+      // large screen
+    },
+    unit = "px",
+    step = 5,
+    ...other
+  } = breakpoints;
+  const sortedValues = sortBreakpointsValues2(values5);
+  const keys = Object.keys(sortedValues);
+  function up(key) {
+    const value = typeof values5[key] === "number" ? values5[key] : key;
+    return `@media (min-width:${value}${unit})`;
+  }
+  function down(key) {
+    const value = typeof values5[key] === "number" ? values5[key] : key;
+    return `@media (max-width:${value - step / 100}${unit})`;
+  }
+  function between(start2, end2) {
+    const endIndex = keys.indexOf(end2);
+    return `@media (min-width:${typeof values5[start2] === "number" ? values5[start2] : start2}${unit}) and (max-width:${(endIndex !== -1 && typeof values5[keys[endIndex]] === "number" ? values5[keys[endIndex]] : end2) - step / 100}${unit})`;
+  }
+  function only(key) {
+    if (keys.indexOf(key) + 1 < keys.length) {
+      return between(key, keys[keys.indexOf(key) + 1]);
+    }
+    return up(key);
+  }
+  function not(key) {
+    const keyIndex = keys.indexOf(key);
+    if (keyIndex === 0) {
+      return up(keys[1]);
+    }
+    if (keyIndex === keys.length - 1) {
+      return down(keys[keyIndex]);
+    }
+    return between(key, keys[keys.indexOf(key) + 1]).replace("@media", "@media not all and");
+  }
+  return {
+    keys,
+    values: sortedValues,
+    up,
+    down,
+    between,
+    only,
+    not,
+    unit,
+    ...other
+  };
+}
+
+// node_modules/@mui/system/esm/cssContainerQueries/cssContainerQueries.js
+function sortContainerQueries2(theme, css3) {
+  if (!theme.containerQueries) {
+    return css3;
+  }
+  const sorted = Object.keys(css3).filter((key) => key.startsWith("@container")).sort((a3, b2) => {
+    const regex = /min-width:\s*([0-9.]+)/;
+    return +(a3.match(regex)?.[1] || 0) - +(b2.match(regex)?.[1] || 0);
+  });
+  if (!sorted.length) {
+    return css3;
+  }
+  return sorted.reduce((acc, key) => {
+    const value = css3[key];
+    delete acc[key];
+    acc[key] = value;
+    return acc;
+  }, {
+    ...css3
+  });
+}
+function isCqShorthand2(breakpointKeys, value) {
+  return value === "@" || value.startsWith("@") && (breakpointKeys.some((key) => value.startsWith(`@${key}`)) || !!value.match(/^@\d/));
+}
+function getContainerQuery2(theme, shorthand) {
+  const matches = shorthand.match(/^@([^/]+)?\/?(.+)?$/);
+  if (!matches) {
+    if (true) {
+      throw new Error(true ? `MUI: The provided shorthand ${`(${shorthand})`} is invalid. The format should be \`@<breakpoint | number>\` or \`@<breakpoint | number>/<container>\`.
+For example, \`@sm\` or \`@600\` or \`@40rem/sidebar\`.` : formatMuiErrorMessage(18, `(${shorthand})`));
+    }
+    return null;
+  }
+  const [, containerQuery, containerName] = matches;
+  const value = Number.isNaN(+containerQuery) ? containerQuery || 0 : +containerQuery;
+  return theme.containerQueries(containerName).up(value);
+}
+function cssContainerQueries2(themeInput) {
+  const toContainerQuery = (mediaQuery, name) => mediaQuery.replace("@media", name ? `@container ${name}` : "@container");
+  function attachCq(node2, name) {
+    node2.up = (...args) => toContainerQuery(themeInput.breakpoints.up(...args), name);
+    node2.down = (...args) => toContainerQuery(themeInput.breakpoints.down(...args), name);
+    node2.between = (...args) => toContainerQuery(themeInput.breakpoints.between(...args), name);
+    node2.only = (...args) => toContainerQuery(themeInput.breakpoints.only(...args), name);
+    node2.not = (...args) => {
+      const result = toContainerQuery(themeInput.breakpoints.not(...args), name);
+      if (result.includes("not all and")) {
+        return result.replace("not all and ", "").replace("min-width:", "width<").replace("max-width:", "width>").replace("and", "or");
+      }
+      return result;
+    };
+  }
+  const node = {};
+  const containerQueries = (name) => {
+    attachCq(node, name);
+    return node;
+  };
+  attachCq(containerQueries);
+  return {
+    ...themeInput,
+    containerQueries
+  };
+}
+
+// node_modules/@mui/system/esm/createTheme/shape.js
+var shape2 = {
+  borderRadius: 4
+};
+var shape_default2 = shape2;
+
+// node_modules/@mui/system/esm/responsivePropType/responsivePropType.js
+var import_prop_types78 = __toESM(require_prop_types(), 1);
+var responsivePropType2 = true ? import_prop_types78.default.oneOfType([import_prop_types78.default.number, import_prop_types78.default.string, import_prop_types78.default.object, import_prop_types78.default.array]) : {};
+var responsivePropType_default2 = responsivePropType2;
+
+// node_modules/@mui/system/esm/merge/merge.js
+function merge2(acc, item) {
+  if (!item) {
+    return acc;
+  }
+  return deepmerge3(acc, item, {
+    clone: false
+    // No need to clone deep, it's way faster.
+  });
+}
+var merge_default2 = merge2;
+
+// node_modules/@mui/system/esm/breakpoints/breakpoints.js
+var values4 = {
+  xs: 0,
+  // phone
+  sm: 600,
+  // tablet
+  md: 900,
+  // small laptop
+  lg: 1200,
+  // desktop
+  xl: 1536
+  // large screen
+};
+var defaultBreakpoints2 = {
+  // Sorted ASC by size. That's important.
+  // It can't be configured as it's used statically for propTypes.
+  keys: ["xs", "sm", "md", "lg", "xl"],
+  up: (key) => `@media (min-width:${values4[key]}px)`
+};
+var defaultContainerQueries2 = {
+  containerQueries: (containerName) => ({
+    up: (key) => {
+      let result = typeof key === "number" ? key : values4[key] || key;
+      if (typeof result === "number") {
+        result = `${result}px`;
+      }
+      return containerName ? `@container ${containerName} (min-width:${result})` : `@container (min-width:${result})`;
+    }
+  })
+};
+function handleBreakpoints2(props, propValue, styleFromPropValue) {
+  const theme = props.theme || {};
+  if (Array.isArray(propValue)) {
+    const themeBreakpoints = theme.breakpoints || defaultBreakpoints2;
+    return propValue.reduce((acc, item, index3) => {
+      acc[themeBreakpoints.up(themeBreakpoints.keys[index3])] = styleFromPropValue(propValue[index3]);
+      return acc;
+    }, {});
+  }
+  if (typeof propValue === "object") {
+    const themeBreakpoints = theme.breakpoints || defaultBreakpoints2;
+    return Object.keys(propValue).reduce((acc, breakpoint) => {
+      if (isCqShorthand2(themeBreakpoints.keys, breakpoint)) {
+        const containerKey = getContainerQuery2(theme.containerQueries ? theme : defaultContainerQueries2, breakpoint);
+        if (containerKey) {
+          acc[containerKey] = styleFromPropValue(propValue[breakpoint], breakpoint);
+        }
+      } else if (Object.keys(themeBreakpoints.values || values4).includes(breakpoint)) {
+        const mediaKey = themeBreakpoints.up(breakpoint);
+        acc[mediaKey] = styleFromPropValue(propValue[breakpoint], breakpoint);
+      } else {
+        const cssKey = breakpoint;
+        acc[cssKey] = propValue[cssKey];
+      }
+      return acc;
+    }, {});
+  }
+  const output = styleFromPropValue(propValue);
+  return output;
+}
+function createEmptyBreakpointObject2(breakpointsInput = {}) {
+  const breakpointsInOrder = breakpointsInput.keys?.reduce((acc, key) => {
+    const breakpointStyleKey = breakpointsInput.up(key);
+    acc[breakpointStyleKey] = {};
+    return acc;
+  }, {});
+  return breakpointsInOrder || {};
+}
+function removeUnusedBreakpoints2(breakpointKeys, style6) {
+  return breakpointKeys.reduce((acc, key) => {
+    const breakpointOutput = acc[key];
+    const isBreakpointUnused = !breakpointOutput || Object.keys(breakpointOutput).length === 0;
+    if (isBreakpointUnused) {
+      delete acc[key];
+    }
+    return acc;
+  }, style6);
+}
+
+// node_modules/@mui/system/node_modules/@mui/utils/esm/capitalize/capitalize.js
+function capitalize3(string) {
+  if (typeof string !== "string") {
+    throw new Error(true ? "MUI: `capitalize(string)` expects a string argument." : formatMuiErrorMessage(7));
+  }
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+// node_modules/@mui/system/esm/style/style.js
+function getPath2(obj, path, checkVars = true) {
+  if (!path || typeof path !== "string") {
+    return null;
+  }
+  if (obj && obj.vars && checkVars) {
+    const val = `vars.${path}`.split(".").reduce((acc, item) => acc && acc[item] ? acc[item] : null, obj);
+    if (val != null) {
+      return val;
+    }
+  }
+  return path.split(".").reduce((acc, item) => {
+    if (acc && acc[item] != null) {
+      return acc[item];
+    }
+    return null;
+  }, obj);
+}
+function getStyleValue3(themeMapping, transform2, propValueFinal, userValue = propValueFinal) {
+  let value;
+  if (typeof themeMapping === "function") {
+    value = themeMapping(propValueFinal);
+  } else if (Array.isArray(themeMapping)) {
+    value = themeMapping[propValueFinal] || userValue;
+  } else {
+    value = getPath2(themeMapping, propValueFinal) || userValue;
+  }
+  if (transform2) {
+    value = transform2(value, userValue, themeMapping);
+  }
+  return value;
+}
+function style3(options) {
+  const {
+    prop,
+    cssProperty = options.prop,
+    themeKey,
+    transform: transform2
+  } = options;
+  const fn2 = (props) => {
+    if (props[prop] == null) {
+      return null;
+    }
+    const propValue = props[prop];
+    const theme = props.theme;
+    const themeMapping = getPath2(theme, themeKey) || {};
+    const styleFromPropValue = (propValueFinal) => {
+      let value = getStyleValue3(themeMapping, transform2, propValueFinal);
+      if (propValueFinal === value && typeof propValueFinal === "string") {
+        value = getStyleValue3(themeMapping, transform2, `${prop}${propValueFinal === "default" ? "" : capitalize3(propValueFinal)}`, propValueFinal);
+      }
+      if (cssProperty === false) {
+        return value;
+      }
+      return {
+        [cssProperty]: value
+      };
+    };
+    return handleBreakpoints2(props, propValue, styleFromPropValue);
+  };
+  fn2.propTypes = true ? {
+    [prop]: responsivePropType_default2
+  } : {};
+  fn2.filterProps = [prop];
+  return fn2;
+}
+var style_default2 = style3;
+
+// node_modules/@mui/system/esm/memoize/memoize.js
+function memoize5(fn2) {
+  const cache3 = {};
+  return (arg2) => {
+    if (cache3[arg2] === void 0) {
+      cache3[arg2] = fn2(arg2);
+    }
+    return cache3[arg2];
+  };
+}
+
+// node_modules/@mui/system/esm/spacing/spacing.js
+var properties2 = {
+  m: "margin",
+  p: "padding"
+};
+var directions2 = {
+  t: "Top",
+  r: "Right",
+  b: "Bottom",
+  l: "Left",
+  x: ["Left", "Right"],
+  y: ["Top", "Bottom"]
+};
+var aliases2 = {
+  marginX: "mx",
+  marginY: "my",
+  paddingX: "px",
+  paddingY: "py"
+};
+var getCssProperties2 = memoize5((prop) => {
+  if (prop.length > 2) {
+    if (aliases2[prop]) {
+      prop = aliases2[prop];
+    } else {
+      return [prop];
+    }
+  }
+  const [a3, b2] = prop.split("");
+  const property = properties2[a3];
+  const direction = directions2[b2] || "";
+  return Array.isArray(direction) ? direction.map((dir) => property + dir) : [property + direction];
+});
+var marginKeys2 = ["m", "mt", "mr", "mb", "ml", "mx", "my", "margin", "marginTop", "marginRight", "marginBottom", "marginLeft", "marginX", "marginY", "marginInline", "marginInlineStart", "marginInlineEnd", "marginBlock", "marginBlockStart", "marginBlockEnd"];
+var paddingKeys2 = ["p", "pt", "pr", "pb", "pl", "px", "py", "padding", "paddingTop", "paddingRight", "paddingBottom", "paddingLeft", "paddingX", "paddingY", "paddingInline", "paddingInlineStart", "paddingInlineEnd", "paddingBlock", "paddingBlockStart", "paddingBlockEnd"];
+var spacingKeys2 = [...marginKeys2, ...paddingKeys2];
+function createUnaryUnit2(theme, themeKey, defaultValue, propName) {
+  const themeSpacing = getPath2(theme, themeKey, true) ?? defaultValue;
+  if (typeof themeSpacing === "number" || typeof themeSpacing === "string") {
+    return (val) => {
+      if (typeof val === "string") {
+        return val;
+      }
+      if (true) {
+        if (typeof val !== "number") {
+          console.error(`MUI: Expected ${propName} argument to be a number or a string, got ${val}.`);
+        }
+      }
+      if (typeof themeSpacing === "string") {
+        if (themeSpacing.startsWith("var(") && val === 0) {
+          return 0;
+        }
+        if (themeSpacing.startsWith("var(") && val === 1) {
+          return themeSpacing;
+        }
+        return `calc(${val} * ${themeSpacing})`;
+      }
+      return themeSpacing * val;
+    };
+  }
+  if (Array.isArray(themeSpacing)) {
+    return (val) => {
+      if (typeof val === "string") {
+        return val;
+      }
+      const abs = Math.abs(val);
+      if (true) {
+        if (!Number.isInteger(abs)) {
+          console.error([`MUI: The \`theme.${themeKey}\` array type cannot be combined with non integer values.You should either use an integer value that can be used as index, or define the \`theme.${themeKey}\` as a number.`].join("\n"));
+        } else if (abs > themeSpacing.length - 1) {
+          console.error([`MUI: The value provided (${abs}) overflows.`, `The supported values are: ${JSON.stringify(themeSpacing)}.`, `${abs} > ${themeSpacing.length - 1}, you need to add the missing values.`].join("\n"));
+        }
+      }
+      const transformed = themeSpacing[abs];
+      if (val >= 0) {
+        return transformed;
+      }
+      if (typeof transformed === "number") {
+        return -transformed;
+      }
+      if (typeof transformed === "string" && transformed.startsWith("var(")) {
+        return `calc(-1 * ${transformed})`;
+      }
+      return `-${transformed}`;
+    };
+  }
+  if (typeof themeSpacing === "function") {
+    return themeSpacing;
+  }
+  if (true) {
+    console.error([`MUI: The \`theme.${themeKey}\` value (${themeSpacing}) is invalid.`, "It should be a number, an array or a function."].join("\n"));
+  }
+  return () => void 0;
+}
+function createUnarySpacing2(theme) {
+  return createUnaryUnit2(theme, "spacing", 8, "spacing");
+}
+function getValue2(transformer, propValue) {
+  if (typeof propValue === "string" || propValue == null) {
+    return propValue;
+  }
+  return transformer(propValue);
+}
+function getStyleFromPropValue2(cssProperties, transformer) {
+  return (propValue) => cssProperties.reduce((acc, cssProperty) => {
+    acc[cssProperty] = getValue2(transformer, propValue);
+    return acc;
+  }, {});
+}
+function resolveCssProperty2(props, keys, prop, transformer) {
+  if (!keys.includes(prop)) {
+    return null;
+  }
+  const cssProperties = getCssProperties2(prop);
+  const styleFromPropValue = getStyleFromPropValue2(cssProperties, transformer);
+  const propValue = props[prop];
+  return handleBreakpoints2(props, propValue, styleFromPropValue);
+}
+function style4(props, keys) {
+  const transformer = createUnarySpacing2(props.theme);
+  return Object.keys(props).map((prop) => resolveCssProperty2(props, keys, prop, transformer)).reduce(merge_default2, {});
+}
+function margin2(props) {
+  return style4(props, marginKeys2);
+}
+margin2.propTypes = true ? marginKeys2.reduce((obj, key) => {
+  obj[key] = responsivePropType_default2;
+  return obj;
+}, {}) : {};
+margin2.filterProps = marginKeys2;
+function padding2(props) {
+  return style4(props, paddingKeys2);
+}
+padding2.propTypes = true ? paddingKeys2.reduce((obj, key) => {
+  obj[key] = responsivePropType_default2;
+  return obj;
+}, {}) : {};
+padding2.filterProps = paddingKeys2;
+function spacing2(props) {
+  return style4(props, spacingKeys2);
+}
+spacing2.propTypes = true ? spacingKeys2.reduce((obj, key) => {
+  obj[key] = responsivePropType_default2;
+  return obj;
+}, {}) : {};
+spacing2.filterProps = spacingKeys2;
+
+// node_modules/@mui/system/esm/createTheme/createSpacing.js
+function createSpacing2(spacingInput = 8, transform2 = createUnarySpacing2({
+  spacing: spacingInput
+})) {
+  if (spacingInput.mui) {
+    return spacingInput;
+  }
+  const spacing3 = (...argsInput) => {
+    if (true) {
+      if (!(argsInput.length <= 4)) {
+        console.error(`MUI: Too many arguments provided, expected between 0 and 4, got ${argsInput.length}`);
+      }
+    }
+    const args = argsInput.length === 0 ? [1] : argsInput;
+    return args.map((argument) => {
+      const output = transform2(argument);
+      return typeof output === "number" ? `${output}px` : output;
+    }).join(" ");
+  };
+  spacing3.mui = true;
+  return spacing3;
+}
+
+// node_modules/@mui/system/esm/compose/compose.js
+function compose2(...styles5) {
+  const handlers = styles5.reduce((acc, style6) => {
+    style6.filterProps.forEach((prop) => {
+      acc[prop] = style6;
+    });
+    return acc;
+  }, {});
+  const fn2 = (props) => {
+    return Object.keys(props).reduce((acc, prop) => {
+      if (handlers[prop]) {
+        return merge_default2(acc, handlers[prop](props));
+      }
+      return acc;
+    }, {});
+  };
+  fn2.propTypes = true ? styles5.reduce((acc, style6) => Object.assign(acc, style6.propTypes), {}) : {};
+  fn2.filterProps = styles5.reduce((acc, style6) => acc.concat(style6.filterProps), []);
+  return fn2;
+}
+var compose_default2 = compose2;
+
+// node_modules/@mui/system/esm/borders/borders.js
+function borderTransform2(value) {
+  if (typeof value !== "number") {
+    return value;
+  }
+  return `${value}px solid`;
+}
+function createBorderStyle2(prop, transform2) {
+  return style_default2({
+    prop,
+    themeKey: "borders",
+    transform: transform2
+  });
+}
+var border2 = createBorderStyle2("border", borderTransform2);
+var borderTop2 = createBorderStyle2("borderTop", borderTransform2);
+var borderRight2 = createBorderStyle2("borderRight", borderTransform2);
+var borderBottom2 = createBorderStyle2("borderBottom", borderTransform2);
+var borderLeft2 = createBorderStyle2("borderLeft", borderTransform2);
+var borderColor2 = createBorderStyle2("borderColor");
+var borderTopColor2 = createBorderStyle2("borderTopColor");
+var borderRightColor2 = createBorderStyle2("borderRightColor");
+var borderBottomColor2 = createBorderStyle2("borderBottomColor");
+var borderLeftColor2 = createBorderStyle2("borderLeftColor");
+var outline2 = createBorderStyle2("outline", borderTransform2);
+var outlineColor2 = createBorderStyle2("outlineColor");
+var borderRadius2 = (props) => {
+  if (props.borderRadius !== void 0 && props.borderRadius !== null) {
+    const transformer = createUnaryUnit2(props.theme, "shape.borderRadius", 4, "borderRadius");
+    const styleFromPropValue = (propValue) => ({
+      borderRadius: getValue2(transformer, propValue)
+    });
+    return handleBreakpoints2(props, props.borderRadius, styleFromPropValue);
+  }
+  return null;
+};
+borderRadius2.propTypes = true ? {
+  borderRadius: responsivePropType_default2
+} : {};
+borderRadius2.filterProps = ["borderRadius"];
+var borders2 = compose_default2(border2, borderTop2, borderRight2, borderBottom2, borderLeft2, borderColor2, borderTopColor2, borderRightColor2, borderBottomColor2, borderLeftColor2, borderRadius2, outline2, outlineColor2);
+
+// node_modules/@mui/system/esm/cssGrid/cssGrid.js
+var gap2 = (props) => {
+  if (props.gap !== void 0 && props.gap !== null) {
+    const transformer = createUnaryUnit2(props.theme, "spacing", 8, "gap");
+    const styleFromPropValue = (propValue) => ({
+      gap: getValue2(transformer, propValue)
+    });
+    return handleBreakpoints2(props, props.gap, styleFromPropValue);
+  }
+  return null;
+};
+gap2.propTypes = true ? {
+  gap: responsivePropType_default2
+} : {};
+gap2.filterProps = ["gap"];
+var columnGap2 = (props) => {
+  if (props.columnGap !== void 0 && props.columnGap !== null) {
+    const transformer = createUnaryUnit2(props.theme, "spacing", 8, "columnGap");
+    const styleFromPropValue = (propValue) => ({
+      columnGap: getValue2(transformer, propValue)
+    });
+    return handleBreakpoints2(props, props.columnGap, styleFromPropValue);
+  }
+  return null;
+};
+columnGap2.propTypes = true ? {
+  columnGap: responsivePropType_default2
+} : {};
+columnGap2.filterProps = ["columnGap"];
+var rowGap2 = (props) => {
+  if (props.rowGap !== void 0 && props.rowGap !== null) {
+    const transformer = createUnaryUnit2(props.theme, "spacing", 8, "rowGap");
+    const styleFromPropValue = (propValue) => ({
+      rowGap: getValue2(transformer, propValue)
+    });
+    return handleBreakpoints2(props, props.rowGap, styleFromPropValue);
+  }
+  return null;
+};
+rowGap2.propTypes = true ? {
+  rowGap: responsivePropType_default2
+} : {};
+rowGap2.filterProps = ["rowGap"];
+var gridColumn2 = style_default2({
+  prop: "gridColumn"
+});
+var gridRow2 = style_default2({
+  prop: "gridRow"
+});
+var gridAutoFlow2 = style_default2({
+  prop: "gridAutoFlow"
+});
+var gridAutoColumns2 = style_default2({
+  prop: "gridAutoColumns"
+});
+var gridAutoRows2 = style_default2({
+  prop: "gridAutoRows"
+});
+var gridTemplateColumns2 = style_default2({
+  prop: "gridTemplateColumns"
+});
+var gridTemplateRows2 = style_default2({
+  prop: "gridTemplateRows"
+});
+var gridTemplateAreas2 = style_default2({
+  prop: "gridTemplateAreas"
+});
+var gridArea2 = style_default2({
+  prop: "gridArea"
+});
+var grid2 = compose_default2(gap2, columnGap2, rowGap2, gridColumn2, gridRow2, gridAutoFlow2, gridAutoColumns2, gridAutoRows2, gridTemplateColumns2, gridTemplateRows2, gridTemplateAreas2, gridArea2);
+
+// node_modules/@mui/system/esm/palette/palette.js
+function paletteTransform2(value, userValue) {
+  if (userValue === "grey") {
+    return userValue;
+  }
+  return value;
+}
+var color2 = style_default2({
+  prop: "color",
+  themeKey: "palette",
+  transform: paletteTransform2
+});
+var bgcolor2 = style_default2({
+  prop: "bgcolor",
+  cssProperty: "backgroundColor",
+  themeKey: "palette",
+  transform: paletteTransform2
+});
+var backgroundColor2 = style_default2({
+  prop: "backgroundColor",
+  themeKey: "palette",
+  transform: paletteTransform2
+});
+var palette2 = compose_default2(color2, bgcolor2, backgroundColor2);
+
+// node_modules/@mui/system/esm/sizing/sizing.js
+function sizingTransform2(value) {
+  return value <= 1 && value !== 0 ? `${value * 100}%` : value;
+}
+var width2 = style_default2({
+  prop: "width",
+  transform: sizingTransform2
+});
+var maxWidth2 = (props) => {
+  if (props.maxWidth !== void 0 && props.maxWidth !== null) {
+    const styleFromPropValue = (propValue) => {
+      const breakpoint = props.theme?.breakpoints?.values?.[propValue] || values4[propValue];
+      if (!breakpoint) {
+        return {
+          maxWidth: sizingTransform2(propValue)
+        };
+      }
+      if (props.theme?.breakpoints?.unit !== "px") {
+        return {
+          maxWidth: `${breakpoint}${props.theme.breakpoints.unit}`
+        };
+      }
+      return {
+        maxWidth: breakpoint
+      };
+    };
+    return handleBreakpoints2(props, props.maxWidth, styleFromPropValue);
+  }
+  return null;
+};
+maxWidth2.filterProps = ["maxWidth"];
+var minWidth2 = style_default2({
+  prop: "minWidth",
+  transform: sizingTransform2
+});
+var height2 = style_default2({
+  prop: "height",
+  transform: sizingTransform2
+});
+var maxHeight2 = style_default2({
+  prop: "maxHeight",
+  transform: sizingTransform2
+});
+var minHeight2 = style_default2({
+  prop: "minHeight",
+  transform: sizingTransform2
+});
+var sizeWidth2 = style_default2({
+  prop: "size",
+  cssProperty: "width",
+  transform: sizingTransform2
+});
+var sizeHeight2 = style_default2({
+  prop: "size",
+  cssProperty: "height",
+  transform: sizingTransform2
+});
+var boxSizing2 = style_default2({
+  prop: "boxSizing"
+});
+var sizing2 = compose_default2(width2, maxWidth2, minWidth2, height2, maxHeight2, minHeight2, boxSizing2);
+
+// node_modules/@mui/system/esm/styleFunctionSx/defaultSxConfig.js
+var defaultSxConfig2 = {
+  // borders
+  border: {
+    themeKey: "borders",
+    transform: borderTransform2
+  },
+  borderTop: {
+    themeKey: "borders",
+    transform: borderTransform2
+  },
+  borderRight: {
+    themeKey: "borders",
+    transform: borderTransform2
+  },
+  borderBottom: {
+    themeKey: "borders",
+    transform: borderTransform2
+  },
+  borderLeft: {
+    themeKey: "borders",
+    transform: borderTransform2
+  },
+  borderColor: {
+    themeKey: "palette"
+  },
+  borderTopColor: {
+    themeKey: "palette"
+  },
+  borderRightColor: {
+    themeKey: "palette"
+  },
+  borderBottomColor: {
+    themeKey: "palette"
+  },
+  borderLeftColor: {
+    themeKey: "palette"
+  },
+  outline: {
+    themeKey: "borders",
+    transform: borderTransform2
+  },
+  outlineColor: {
+    themeKey: "palette"
+  },
+  borderRadius: {
+    themeKey: "shape.borderRadius",
+    style: borderRadius2
+  },
+  // palette
+  color: {
+    themeKey: "palette",
+    transform: paletteTransform2
+  },
+  bgcolor: {
+    themeKey: "palette",
+    cssProperty: "backgroundColor",
+    transform: paletteTransform2
+  },
+  backgroundColor: {
+    themeKey: "palette",
+    transform: paletteTransform2
+  },
+  // spacing
+  p: {
+    style: padding2
+  },
+  pt: {
+    style: padding2
+  },
+  pr: {
+    style: padding2
+  },
+  pb: {
+    style: padding2
+  },
+  pl: {
+    style: padding2
+  },
+  px: {
+    style: padding2
+  },
+  py: {
+    style: padding2
+  },
+  padding: {
+    style: padding2
+  },
+  paddingTop: {
+    style: padding2
+  },
+  paddingRight: {
+    style: padding2
+  },
+  paddingBottom: {
+    style: padding2
+  },
+  paddingLeft: {
+    style: padding2
+  },
+  paddingX: {
+    style: padding2
+  },
+  paddingY: {
+    style: padding2
+  },
+  paddingInline: {
+    style: padding2
+  },
+  paddingInlineStart: {
+    style: padding2
+  },
+  paddingInlineEnd: {
+    style: padding2
+  },
+  paddingBlock: {
+    style: padding2
+  },
+  paddingBlockStart: {
+    style: padding2
+  },
+  paddingBlockEnd: {
+    style: padding2
+  },
+  m: {
+    style: margin2
+  },
+  mt: {
+    style: margin2
+  },
+  mr: {
+    style: margin2
+  },
+  mb: {
+    style: margin2
+  },
+  ml: {
+    style: margin2
+  },
+  mx: {
+    style: margin2
+  },
+  my: {
+    style: margin2
+  },
+  margin: {
+    style: margin2
+  },
+  marginTop: {
+    style: margin2
+  },
+  marginRight: {
+    style: margin2
+  },
+  marginBottom: {
+    style: margin2
+  },
+  marginLeft: {
+    style: margin2
+  },
+  marginX: {
+    style: margin2
+  },
+  marginY: {
+    style: margin2
+  },
+  marginInline: {
+    style: margin2
+  },
+  marginInlineStart: {
+    style: margin2
+  },
+  marginInlineEnd: {
+    style: margin2
+  },
+  marginBlock: {
+    style: margin2
+  },
+  marginBlockStart: {
+    style: margin2
+  },
+  marginBlockEnd: {
+    style: margin2
+  },
+  // display
+  displayPrint: {
+    cssProperty: false,
+    transform: (value) => ({
+      "@media print": {
+        display: value
+      }
+    })
+  },
+  display: {},
+  overflow: {},
+  textOverflow: {},
+  visibility: {},
+  whiteSpace: {},
+  // flexbox
+  flexBasis: {},
+  flexDirection: {},
+  flexWrap: {},
+  justifyContent: {},
+  alignItems: {},
+  alignContent: {},
+  order: {},
+  flex: {},
+  flexGrow: {},
+  flexShrink: {},
+  alignSelf: {},
+  justifyItems: {},
+  justifySelf: {},
+  // grid
+  gap: {
+    style: gap2
+  },
+  rowGap: {
+    style: rowGap2
+  },
+  columnGap: {
+    style: columnGap2
+  },
+  gridColumn: {},
+  gridRow: {},
+  gridAutoFlow: {},
+  gridAutoColumns: {},
+  gridAutoRows: {},
+  gridTemplateColumns: {},
+  gridTemplateRows: {},
+  gridTemplateAreas: {},
+  gridArea: {},
+  // positions
+  position: {},
+  zIndex: {
+    themeKey: "zIndex"
+  },
+  top: {},
+  right: {},
+  bottom: {},
+  left: {},
+  // shadows
+  boxShadow: {
+    themeKey: "shadows"
+  },
+  // sizing
+  width: {
+    transform: sizingTransform2
+  },
+  maxWidth: {
+    style: maxWidth2
+  },
+  minWidth: {
+    transform: sizingTransform2
+  },
+  height: {
+    transform: sizingTransform2
+  },
+  maxHeight: {
+    transform: sizingTransform2
+  },
+  minHeight: {
+    transform: sizingTransform2
+  },
+  boxSizing: {},
+  // typography
+  font: {
+    themeKey: "font"
+  },
+  fontFamily: {
+    themeKey: "typography"
+  },
+  fontSize: {
+    themeKey: "typography"
+  },
+  fontStyle: {
+    themeKey: "typography"
+  },
+  fontWeight: {
+    themeKey: "typography"
+  },
+  letterSpacing: {},
+  textTransform: {},
+  lineHeight: {},
+  textAlign: {},
+  typography: {
+    cssProperty: false,
+    themeKey: "typography"
+  }
+};
+var defaultSxConfig_default2 = defaultSxConfig2;
+
+// node_modules/@mui/system/esm/styleFunctionSx/styleFunctionSx.js
+function objectsHaveSameKeys2(...objects) {
+  const allKeys = objects.reduce((keys, object) => keys.concat(Object.keys(object)), []);
+  const union = new Set(allKeys);
+  return objects.every((object) => union.size === Object.keys(object).length);
+}
+function callIfFn2(maybeFn, arg2) {
+  return typeof maybeFn === "function" ? maybeFn(arg2) : maybeFn;
+}
+function unstable_createStyleFunctionSx2() {
+  function getThemeValue(prop, val, theme, config) {
+    const props = {
+      [prop]: val,
+      theme
+    };
+    const options = config[prop];
+    if (!options) {
+      return {
+        [prop]: val
+      };
+    }
+    const {
+      cssProperty = prop,
+      themeKey,
+      transform: transform2,
+      style: style6
+    } = options;
+    if (val == null) {
+      return null;
+    }
+    if (themeKey === "typography" && val === "inherit") {
+      return {
+        [prop]: val
+      };
+    }
+    const themeMapping = getPath2(theme, themeKey) || {};
+    if (style6) {
+      return style6(props);
+    }
+    const styleFromPropValue = (propValueFinal) => {
+      let value = getStyleValue3(themeMapping, transform2, propValueFinal);
+      if (propValueFinal === value && typeof propValueFinal === "string") {
+        value = getStyleValue3(themeMapping, transform2, `${prop}${propValueFinal === "default" ? "" : capitalize3(propValueFinal)}`, propValueFinal);
+      }
+      if (cssProperty === false) {
+        return value;
+      }
+      return {
+        [cssProperty]: value
+      };
+    };
+    return handleBreakpoints2(props, val, styleFromPropValue);
+  }
+  function styleFunctionSx3(props) {
+    const {
+      sx,
+      theme = {}
+    } = props || {};
+    if (!sx) {
+      return null;
+    }
+    const config = theme.unstable_sxConfig ?? defaultSxConfig_default2;
+    function traverse(sxInput) {
+      let sxObject = sxInput;
+      if (typeof sxInput === "function") {
+        sxObject = sxInput(theme);
+      } else if (typeof sxInput !== "object") {
+        return sxInput;
+      }
+      if (!sxObject) {
+        return null;
+      }
+      const emptyBreakpoints = createEmptyBreakpointObject2(theme.breakpoints);
+      const breakpointsKeys = Object.keys(emptyBreakpoints);
+      let css3 = emptyBreakpoints;
+      Object.keys(sxObject).forEach((styleKey) => {
+        const value = callIfFn2(sxObject[styleKey], theme);
+        if (value !== null && value !== void 0) {
+          if (typeof value === "object") {
+            if (config[styleKey]) {
+              css3 = merge_default2(css3, getThemeValue(styleKey, value, theme, config));
+            } else {
+              const breakpointsValues = handleBreakpoints2({
+                theme
+              }, value, (x2) => ({
+                [styleKey]: x2
+              }));
+              if (objectsHaveSameKeys2(breakpointsValues, value)) {
+                css3[styleKey] = styleFunctionSx3({
+                  sx: value,
+                  theme
+                });
+              } else {
+                css3 = merge_default2(css3, breakpointsValues);
+              }
+            }
+          } else {
+            css3 = merge_default2(css3, getThemeValue(styleKey, value, theme, config));
+          }
+        }
+      });
+      return sortContainerQueries2(theme, removeUnusedBreakpoints2(breakpointsKeys, css3));
+    }
+    return Array.isArray(sx) ? sx.map(traverse) : traverse(sx);
+  }
+  return styleFunctionSx3;
+}
+var styleFunctionSx2 = unstable_createStyleFunctionSx2();
+styleFunctionSx2.filterProps = ["sx"];
+var styleFunctionSx_default2 = styleFunctionSx2;
+
+// node_modules/@mui/system/esm/createTheme/applyStyles.js
+function applyStyles3(key, styles5) {
+  const theme = this;
+  if (theme.vars) {
+    if (!theme.colorSchemes?.[key] || typeof theme.getColorSchemeSelector !== "function") {
+      return {};
+    }
+    let selector = theme.getColorSchemeSelector(key);
+    if (selector === "&") {
+      return styles5;
+    }
+    if (selector.includes("data-") || selector.includes(".")) {
+      selector = `*:where(${selector.replace(/\s*&$/, "")}) &`;
+    }
+    return {
+      [selector]: styles5
+    };
+  }
+  if (theme.palette.mode === key) {
+    return styles5;
+  }
+  return {};
+}
+
+// node_modules/@mui/system/esm/createTheme/createTheme.js
+function createTheme3(options = {}, ...args) {
+  const {
+    breakpoints: breakpointsInput = {},
+    palette: paletteInput = {},
+    spacing: spacingInput,
+    shape: shapeInput = {},
+    ...other
+  } = options;
+  const breakpoints = createBreakpoints2(breakpointsInput);
+  const spacing3 = createSpacing2(spacingInput);
+  let muiTheme = deepmerge3({
+    breakpoints,
+    direction: "ltr",
+    components: {},
+    // Inject component definitions.
+    palette: {
+      mode: "light",
+      ...paletteInput
+    },
+    spacing: spacing3,
+    shape: {
+      ...shape_default2,
+      ...shapeInput
+    }
+  }, other);
+  muiTheme = cssContainerQueries2(muiTheme);
+  muiTheme.applyStyles = applyStyles3;
+  muiTheme = args.reduce((acc, argument) => deepmerge3(acc, argument), muiTheme);
+  muiTheme.unstable_sxConfig = {
+    ...defaultSxConfig_default2,
+    ...other?.unstable_sxConfig
+  };
+  muiTheme.unstable_sx = function sx(props) {
+    return styleFunctionSx_default2({
+      sx: props,
+      theme: this
+    });
+  };
+  return muiTheme;
+}
+var createTheme_default2 = createTheme3;
+
+// node_modules/@mui/system/esm/createStyled/createStyled.js
+var systemDefaultTheme3 = createTheme_default2();
+function shouldForwardProp2(prop) {
+  return prop !== "ownerState" && prop !== "theme" && prop !== "sx" && prop !== "as";
+}
 
 // node_modules/@mui/x-date-pickers/PickersTextField/PickersFilledInput/pickersFilledInputClasses.js
 function getPickersFilledInputUtilityClass(slot) {
@@ -45238,23 +46821,23 @@ function getPickersFilledInputUtilityClass(slot) {
 var pickersFilledInputClasses = _extends({}, pickersInputBaseClasses, generateUtilityClasses("MuiPickersFilledInput", ["root", "underline", "input"]));
 
 // node_modules/@mui/x-date-pickers/PickersTextField/PickersFilledInput/PickersFilledInput.js
-import { jsx as _jsx87 } from "react/jsx-runtime";
+import { jsx as _jsx88 } from "react/jsx-runtime";
 var _excluded19 = ["label", "autoFocus", "disableUnderline", "ownerState"];
 var PickersFilledInputRoot = styled_default(PickersInputBaseRoot, {
   name: "MuiPickersFilledInput",
   slot: "Root",
   overridesResolver: (props, styles5) => styles5.root,
-  shouldForwardProp: (prop) => shouldForwardProp(prop) && prop !== "disableUnderline"
+  shouldForwardProp: (prop) => shouldForwardProp2(prop) && prop !== "disableUnderline"
 })(({
   theme
 }) => {
   const light2 = theme.palette.mode === "light";
   const bottomLineColor = light2 ? "rgba(0, 0, 0, 0.42)" : "rgba(255, 255, 255, 0.7)";
-  const backgroundColor2 = light2 ? "rgba(0, 0, 0, 0.06)" : "rgba(255, 255, 255, 0.09)";
+  const backgroundColor3 = light2 ? "rgba(0, 0, 0, 0.06)" : "rgba(255, 255, 255, 0.09)";
   const hoverBackground = light2 ? "rgba(0, 0, 0, 0.09)" : "rgba(255, 255, 255, 0.13)";
   const disabledBackground = light2 ? "rgba(0, 0, 0, 0.12)" : "rgba(255, 255, 255, 0.12)";
   return {
-    backgroundColor: theme.vars ? theme.vars.palette.FilledInput.bg : backgroundColor2,
+    backgroundColor: theme.vars ? theme.vars.palette.FilledInput.bg : backgroundColor3,
     borderTopLeftRadius: (theme.vars || theme).shape.borderRadius,
     borderTopRightRadius: (theme.vars || theme).shape.borderRadius,
     transition: theme.transitions.create("background-color", {
@@ -45265,24 +46848,24 @@ var PickersFilledInputRoot = styled_default(PickersInputBaseRoot, {
       backgroundColor: theme.vars ? theme.vars.palette.FilledInput.hoverBg : hoverBackground,
       // Reset on touch devices, it doesn't add specificity
       "@media (hover: none)": {
-        backgroundColor: theme.vars ? theme.vars.palette.FilledInput.bg : backgroundColor2
+        backgroundColor: theme.vars ? theme.vars.palette.FilledInput.bg : backgroundColor3
       }
     },
     [`&.${pickersFilledInputClasses.focused}`]: {
-      backgroundColor: theme.vars ? theme.vars.palette.FilledInput.bg : backgroundColor2
+      backgroundColor: theme.vars ? theme.vars.palette.FilledInput.bg : backgroundColor3
     },
     [`&.${pickersFilledInputClasses.disabled}`]: {
       backgroundColor: theme.vars ? theme.vars.palette.FilledInput.disabledBg : disabledBackground
     },
-    variants: [...Object.keys((theme.vars ?? theme).palette).filter((key) => (theme.vars ?? theme).palette[key].main).map((color2) => ({
+    variants: [...Object.keys((theme.vars ?? theme).palette).filter((key) => (theme.vars ?? theme).palette[key].main).map((color3) => ({
       props: {
-        color: color2,
+        color: color3,
         disableUnderline: false
       },
       style: {
         "&::after": {
           // @ts-ignore
-          borderBottom: `2px solid ${(theme.vars || theme).palette[color2]?.main}`
+          borderBottom: `2px solid ${(theme.vars || theme).palette[color3]?.main}`
         }
       }
     })), {
@@ -45415,7 +46998,7 @@ var useUtilityClasses54 = (ownerState) => {
   const composedClasses = composeClasses(slots, getPickersFilledInputUtilityClass, classes);
   return _extends({}, classes, composedClasses);
 };
-var PickersFilledInput = /* @__PURE__ */ React139.forwardRef(function PickersFilledInput2(inProps, ref) {
+var PickersFilledInput = /* @__PURE__ */ React141.forwardRef(function PickersFilledInput2(inProps, ref) {
   const props = useThemeProps2({
     props: inProps,
     name: "MuiPickersFilledInput"
@@ -45430,7 +47013,7 @@ var PickersFilledInput = /* @__PURE__ */ React139.forwardRef(function PickersFil
     color: muiFormControl?.color || "primary"
   });
   const classes = useUtilityClasses54(ownerState);
-  return /* @__PURE__ */ _jsx87(PickersInputBase, _extends({
+  return /* @__PURE__ */ _jsx88(PickersInputBase, _extends({
     slots: {
       root: PickersFilledInputRoot,
       input: PickersFilledSectionsContainer
@@ -45456,78 +47039,78 @@ true ? PickersFilledInput.propTypes = {
    * For a single item value, it means that `value === null`
    * For a range value, it means that `value === [null, null]`
    */
-  areAllSectionsEmpty: import_prop_types77.default.bool.isRequired,
-  className: import_prop_types77.default.string,
+  areAllSectionsEmpty: import_prop_types79.default.bool.isRequired,
+  className: import_prop_types79.default.string,
   /**
    * The component used for the root node.
    * Either a string to use a HTML element or a component.
    */
-  component: import_prop_types77.default.elementType,
+  component: import_prop_types79.default.elementType,
   /**
    * If true, the whole element is editable.
    * Useful when all the sections are selected.
    */
-  contentEditable: import_prop_types77.default.bool.isRequired,
-  disableUnderline: import_prop_types77.default.bool,
+  contentEditable: import_prop_types79.default.bool.isRequired,
+  disableUnderline: import_prop_types79.default.bool,
   /**
    * The elements to render.
    * Each element contains the prop to edit a section of the value.
    */
-  elements: import_prop_types77.default.arrayOf(import_prop_types77.default.shape({
-    after: import_prop_types77.default.object.isRequired,
-    before: import_prop_types77.default.object.isRequired,
-    container: import_prop_types77.default.object.isRequired,
-    content: import_prop_types77.default.object.isRequired
+  elements: import_prop_types79.default.arrayOf(import_prop_types79.default.shape({
+    after: import_prop_types79.default.object.isRequired,
+    before: import_prop_types79.default.object.isRequired,
+    container: import_prop_types79.default.object.isRequired,
+    content: import_prop_types79.default.object.isRequired
   })).isRequired,
-  endAdornment: import_prop_types77.default.node,
-  fullWidth: import_prop_types77.default.bool,
-  hiddenLabel: import_prop_types77.default.bool,
-  id: import_prop_types77.default.string,
-  inputProps: import_prop_types77.default.object,
+  endAdornment: import_prop_types79.default.node,
+  fullWidth: import_prop_types79.default.bool,
+  hiddenLabel: import_prop_types79.default.bool,
+  id: import_prop_types79.default.string,
+  inputProps: import_prop_types79.default.object,
   inputRef: refType_default,
-  label: import_prop_types77.default.node,
-  margin: import_prop_types77.default.oneOf(["dense", "none", "normal"]),
-  name: import_prop_types77.default.string,
-  onChange: import_prop_types77.default.func.isRequired,
-  onClick: import_prop_types77.default.func.isRequired,
-  onInput: import_prop_types77.default.func.isRequired,
-  onKeyDown: import_prop_types77.default.func.isRequired,
-  onPaste: import_prop_types77.default.func.isRequired,
-  ownerState: import_prop_types77.default.any,
-  readOnly: import_prop_types77.default.bool,
-  renderSuffix: import_prop_types77.default.func,
-  sectionListRef: import_prop_types77.default.oneOfType([import_prop_types77.default.func, import_prop_types77.default.shape({
-    current: import_prop_types77.default.shape({
-      getRoot: import_prop_types77.default.func.isRequired,
-      getSectionContainer: import_prop_types77.default.func.isRequired,
-      getSectionContent: import_prop_types77.default.func.isRequired,
-      getSectionIndexFromDOMElement: import_prop_types77.default.func.isRequired
+  label: import_prop_types79.default.node,
+  margin: import_prop_types79.default.oneOf(["dense", "none", "normal"]),
+  name: import_prop_types79.default.string,
+  onChange: import_prop_types79.default.func.isRequired,
+  onClick: import_prop_types79.default.func.isRequired,
+  onInput: import_prop_types79.default.func.isRequired,
+  onKeyDown: import_prop_types79.default.func.isRequired,
+  onPaste: import_prop_types79.default.func.isRequired,
+  ownerState: import_prop_types79.default.any,
+  readOnly: import_prop_types79.default.bool,
+  renderSuffix: import_prop_types79.default.func,
+  sectionListRef: import_prop_types79.default.oneOfType([import_prop_types79.default.func, import_prop_types79.default.shape({
+    current: import_prop_types79.default.shape({
+      getRoot: import_prop_types79.default.func.isRequired,
+      getSectionContainer: import_prop_types79.default.func.isRequired,
+      getSectionContent: import_prop_types79.default.func.isRequired,
+      getSectionIndexFromDOMElement: import_prop_types79.default.func.isRequired
     })
   })]),
   /**
    * The props used for each component slot.
    * @default {}
    */
-  slotProps: import_prop_types77.default.object,
+  slotProps: import_prop_types79.default.object,
   /**
    * The components used for each slot inside.
    *
    * @default {}
    */
-  slots: import_prop_types77.default.object,
-  startAdornment: import_prop_types77.default.node,
-  style: import_prop_types77.default.object,
+  slots: import_prop_types79.default.object,
+  startAdornment: import_prop_types79.default.node,
+  style: import_prop_types79.default.object,
   /**
    * The system prop that allows defining system overrides as well as additional CSS styles.
    */
-  sx: import_prop_types77.default.oneOfType([import_prop_types77.default.arrayOf(import_prop_types77.default.oneOfType([import_prop_types77.default.func, import_prop_types77.default.object, import_prop_types77.default.bool])), import_prop_types77.default.func, import_prop_types77.default.object]),
-  value: import_prop_types77.default.string.isRequired
+  sx: import_prop_types79.default.oneOfType([import_prop_types79.default.arrayOf(import_prop_types79.default.oneOfType([import_prop_types79.default.func, import_prop_types79.default.object, import_prop_types79.default.bool])), import_prop_types79.default.func, import_prop_types79.default.object]),
+  value: import_prop_types79.default.string.isRequired
 } : void 0;
 PickersFilledInput.muiName = "Input";
 
 // node_modules/@mui/x-date-pickers/PickersTextField/PickersInput/PickersInput.js
-var import_prop_types78 = __toESM(require_prop_types());
-import * as React140 from "react";
+var import_prop_types80 = __toESM(require_prop_types());
+import * as React142 from "react";
 
 // node_modules/@mui/x-date-pickers/PickersTextField/PickersInput/pickersInputClasses.js
 function getPickersInputUtilityClass(slot) {
@@ -45536,7 +47119,7 @@ function getPickersInputUtilityClass(slot) {
 var pickersInputClasses = _extends({}, pickersInputBaseClasses, generateUtilityClasses("MuiPickersInput", ["root", "input"]));
 
 // node_modules/@mui/x-date-pickers/PickersTextField/PickersInput/PickersInput.js
-import { jsx as _jsx88 } from "react/jsx-runtime";
+import { jsx as _jsx89 } from "react/jsx-runtime";
 var _excluded20 = ["label", "autoFocus", "disableUnderline", "ownerState"];
 var PickersInputRoot = styled_default(PickersInputBaseRoot, {
   name: "MuiPickersInput",
@@ -45554,14 +47137,14 @@ var PickersInputRoot = styled_default(PickersInputBaseRoot, {
     "label + &": {
       marginTop: 16
     },
-    variants: [...Object.keys((theme.vars ?? theme).palette).filter((key) => (theme.vars ?? theme).palette[key].main).map((color2) => ({
+    variants: [...Object.keys((theme.vars ?? theme).palette).filter((key) => (theme.vars ?? theme).palette[key].main).map((color3) => ({
       props: {
-        color: color2
+        color: color3
       },
       style: {
         "&::after": {
           // @ts-ignore
-          borderBottom: `2px solid ${(theme.vars || theme).palette[color2].main}`
+          borderBottom: `2px solid ${(theme.vars || theme).palette[color3].main}`
         }
       }
     })), {
@@ -45635,7 +47218,7 @@ var useUtilityClasses55 = (ownerState) => {
   const composedClasses = composeClasses(slots, getPickersInputUtilityClass, classes);
   return _extends({}, classes, composedClasses);
 };
-var PickersInput = /* @__PURE__ */ React140.forwardRef(function PickersInput2(inProps, ref) {
+var PickersInput = /* @__PURE__ */ React142.forwardRef(function PickersInput2(inProps, ref) {
   const props = useThemeProps2({
     props: inProps,
     name: "MuiPickersInput"
@@ -45651,7 +47234,7 @@ var PickersInput = /* @__PURE__ */ React140.forwardRef(function PickersInput2(in
     color: muiFormControl?.color || "primary"
   });
   const classes = useUtilityClasses55(ownerState);
-  return /* @__PURE__ */ _jsx88(PickersInputBase, _extends({
+  return /* @__PURE__ */ _jsx89(PickersInputBase, _extends({
     slots: {
       root: PickersInputRoot
     }
@@ -45671,76 +47254,76 @@ true ? PickersInput.propTypes = {
    * For a single item value, it means that `value === null`
    * For a range value, it means that `value === [null, null]`
    */
-  areAllSectionsEmpty: import_prop_types78.default.bool.isRequired,
-  className: import_prop_types78.default.string,
+  areAllSectionsEmpty: import_prop_types80.default.bool.isRequired,
+  className: import_prop_types80.default.string,
   /**
    * The component used for the root node.
    * Either a string to use a HTML element or a component.
    */
-  component: import_prop_types78.default.elementType,
+  component: import_prop_types80.default.elementType,
   /**
    * If true, the whole element is editable.
    * Useful when all the sections are selected.
    */
-  contentEditable: import_prop_types78.default.bool.isRequired,
-  disableUnderline: import_prop_types78.default.bool,
+  contentEditable: import_prop_types80.default.bool.isRequired,
+  disableUnderline: import_prop_types80.default.bool,
   /**
    * The elements to render.
    * Each element contains the prop to edit a section of the value.
    */
-  elements: import_prop_types78.default.arrayOf(import_prop_types78.default.shape({
-    after: import_prop_types78.default.object.isRequired,
-    before: import_prop_types78.default.object.isRequired,
-    container: import_prop_types78.default.object.isRequired,
-    content: import_prop_types78.default.object.isRequired
+  elements: import_prop_types80.default.arrayOf(import_prop_types80.default.shape({
+    after: import_prop_types80.default.object.isRequired,
+    before: import_prop_types80.default.object.isRequired,
+    container: import_prop_types80.default.object.isRequired,
+    content: import_prop_types80.default.object.isRequired
   })).isRequired,
-  endAdornment: import_prop_types78.default.node,
-  fullWidth: import_prop_types78.default.bool,
-  id: import_prop_types78.default.string,
-  inputProps: import_prop_types78.default.object,
+  endAdornment: import_prop_types80.default.node,
+  fullWidth: import_prop_types80.default.bool,
+  id: import_prop_types80.default.string,
+  inputProps: import_prop_types80.default.object,
   inputRef: refType_default,
-  label: import_prop_types78.default.node,
-  margin: import_prop_types78.default.oneOf(["dense", "none", "normal"]),
-  name: import_prop_types78.default.string,
-  onChange: import_prop_types78.default.func.isRequired,
-  onClick: import_prop_types78.default.func.isRequired,
-  onInput: import_prop_types78.default.func.isRequired,
-  onKeyDown: import_prop_types78.default.func.isRequired,
-  onPaste: import_prop_types78.default.func.isRequired,
-  ownerState: import_prop_types78.default.any,
-  readOnly: import_prop_types78.default.bool,
-  renderSuffix: import_prop_types78.default.func,
-  sectionListRef: import_prop_types78.default.oneOfType([import_prop_types78.default.func, import_prop_types78.default.shape({
-    current: import_prop_types78.default.shape({
-      getRoot: import_prop_types78.default.func.isRequired,
-      getSectionContainer: import_prop_types78.default.func.isRequired,
-      getSectionContent: import_prop_types78.default.func.isRequired,
-      getSectionIndexFromDOMElement: import_prop_types78.default.func.isRequired
+  label: import_prop_types80.default.node,
+  margin: import_prop_types80.default.oneOf(["dense", "none", "normal"]),
+  name: import_prop_types80.default.string,
+  onChange: import_prop_types80.default.func.isRequired,
+  onClick: import_prop_types80.default.func.isRequired,
+  onInput: import_prop_types80.default.func.isRequired,
+  onKeyDown: import_prop_types80.default.func.isRequired,
+  onPaste: import_prop_types80.default.func.isRequired,
+  ownerState: import_prop_types80.default.any,
+  readOnly: import_prop_types80.default.bool,
+  renderSuffix: import_prop_types80.default.func,
+  sectionListRef: import_prop_types80.default.oneOfType([import_prop_types80.default.func, import_prop_types80.default.shape({
+    current: import_prop_types80.default.shape({
+      getRoot: import_prop_types80.default.func.isRequired,
+      getSectionContainer: import_prop_types80.default.func.isRequired,
+      getSectionContent: import_prop_types80.default.func.isRequired,
+      getSectionIndexFromDOMElement: import_prop_types80.default.func.isRequired
     })
   })]),
   /**
    * The props used for each component slot.
    * @default {}
    */
-  slotProps: import_prop_types78.default.object,
+  slotProps: import_prop_types80.default.object,
   /**
    * The components used for each slot inside.
    *
    * @default {}
    */
-  slots: import_prop_types78.default.object,
-  startAdornment: import_prop_types78.default.node,
-  style: import_prop_types78.default.object,
+  slots: import_prop_types80.default.object,
+  startAdornment: import_prop_types80.default.node,
+  style: import_prop_types80.default.object,
   /**
    * The system prop that allows defining system overrides as well as additional CSS styles.
    */
-  sx: import_prop_types78.default.oneOfType([import_prop_types78.default.arrayOf(import_prop_types78.default.oneOfType([import_prop_types78.default.func, import_prop_types78.default.object, import_prop_types78.default.bool])), import_prop_types78.default.func, import_prop_types78.default.object]),
-  value: import_prop_types78.default.string.isRequired
+  sx: import_prop_types80.default.oneOfType([import_prop_types80.default.arrayOf(import_prop_types80.default.oneOfType([import_prop_types80.default.func, import_prop_types80.default.object, import_prop_types80.default.bool])), import_prop_types80.default.func, import_prop_types80.default.object]),
+  value: import_prop_types80.default.string.isRequired
 } : void 0;
 PickersInput.muiName = "Input";
 
 // node_modules/@mui/x-date-pickers/PickersTextField/PickersTextField.js
-import { jsx as _jsx89, jsxs as _jsxs30 } from "react/jsx-runtime";
+import { jsx as _jsx90, jsxs as _jsxs30 } from "react/jsx-runtime";
 var _excluded21 = ["onFocus", "onBlur", "className", "color", "disabled", "error", "variant", "required", "InputProps", "inputProps", "inputRef", "sectionListRef", "elements", "areAllSectionsEmpty", "onClick", "onKeyDown", "onKeyUp", "onPaste", "onInput", "endAdornment", "startAdornment", "tabIndex", "contentEditable", "focused", "value", "onChange", "fullWidth", "id", "name", "helperText", "FormHelperTextProps", "label", "InputLabelProps"];
 var VARIANT_COMPONENT = {
   standard: PickersInput,
@@ -45764,7 +47347,7 @@ var useUtilityClasses56 = (ownerState) => {
   };
   return composeClasses(slots, getPickersTextFieldUtilityClass, classes);
 };
-var PickersTextField = /* @__PURE__ */ React141.forwardRef(function PickersTextField2(inProps, ref) {
+var PickersTextField = /* @__PURE__ */ React143.forwardRef(function PickersTextField2(inProps, ref) {
   const props = useThemeProps2({
     props: inProps,
     name: "MuiPickersTextField"
@@ -45774,7 +47357,7 @@ var PickersTextField = /* @__PURE__ */ React141.forwardRef(function PickersTextF
     onFocus,
     onBlur,
     className,
-    color: color2 = "primary",
+    color: color3 = "primary",
     disabled = false,
     error = false,
     variant = "outlined",
@@ -45808,13 +47391,13 @@ var PickersTextField = /* @__PURE__ */ React141.forwardRef(function PickersTextF
     label,
     InputLabelProps
   } = props, other = _objectWithoutPropertiesLoose(props, _excluded21);
-  const rootRef = React141.useRef(null);
+  const rootRef = React143.useRef(null);
   const handleRootRef = useForkRef(ref, rootRef);
   const id = useId(idProp);
   const helperTextId = helperText && id ? `${id}-helper-text` : void 0;
   const inputLabelId = label && id ? `${id}-label` : void 0;
   const ownerState = _extends({}, props, {
-    color: color2,
+    color: color3,
     disabled,
     error,
     focused,
@@ -45832,17 +47415,17 @@ var PickersTextField = /* @__PURE__ */ React141.forwardRef(function PickersTextF
     disabled,
     variant,
     error,
-    color: color2,
+    color: color3,
     fullWidth,
     required,
     ownerState
   }, other, {
-    children: [/* @__PURE__ */ _jsx89(InputLabel_default, _extends({
+    children: [/* @__PURE__ */ _jsx90(InputLabel_default, _extends({
       htmlFor: id,
       id: inputLabelId
     }, InputLabelProps, {
       children: label
-    })), /* @__PURE__ */ _jsx89(PickersInputComponent, _extends({
+    })), /* @__PURE__ */ _jsx90(PickersInputComponent, _extends({
       elements,
       areAllSectionsEmpty,
       onClick,
@@ -45864,8 +47447,10 @@ var PickersTextField = /* @__PURE__ */ React141.forwardRef(function PickersTextF
       label,
       name,
       role: "group",
-      "aria-labelledby": inputLabelId
-    }, InputProps)), helperText && /* @__PURE__ */ _jsx89(FormHelperText_default, _extends({
+      "aria-labelledby": inputLabelId,
+      "aria-describedby": helperTextId,
+      "aria-live": helperTextId ? "polite" : void 0
+    }, InputProps)), helperText && /* @__PURE__ */ _jsx90(FormHelperText_default, _extends({
       id: helperTextId
     }, FormHelperTextProps, {
       children: helperText
@@ -45882,107 +47467,107 @@ true ? PickersTextField.propTypes = {
    * For a single item value, it means that `value === null`
    * For a range value, it means that `value === [null, null]`
    */
-  areAllSectionsEmpty: import_prop_types79.default.bool.isRequired,
-  className: import_prop_types79.default.string,
+  areAllSectionsEmpty: import_prop_types81.default.bool.isRequired,
+  className: import_prop_types81.default.string,
   /**
    * The color of the component.
    * It supports both default and custom theme colors, which can be added as shown in the
    * [palette customization guide](https://mui.com/material-ui/customization/palette/#custom-colors).
    * @default 'primary'
    */
-  color: import_prop_types79.default.oneOf(["error", "info", "primary", "secondary", "success", "warning"]),
-  component: import_prop_types79.default.elementType,
+  color: import_prop_types81.default.oneOf(["error", "info", "primary", "secondary", "success", "warning"]),
+  component: import_prop_types81.default.elementType,
   /**
    * If true, the whole element is editable.
    * Useful when all the sections are selected.
    */
-  contentEditable: import_prop_types79.default.bool.isRequired,
-  disabled: import_prop_types79.default.bool.isRequired,
+  contentEditable: import_prop_types81.default.bool.isRequired,
+  disabled: import_prop_types81.default.bool.isRequired,
   /**
    * The elements to render.
    * Each element contains the prop to edit a section of the value.
    */
-  elements: import_prop_types79.default.arrayOf(import_prop_types79.default.shape({
-    after: import_prop_types79.default.object.isRequired,
-    before: import_prop_types79.default.object.isRequired,
-    container: import_prop_types79.default.object.isRequired,
-    content: import_prop_types79.default.object.isRequired
+  elements: import_prop_types81.default.arrayOf(import_prop_types81.default.shape({
+    after: import_prop_types81.default.object.isRequired,
+    before: import_prop_types81.default.object.isRequired,
+    container: import_prop_types81.default.object.isRequired,
+    content: import_prop_types81.default.object.isRequired
   })).isRequired,
-  endAdornment: import_prop_types79.default.node,
-  error: import_prop_types79.default.bool.isRequired,
+  endAdornment: import_prop_types81.default.node,
+  error: import_prop_types81.default.bool.isRequired,
   /**
    * If `true`, the component is displayed in focused state.
    */
-  focused: import_prop_types79.default.bool,
-  FormHelperTextProps: import_prop_types79.default.object,
-  fullWidth: import_prop_types79.default.bool,
+  focused: import_prop_types81.default.bool,
+  FormHelperTextProps: import_prop_types81.default.object,
+  fullWidth: import_prop_types81.default.bool,
   /**
    * The helper text content.
    */
-  helperText: import_prop_types79.default.node,
+  helperText: import_prop_types81.default.node,
   /**
    * If `true`, the label is hidden.
    * This is used to increase density for a `FilledInput`.
    * Be sure to add `aria-label` to the `input` element.
    * @default false
    */
-  hiddenLabel: import_prop_types79.default.bool,
-  id: import_prop_types79.default.string,
-  InputLabelProps: import_prop_types79.default.object,
-  inputProps: import_prop_types79.default.object,
+  hiddenLabel: import_prop_types81.default.bool,
+  id: import_prop_types81.default.string,
+  InputLabelProps: import_prop_types81.default.object,
+  inputProps: import_prop_types81.default.object,
   /**
    * Props applied to the Input element.
    * It will be a [`FilledInput`](/material-ui/api/filled-input/),
    * [`OutlinedInput`](/material-ui/api/outlined-input/) or [`Input`](/material-ui/api/input/)
    * component depending on the `variant` prop value.
    */
-  InputProps: import_prop_types79.default.object,
+  InputProps: import_prop_types81.default.object,
   inputRef: refType_default,
-  label: import_prop_types79.default.node,
+  label: import_prop_types81.default.node,
   /**
    * If `dense` or `normal`, will adjust vertical spacing of this and contained components.
    * @default 'none'
    */
-  margin: import_prop_types79.default.oneOf(["dense", "none", "normal"]),
-  name: import_prop_types79.default.string,
-  onBlur: import_prop_types79.default.func.isRequired,
-  onChange: import_prop_types79.default.func.isRequired,
-  onClick: import_prop_types79.default.func.isRequired,
-  onFocus: import_prop_types79.default.func.isRequired,
-  onInput: import_prop_types79.default.func.isRequired,
-  onKeyDown: import_prop_types79.default.func.isRequired,
-  onPaste: import_prop_types79.default.func.isRequired,
-  readOnly: import_prop_types79.default.bool,
+  margin: import_prop_types81.default.oneOf(["dense", "none", "normal"]),
+  name: import_prop_types81.default.string,
+  onBlur: import_prop_types81.default.func.isRequired,
+  onChange: import_prop_types81.default.func.isRequired,
+  onClick: import_prop_types81.default.func.isRequired,
+  onFocus: import_prop_types81.default.func.isRequired,
+  onInput: import_prop_types81.default.func.isRequired,
+  onKeyDown: import_prop_types81.default.func.isRequired,
+  onPaste: import_prop_types81.default.func.isRequired,
+  readOnly: import_prop_types81.default.bool,
   /**
    * If `true`, the label will indicate that the `input` is required.
    * @default false
    */
-  required: import_prop_types79.default.bool,
-  sectionListRef: import_prop_types79.default.oneOfType([import_prop_types79.default.func, import_prop_types79.default.shape({
-    current: import_prop_types79.default.shape({
-      getRoot: import_prop_types79.default.func.isRequired,
-      getSectionContainer: import_prop_types79.default.func.isRequired,
-      getSectionContent: import_prop_types79.default.func.isRequired,
-      getSectionIndexFromDOMElement: import_prop_types79.default.func.isRequired
+  required: import_prop_types81.default.bool,
+  sectionListRef: import_prop_types81.default.oneOfType([import_prop_types81.default.func, import_prop_types81.default.shape({
+    current: import_prop_types81.default.shape({
+      getRoot: import_prop_types81.default.func.isRequired,
+      getSectionContainer: import_prop_types81.default.func.isRequired,
+      getSectionContent: import_prop_types81.default.func.isRequired,
+      getSectionIndexFromDOMElement: import_prop_types81.default.func.isRequired
     })
   })]),
   /**
    * The size of the component.
    * @default 'medium'
    */
-  size: import_prop_types79.default.oneOf(["medium", "small"]),
-  startAdornment: import_prop_types79.default.node,
-  style: import_prop_types79.default.object,
+  size: import_prop_types81.default.oneOf(["medium", "small"]),
+  startAdornment: import_prop_types81.default.node,
+  style: import_prop_types81.default.object,
   /**
    * The system prop that allows defining system overrides as well as additional CSS styles.
    */
-  sx: import_prop_types79.default.oneOfType([import_prop_types79.default.arrayOf(import_prop_types79.default.oneOfType([import_prop_types79.default.func, import_prop_types79.default.object, import_prop_types79.default.bool])), import_prop_types79.default.func, import_prop_types79.default.object]),
-  value: import_prop_types79.default.string.isRequired,
+  sx: import_prop_types81.default.oneOfType([import_prop_types81.default.arrayOf(import_prop_types81.default.oneOfType([import_prop_types81.default.func, import_prop_types81.default.object, import_prop_types81.default.bool])), import_prop_types81.default.func, import_prop_types81.default.object]),
+  value: import_prop_types81.default.string.isRequired,
   /**
    * The variant to use.
    * @default 'outlined'
    */
-  variant: import_prop_types79.default.oneOf(["filled", "outlined", "standard"])
+  variant: import_prop_types81.default.oneOf(["filled", "outlined", "standard"])
 } : void 0;
 
 // node_modules/@mui/x-date-pickers/internals/utils/convertFieldResponseIntoMuiTextFieldProps.js
@@ -46027,8 +47612,8 @@ var convertFieldResponseIntoMuiTextFieldProps = (_ref) => {
 };
 
 // node_modules/@mui/x-date-pickers/DateTimeField/DateTimeField.js
-var import_prop_types80 = __toESM(require_prop_types());
-import * as React142 from "react";
+var import_prop_types82 = __toESM(require_prop_types());
+import * as React144 from "react";
 
 // node_modules/@mui/x-date-pickers/DateTimeField/useDateTimeField.js
 var useDateTimeField = (inProps) => {
@@ -46048,9 +47633,9 @@ var useDateTimeField = (inProps) => {
 };
 
 // node_modules/@mui/x-date-pickers/DateTimeField/DateTimeField.js
-import { jsx as _jsx90 } from "react/jsx-runtime";
+import { jsx as _jsx91 } from "react/jsx-runtime";
 var _excluded26 = ["slots", "slotProps", "InputProps", "inputProps"];
-var DateTimeField = /* @__PURE__ */ React142.forwardRef(function DateTimeField2(inProps, inRef) {
+var DateTimeField = /* @__PURE__ */ React144.forwardRef(function DateTimeField2(inProps, inRef) {
   const themeProps = useThemeProps2({
     props: inProps,
     name: "MuiDateTimeField"
@@ -46080,7 +47665,7 @@ var DateTimeField = /* @__PURE__ */ React142.forwardRef(function DateTimeField2(
     slots,
     slotProps
   }));
-  return /* @__PURE__ */ _jsx90(TextField3, _extends({}, processedFieldProps));
+  return /* @__PURE__ */ _jsx91(TextField3, _extends({}, processedFieldProps));
 });
 true ? DateTimeField.propTypes = {
   // ----------------------------- Warning --------------------------------
@@ -46091,109 +47676,109 @@ true ? DateTimeField.propTypes = {
    * 12h/24h view for hour selection clock.
    * @default utils.is12HourCycleInCurrentLocale()
    */
-  ampm: import_prop_types80.default.bool,
+  ampm: import_prop_types82.default.bool,
   /**
    * If `true`, the `input` element is focused during the first mount.
    * @default false
    */
-  autoFocus: import_prop_types80.default.bool,
-  className: import_prop_types80.default.string,
+  autoFocus: import_prop_types82.default.bool,
+  className: import_prop_types82.default.string,
   /**
    * If `true`, a clear button will be shown in the field allowing value clearing.
    * @default false
    */
-  clearable: import_prop_types80.default.bool,
+  clearable: import_prop_types82.default.bool,
   /**
    * The color of the component.
    * It supports both default and custom theme colors, which can be added as shown in the
    * [palette customization guide](https://mui.com/material-ui/customization/palette/#custom-colors).
    * @default 'primary'
    */
-  color: import_prop_types80.default.oneOf(["error", "info", "primary", "secondary", "success", "warning"]),
-  component: import_prop_types80.default.elementType,
+  color: import_prop_types82.default.oneOf(["error", "info", "primary", "secondary", "success", "warning"]),
+  component: import_prop_types82.default.elementType,
   /**
    * The default value. Use when the component is not controlled.
    */
-  defaultValue: import_prop_types80.default.object,
+  defaultValue: import_prop_types82.default.object,
   /**
    * If `true`, the component is disabled.
    * @default false
    */
-  disabled: import_prop_types80.default.bool,
+  disabled: import_prop_types82.default.bool,
   /**
    * If `true`, disable values after the current date for date components, time for time components and both for date time components.
    * @default false
    */
-  disableFuture: import_prop_types80.default.bool,
+  disableFuture: import_prop_types82.default.bool,
   /**
    * Do not ignore date part when validating min/max time.
    * @default false
    */
-  disableIgnoringDatePartForTimeValidation: import_prop_types80.default.bool,
+  disableIgnoringDatePartForTimeValidation: import_prop_types82.default.bool,
   /**
    * If `true`, disable values before the current date for date components, time for time components and both for date time components.
    * @default false
    */
-  disablePast: import_prop_types80.default.bool,
+  disablePast: import_prop_types82.default.bool,
   /**
    * @default false
    */
-  enableAccessibleFieldDOMStructure: import_prop_types80.default.bool,
+  enableAccessibleFieldDOMStructure: import_prop_types82.default.bool,
   /**
    * If `true`, the component is displayed in focused state.
    */
-  focused: import_prop_types80.default.bool,
+  focused: import_prop_types82.default.bool,
   /**
    * Format of the date when rendered in the input(s).
    */
-  format: import_prop_types80.default.string,
+  format: import_prop_types82.default.string,
   /**
    * Density of the format when rendered in the input.
    * Setting `formatDensity` to `"spacious"` will add a space before and after each `/`, `-` and `.` character.
    * @default "dense"
    */
-  formatDensity: import_prop_types80.default.oneOf(["dense", "spacious"]),
+  formatDensity: import_prop_types82.default.oneOf(["dense", "spacious"]),
   /**
    * Props applied to the [`FormHelperText`](/material-ui/api/form-helper-text/) element.
    */
-  FormHelperTextProps: import_prop_types80.default.object,
+  FormHelperTextProps: import_prop_types82.default.object,
   /**
    * If `true`, the input will take up the full width of its container.
    * @default false
    */
-  fullWidth: import_prop_types80.default.bool,
+  fullWidth: import_prop_types82.default.bool,
   /**
    * The helper text content.
    */
-  helperText: import_prop_types80.default.node,
+  helperText: import_prop_types82.default.node,
   /**
    * If `true`, the label is hidden.
    * This is used to increase density for a `FilledInput`.
    * Be sure to add `aria-label` to the `input` element.
    * @default false
    */
-  hiddenLabel: import_prop_types80.default.bool,
+  hiddenLabel: import_prop_types82.default.bool,
   /**
    * The id of the `input` element.
    * Use this prop to make `label` and `helperText` accessible for screen readers.
    */
-  id: import_prop_types80.default.string,
+  id: import_prop_types82.default.string,
   /**
    * Props applied to the [`InputLabel`](/material-ui/api/input-label/) element.
    * Pointer events like `onClick` are enabled if and only if `shrink` is `true`.
    */
-  InputLabelProps: import_prop_types80.default.object,
+  InputLabelProps: import_prop_types82.default.object,
   /**
    * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.
    */
-  inputProps: import_prop_types80.default.object,
+  inputProps: import_prop_types82.default.object,
   /**
    * Props applied to the Input element.
    * It will be a [`FilledInput`](/material-ui/api/filled-input/),
    * [`OutlinedInput`](/material-ui/api/outlined-input/) or [`Input`](/material-ui/api/input/)
    * component depending on the `variant` prop value.
    */
-  InputProps: import_prop_types80.default.object,
+  InputProps: import_prop_types82.default.object,
   /**
    * Pass a ref to the `input` element.
    */
@@ -46201,50 +47786,50 @@ true ? DateTimeField.propTypes = {
   /**
    * The label content.
    */
-  label: import_prop_types80.default.node,
+  label: import_prop_types82.default.node,
   /**
    * If `dense` or `normal`, will adjust vertical spacing of this and contained components.
    * @default 'none'
    */
-  margin: import_prop_types80.default.oneOf(["dense", "none", "normal"]),
+  margin: import_prop_types82.default.oneOf(["dense", "none", "normal"]),
   /**
    * Maximal selectable date.
    * @default 2099-12-31
    */
-  maxDate: import_prop_types80.default.object,
+  maxDate: import_prop_types82.default.object,
   /**
    * Maximal selectable moment of time with binding to date, to set max time in each day use `maxTime`.
    */
-  maxDateTime: import_prop_types80.default.object,
+  maxDateTime: import_prop_types82.default.object,
   /**
    * Maximal selectable time.
    * The date part of the object will be ignored unless `props.disableIgnoringDatePartForTimeValidation === true`.
    */
-  maxTime: import_prop_types80.default.object,
+  maxTime: import_prop_types82.default.object,
   /**
    * Minimal selectable date.
    * @default 1900-01-01
    */
-  minDate: import_prop_types80.default.object,
+  minDate: import_prop_types82.default.object,
   /**
    * Minimal selectable moment of time with binding to date, to set min time in each day use `minTime`.
    */
-  minDateTime: import_prop_types80.default.object,
+  minDateTime: import_prop_types82.default.object,
   /**
    * Minimal selectable time.
    * The date part of the object will be ignored unless `props.disableIgnoringDatePartForTimeValidation === true`.
    */
-  minTime: import_prop_types80.default.object,
+  minTime: import_prop_types82.default.object,
   /**
    * Step over minutes.
    * @default 1
    */
-  minutesStep: import_prop_types80.default.number,
+  minutesStep: import_prop_types82.default.number,
   /**
    * Name attribute of the `input` element.
    */
-  name: import_prop_types80.default.string,
-  onBlur: import_prop_types80.default.func,
+  name: import_prop_types82.default.string,
+  onBlur: import_prop_types82.default.func,
   /**
    * Callback fired when the value changes.
    * @template TValue The value type. It will be the same type as `value` or `null`. It can be in `[start, end]` format in case of range value.
@@ -46252,11 +47837,11 @@ true ? DateTimeField.propTypes = {
    * @param {TValue} value The new value.
    * @param {FieldChangeHandlerContext<TError>} context The context containing the validation result of the current value.
    */
-  onChange: import_prop_types80.default.func,
+  onChange: import_prop_types82.default.func,
   /**
    * Callback fired when the clear button is clicked.
    */
-  onClear: import_prop_types80.default.func,
+  onClear: import_prop_types82.default.func,
   /**
    * Callback fired when the error associated with the current value changes.
    * When a validation error is detected, the `error` parameter contains a non-null value.
@@ -46266,30 +47851,30 @@ true ? DateTimeField.propTypes = {
    * @param {TError} error The reason why the current value is not valid.
    * @param {TValue} value The value associated with the error.
    */
-  onError: import_prop_types80.default.func,
-  onFocus: import_prop_types80.default.func,
+  onError: import_prop_types82.default.func,
+  onFocus: import_prop_types82.default.func,
   /**
    * Callback fired when the selected sections change.
    * @param {FieldSelectedSections} newValue The new selected sections.
    */
-  onSelectedSectionsChange: import_prop_types80.default.func,
+  onSelectedSectionsChange: import_prop_types82.default.func,
   /**
    * It prevents the user from changing the value of the field
    * (not from interacting with the field).
    * @default false
    */
-  readOnly: import_prop_types80.default.bool,
+  readOnly: import_prop_types82.default.bool,
   /**
    * The date used to generate a part of the new value that is not present in the format when both `value` and `defaultValue` are empty.
    * For example, on time fields it will be used to determine the date to set.
    * @default The closest valid date using the validation props, except callbacks such as `shouldDisableDate`. Value is rounded to the most granular section used.
    */
-  referenceDate: import_prop_types80.default.object,
+  referenceDate: import_prop_types82.default.object,
   /**
    * If `true`, the label is displayed as required and the `input` element is required.
    * @default false
    */
-  required: import_prop_types80.default.bool,
+  required: import_prop_types82.default.bool,
   /**
    * The currently selected sections.
    * This prop accepts four formats:
@@ -46299,7 +47884,7 @@ true ? DateTimeField.propTypes = {
    * 4. If `null` is provided, no section will be selected.
    * If not provided, the selected sections will be handled internally.
    */
-  selectedSections: import_prop_types80.default.oneOfType([import_prop_types80.default.oneOf(["all", "day", "empty", "hours", "meridiem", "minutes", "month", "seconds", "weekDay", "year"]), import_prop_types80.default.number]),
+  selectedSections: import_prop_types82.default.oneOfType([import_prop_types82.default.oneOf(["all", "day", "empty", "hours", "meridiem", "minutes", "month", "seconds", "weekDay", "year"]), import_prop_types82.default.number]),
   /**
    * Disable specific date.
    *
@@ -46309,14 +47894,14 @@ true ? DateTimeField.propTypes = {
    * @param {TDate} day The date to test.
    * @returns {boolean} If `true` the date will be disabled.
    */
-  shouldDisableDate: import_prop_types80.default.func,
+  shouldDisableDate: import_prop_types82.default.func,
   /**
    * Disable specific month.
    * @template TDate
    * @param {TDate} month The month to test.
    * @returns {boolean} If `true`, the month will be disabled.
    */
-  shouldDisableMonth: import_prop_types80.default.func,
+  shouldDisableMonth: import_prop_types82.default.func,
   /**
    * Disable specific time.
    * @template TDate
@@ -46324,14 +47909,14 @@ true ? DateTimeField.propTypes = {
    * @param {TimeView} view The clock type of the timeValue.
    * @returns {boolean} If `true` the time will be disabled.
    */
-  shouldDisableTime: import_prop_types80.default.func,
+  shouldDisableTime: import_prop_types82.default.func,
   /**
    * Disable specific year.
    * @template TDate
    * @param {TDate} year The year to test.
    * @returns {boolean} If `true`, the year will be disabled.
    */
-  shouldDisableYear: import_prop_types80.default.func,
+  shouldDisableYear: import_prop_types82.default.func,
   /**
    * If `true`, the format will respect the leading zeroes (e.g: on dayjs, the format `M/D/YYYY` will render `8/16/2018`)
    * If `false`, the format will always add leading zeroes (e.g: on dayjs, the format `M/D/YYYY` will render `08/16/2018`)
@@ -46346,26 +47931,26 @@ true ? DateTimeField.propTypes = {
    *
    * @default false
    */
-  shouldRespectLeadingZeros: import_prop_types80.default.bool,
+  shouldRespectLeadingZeros: import_prop_types82.default.bool,
   /**
    * The size of the component.
    */
-  size: import_prop_types80.default.oneOf(["medium", "small"]),
+  size: import_prop_types82.default.oneOf(["medium", "small"]),
   /**
    * The props used for each component slot.
    * @default {}
    */
-  slotProps: import_prop_types80.default.object,
+  slotProps: import_prop_types82.default.object,
   /**
    * Overridable component slots.
    * @default {}
    */
-  slots: import_prop_types80.default.object,
-  style: import_prop_types80.default.object,
+  slots: import_prop_types82.default.object,
+  style: import_prop_types82.default.object,
   /**
    * The system prop that allows defining system overrides as well as additional CSS styles.
    */
-  sx: import_prop_types80.default.oneOfType([import_prop_types80.default.arrayOf(import_prop_types80.default.oneOfType([import_prop_types80.default.func, import_prop_types80.default.object, import_prop_types80.default.bool])), import_prop_types80.default.func, import_prop_types80.default.object]),
+  sx: import_prop_types82.default.oneOfType([import_prop_types82.default.arrayOf(import_prop_types82.default.oneOfType([import_prop_types82.default.func, import_prop_types82.default.object, import_prop_types82.default.bool])), import_prop_types82.default.func, import_prop_types82.default.object]),
   /**
    * Choose which timezone to use for the value.
    * Example: "default", "system", "UTC", "America/New_York".
@@ -46373,32 +47958,32 @@ true ? DateTimeField.propTypes = {
    * @see See the {@link https://mui.com/x/react-date-pickers/timezone/ timezones documentation} for more details.
    * @default The timezone of the `value` or `defaultValue` prop is defined, 'default' otherwise.
    */
-  timezone: import_prop_types80.default.string,
+  timezone: import_prop_types82.default.string,
   /**
    * The ref object used to imperatively interact with the field.
    */
-  unstableFieldRef: import_prop_types80.default.oneOfType([import_prop_types80.default.func, import_prop_types80.default.object]),
+  unstableFieldRef: import_prop_types82.default.oneOfType([import_prop_types82.default.func, import_prop_types82.default.object]),
   /**
    * The selected value.
    * Used when the component is controlled.
    */
-  value: import_prop_types80.default.object,
+  value: import_prop_types82.default.object,
   /**
    * The variant to use.
    * @default 'outlined'
    */
-  variant: import_prop_types80.default.oneOf(["filled", "outlined", "standard"])
+  variant: import_prop_types82.default.oneOf(["filled", "outlined", "standard"])
 } : void 0;
 
 // node_modules/@mui/x-date-pickers/DateCalendar/DateCalendar.js
-var import_prop_types84 = __toESM(require_prop_types());
-import * as React153 from "react";
+var import_prop_types86 = __toESM(require_prop_types());
+import * as React155 from "react";
 
 // node_modules/@mui/x-date-pickers/DateCalendar/useCalendarState.js
-import * as React144 from "react";
+import * as React146 from "react";
 
 // node_modules/@mui/x-date-pickers/DateCalendar/useIsDateDisabled.js
-import * as React143 from "react";
+import * as React145 from "react";
 var useIsDateDisabled = ({
   shouldDisableDate,
   shouldDisableMonth,
@@ -46410,7 +47995,7 @@ var useIsDateDisabled = ({
   timezone
 }) => {
   const adapter = useLocalizationContext();
-  return React143.useCallback((day) => validateDate({
+  return React145.useCallback((day) => validateDate({
     adapter,
     value: day,
     timezone,
@@ -46483,8 +48068,8 @@ var useCalendarState = (params) => {
     timezone
   } = params;
   const utils2 = useUtils();
-  const reducerFn = React144.useRef(createCalendarStateReducer(Boolean(reduceAnimations), disableSwitchToMonthOnDayFocus, utils2)).current;
-  const referenceDate = React144.useMemo(
+  const reducerFn = React146.useRef(createCalendarStateReducer(Boolean(reduceAnimations), disableSwitchToMonthOnDayFocus, utils2)).current;
+  const referenceDate = React146.useMemo(
     () => {
       return singleItemValueManager.getInitialReferenceValue({
         value,
@@ -46499,19 +48084,19 @@ var useCalendarState = (params) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [referenceDateProp, timezone]
   );
-  const [calendarState, dispatch] = React144.useReducer(reducerFn, {
+  const [calendarState, dispatch] = React146.useReducer(reducerFn, {
     isMonthSwitchingAnimating: false,
     focusedDay: referenceDate,
     currentMonth: utils2.startOfMonth(referenceDate),
     slideDirection: "left"
   });
-  React144.useEffect(() => {
+  React146.useEffect(() => {
     dispatch({
       type: "changeMonthTimezone",
       newTimezone: utils2.getTimezone(referenceDate)
     });
   }, [referenceDate, utils2]);
-  const handleChangeMonth = React144.useCallback((payload) => {
+  const handleChangeMonth = React146.useCallback((payload) => {
     dispatch(_extends({
       type: "changeMonth"
     }, payload));
@@ -46519,7 +48104,7 @@ var useCalendarState = (params) => {
       onMonthChange(payload.newMonth);
     }
   }, [onMonthChange]);
-  const changeMonth = React144.useCallback((newDate) => {
+  const changeMonth = React146.useCallback((newDate) => {
     const newDateRequested = newDate;
     if (utils2.isSameMonth(newDateRequested, calendarState.currentMonth)) {
       return;
@@ -46537,7 +48122,7 @@ var useCalendarState = (params) => {
     disablePast,
     timezone
   });
-  const onMonthSwitchingAnimationEnd = React144.useCallback(() => {
+  const onMonthSwitchingAnimationEnd = React146.useCallback(() => {
     dispatch({
       type: "finishMonthSwitchingAnimation"
     });
@@ -46563,14 +48148,14 @@ var useCalendarState = (params) => {
 };
 
 // node_modules/@mui/x-date-pickers/DateCalendar/PickersFadeTransitionGroup.js
-import * as React145 from "react";
+import * as React147 from "react";
 
 // node_modules/@mui/x-date-pickers/DateCalendar/pickersFadeTransitionGroupClasses.js
 var getPickersFadeTransitionGroupUtilityClass = (slot) => generateUtilityClass("MuiPickersFadeTransitionGroup", slot);
 var pickersFadeTransitionGroupClasses = generateUtilityClasses("MuiPickersFadeTransitionGroup", ["root"]);
 
 // node_modules/@mui/x-date-pickers/DateCalendar/PickersFadeTransitionGroup.js
-import { jsx as _jsx91 } from "react/jsx-runtime";
+import { jsx as _jsx92 } from "react/jsx-runtime";
 var useUtilityClasses57 = (ownerState) => {
   const {
     classes
@@ -46604,9 +48189,9 @@ function PickersFadeTransitionGroup(inProps) {
   if (reduceAnimations) {
     return children;
   }
-  return /* @__PURE__ */ _jsx91(PickersFadeTransitionGroupRoot, {
+  return /* @__PURE__ */ _jsx92(PickersFadeTransitionGroupRoot, {
     className: clsx_default(classes.root, className),
-    children: /* @__PURE__ */ _jsx91(Fade_default, {
+    children: /* @__PURE__ */ _jsx92(Fade_default, {
       appear: false,
       mountOnEnter: true,
       unmountOnExit: true,
@@ -46621,17 +48206,17 @@ function PickersFadeTransitionGroup(inProps) {
 }
 
 // node_modules/@mui/x-date-pickers/DateCalendar/DayCalendar.js
-import * as React147 from "react";
+import * as React149 from "react";
 
 // node_modules/@mui/x-date-pickers/DateCalendar/PickersSlideTransition.js
-import * as React146 from "react";
+import * as React148 from "react";
 
 // node_modules/@mui/x-date-pickers/DateCalendar/pickersSlideTransitionClasses.js
 var getPickersSlideTransitionUtilityClass = (slot) => generateUtilityClass("MuiPickersSlideTransition", slot);
 var pickersSlideTransitionClasses = generateUtilityClasses("MuiPickersSlideTransition", ["root", "slideEnter-left", "slideEnter-right", "slideEnterActive", "slideExit", "slideExitActiveLeft-left", "slideExitActiveLeft-right"]);
 
 // node_modules/@mui/x-date-pickers/DateCalendar/PickersSlideTransition.js
-import { jsx as _jsx92 } from "react/jsx-runtime";
+import { jsx as _jsx93 } from "react/jsx-runtime";
 var _excluded27 = ["children", "className", "reduceAnimations", "slideDirection", "transKey", "classes"];
 var useUtilityClasses58 = (ownerState) => {
   const {
@@ -46726,7 +48311,7 @@ function PickersSlideTransition(inProps) {
   const classes = useUtilityClasses58(props);
   const theme = useTheme3();
   if (reduceAnimations) {
-    return /* @__PURE__ */ _jsx92("div", {
+    return /* @__PURE__ */ _jsx93("div", {
       className: clsx_default(classes.root, className),
       children
     });
@@ -46737,13 +48322,13 @@ function PickersSlideTransition(inProps) {
     enter: classes.enter,
     exitActive: classes.exitActive
   };
-  return /* @__PURE__ */ _jsx92(PickersSlideTransitionRoot, {
+  return /* @__PURE__ */ _jsx93(PickersSlideTransitionRoot, {
     className: clsx_default(classes.root, className),
-    childFactory: (element) => /* @__PURE__ */ React146.cloneElement(element, {
+    childFactory: (element) => /* @__PURE__ */ React148.cloneElement(element, {
       classNames: transitionClasses
     }),
     role: "presentation",
-    children: /* @__PURE__ */ _jsx92(CSSTransition_default, _extends({
+    children: /* @__PURE__ */ _jsx93(CSSTransition_default, _extends({
       mountOnEnter: true,
       unmountOnExit: true,
       timeout: theme.transitions.duration.complex,
@@ -46759,7 +48344,7 @@ var getDayCalendarUtilityClass = (slot) => generateUtilityClass("MuiDayCalendar"
 var dayCalendarClasses = generateUtilityClasses("MuiDayCalendar", ["root", "header", "weekDayLabel", "loadingContainer", "slideTransition", "monthContainer", "weekContainer", "weekNumberLabel", "weekNumber"]);
 
 // node_modules/@mui/x-date-pickers/DateCalendar/DayCalendar.js
-import { jsx as _jsx93, jsxs as _jsxs31 } from "react/jsx-runtime";
+import { jsx as _jsx94, jsxs as _jsxs31 } from "react/jsx-runtime";
 var _excluded28 = ["parentProps", "day", "focusableDay", "selectedDays", "isDateDisabled", "currentMonthNumber", "isViewFocused"];
 var _excluded29 = ["ownerState"];
 var useUtilityClasses59 = (ownerState) => {
@@ -46917,23 +48502,23 @@ function WrappedDay(_ref) {
       selected: isSelected
     })
   }), dayProps = _objectWithoutPropertiesLoose(_useSlotProps, _excluded29);
-  const isDisabled = React147.useMemo(() => disabled || isDateDisabled(day), [disabled, isDateDisabled, day]);
-  const outsideCurrentMonth = React147.useMemo(() => utils2.getMonth(day) !== currentMonthNumber, [utils2, day, currentMonthNumber]);
-  const isFirstVisibleCell = React147.useMemo(() => {
+  const isDisabled = React149.useMemo(() => disabled || isDateDisabled(day), [disabled, isDateDisabled, day]);
+  const outsideCurrentMonth = React149.useMemo(() => utils2.getMonth(day) !== currentMonthNumber, [utils2, day, currentMonthNumber]);
+  const isFirstVisibleCell = React149.useMemo(() => {
     const startOfMonth = utils2.startOfMonth(utils2.setMonth(day, currentMonthNumber));
     if (!showDaysOutsideCurrentMonth) {
       return utils2.isSameDay(day, startOfMonth);
     }
     return utils2.isSameDay(day, utils2.startOfWeek(startOfMonth));
   }, [currentMonthNumber, day, showDaysOutsideCurrentMonth, utils2]);
-  const isLastVisibleCell = React147.useMemo(() => {
+  const isLastVisibleCell = React149.useMemo(() => {
     const endOfMonth = utils2.endOfMonth(utils2.setMonth(day, currentMonthNumber));
     if (!showDaysOutsideCurrentMonth) {
       return utils2.isSameDay(day, endOfMonth);
     }
     return utils2.isSameDay(day, utils2.endOfWeek(endOfMonth));
   }, [currentMonthNumber, day, showDaysOutsideCurrentMonth, utils2]);
-  return /* @__PURE__ */ _jsx93(Day, _extends({}, dayProps, {
+  return /* @__PURE__ */ _jsx94(Day, _extends({}, dayProps, {
     day,
     disabled: isDisabled,
     autoFocus: isViewFocused && isFocusableDay,
@@ -46964,7 +48549,7 @@ function DayCalendar(inProps) {
     onMonthSwitchingAnimationEnd,
     readOnly,
     reduceAnimations,
-    renderLoading = () => /* @__PURE__ */ _jsx93("span", {
+    renderLoading = () => /* @__PURE__ */ _jsx94("span", {
       children: "..."
     }),
     slideDirection,
@@ -46987,7 +48572,7 @@ function DayCalendar(inProps) {
   } = props;
   const now2 = useNow(timezone);
   const classes = useUtilityClasses59(props);
-  const isRtl = useRtl();
+  const isRtl = useRtl2();
   const isDateDisabled = useIsDateDisabled({
     shouldDisableDate,
     shouldDisableMonth,
@@ -47005,7 +48590,7 @@ function DayCalendar(inProps) {
     controlled: hasFocus,
     default: autoFocus ?? false
   });
-  const [internalFocusedDay, setInternalFocusedDay] = React147.useState(() => focusedDay || now2);
+  const [internalFocusedDay, setInternalFocusedDay] = React149.useState(() => focusedDay || now2);
   const handleDaySelect = useEventCallback_default((day) => {
     if (readOnly) {
       return;
@@ -47088,10 +48673,10 @@ function DayCalendar(inProps) {
   });
   const currentMonthNumber = utils2.getMonth(currentMonth);
   const currentYearNumber = utils2.getYear(currentMonth);
-  const validSelectedDays = React147.useMemo(() => selectedDays.filter((day) => !!day).map((day) => utils2.startOfDay(day)), [utils2, selectedDays]);
+  const validSelectedDays = React149.useMemo(() => selectedDays.filter((day) => !!day).map((day) => utils2.startOfDay(day)), [utils2, selectedDays]);
   const transitionKey = `${currentYearNumber}-${currentMonthNumber}`;
-  const slideNodeRef = React147.useMemo(() => /* @__PURE__ */ React147.createRef(), [transitionKey]);
-  const focusableDay = React147.useMemo(() => {
+  const slideNodeRef = React149.useMemo(() => /* @__PURE__ */ React149.createRef(), [transitionKey]);
+  const focusableDay = React149.useMemo(() => {
     const startOfMonth = utils2.startOfMonth(currentMonth);
     const endOfMonth = utils2.endOfMonth(currentMonth);
     if (isDateDisabled(internalFocusedDay) || utils2.isAfterDay(internalFocusedDay, endOfMonth) || utils2.isBeforeDay(internalFocusedDay, startOfMonth)) {
@@ -47108,7 +48693,7 @@ function DayCalendar(inProps) {
     }
     return internalFocusedDay;
   }, [currentMonth, disableFuture, disablePast, internalFocusedDay, isDateDisabled, utils2, timezone]);
-  const weeksToDisplay = React147.useMemo(() => {
+  const weeksToDisplay = React149.useMemo(() => {
     const toDisplay = utils2.getWeekArray(currentMonth);
     let nextMonth = utils2.addMonths(currentMonth, 1);
     while (fixedWeekNumber && toDisplay.length < fixedWeekNumber) {
@@ -47130,23 +48715,23 @@ function DayCalendar(inProps) {
     children: [/* @__PURE__ */ _jsxs31(PickersCalendarDayHeader, {
       role: "row",
       className: classes.header,
-      children: [displayWeekNumber && /* @__PURE__ */ _jsx93(PickersCalendarWeekNumberLabel, {
+      children: [displayWeekNumber && /* @__PURE__ */ _jsx94(PickersCalendarWeekNumberLabel, {
         variant: "caption",
         role: "columnheader",
         "aria-label": translations.calendarWeekNumberHeaderLabel,
         className: classes.weekNumberLabel,
         children: translations.calendarWeekNumberHeaderText
-      }), getWeekdays(utils2, now2).map((weekday, i2) => /* @__PURE__ */ _jsx93(PickersCalendarWeekDayLabel, {
+      }), getWeekdays(utils2, now2).map((weekday, i2) => /* @__PURE__ */ _jsx94(PickersCalendarWeekDayLabel, {
         variant: "caption",
         role: "columnheader",
         "aria-label": utils2.format(weekday, "weekday"),
         className: classes.weekDayLabel,
         children: dayOfWeekFormatter(weekday)
       }, i2.toString()))]
-    }), loading ? /* @__PURE__ */ _jsx93(PickersCalendarLoadingContainer, {
+    }), loading ? /* @__PURE__ */ _jsx94(PickersCalendarLoadingContainer, {
       className: classes.loadingContainer,
       children: renderLoading()
-    }) : /* @__PURE__ */ _jsx93(PickersCalendarSlideTransition, _extends({
+    }) : /* @__PURE__ */ _jsx94(PickersCalendarSlideTransition, _extends({
       transKey: transitionKey,
       onExited: onMonthSwitchingAnimationEnd,
       reduceAnimations,
@@ -47154,7 +48739,7 @@ function DayCalendar(inProps) {
       className: clsx_default(className, classes.slideTransition)
     }, TransitionProps, {
       nodeRef: slideNodeRef,
-      children: /* @__PURE__ */ _jsx93(PickersCalendarWeekContainer, {
+      children: /* @__PURE__ */ _jsx94(PickersCalendarWeekContainer, {
         ref: slideNodeRef,
         role: "rowgroup",
         className: classes.monthContainer,
@@ -47162,12 +48747,12 @@ function DayCalendar(inProps) {
           role: "row",
           className: classes.weekContainer,
           "aria-rowindex": index3 + 1,
-          children: [displayWeekNumber && /* @__PURE__ */ _jsx93(PickersCalendarWeekNumber, {
+          children: [displayWeekNumber && /* @__PURE__ */ _jsx94(PickersCalendarWeekNumber, {
             className: classes.weekNumber,
             role: "rowheader",
             "aria-label": translations.calendarWeekNumberAriaLabelText(utils2.getWeekNumber(week[0])),
             children: translations.calendarWeekNumberText(utils2.getWeekNumber(week[0]))
-          }), week.map((day, dayIndex) => /* @__PURE__ */ _jsx93(WrappedDay, {
+          }), week.map((day, dayIndex) => /* @__PURE__ */ _jsx94(WrappedDay, {
             parentProps: props,
             day,
             selectedDays: validSelectedDays,
@@ -47188,11 +48773,11 @@ function DayCalendar(inProps) {
 }
 
 // node_modules/@mui/x-date-pickers/MonthCalendar/MonthCalendar.js
-var import_prop_types81 = __toESM(require_prop_types());
-import * as React149 from "react";
+var import_prop_types83 = __toESM(require_prop_types());
+import * as React151 from "react";
 
 // node_modules/@mui/x-date-pickers/MonthCalendar/PickersMonth.js
-import * as React148 from "react";
+import * as React150 from "react";
 
 // node_modules/@mui/x-date-pickers/MonthCalendar/pickersMonthClasses.js
 function getPickersMonthUtilityClass(slot) {
@@ -47201,7 +48786,7 @@ function getPickersMonthUtilityClass(slot) {
 var pickersMonthClasses = generateUtilityClasses("MuiPickersMonth", ["root", "monthButton", "disabled", "selected"]);
 
 // node_modules/@mui/x-date-pickers/MonthCalendar/PickersMonth.js
-import { jsx as _jsx94 } from "react/jsx-runtime";
+import { jsx as _jsx95 } from "react/jsx-runtime";
 var _excluded30 = ["autoFocus", "className", "children", "disabled", "selected", "value", "tabIndex", "onClick", "onKeyDown", "onFocus", "onBlur", "aria-current", "aria-label", "monthsPerRow", "slots", "slotProps"];
 var useUtilityClasses60 = (ownerState) => {
   const {
@@ -47275,7 +48860,7 @@ var MonthCalendarButton = styled_default("button", {
     }
   }
 }));
-var PickersMonth = /* @__PURE__ */ React148.memo(function PickersMonth2(inProps) {
+var PickersMonth = /* @__PURE__ */ React150.memo(function PickersMonth2(inProps) {
   const props = useThemeProps2({
     props: inProps,
     name: "MuiPickersMonth"
@@ -47297,7 +48882,7 @@ var PickersMonth = /* @__PURE__ */ React148.memo(function PickersMonth2(inProps)
     slots,
     slotProps
   } = props, other = _objectWithoutPropertiesLoose(props, _excluded30);
-  const ref = React148.useRef(null);
+  const ref = React150.useRef(null);
   const classes = useUtilityClasses60(props);
   useEnhancedEffect_default(() => {
     if (autoFocus) {
@@ -47326,11 +48911,11 @@ var PickersMonth = /* @__PURE__ */ React148.memo(function PickersMonth2(inProps)
     ownerState: props,
     className: classes.monthButton
   });
-  return /* @__PURE__ */ _jsx94(PickersMonthRoot, _extends({
+  return /* @__PURE__ */ _jsx95(PickersMonthRoot, _extends({
     className: clsx_default(classes.root, className),
     ownerState: props
   }, other, {
-    children: /* @__PURE__ */ _jsx94(MonthButton, _extends({}, monthButtonProps))
+    children: /* @__PURE__ */ _jsx95(MonthButton, _extends({}, monthButtonProps))
   }));
 });
 
@@ -47341,7 +48926,7 @@ function getMonthCalendarUtilityClass(slot) {
 var monthCalendarClasses = generateUtilityClasses("MuiMonthCalendar", ["root"]);
 
 // node_modules/@mui/x-date-pickers/MonthCalendar/MonthCalendar.js
-import { jsx as _jsx95 } from "react/jsx-runtime";
+import { jsx as _jsx96 } from "react/jsx-runtime";
 var _excluded31 = ["className", "value", "defaultValue", "referenceDate", "disabled", "disableFuture", "disablePast", "maxDate", "minDate", "onChange", "shouldDisableMonth", "readOnly", "disableHighlightToday", "autoFocus", "onMonthFocus", "hasFocus", "onFocusedViewChange", "monthsPerRow", "timezone", "gridLabelId", "slots", "slotProps"];
 var useUtilityClasses61 = (ownerState) => {
   const {
@@ -47380,7 +48965,7 @@ var MonthCalendarRoot = styled_default("div", {
   // avoid padding increasing width over defined
   boxSizing: "border-box"
 });
-var MonthCalendar = /* @__PURE__ */ React149.forwardRef(function MonthCalendar2(inProps, ref) {
+var MonthCalendar = /* @__PURE__ */ React151.forwardRef(function MonthCalendar2(inProps, ref) {
   const props = useMonthCalendarDefaultizedProps(inProps, "MuiMonthCalendar");
   const {
     className,
@@ -47419,9 +49004,9 @@ var MonthCalendar = /* @__PURE__ */ React149.forwardRef(function MonthCalendar2(
     valueManager: singleItemValueManager
   });
   const now2 = useNow(timezone);
-  const isRtl = useRtl();
+  const isRtl = useRtl2();
   const utils2 = useUtils();
-  const referenceDate = React149.useMemo(
+  const referenceDate = React151.useMemo(
     () => singleItemValueManager.getInitialReferenceValue({
       value,
       utils: utils2,
@@ -47435,14 +49020,14 @@ var MonthCalendar = /* @__PURE__ */ React149.forwardRef(function MonthCalendar2(
   );
   const ownerState = props;
   const classes = useUtilityClasses61(ownerState);
-  const todayMonth = React149.useMemo(() => utils2.getMonth(now2), [utils2, now2]);
-  const selectedMonth = React149.useMemo(() => {
+  const todayMonth = React151.useMemo(() => utils2.getMonth(now2), [utils2, now2]);
+  const selectedMonth = React151.useMemo(() => {
     if (value != null) {
       return utils2.getMonth(value);
     }
     return null;
   }, [value, utils2]);
-  const [focusedMonth, setFocusedMonth] = React149.useState(() => selectedMonth || utils2.getMonth(referenceDate));
+  const [focusedMonth, setFocusedMonth] = React151.useState(() => selectedMonth || utils2.getMonth(referenceDate));
   const [internalHasFocus, setInternalHasFocus] = useControlled({
     name: "MonthCalendar",
     state: "hasFocus",
@@ -47455,7 +49040,7 @@ var MonthCalendar = /* @__PURE__ */ React149.forwardRef(function MonthCalendar2(
       onFocusedViewChange(newHasFocus);
     }
   });
-  const isMonthDisabled = React149.useCallback((dateToValidate) => {
+  const isMonthDisabled = React151.useCallback((dateToValidate) => {
     const firstEnabledMonth = utils2.startOfMonth(disablePast && utils2.isAfter(now2, minDate) ? now2 : minDate);
     const lastEnabledMonth = utils2.startOfMonth(disableFuture && utils2.isBefore(now2, maxDate) ? now2 : maxDate);
     const monthToValidate = utils2.startOfMonth(dateToValidate);
@@ -47486,7 +49071,7 @@ var MonthCalendar = /* @__PURE__ */ React149.forwardRef(function MonthCalendar2(
       }
     }
   });
-  React149.useEffect(() => {
+  React151.useEffect(() => {
     setFocusedMonth((prevFocusedMonth) => selectedMonth !== null && prevFocusedMonth !== selectedMonth ? selectedMonth : prevFocusedMonth);
   }, [selectedMonth]);
   const handleKeyDown = useEventCallback_default((event, month) => {
@@ -47521,7 +49106,7 @@ var MonthCalendar = /* @__PURE__ */ React149.forwardRef(function MonthCalendar2(
       changeHasFocus(false);
     }
   });
-  return /* @__PURE__ */ _jsx95(MonthCalendarRoot, _extends({
+  return /* @__PURE__ */ _jsx96(MonthCalendarRoot, _extends({
     ref,
     className: clsx_default(classes.root, className),
     ownerState,
@@ -47534,7 +49119,7 @@ var MonthCalendar = /* @__PURE__ */ React149.forwardRef(function MonthCalendar2(
       const monthLabel = utils2.format(month, "month");
       const isSelected = monthNumber === selectedMonth;
       const isDisabled = disabled || isMonthDisabled(month);
-      return /* @__PURE__ */ _jsx95(PickersMonth, {
+      return /* @__PURE__ */ _jsx96(PickersMonth, {
         selected: isSelected,
         value: monthNumber,
         onClick: handleMonthSelection,
@@ -47559,91 +49144,91 @@ true ? MonthCalendar.propTypes = {
   // | These PropTypes are generated from the TypeScript type definitions |
   // | To update them edit the TypeScript types and run "pnpm proptypes"  |
   // ----------------------------------------------------------------------
-  autoFocus: import_prop_types81.default.bool,
+  autoFocus: import_prop_types83.default.bool,
   /**
    * Override or extend the styles applied to the component.
    */
-  classes: import_prop_types81.default.object,
-  className: import_prop_types81.default.string,
+  classes: import_prop_types83.default.object,
+  className: import_prop_types83.default.string,
   /**
    * The default selected value.
    * Used when the component is not controlled.
    */
-  defaultValue: import_prop_types81.default.object,
+  defaultValue: import_prop_types83.default.object,
   /**
    * If `true` picker is disabled
    */
-  disabled: import_prop_types81.default.bool,
+  disabled: import_prop_types83.default.bool,
   /**
    * If `true`, disable values after the current date for date components, time for time components and both for date time components.
    * @default false
    */
-  disableFuture: import_prop_types81.default.bool,
+  disableFuture: import_prop_types83.default.bool,
   /**
    * If `true`, today's date is rendering without highlighting with circle.
    * @default false
    */
-  disableHighlightToday: import_prop_types81.default.bool,
+  disableHighlightToday: import_prop_types83.default.bool,
   /**
    * If `true`, disable values before the current date for date components, time for time components and both for date time components.
    * @default false
    */
-  disablePast: import_prop_types81.default.bool,
-  gridLabelId: import_prop_types81.default.string,
-  hasFocus: import_prop_types81.default.bool,
+  disablePast: import_prop_types83.default.bool,
+  gridLabelId: import_prop_types83.default.string,
+  hasFocus: import_prop_types83.default.bool,
   /**
    * Maximal selectable date.
    * @default 2099-12-31
    */
-  maxDate: import_prop_types81.default.object,
+  maxDate: import_prop_types83.default.object,
   /**
    * Minimal selectable date.
    * @default 1900-01-01
    */
-  minDate: import_prop_types81.default.object,
+  minDate: import_prop_types83.default.object,
   /**
    * Months rendered per row.
    * @default 3
    */
-  monthsPerRow: import_prop_types81.default.oneOf([3, 4]),
+  monthsPerRow: import_prop_types83.default.oneOf([3, 4]),
   /**
    * Callback fired when the value changes.
    * @template TDate
    * @param {TDate} value The new value.
    */
-  onChange: import_prop_types81.default.func,
-  onFocusedViewChange: import_prop_types81.default.func,
-  onMonthFocus: import_prop_types81.default.func,
+  onChange: import_prop_types83.default.func,
+  onFocusedViewChange: import_prop_types83.default.func,
+  onMonthFocus: import_prop_types83.default.func,
   /**
    * If `true` picker is readonly
    */
-  readOnly: import_prop_types81.default.bool,
+  readOnly: import_prop_types83.default.bool,
   /**
    * The date used to generate the new value when both `value` and `defaultValue` are empty.
    * @default The closest valid month using the validation props, except callbacks such as `shouldDisableMonth`.
    */
-  referenceDate: import_prop_types81.default.object,
+  referenceDate: import_prop_types83.default.object,
   /**
    * Disable specific month.
    * @template TDate
    * @param {TDate} month The month to test.
    * @returns {boolean} If `true`, the month will be disabled.
    */
-  shouldDisableMonth: import_prop_types81.default.func,
+  shouldDisableMonth: import_prop_types83.default.func,
   /**
    * The props used for each component slot.
    * @default {}
    */
-  slotProps: import_prop_types81.default.object,
+  slotProps: import_prop_types83.default.object,
   /**
    * Overridable component slots.
    * @default {}
    */
-  slots: import_prop_types81.default.object,
+  slots: import_prop_types83.default.object,
   /**
    * The system prop that allows defining system overrides as well as additional CSS styles.
    */
-  sx: import_prop_types81.default.oneOfType([import_prop_types81.default.arrayOf(import_prop_types81.default.oneOfType([import_prop_types81.default.func, import_prop_types81.default.object, import_prop_types81.default.bool])), import_prop_types81.default.func, import_prop_types81.default.object]),
+  sx: import_prop_types83.default.oneOfType([import_prop_types83.default.arrayOf(import_prop_types83.default.oneOfType([import_prop_types83.default.func, import_prop_types83.default.object, import_prop_types83.default.bool])), import_prop_types83.default.func, import_prop_types83.default.object]),
   /**
    * Choose which timezone to use for the value.
    * Example: "default", "system", "UTC", "America/New_York".
@@ -47651,20 +49236,20 @@ true ? MonthCalendar.propTypes = {
    * @see See the {@link https://mui.com/x/react-date-pickers/timezone/ timezones documentation} for more details.
    * @default The timezone of the `value` or `defaultValue` prop is defined, 'default' otherwise.
    */
-  timezone: import_prop_types81.default.string,
+  timezone: import_prop_types83.default.string,
   /**
    * The selected value.
    * Used when the component is controlled.
    */
-  value: import_prop_types81.default.object
+  value: import_prop_types83.default.object
 } : void 0;
 
 // node_modules/@mui/x-date-pickers/YearCalendar/YearCalendar.js
-var import_prop_types82 = __toESM(require_prop_types());
-import * as React151 from "react";
+var import_prop_types84 = __toESM(require_prop_types());
+import * as React153 from "react";
 
 // node_modules/@mui/x-date-pickers/YearCalendar/PickersYear.js
-import * as React150 from "react";
+import * as React152 from "react";
 
 // node_modules/@mui/x-date-pickers/YearCalendar/pickersYearClasses.js
 function getPickersYearUtilityClass(slot) {
@@ -47673,7 +49258,7 @@ function getPickersYearUtilityClass(slot) {
 var pickersYearClasses = generateUtilityClasses("MuiPickersYear", ["root", "yearButton", "selected", "disabled"]);
 
 // node_modules/@mui/x-date-pickers/YearCalendar/PickersYear.js
-import { jsx as _jsx96 } from "react/jsx-runtime";
+import { jsx as _jsx97 } from "react/jsx-runtime";
 var _excluded34 = ["autoFocus", "className", "children", "disabled", "selected", "value", "tabIndex", "onClick", "onKeyDown", "onFocus", "onBlur", "aria-current", "yearsPerRow", "slots", "slotProps"];
 var useUtilityClasses62 = (ownerState) => {
   const {
@@ -47747,7 +49332,7 @@ var YearCalendarButton = styled_default("button", {
     }
   }
 }));
-var PickersYear = /* @__PURE__ */ React150.memo(function PickersYear2(inProps) {
+var PickersYear = /* @__PURE__ */ React152.memo(function PickersYear2(inProps) {
   const props = useThemeProps2({
     props: inProps,
     name: "MuiPickersYear"
@@ -47768,7 +49353,7 @@ var PickersYear = /* @__PURE__ */ React150.memo(function PickersYear2(inProps) {
     slots,
     slotProps
   } = props, other = _objectWithoutPropertiesLoose(props, _excluded34);
-  const ref = React150.useRef(null);
+  const ref = React152.useRef(null);
   const classes = useUtilityClasses62(props);
   useEnhancedEffect_default(() => {
     if (autoFocus) {
@@ -47796,11 +49381,11 @@ var PickersYear = /* @__PURE__ */ React150.memo(function PickersYear2(inProps) {
     ownerState: props,
     className: classes.yearButton
   });
-  return /* @__PURE__ */ _jsx96(PickersYearRoot, _extends({
+  return /* @__PURE__ */ _jsx97(PickersYearRoot, _extends({
     className: clsx_default(classes.root, className),
     ownerState: props
   }, other, {
-    children: /* @__PURE__ */ _jsx96(YearButton, _extends({}, yearButtonProps))
+    children: /* @__PURE__ */ _jsx97(YearButton, _extends({}, yearButtonProps))
   }));
 });
 
@@ -47811,7 +49396,7 @@ function getYearCalendarUtilityClass(slot) {
 var yearCalendarClasses = generateUtilityClasses("MuiYearCalendar", ["root"]);
 
 // node_modules/@mui/x-date-pickers/YearCalendar/YearCalendar.js
-import { jsx as _jsx97 } from "react/jsx-runtime";
+import { jsx as _jsx98 } from "react/jsx-runtime";
 var _excluded35 = ["autoFocus", "className", "value", "defaultValue", "referenceDate", "disabled", "disableFuture", "disablePast", "maxDate", "minDate", "onChange", "readOnly", "shouldDisableYear", "disableHighlightToday", "onYearFocus", "hasFocus", "onFocusedViewChange", "yearsOrder", "yearsPerRow", "timezone", "gridLabelId", "slots", "slotProps"];
 var useUtilityClasses63 = (ownerState) => {
   const {
@@ -47855,7 +49440,7 @@ var YearCalendarRoot = styled_default("div", {
   boxSizing: "border-box",
   position: "relative"
 });
-var YearCalendar = /* @__PURE__ */ React151.forwardRef(function YearCalendar2(inProps, ref) {
+var YearCalendar = /* @__PURE__ */ React153.forwardRef(function YearCalendar2(inProps, ref) {
   const props = useYearCalendarDefaultizedProps(inProps, "MuiYearCalendar");
   const {
     autoFocus,
@@ -47895,9 +49480,9 @@ var YearCalendar = /* @__PURE__ */ React151.forwardRef(function YearCalendar2(in
     valueManager: singleItemValueManager
   });
   const now2 = useNow(timezone);
-  const isRtl = useRtl();
+  const isRtl = useRtl2();
   const utils2 = useUtils();
-  const referenceDate = React151.useMemo(
+  const referenceDate = React153.useMemo(
     () => singleItemValueManager.getInitialReferenceValue({
       value,
       utils: utils2,
@@ -47911,14 +49496,14 @@ var YearCalendar = /* @__PURE__ */ React151.forwardRef(function YearCalendar2(in
   );
   const ownerState = props;
   const classes = useUtilityClasses63(ownerState);
-  const todayYear = React151.useMemo(() => utils2.getYear(now2), [utils2, now2]);
-  const selectedYear = React151.useMemo(() => {
+  const todayYear = React153.useMemo(() => utils2.getYear(now2), [utils2, now2]);
+  const selectedYear = React153.useMemo(() => {
     if (value != null) {
       return utils2.getYear(value);
     }
     return null;
   }, [value, utils2]);
-  const [focusedYear, setFocusedYear] = React151.useState(() => selectedYear || utils2.getYear(referenceDate));
+  const [focusedYear, setFocusedYear] = React153.useState(() => selectedYear || utils2.getYear(referenceDate));
   const [internalHasFocus, setInternalHasFocus] = useControlled({
     name: "YearCalendar",
     state: "hasFocus",
@@ -47931,7 +49516,7 @@ var YearCalendar = /* @__PURE__ */ React151.forwardRef(function YearCalendar2(in
       onFocusedViewChange(newHasFocus);
     }
   });
-  const isYearDisabled = React151.useCallback((dateToValidate) => {
+  const isYearDisabled = React153.useCallback((dateToValidate) => {
     if (disablePast && utils2.isBeforeYear(dateToValidate, now2)) {
       return true;
     }
@@ -47964,7 +49549,7 @@ var YearCalendar = /* @__PURE__ */ React151.forwardRef(function YearCalendar2(in
       onYearFocus?.(year);
     }
   });
-  React151.useEffect(() => {
+  React153.useEffect(() => {
     setFocusedYear((prevFocusedYear) => selectedYear !== null && prevFocusedYear !== selectedYear ? selectedYear : prevFocusedYear);
   }, [selectedYear]);
   const verticalDirection = yearsOrder !== "desc" ? yearsPerRow * 1 : yearsPerRow * -1;
@@ -47999,9 +49584,9 @@ var YearCalendar = /* @__PURE__ */ React151.forwardRef(function YearCalendar2(in
       changeHasFocus(false);
     }
   });
-  const scrollerRef = React151.useRef(null);
+  const scrollerRef = React153.useRef(null);
   const handleRef = useForkRef(ref, scrollerRef);
-  React151.useEffect(() => {
+  React153.useEffect(() => {
     if (autoFocus || scrollerRef.current === null) {
       return;
     }
@@ -48023,7 +49608,7 @@ var YearCalendar = /* @__PURE__ */ React151.forwardRef(function YearCalendar2(in
   if (yearsOrder === "desc") {
     yearRange.reverse();
   }
-  return /* @__PURE__ */ _jsx97(YearCalendarRoot, _extends({
+  return /* @__PURE__ */ _jsx98(YearCalendarRoot, _extends({
     ref: handleRef,
     className: clsx_default(classes.root, className),
     ownerState,
@@ -48034,7 +49619,7 @@ var YearCalendar = /* @__PURE__ */ React151.forwardRef(function YearCalendar2(in
       const yearNumber = utils2.getYear(year);
       const isSelected = yearNumber === selectedYear;
       const isDisabled = disabled || isYearDisabled(year);
-      return /* @__PURE__ */ _jsx97(PickersYear, {
+      return /* @__PURE__ */ _jsx98(PickersYear, {
         selected: isSelected,
         value: yearNumber,
         onClick: handleYearSelection,
@@ -48058,86 +49643,86 @@ true ? YearCalendar.propTypes = {
   // | These PropTypes are generated from the TypeScript type definitions |
   // | To update them edit the TypeScript types and run "pnpm proptypes"  |
   // ----------------------------------------------------------------------
-  autoFocus: import_prop_types82.default.bool,
+  autoFocus: import_prop_types84.default.bool,
   /**
    * Override or extend the styles applied to the component.
    */
-  classes: import_prop_types82.default.object,
-  className: import_prop_types82.default.string,
+  classes: import_prop_types84.default.object,
+  className: import_prop_types84.default.string,
   /**
    * The default selected value.
    * Used when the component is not controlled.
    */
-  defaultValue: import_prop_types82.default.object,
+  defaultValue: import_prop_types84.default.object,
   /**
    * If `true` picker is disabled
    */
-  disabled: import_prop_types82.default.bool,
+  disabled: import_prop_types84.default.bool,
   /**
    * If `true`, disable values after the current date for date components, time for time components and both for date time components.
    * @default false
    */
-  disableFuture: import_prop_types82.default.bool,
+  disableFuture: import_prop_types84.default.bool,
   /**
    * If `true`, today's date is rendering without highlighting with circle.
    * @default false
    */
-  disableHighlightToday: import_prop_types82.default.bool,
+  disableHighlightToday: import_prop_types84.default.bool,
   /**
    * If `true`, disable values before the current date for date components, time for time components and both for date time components.
    * @default false
    */
-  disablePast: import_prop_types82.default.bool,
-  gridLabelId: import_prop_types82.default.string,
-  hasFocus: import_prop_types82.default.bool,
+  disablePast: import_prop_types84.default.bool,
+  gridLabelId: import_prop_types84.default.string,
+  hasFocus: import_prop_types84.default.bool,
   /**
    * Maximal selectable date.
    * @default 2099-12-31
    */
-  maxDate: import_prop_types82.default.object,
+  maxDate: import_prop_types84.default.object,
   /**
    * Minimal selectable date.
    * @default 1900-01-01
    */
-  minDate: import_prop_types82.default.object,
+  minDate: import_prop_types84.default.object,
   /**
    * Callback fired when the value changes.
    * @template TDate
    * @param {TDate} value The new value.
    */
-  onChange: import_prop_types82.default.func,
-  onFocusedViewChange: import_prop_types82.default.func,
-  onYearFocus: import_prop_types82.default.func,
+  onChange: import_prop_types84.default.func,
+  onFocusedViewChange: import_prop_types84.default.func,
+  onYearFocus: import_prop_types84.default.func,
   /**
    * If `true` picker is readonly
    */
-  readOnly: import_prop_types82.default.bool,
+  readOnly: import_prop_types84.default.bool,
   /**
    * The date used to generate the new value when both `value` and `defaultValue` are empty.
    * @default The closest valid year using the validation props, except callbacks such as `shouldDisableYear`.
    */
-  referenceDate: import_prop_types82.default.object,
+  referenceDate: import_prop_types84.default.object,
   /**
    * Disable specific year.
    * @template TDate
    * @param {TDate} year The year to test.
    * @returns {boolean} If `true`, the year will be disabled.
    */
-  shouldDisableYear: import_prop_types82.default.func,
+  shouldDisableYear: import_prop_types84.default.func,
   /**
    * The props used for each component slot.
    * @default {}
    */
-  slotProps: import_prop_types82.default.object,
+  slotProps: import_prop_types84.default.object,
   /**
    * Overridable component slots.
    * @default {}
    */
-  slots: import_prop_types82.default.object,
+  slots: import_prop_types84.default.object,
   /**
    * The system prop that allows defining system overrides as well as additional CSS styles.
    */
-  sx: import_prop_types82.default.oneOfType([import_prop_types82.default.arrayOf(import_prop_types82.default.oneOfType([import_prop_types82.default.func, import_prop_types82.default.object, import_prop_types82.default.bool])), import_prop_types82.default.func, import_prop_types82.default.object]),
+  sx: import_prop_types84.default.oneOfType([import_prop_types84.default.arrayOf(import_prop_types84.default.oneOfType([import_prop_types84.default.func, import_prop_types84.default.object, import_prop_types84.default.bool])), import_prop_types84.default.func, import_prop_types84.default.object]),
   /**
    * Choose which timezone to use for the value.
    * Example: "default", "system", "UTC", "America/New_York".
@@ -48145,23 +49730,23 @@ true ? YearCalendar.propTypes = {
    * @see See the {@link https://mui.com/x/react-date-pickers/timezone/ timezones documentation} for more details.
    * @default The timezone of the `value` or `defaultValue` prop is defined, 'default' otherwise.
    */
-  timezone: import_prop_types82.default.string,
+  timezone: import_prop_types84.default.string,
   /**
    * The selected value.
    * Used when the component is controlled.
    */
-  value: import_prop_types82.default.object,
+  value: import_prop_types84.default.object,
   /**
    * Years are displayed in ascending (chronological) order by default.
    * If `desc`, years are displayed in descending order.
    * @default 'asc'
    */
-  yearsOrder: import_prop_types82.default.oneOf(["asc", "desc"]),
+  yearsOrder: import_prop_types84.default.oneOf(["asc", "desc"]),
   /**
    * Years rendered per row.
    * @default 3
    */
-  yearsPerRow: import_prop_types82.default.oneOf([3, 4])
+  yearsPerRow: import_prop_types84.default.oneOf([3, 4])
 } : void 0;
 
 // node_modules/@mui/x-date-pickers/PickersCalendarHeader/pickersCalendarHeaderClasses.js
@@ -48169,9 +49754,9 @@ var getPickersCalendarHeaderUtilityClass = (slot) => generateUtilityClass("MuiPi
 var pickersCalendarHeaderClasses = generateUtilityClasses("MuiPickersCalendarHeader", ["root", "labelContainer", "label", "switchViewButton", "switchViewIcon"]);
 
 // node_modules/@mui/x-date-pickers/PickersCalendarHeader/PickersCalendarHeader.js
-var import_prop_types83 = __toESM(require_prop_types());
-import * as React152 from "react";
-import { jsx as _jsx98, jsxs as _jsxs32 } from "react/jsx-runtime";
+var import_prop_types85 = __toESM(require_prop_types());
+import * as React154 from "react";
+import { jsx as _jsx99, jsxs as _jsxs32 } from "react/jsx-runtime";
 var _excluded36 = ["slots", "slotProps", "currentMonth", "disabled", "disableFuture", "disablePast", "maxDate", "minDate", "onMonthChange", "onViewChange", "view", "reduceAnimations", "views", "labelId", "className", "timezone", "format"];
 var _excluded210 = ["ownerState"];
 var useUtilityClasses64 = (ownerState) => {
@@ -48252,7 +49837,7 @@ var PickersCalendarHeaderSwitchViewIcon = styled_default(ArrowDropDownIcon, {
   transition: theme.transitions.create("transform"),
   transform: "rotate(0deg)"
 }));
-var PickersCalendarHeader = /* @__PURE__ */ React152.forwardRef(function PickersCalendarHeader2(inProps, ref) {
+var PickersCalendarHeader = /* @__PURE__ */ React154.forwardRef(function PickersCalendarHeader2(inProps, ref) {
   const translations = usePickersTranslations();
   const utils2 = useUtils();
   const props = useThemeProps2({
@@ -48335,23 +49920,23 @@ var PickersCalendarHeader = /* @__PURE__ */ React152.forwardRef(function Pickers
       ownerState,
       "aria-live": "polite",
       className: classes.labelContainer,
-      children: [/* @__PURE__ */ _jsx98(PickersFadeTransitionGroup, {
+      children: [/* @__PURE__ */ _jsx99(PickersFadeTransitionGroup, {
         reduceAnimations,
         transKey: label,
-        children: /* @__PURE__ */ _jsx98(PickersCalendarHeaderLabel, {
+        children: /* @__PURE__ */ _jsx99(PickersCalendarHeaderLabel, {
           id: labelId,
           ownerState,
           className: classes.label,
           children: label
         })
-      }), views.length > 1 && !disabled && /* @__PURE__ */ _jsx98(SwitchViewButton, _extends({}, switchViewButtonProps, {
-        children: /* @__PURE__ */ _jsx98(SwitchViewIcon, _extends({}, switchViewIconProps))
+      }), views.length > 1 && !disabled && /* @__PURE__ */ _jsx99(SwitchViewButton, _extends({}, switchViewButtonProps, {
+        children: /* @__PURE__ */ _jsx99(SwitchViewIcon, _extends({}, switchViewIconProps))
       }))]
-    }), /* @__PURE__ */ _jsx98(Fade_default, {
+    }), /* @__PURE__ */ _jsx99(Fade_default, {
       in: view === "day",
       appear: !reduceAnimations,
       enter: !reduceAnimations,
-      children: /* @__PURE__ */ _jsx98(PickersArrowSwitcher, {
+      children: /* @__PURE__ */ _jsx99(PickersArrowSwitcher, {
         slots,
         slotProps,
         onGoToPrevious: selectPreviousMonth,
@@ -48372,44 +49957,44 @@ true ? PickersCalendarHeader.propTypes = {
   /**
    * Override or extend the styles applied to the component.
    */
-  classes: import_prop_types83.default.object,
-  className: import_prop_types83.default.string,
-  currentMonth: import_prop_types83.default.object.isRequired,
-  disabled: import_prop_types83.default.bool,
-  disableFuture: import_prop_types83.default.bool,
-  disablePast: import_prop_types83.default.bool,
+  classes: import_prop_types85.default.object,
+  className: import_prop_types85.default.string,
+  currentMonth: import_prop_types85.default.object.isRequired,
+  disabled: import_prop_types85.default.bool,
+  disableFuture: import_prop_types85.default.bool,
+  disablePast: import_prop_types85.default.bool,
   /**
    * Format used to display the date.
    * @default `${adapter.formats.month} ${adapter.formats.year}`
    */
-  format: import_prop_types83.default.string,
+  format: import_prop_types85.default.string,
   /**
    * Id of the calendar text element.
    * It is used to establish an `aria-labelledby` relationship with the calendar `grid` element.
    */
-  labelId: import_prop_types83.default.string,
-  maxDate: import_prop_types83.default.object.isRequired,
-  minDate: import_prop_types83.default.object.isRequired,
-  onMonthChange: import_prop_types83.default.func.isRequired,
-  onViewChange: import_prop_types83.default.func,
-  reduceAnimations: import_prop_types83.default.bool.isRequired,
+  labelId: import_prop_types85.default.string,
+  maxDate: import_prop_types85.default.object.isRequired,
+  minDate: import_prop_types85.default.object.isRequired,
+  onMonthChange: import_prop_types85.default.func.isRequired,
+  onViewChange: import_prop_types85.default.func,
+  reduceAnimations: import_prop_types85.default.bool.isRequired,
   /**
    * The props used for each component slot.
    * @default {}
    */
-  slotProps: import_prop_types83.default.object,
+  slotProps: import_prop_types85.default.object,
   /**
    * Overridable component slots.
    * @default {}
    */
-  slots: import_prop_types83.default.object,
+  slots: import_prop_types85.default.object,
   /**
    * The system prop that allows defining system overrides as well as additional CSS styles.
    */
-  sx: import_prop_types83.default.oneOfType([import_prop_types83.default.arrayOf(import_prop_types83.default.oneOfType([import_prop_types83.default.func, import_prop_types83.default.object, import_prop_types83.default.bool])), import_prop_types83.default.func, import_prop_types83.default.object]),
-  timezone: import_prop_types83.default.string.isRequired,
-  view: import_prop_types83.default.oneOf(["day", "month", "year"]).isRequired,
-  views: import_prop_types83.default.arrayOf(import_prop_types83.default.oneOf(["day", "month", "year"]).isRequired).isRequired
+  sx: import_prop_types85.default.oneOfType([import_prop_types85.default.arrayOf(import_prop_types85.default.oneOfType([import_prop_types85.default.func, import_prop_types85.default.object, import_prop_types85.default.bool])), import_prop_types85.default.func, import_prop_types85.default.object]),
+  timezone: import_prop_types85.default.string.isRequired,
+  view: import_prop_types85.default.oneOf(["day", "month", "year"]).isRequired,
+  views: import_prop_types85.default.arrayOf(import_prop_types85.default.oneOf(["day", "month", "year"]).isRequired).isRequired
 } : void 0;
 
 // node_modules/@mui/x-date-pickers/internals/hooks/useDefaultReduceAnimations.js
@@ -48430,7 +50015,7 @@ var getDateCalendarUtilityClass = (slot) => generateUtilityClass("MuiDateCalenda
 var dateCalendarClasses = generateUtilityClasses("MuiDateCalendar", ["root", "viewTransitionContainer"]);
 
 // node_modules/@mui/x-date-pickers/DateCalendar/DateCalendar.js
-import { jsx as _jsx99, jsxs as _jsxs33 } from "react/jsx-runtime";
+import { jsx as _jsx100, jsxs as _jsxs33 } from "react/jsx-runtime";
 var _excluded37 = ["autoFocus", "onViewChange", "value", "defaultValue", "referenceDate", "disableFuture", "disablePast", "onChange", "onYearChange", "onMonthChange", "reduceAnimations", "shouldDisableDate", "shouldDisableMonth", "shouldDisableYear", "view", "views", "openTo", "className", "disabled", "readOnly", "minDate", "maxDate", "disableHighlightToday", "focusedView", "onFocusedViewChange", "showDaysOutsideCurrentMonth", "fixedWeekNumber", "dayOfWeekFormatter", "slots", "slotProps", "loading", "renderLoading", "displayWeekNumber", "yearsOrder", "yearsPerRow", "monthsPerRow", "timezone"];
 var useUtilityClasses65 = (ownerState) => {
   const {
@@ -48457,7 +50042,7 @@ function useDateCalendarDefaultizedProps(props, name) {
     openTo: themeProps.openTo ?? "day",
     views: themeProps.views ?? ["year", "day"],
     reduceAnimations: themeProps.reduceAnimations ?? defaultReduceAnimations,
-    renderLoading: themeProps.renderLoading ?? (() => /* @__PURE__ */ _jsx99("span", {
+    renderLoading: themeProps.renderLoading ?? (() => /* @__PURE__ */ _jsx100("span", {
       children: "..."
     })),
     minDate: applyDefaultDate(utils2, themeProps.minDate, defaultDates.minDate),
@@ -48478,7 +50063,7 @@ var DateCalendarViewTransitionContainer = styled_default(PickersFadeTransitionGr
   slot: "ViewTransitionContainer",
   overridesResolver: (props, styles5) => styles5.viewTransitionContainer
 })({});
-var DateCalendar = /* @__PURE__ */ React153.forwardRef(function DateCalendar2(inProps, ref) {
+var DateCalendar = /* @__PURE__ */ React155.forwardRef(function DateCalendar2(inProps, ref) {
   const utils2 = useUtils();
   const id = useId();
   const props = useDateCalendarDefaultizedProps(inProps, "MuiDateCalendar");
@@ -48649,7 +50234,7 @@ var DateCalendar = /* @__PURE__ */ React153.forwardRef(function DateCalendar2(in
     }
     return handleValueChange(day, "finish", view);
   });
-  React153.useEffect(() => {
+  React155.useEffect(() => {
     if (value != null && utils2.isValid(value)) {
       changeMonth(value);
     }
@@ -48671,8 +50256,8 @@ var DateCalendar = /* @__PURE__ */ React153.forwardRef(function DateCalendar2(in
     slots,
     slotProps
   };
-  const prevOpenViewRef = React153.useRef(view);
-  React153.useEffect(() => {
+  const prevOpenViewRef = React155.useRef(view);
+  React155.useEffect(() => {
     if (prevOpenViewRef.current === view) {
       return;
     }
@@ -48681,22 +50266,22 @@ var DateCalendar = /* @__PURE__ */ React153.forwardRef(function DateCalendar2(in
     }
     prevOpenViewRef.current = view;
   }, [focusedView, setFocusedView, view]);
-  const selectedDays = React153.useMemo(() => [value], [value]);
+  const selectedDays = React155.useMemo(() => [value], [value]);
   return /* @__PURE__ */ _jsxs33(DateCalendarRoot, _extends({
     ref,
     className: clsx_default(classes.root, className),
     ownerState
   }, other, {
-    children: [/* @__PURE__ */ _jsx99(CalendarHeader, _extends({}, calendarHeaderProps, {
+    children: [/* @__PURE__ */ _jsx100(CalendarHeader, _extends({}, calendarHeaderProps, {
       slots,
       slotProps
-    })), /* @__PURE__ */ _jsx99(DateCalendarViewTransitionContainer, {
+    })), /* @__PURE__ */ _jsx100(DateCalendarViewTransitionContainer, {
       reduceAnimations,
       className: classes.viewTransitionContainer,
       transKey: view,
       ownerState,
       children: /* @__PURE__ */ _jsxs33("div", {
-        children: [view === "year" && /* @__PURE__ */ _jsx99(YearCalendar, _extends({}, baseDateValidationProps, commonViewProps, {
+        children: [view === "year" && /* @__PURE__ */ _jsx100(YearCalendar, _extends({}, baseDateValidationProps, commonViewProps, {
           value,
           onChange: handleDateYearChange,
           shouldDisableYear,
@@ -48705,7 +50290,7 @@ var DateCalendar = /* @__PURE__ */ React153.forwardRef(function DateCalendar2(in
           yearsOrder,
           yearsPerRow,
           referenceDate
-        })), view === "month" && /* @__PURE__ */ _jsx99(MonthCalendar, _extends({}, baseDateValidationProps, commonViewProps, {
+        })), view === "month" && /* @__PURE__ */ _jsx100(MonthCalendar, _extends({}, baseDateValidationProps, commonViewProps, {
           hasFocus,
           className,
           value,
@@ -48714,7 +50299,7 @@ var DateCalendar = /* @__PURE__ */ React153.forwardRef(function DateCalendar2(in
           onFocusedViewChange: (isViewFocused) => setFocusedView("month", isViewFocused),
           monthsPerRow,
           referenceDate
-        })), view === "day" && /* @__PURE__ */ _jsx99(DayCalendar, _extends({}, calendarState, baseDateValidationProps, commonViewProps, {
+        })), view === "day" && /* @__PURE__ */ _jsx100(DayCalendar, _extends({}, calendarState, baseDateValidationProps, commonViewProps, {
           onMonthSwitchingAnimationEnd,
           onFocusedDayChange: changeFocusedDay,
           reduceAnimations,
@@ -48747,78 +50332,78 @@ true ? DateCalendar.propTypes = {
    * - the element chosen by the visible view if any (i.e: the selected day on the `day` view).
    * - the `input` element if there is a field rendered.
    */
-  autoFocus: import_prop_types84.default.bool,
+  autoFocus: import_prop_types86.default.bool,
   /**
    * Override or extend the styles applied to the component.
    */
-  classes: import_prop_types84.default.object,
-  className: import_prop_types84.default.string,
+  classes: import_prop_types86.default.object,
+  className: import_prop_types86.default.string,
   /**
    * Formats the day of week displayed in the calendar header.
    * @param {TDate} date The date of the day of week provided by the adapter.
    * @returns {string} The name to display.
    * @default (date: TDate) => adapter.format(date, 'weekdayShort').charAt(0).toUpperCase()
    */
-  dayOfWeekFormatter: import_prop_types84.default.func,
+  dayOfWeekFormatter: import_prop_types86.default.func,
   /**
    * The default selected value.
    * Used when the component is not controlled.
    */
-  defaultValue: import_prop_types84.default.object,
+  defaultValue: import_prop_types86.default.object,
   /**
    * If `true`, the picker and text field are disabled.
    * @default false
    */
-  disabled: import_prop_types84.default.bool,
+  disabled: import_prop_types86.default.bool,
   /**
    * If `true`, disable values after the current date for date components, time for time components and both for date time components.
    * @default false
    */
-  disableFuture: import_prop_types84.default.bool,
+  disableFuture: import_prop_types86.default.bool,
   /**
    * If `true`, today's date is rendering without highlighting with circle.
    * @default false
    */
-  disableHighlightToday: import_prop_types84.default.bool,
+  disableHighlightToday: import_prop_types86.default.bool,
   /**
    * If `true`, disable values before the current date for date components, time for time components and both for date time components.
    * @default false
    */
-  disablePast: import_prop_types84.default.bool,
+  disablePast: import_prop_types86.default.bool,
   /**
    * If `true`, the week number will be display in the calendar.
    */
-  displayWeekNumber: import_prop_types84.default.bool,
+  displayWeekNumber: import_prop_types86.default.bool,
   /**
    * The day view will show as many weeks as needed after the end of the current month to match this value.
    * Put it to 6 to have a fixed number of weeks in Gregorian calendars
    */
-  fixedWeekNumber: import_prop_types84.default.number,
+  fixedWeekNumber: import_prop_types86.default.number,
   /**
    * Controlled focused view.
    */
-  focusedView: import_prop_types84.default.oneOf(["day", "month", "year"]),
+  focusedView: import_prop_types86.default.oneOf(["day", "month", "year"]),
   /**
    * If `true`, calls `renderLoading` instead of rendering the day calendar.
    * Can be used to preload information and show it in calendar.
    * @default false
    */
-  loading: import_prop_types84.default.bool,
+  loading: import_prop_types86.default.bool,
   /**
    * Maximal selectable date.
    * @default 2099-12-31
    */
-  maxDate: import_prop_types84.default.object,
+  maxDate: import_prop_types86.default.object,
   /**
    * Minimal selectable date.
    * @default 1900-01-01
    */
-  minDate: import_prop_types84.default.object,
+  minDate: import_prop_types86.default.object,
   /**
    * Months rendered per row.
    * @default 3
    */
-  monthsPerRow: import_prop_types84.default.oneOf([3, 4]),
+  monthsPerRow: import_prop_types86.default.oneOf([3, 4]),
   /**
    * Callback fired when the value changes.
    * @template TValue The value type. It will be the same type as `value` or `null`. It can be in `[start, end]` format in case of range value.
@@ -48827,59 +50412,59 @@ true ? DateCalendar.propTypes = {
    * @param {PickerSelectionState | undefined} selectionState Indicates if the date selection is complete.
    * @param {TView | undefined} selectedView Indicates the view in which the selection has been made.
    */
-  onChange: import_prop_types84.default.func,
+  onChange: import_prop_types86.default.func,
   /**
    * Callback fired on focused view change.
    * @template TView
    * @param {TView} view The new view to focus or not.
    * @param {boolean} hasFocus `true` if the view should be focused.
    */
-  onFocusedViewChange: import_prop_types84.default.func,
+  onFocusedViewChange: import_prop_types86.default.func,
   /**
    * Callback fired on month change.
    * @template TDate
    * @param {TDate} month The new month.
    */
-  onMonthChange: import_prop_types84.default.func,
+  onMonthChange: import_prop_types86.default.func,
   /**
    * Callback fired on view change.
    * @template TView
    * @param {TView} view The new view.
    */
-  onViewChange: import_prop_types84.default.func,
+  onViewChange: import_prop_types86.default.func,
   /**
    * Callback fired on year change.
    * @template TDate
    * @param {TDate} year The new year.
    */
-  onYearChange: import_prop_types84.default.func,
+  onYearChange: import_prop_types86.default.func,
   /**
    * The default visible view.
    * Used when the component view is not controlled.
    * Must be a valid option from `views` list.
    */
-  openTo: import_prop_types84.default.oneOf(["day", "month", "year"]),
+  openTo: import_prop_types86.default.oneOf(["day", "month", "year"]),
   /**
    * Make picker read only.
    * @default false
    */
-  readOnly: import_prop_types84.default.bool,
+  readOnly: import_prop_types86.default.bool,
   /**
    * If `true`, disable heavy animations.
    * @default `@media(prefers-reduced-motion: reduce)` || `navigator.userAgent` matches Android <10 or iOS <13
    */
-  reduceAnimations: import_prop_types84.default.bool,
+  reduceAnimations: import_prop_types86.default.bool,
   /**
    * The date used to generate the new value when both `value` and `defaultValue` are empty.
    * @default The closest valid date using the validation props, except callbacks such as `shouldDisableDate`.
    */
-  referenceDate: import_prop_types84.default.object,
+  referenceDate: import_prop_types86.default.object,
   /**
    * Component displaying when passed `loading` true.
    * @returns {React.ReactNode} The node to render when loading.
    * @default () => <span>...</span>
    */
-  renderLoading: import_prop_types84.default.func,
+  renderLoading: import_prop_types86.default.func,
   /**
    * Disable specific date.
    *
@@ -48889,21 +50474,21 @@ true ? DateCalendar.propTypes = {
    * @param {TDate} day The date to test.
    * @returns {boolean} If `true` the date will be disabled.
    */
-  shouldDisableDate: import_prop_types84.default.func,
+  shouldDisableDate: import_prop_types86.default.func,
   /**
    * Disable specific month.
    * @template TDate
    * @param {TDate} month The month to test.
    * @returns {boolean} If `true`, the month will be disabled.
    */
-  shouldDisableMonth: import_prop_types84.default.func,
+  shouldDisableMonth: import_prop_types86.default.func,
   /**
    * Disable specific year.
    * @template TDate
    * @param {TDate} year The year to test.
    * @returns {boolean} If `true`, the year will be disabled.
    */
-  shouldDisableYear: import_prop_types84.default.func,
+  shouldDisableYear: import_prop_types86.default.func,
   /**
    * If `true`, days outside the current month are rendered:
    *
@@ -48914,21 +50499,21 @@ true ? DateCalendar.propTypes = {
    * - ignored if `calendars` equals more than `1` on range pickers.
    * @default false
    */
-  showDaysOutsideCurrentMonth: import_prop_types84.default.bool,
+  showDaysOutsideCurrentMonth: import_prop_types86.default.bool,
   /**
    * The props used for each component slot.
    * @default {}
    */
-  slotProps: import_prop_types84.default.object,
+  slotProps: import_prop_types86.default.object,
   /**
    * Overridable component slots.
    * @default {}
    */
-  slots: import_prop_types84.default.object,
+  slots: import_prop_types86.default.object,
   /**
    * The system prop that allows defining system overrides as well as additional CSS styles.
    */
-  sx: import_prop_types84.default.oneOfType([import_prop_types84.default.arrayOf(import_prop_types84.default.oneOfType([import_prop_types84.default.func, import_prop_types84.default.object, import_prop_types84.default.bool])), import_prop_types84.default.func, import_prop_types84.default.object]),
+  sx: import_prop_types86.default.oneOfType([import_prop_types86.default.arrayOf(import_prop_types86.default.oneOfType([import_prop_types86.default.func, import_prop_types86.default.object, import_prop_types86.default.bool])), import_prop_types86.default.func, import_prop_types86.default.object]),
   /**
    * Choose which timezone to use for the value.
    * Example: "default", "system", "UTC", "America/New_York".
@@ -48936,37 +50521,37 @@ true ? DateCalendar.propTypes = {
    * @see See the {@link https://mui.com/x/react-date-pickers/timezone/ timezones documentation} for more details.
    * @default The timezone of the `value` or `defaultValue` prop is defined, 'default' otherwise.
    */
-  timezone: import_prop_types84.default.string,
+  timezone: import_prop_types86.default.string,
   /**
    * The selected value.
    * Used when the component is controlled.
    */
-  value: import_prop_types84.default.object,
+  value: import_prop_types86.default.object,
   /**
    * The visible view.
    * Used when the component view is controlled.
    * Must be a valid option from `views` list.
    */
-  view: import_prop_types84.default.oneOf(["day", "month", "year"]),
+  view: import_prop_types86.default.oneOf(["day", "month", "year"]),
   /**
    * Available views.
    */
-  views: import_prop_types84.default.arrayOf(import_prop_types84.default.oneOf(["day", "month", "year"]).isRequired),
+  views: import_prop_types86.default.arrayOf(import_prop_types86.default.oneOf(["day", "month", "year"]).isRequired),
   /**
    * Years are displayed in ascending (chronological) order by default.
    * If `desc`, years are displayed in descending order.
    * @default 'asc'
    */
-  yearsOrder: import_prop_types84.default.oneOf(["asc", "desc"]),
+  yearsOrder: import_prop_types86.default.oneOf(["asc", "desc"]),
   /**
    * Years rendered per row.
    * @default 3
    */
-  yearsPerRow: import_prop_types84.default.oneOf([3, 4])
+  yearsPerRow: import_prop_types86.default.oneOf([3, 4])
 } : void 0;
 
 // node_modules/@mui/x-date-pickers/internals/components/PickersToolbar.js
-import * as React154 from "react";
+import * as React156 from "react";
 
 // node_modules/@mui/x-date-pickers/internals/components/pickersToolbarClasses.js
 function getPickersToolbarUtilityClass(slot) {
@@ -48975,7 +50560,7 @@ function getPickersToolbarUtilityClass(slot) {
 var pickersToolbarClasses = generateUtilityClasses("MuiPickersToolbar", ["root", "content"]);
 
 // node_modules/@mui/x-date-pickers/internals/components/PickersToolbar.js
-import { jsx as _jsx100, jsxs as _jsxs34 } from "react/jsx-runtime";
+import { jsx as _jsx101, jsxs as _jsxs34 } from "react/jsx-runtime";
 var _excluded38 = ["children", "className", "toolbarTitle", "hidden", "titleId", "isLandscape", "classes", "landscapeDirection"];
 var useUtilityClasses66 = (ownerState) => {
   const {
@@ -49043,7 +50628,7 @@ var PickersToolbarContent = styled_default("div", {
     }
   }]
 });
-var PickersToolbar = /* @__PURE__ */ React154.forwardRef(function PickersToolbar2(inProps, ref) {
+var PickersToolbar = /* @__PURE__ */ React156.forwardRef(function PickersToolbar2(inProps, ref) {
   const props = useThemeProps2({
     props: inProps,
     name: "MuiPickersToolbar"
@@ -49065,12 +50650,12 @@ var PickersToolbar = /* @__PURE__ */ React154.forwardRef(function PickersToolbar
     className: clsx_default(classes.root, className),
     ownerState
   }, other, {
-    children: [/* @__PURE__ */ _jsx100(Typography_default, {
+    children: [/* @__PURE__ */ _jsx101(Typography_default, {
       color: "text.secondary",
       variant: "overline",
       id: titleId,
       children: toolbarTitle
-    }), /* @__PURE__ */ _jsx100(PickersToolbarContent, {
+    }), /* @__PURE__ */ _jsx101(PickersToolbarContent, {
       className: classes.content,
       ownerState,
       children
@@ -49079,10 +50664,10 @@ var PickersToolbar = /* @__PURE__ */ React154.forwardRef(function PickersToolbar
 });
 
 // node_modules/@mui/x-date-pickers/internals/hooks/useDesktopPicker/useDesktopPicker.js
-import * as React165 from "react";
+import * as React167 from "react";
 
 // node_modules/@mui/x-date-pickers/internals/components/PickersPopper.js
-import * as React155 from "react";
+import * as React157 from "react";
 
 // node_modules/@mui/x-date-pickers/internals/components/pickersPopperClasses.js
 function getPickersPopperUtilityClass(slot) {
@@ -49091,7 +50676,7 @@ function getPickersPopperUtilityClass(slot) {
 var pickersPopperClasses = generateUtilityClasses("MuiPickersPopper", ["root", "paper"]);
 
 // node_modules/@mui/x-date-pickers/internals/components/PickersPopper.js
-import { jsx as _jsx101 } from "react/jsx-runtime";
+import { jsx as _jsx102 } from "react/jsx-runtime";
 var _excluded39 = ["PaperComponent", "popperPlacement", "ownerState", "children", "paperSlotProps", "paperClasses", "onPaperClick", "onPaperTouchStart"];
 var useUtilityClasses67 = (ownerState) => {
   const {
@@ -49132,11 +50717,11 @@ function clickedRootScrollbar2(event, doc) {
   return doc.documentElement.clientWidth < event.clientX || doc.documentElement.clientHeight < event.clientY;
 }
 function useClickAwayListener(active, onClickAway) {
-  const movedRef = React155.useRef(false);
-  const syntheticEventRef = React155.useRef(false);
-  const nodeRef = React155.useRef(null);
-  const activatedRef = React155.useRef(false);
-  React155.useEffect(() => {
+  const movedRef = React157.useRef(false);
+  const syntheticEventRef = React157.useRef(false);
+  const nodeRef = React157.useRef(null);
+  const activatedRef = React157.useRef(false);
+  React157.useEffect(() => {
     if (!active) {
       return void 0;
     }
@@ -49179,7 +50764,7 @@ function useClickAwayListener(active, onClickAway) {
   const handleSynthetic = () => {
     syntheticEventRef.current = true;
   };
-  React155.useEffect(() => {
+  React157.useEffect(() => {
     if (active) {
       const doc = ownerDocument(nodeRef.current);
       const handleTouchMove = () => {
@@ -49194,7 +50779,7 @@ function useClickAwayListener(active, onClickAway) {
     }
     return void 0;
   }, [active, handleClickAway]);
-  React155.useEffect(() => {
+  React157.useEffect(() => {
     if (active) {
       const doc = ownerDocument(nodeRef.current);
       doc.addEventListener("click", handleClickAway);
@@ -49207,7 +50792,7 @@ function useClickAwayListener(active, onClickAway) {
   }, [active, handleClickAway]);
   return [nodeRef, handleSynthetic, handleSynthetic];
 }
-var PickersPopperPaperWrapper = /* @__PURE__ */ React155.forwardRef((props, ref) => {
+var PickersPopperPaperWrapper = /* @__PURE__ */ React157.forwardRef((props, ref) => {
   const {
     PaperComponent,
     popperPlacement,
@@ -49234,7 +50819,7 @@ var PickersPopperPaperWrapper = /* @__PURE__ */ React155.forwardRef((props, ref)
     className: paperClasses2,
     ownerState
   });
-  return /* @__PURE__ */ _jsx101(PaperComponent, _extends({}, other, paperProps, {
+  return /* @__PURE__ */ _jsx102(PaperComponent, _extends({}, other, paperProps, {
     onClick: (event) => {
       onPaperClick(event);
       paperProps.onClick?.(event);
@@ -49266,7 +50851,7 @@ function PickersPopper(inProps) {
     slotProps,
     reduceAnimations: inReduceAnimations
   } = props;
-  React155.useEffect(() => {
+  React157.useEffect(() => {
     function handleKeyDown2(nativeEvent) {
       if (open && nativeEvent.key === "Escape") {
         onDismiss();
@@ -49277,8 +50862,8 @@ function PickersPopper(inProps) {
       document.removeEventListener("keydown", handleKeyDown2);
     };
   }, [onDismiss, open]);
-  const lastFocusedElementRef = React155.useRef(null);
-  React155.useEffect(() => {
+  const lastFocusedElementRef = React157.useRef(null);
+  React157.useEffect(() => {
     if (role === "tooltip" || shouldRestoreFocus && !shouldRestoreFocus()) {
       return;
     }
@@ -49293,7 +50878,7 @@ function PickersPopper(inProps) {
     }
   }, [open, role, shouldRestoreFocus]);
   const [clickAwayRef, onPaperClick, onPaperTouchStart] = useClickAwayListener(open, onBlur ?? onDismiss);
-  const paperRef = React155.useRef(null);
+  const paperRef = React157.useRef(null);
   const handleRef = useForkRef(paperRef, containerRef);
   const handlePaperRef = useForkRef(handleRef, clickAwayRef);
   const ownerState = props;
@@ -49324,19 +50909,19 @@ function PickersPopper(inProps) {
     className: classes.root,
     ownerState: props
   });
-  return /* @__PURE__ */ _jsx101(Popper5, _extends({}, popperProps, {
+  return /* @__PURE__ */ _jsx102(Popper5, _extends({}, popperProps, {
     children: ({
       TransitionProps,
       placement: popperPlacement
-    }) => /* @__PURE__ */ _jsx101(FocusTrap2, _extends({
+    }) => /* @__PURE__ */ _jsx102(FocusTrap2, _extends({
       open,
       disableAutoFocus: true,
       disableRestoreFocus: true,
       disableEnforceFocus: role === "tooltip",
       isEnabled: () => true
     }, slotProps?.desktopTrapFocus, {
-      children: /* @__PURE__ */ _jsx101(Transition2, _extends({}, TransitionProps, slotProps?.desktopTransition, {
-        children: /* @__PURE__ */ _jsx101(PickersPopperPaperWrapper, {
+      children: /* @__PURE__ */ _jsx102(Transition2, _extends({}, TransitionProps, slotProps?.desktopTransition, {
+        children: /* @__PURE__ */ _jsx102(PickersPopperPaperWrapper, {
           PaperComponent: Paper3,
           ownerState,
           popperPlacement,
@@ -49370,18 +50955,18 @@ function warnOnce(message, gravity = "warning") {
 }
 
 // node_modules/@mui/x-date-pickers/internals/hooks/usePicker/usePickerValue.js
-import * as React157 from "react";
+import * as React159 from "react";
 
 // node_modules/@mui/x-date-pickers/internals/hooks/useOpenState.js
-import * as React156 from "react";
+import * as React158 from "react";
 var useOpenState = ({
   open,
   onOpen,
   onClose
 }) => {
-  const isControllingOpenProp = React156.useRef(typeof open === "boolean").current;
-  const [openState, setIsOpenState] = React156.useState(false);
-  React156.useEffect(() => {
+  const isControllingOpenProp = React158.useRef(typeof open === "boolean").current;
+  const [openState, setIsOpenState] = React158.useState(false);
+  React158.useEffect(() => {
     if (isControllingOpenProp) {
       if (typeof open !== "boolean") {
         throw new Error("You must not mix controlling and uncontrolled mode for `open` prop");
@@ -49389,7 +50974,7 @@ var useOpenState = ({
       setIsOpenState(open);
     }
   }, [isControllingOpenProp, open]);
-  const setIsOpen = React156.useCallback((newIsOpen) => {
+  const setIsOpen = React158.useCallback((newIsOpen) => {
     if (!isControllingOpenProp) {
       setIsOpenState(newIsOpen);
     }
@@ -49498,18 +51083,18 @@ var usePickerValue = ({
   } = props;
   const {
     current: defaultValue
-  } = React157.useRef(inDefaultValue);
+  } = React159.useRef(inDefaultValue);
   const {
     current: isControlled
-  } = React157.useRef(inValueWithoutRenderTimezone !== void 0);
-  const [previousTimezoneProp, setPreviousTimezoneProp] = React157.useState(timezoneProp);
+  } = React159.useRef(inValueWithoutRenderTimezone !== void 0);
+  const [previousTimezoneProp, setPreviousTimezoneProp] = React159.useState(timezoneProp);
   if (true) {
-    React157.useEffect(() => {
+    React159.useEffect(() => {
       if (isControlled !== (inValueWithoutRenderTimezone !== void 0)) {
         console.error([`MUI X: A component is changing the ${isControlled ? "" : "un"}controlled value of a picker to be ${isControlled ? "un" : ""}controlled.`, "Elements should not switch from uncontrolled to controlled (or vice versa).", `Decide between using a controlled or uncontrolled valuefor the lifetime of the component.`, "The nature of the state is determined during the first render. It's considered controlled if the value is not `undefined`.", "More info: https://fb.me/react-controlled-components"].join("\n"));
       }
     }, [inValueWithoutRenderTimezone]);
-    React157.useEffect(() => {
+    React159.useEffect(() => {
       if (!isControlled && defaultValue !== inDefaultValue) {
         console.error([`MUI X: A component is changing the defaultValue of an uncontrolled picker after being initialized. To suppress this warning opt to use a controlled value.`].join("\n"));
       }
@@ -49533,7 +51118,7 @@ var usePickerValue = ({
     onChange,
     valueManager
   });
-  const [dateState, setDateState] = React157.useState(() => {
+  const [dateState, setDateState] = React159.useState(() => {
     let initialValue;
     if (inValueWithTimezoneToRender !== void 0) {
       initialValue = inValueWithTimezoneToRender;
@@ -49691,7 +51276,7 @@ var usePickerValue = ({
     value: dateState.draft,
     onChange: handleChangeFromField
   };
-  const viewValue = React157.useMemo(() => valueManager.cleanValue(utils2, dateState.draft), [utils2, valueManager, dateState.draft]);
+  const viewValue = React159.useMemo(() => valueManager.cleanValue(utils2, dateState.draft), [utils2, valueManager, dateState.draft]);
   const viewResponse = {
     value: viewValue,
     onChange: handleChange,
@@ -49713,7 +51298,7 @@ var usePickerValue = ({
     onSelectShortcut: handleSelectShortcut,
     isValid: isValid2
   });
-  const contextValue = React157.useMemo(() => ({
+  const contextValue = React159.useMemo(() => ({
     onOpen: handleOpen,
     onClose: handleClose,
     open: isOpen
@@ -49729,7 +51314,7 @@ var usePickerValue = ({
 };
 
 // node_modules/@mui/x-date-pickers/internals/hooks/usePicker/usePickerViews.js
-import * as React158 from "react";
+import * as React160 from "react";
 var _excluded40 = ["className", "sx"];
 var usePickerViews = ({
   props,
@@ -49771,7 +51356,7 @@ var usePickerViews = ({
   const {
     hasUIView,
     viewModeLookup
-  } = React158.useMemo(() => views.reduce((acc, viewForReduce) => {
+  } = React160.useMemo(() => views.reduce((acc, viewForReduce) => {
     let viewMode;
     if (viewRenderers[viewForReduce] != null) {
       viewMode = "UI";
@@ -49787,7 +51372,7 @@ var usePickerViews = ({
     hasUIView: false,
     viewModeLookup: {}
   }), [viewRenderers, views]);
-  const timeViewsCount = React158.useMemo(() => views.reduce((acc, viewForReduce) => {
+  const timeViewsCount = React160.useMemo(() => views.reduce((acc, viewForReduce) => {
     if (viewRenderers[viewForReduce] != null && isTimeView(viewForReduce)) {
       return acc + 1;
     }
@@ -49795,7 +51380,7 @@ var usePickerViews = ({
   }, 0), [viewRenderers, views]);
   const currentViewMode = viewModeLookup[view];
   const shouldRestoreFocus = useEventCallback_default(() => currentViewMode === "UI");
-  const [popperView, setPopperView] = React158.useState(currentViewMode === "UI" ? view : null);
+  const [popperView, setPopperView] = React160.useState(currentViewMode === "UI" ? view : null);
   if (popperView !== view && viewModeLookup[view] === "UI") {
     setPopperView(view);
   }
@@ -49861,7 +51446,7 @@ var usePickerViews = ({
 };
 
 // node_modules/@mui/x-date-pickers/internals/hooks/useIsLandscape.js
-import * as React159 from "react";
+import * as React161 from "react";
 function getOrientation() {
   if (typeof window === "undefined") {
     return "portrait";
@@ -49875,7 +51460,7 @@ function getOrientation() {
   return "portrait";
 }
 var useIsLandscape = (views, customOrientation) => {
-  const [orientation, setOrientation] = React159.useState(getOrientation);
+  const [orientation, setOrientation] = React161.useState(getOrientation);
   useEnhancedEffect_default(() => {
     const eventHandler = () => {
       setOrientation(getOrientation());
@@ -49903,7 +51488,7 @@ var usePickerLayoutProps = ({
     orientation
   } = props;
   const isLandscape = useIsLandscape(propsFromPickerViews.views, orientation);
-  const isRtl = useRtl();
+  const isRtl = useRtl2();
   const layoutProps = _extends({}, propsFromPickerViews, propsFromPickerValue, {
     isLandscape,
     isRtl,
@@ -49917,13 +51502,13 @@ var usePickerLayoutProps = ({
 };
 
 // node_modules/@mui/x-date-pickers/internals/hooks/usePicker/usePickerOwnerState.js
-import * as React160 from "react";
+import * as React162 from "react";
 function usePickerOwnerState(parameters) {
   const {
     props,
     pickerValueResponse
   } = parameters;
-  return React160.useMemo(() => ({
+  return React162.useMemo(() => ({
     value: pickerValueResponse.viewProps.value,
     open: pickerValueResponse.open,
     disabled: props.disabled ?? false,
@@ -49992,8 +51577,8 @@ var usePicker = ({
 };
 
 // node_modules/@mui/x-date-pickers/PickersLayout/PickersLayout.js
-var import_prop_types87 = __toESM(require_prop_types());
-import * as React164 from "react";
+var import_prop_types89 = __toESM(require_prop_types());
+import * as React166 from "react";
 
 // node_modules/@mui/x-date-pickers/PickersLayout/pickersLayoutClasses.js
 function getPickersLayoutUtilityClass(slot) {
@@ -50002,12 +51587,12 @@ function getPickersLayoutUtilityClass(slot) {
 var pickersLayoutClasses = generateUtilityClasses("MuiPickersLayout", ["root", "landscape", "contentWrapper", "toolbar", "actionBar", "tabs", "shortcuts"]);
 
 // node_modules/@mui/x-date-pickers/PickersLayout/usePickerLayout.js
-import * as React163 from "react";
+import * as React165 from "react";
 
 // node_modules/@mui/x-date-pickers/PickersActionBar/PickersActionBar.js
-var import_prop_types85 = __toESM(require_prop_types());
-import * as React161 from "react";
-import { jsx as _jsx102 } from "react/jsx-runtime";
+var import_prop_types87 = __toESM(require_prop_types());
+import * as React163 from "react";
+import { jsx as _jsx103 } from "react/jsx-runtime";
 var _excluded41 = ["onAccept", "onClear", "onCancel", "onSetToday", "actions"];
 function PickersActionBar(props) {
   const {
@@ -50024,22 +51609,22 @@ function PickersActionBar(props) {
   const buttons = actions?.map((actionType) => {
     switch (actionType) {
       case "clear":
-        return /* @__PURE__ */ _jsx102(Button_default, {
+        return /* @__PURE__ */ _jsx103(Button_default, {
           onClick: onClear,
           children: translations.clearButtonLabel
         }, actionType);
       case "cancel":
-        return /* @__PURE__ */ _jsx102(Button_default, {
+        return /* @__PURE__ */ _jsx103(Button_default, {
           onClick: onCancel,
           children: translations.cancelButtonLabel
         }, actionType);
       case "accept":
-        return /* @__PURE__ */ _jsx102(Button_default, {
+        return /* @__PURE__ */ _jsx103(Button_default, {
           onClick: onAccept,
           children: translations.okButtonLabel
         }, actionType);
       case "today":
-        return /* @__PURE__ */ _jsx102(Button_default, {
+        return /* @__PURE__ */ _jsx103(Button_default, {
           onClick: onSetToday,
           children: translations.todayButtonLabel
         }, actionType);
@@ -50047,7 +51632,7 @@ function PickersActionBar(props) {
         return null;
     }
   });
-  return /* @__PURE__ */ _jsx102(DialogActions_default, _extends({}, other, {
+  return /* @__PURE__ */ _jsx103(DialogActions_default, _extends({}, other, {
     children: buttons
   }));
 }
@@ -50061,26 +51646,26 @@ true ? PickersActionBar.propTypes = {
    * If empty, does not display that action bar.
    * @default `['cancel', 'accept']` for mobile and `[]` for desktop
    */
-  actions: import_prop_types85.default.arrayOf(import_prop_types85.default.oneOf(["accept", "cancel", "clear", "today"]).isRequired),
+  actions: import_prop_types87.default.arrayOf(import_prop_types87.default.oneOf(["accept", "cancel", "clear", "today"]).isRequired),
   /**
    * If `true`, the actions do not have additional margin.
    * @default false
    */
-  disableSpacing: import_prop_types85.default.bool,
-  onAccept: import_prop_types85.default.func.isRequired,
-  onCancel: import_prop_types85.default.func.isRequired,
-  onClear: import_prop_types85.default.func.isRequired,
-  onSetToday: import_prop_types85.default.func.isRequired,
+  disableSpacing: import_prop_types87.default.bool,
+  onAccept: import_prop_types87.default.func.isRequired,
+  onCancel: import_prop_types87.default.func.isRequired,
+  onClear: import_prop_types87.default.func.isRequired,
+  onSetToday: import_prop_types87.default.func.isRequired,
   /**
    * The system prop that allows defining system overrides as well as additional CSS styles.
    */
-  sx: import_prop_types85.default.oneOfType([import_prop_types85.default.arrayOf(import_prop_types85.default.oneOfType([import_prop_types85.default.func, import_prop_types85.default.object, import_prop_types85.default.bool])), import_prop_types85.default.func, import_prop_types85.default.object])
+  sx: import_prop_types87.default.oneOfType([import_prop_types87.default.arrayOf(import_prop_types87.default.oneOfType([import_prop_types87.default.func, import_prop_types87.default.object, import_prop_types87.default.bool])), import_prop_types87.default.func, import_prop_types87.default.object])
 } : void 0;
 
 // node_modules/@mui/x-date-pickers/PickersShortcuts/PickersShortcuts.js
-var import_prop_types86 = __toESM(require_prop_types());
-import * as React162 from "react";
-import { jsx as _jsx103 } from "react/jsx-runtime";
+var import_prop_types88 = __toESM(require_prop_types());
+import * as React164 from "react";
+import { jsx as _jsx104 } from "react/jsx-runtime";
 var _excluded42 = ["items", "changeImportance", "isLandscape", "onChange", "isValid"];
 var _excluded211 = ["getValue"];
 function PickersShortcuts(props) {
@@ -50095,9 +51680,9 @@ function PickersShortcuts(props) {
   }
   const resolvedItems = items.map((_ref) => {
     let {
-      getValue: getValue2
+      getValue: getValue3
     } = _ref, item = _objectWithoutPropertiesLoose(_ref, _excluded211);
-    const newValue = getValue2({
+    const newValue = getValue3({
       isValid: isValid2
     });
     return _extends({}, item, {
@@ -50108,7 +51693,7 @@ function PickersShortcuts(props) {
       disabled: !isValid2(newValue)
     });
   });
-  return /* @__PURE__ */ _jsx103(List_default, _extends({
+  return /* @__PURE__ */ _jsx104(List_default, _extends({
     dense: true,
     sx: [{
       maxHeight: VIEW_HEIGHT,
@@ -50117,8 +51702,8 @@ function PickersShortcuts(props) {
     }, ...Array.isArray(other.sx) ? other.sx : [other.sx]]
   }, other, {
     children: resolvedItems.map((item) => {
-      return /* @__PURE__ */ _jsx103(ListItem_default, {
-        children: /* @__PURE__ */ _jsx103(Chip_default, _extends({}, item))
+      return /* @__PURE__ */ _jsx104(ListItem_default, {
+        children: /* @__PURE__ */ _jsx104(Chip_default, _extends({}, item))
       }, item.id ?? item.label);
     })
   }));
@@ -50134,47 +51719,47 @@ true ? PickersShortcuts.propTypes = {
    * - "set": fires `onChange` but do not fire `onAccept` and does not close the picker.
    * @default "accept"
    */
-  changeImportance: import_prop_types86.default.oneOf(["accept", "set"]),
-  className: import_prop_types86.default.string,
-  component: import_prop_types86.default.elementType,
+  changeImportance: import_prop_types88.default.oneOf(["accept", "set"]),
+  className: import_prop_types88.default.string,
+  component: import_prop_types88.default.elementType,
   /**
    * If `true`, compact vertical padding designed for keyboard and mouse input is used for
    * the list and list items.
    * The prop is available to descendant components as the `dense` context.
    * @default false
    */
-  dense: import_prop_types86.default.bool,
+  dense: import_prop_types88.default.bool,
   /**
    * If `true`, vertical padding is removed from the list.
    * @default false
    */
-  disablePadding: import_prop_types86.default.bool,
-  isLandscape: import_prop_types86.default.bool.isRequired,
-  isValid: import_prop_types86.default.func.isRequired,
+  disablePadding: import_prop_types88.default.bool,
+  isLandscape: import_prop_types88.default.bool.isRequired,
+  isValid: import_prop_types88.default.func.isRequired,
   /**
    * Ordered array of shortcuts to display.
    * If empty, does not display the shortcuts.
    * @default []
    */
-  items: import_prop_types86.default.arrayOf(import_prop_types86.default.shape({
-    getValue: import_prop_types86.default.func.isRequired,
-    id: import_prop_types86.default.string,
-    label: import_prop_types86.default.string.isRequired
+  items: import_prop_types88.default.arrayOf(import_prop_types88.default.shape({
+    getValue: import_prop_types88.default.func.isRequired,
+    id: import_prop_types88.default.string,
+    label: import_prop_types88.default.string.isRequired
   })),
-  onChange: import_prop_types86.default.func.isRequired,
-  style: import_prop_types86.default.object,
+  onChange: import_prop_types88.default.func.isRequired,
+  style: import_prop_types88.default.object,
   /**
    * The content of the subheader, normally `ListSubheader`.
    */
-  subheader: import_prop_types86.default.node,
+  subheader: import_prop_types88.default.node,
   /**
    * The system prop that allows defining system overrides as well as additional CSS styles.
    */
-  sx: import_prop_types86.default.oneOfType([import_prop_types86.default.arrayOf(import_prop_types86.default.oneOfType([import_prop_types86.default.func, import_prop_types86.default.object, import_prop_types86.default.bool])), import_prop_types86.default.func, import_prop_types86.default.object])
+  sx: import_prop_types88.default.oneOfType([import_prop_types88.default.arrayOf(import_prop_types88.default.oneOfType([import_prop_types88.default.func, import_prop_types88.default.object, import_prop_types88.default.bool])), import_prop_types88.default.func, import_prop_types88.default.object])
 } : void 0;
 
 // node_modules/@mui/x-date-pickers/PickersLayout/usePickerLayout.js
-import { jsx as _jsx104 } from "react/jsx-runtime";
+import { jsx as _jsx105 } from "react/jsx-runtime";
 function toolbarHasView(toolbarProps) {
   return toolbarProps.view !== null;
 }
@@ -50236,7 +51821,7 @@ var usePickerLayout = (props) => {
       wrapperVariant
     })
   });
-  const actionBar = /* @__PURE__ */ _jsx104(ActionBar, _extends({}, actionBarProps));
+  const actionBar = /* @__PURE__ */ _jsx105(ActionBar, _extends({}, actionBarProps));
   const Toolbar = slots?.toolbar;
   const toolbarProps = useSlotProps_default({
     elementType: Toolbar,
@@ -50256,10 +51841,10 @@ var usePickerLayout = (props) => {
       wrapperVariant
     })
   });
-  const toolbar = toolbarHasView(toolbarProps) && !!Toolbar ? /* @__PURE__ */ _jsx104(Toolbar, _extends({}, toolbarProps)) : null;
+  const toolbar = toolbarHasView(toolbarProps) && !!Toolbar ? /* @__PURE__ */ _jsx105(Toolbar, _extends({}, toolbarProps)) : null;
   const content = children;
   const Tabs3 = slots?.tabs;
-  const tabs = view && Tabs3 ? /* @__PURE__ */ _jsx104(Tabs3, _extends({
+  const tabs = view && Tabs3 ? /* @__PURE__ */ _jsx105(Tabs3, _extends({
     view,
     onViewChange,
     className: classes.tabs
@@ -50281,7 +51866,7 @@ var usePickerLayout = (props) => {
       wrapperVariant
     }
   });
-  const shortcuts = view && !!Shortcuts ? /* @__PURE__ */ _jsx104(Shortcuts, _extends({}, shortcutsProps)) : null;
+  const shortcuts = view && !!Shortcuts ? /* @__PURE__ */ _jsx105(Shortcuts, _extends({}, shortcutsProps)) : null;
   return {
     toolbar,
     content,
@@ -50293,7 +51878,7 @@ var usePickerLayout = (props) => {
 var usePickerLayout_default = usePickerLayout;
 
 // node_modules/@mui/x-date-pickers/PickersLayout/PickersLayout.js
-import { jsxs as _jsxs35, jsx as _jsx105 } from "react/jsx-runtime";
+import { jsxs as _jsxs35, jsx as _jsx106 } from "react/jsx-runtime";
 var useUtilityClasses69 = (ownerState) => {
   const {
     isLandscape,
@@ -50377,7 +51962,7 @@ var PickersLayoutContentWrapper = styled_default("div", {
   display: "flex",
   flexDirection: "column"
 });
-var PickersLayout = /* @__PURE__ */ React164.forwardRef(function PickersLayout2(inProps, ref) {
+var PickersLayout = /* @__PURE__ */ React166.forwardRef(function PickersLayout2(inProps, ref) {
   const props = useThemeProps2({
     props: inProps,
     name: "MuiPickersLayout"
@@ -50401,11 +51986,11 @@ var PickersLayout = /* @__PURE__ */ React164.forwardRef(function PickersLayout2(
     sx,
     className: clsx_default(classes.root, className),
     ownerState: props,
-    children: [isLandscape ? shortcuts : toolbar, isLandscape ? toolbar : shortcuts, /* @__PURE__ */ _jsx105(PickersLayoutContentWrapper, {
+    children: [isLandscape ? shortcuts : toolbar, isLandscape ? toolbar : shortcuts, /* @__PURE__ */ _jsx106(PickersLayoutContentWrapper, {
       className: classes.contentWrapper,
-      children: wrapperVariant === "desktop" ? /* @__PURE__ */ _jsxs35(React164.Fragment, {
+      children: wrapperVariant === "desktop" ? /* @__PURE__ */ _jsxs35(React166.Fragment, {
         children: [content, tabs]
-      }) : /* @__PURE__ */ _jsxs35(React164.Fragment, {
+      }) : /* @__PURE__ */ _jsxs35(React166.Fragment, {
         children: [tabs, content]
       })
     }), actionBar]
@@ -50416,56 +52001,56 @@ true ? PickersLayout.propTypes = {
   // | These PropTypes are generated from the TypeScript type definitions |
   // | To update them edit the TypeScript types and run "pnpm proptypes"  |
   // ----------------------------------------------------------------------
-  children: import_prop_types87.default.node,
+  children: import_prop_types89.default.node,
   /**
    * Override or extend the styles applied to the component.
    */
-  classes: import_prop_types87.default.object,
-  className: import_prop_types87.default.string,
-  disabled: import_prop_types87.default.bool,
-  isLandscape: import_prop_types87.default.bool.isRequired,
+  classes: import_prop_types89.default.object,
+  className: import_prop_types89.default.string,
+  disabled: import_prop_types89.default.bool,
+  isLandscape: import_prop_types89.default.bool.isRequired,
   /**
    * `true` if the application is in right-to-left direction.
    */
-  isRtl: import_prop_types87.default.bool.isRequired,
-  isValid: import_prop_types87.default.func.isRequired,
-  onAccept: import_prop_types87.default.func.isRequired,
-  onCancel: import_prop_types87.default.func.isRequired,
-  onChange: import_prop_types87.default.func.isRequired,
-  onClear: import_prop_types87.default.func.isRequired,
-  onClose: import_prop_types87.default.func.isRequired,
-  onDismiss: import_prop_types87.default.func.isRequired,
-  onOpen: import_prop_types87.default.func.isRequired,
-  onSelectShortcut: import_prop_types87.default.func.isRequired,
-  onSetToday: import_prop_types87.default.func.isRequired,
-  onViewChange: import_prop_types87.default.func.isRequired,
+  isRtl: import_prop_types89.default.bool.isRequired,
+  isValid: import_prop_types89.default.func.isRequired,
+  onAccept: import_prop_types89.default.func.isRequired,
+  onCancel: import_prop_types89.default.func.isRequired,
+  onChange: import_prop_types89.default.func.isRequired,
+  onClear: import_prop_types89.default.func.isRequired,
+  onClose: import_prop_types89.default.func.isRequired,
+  onDismiss: import_prop_types89.default.func.isRequired,
+  onOpen: import_prop_types89.default.func.isRequired,
+  onSelectShortcut: import_prop_types89.default.func.isRequired,
+  onSetToday: import_prop_types89.default.func.isRequired,
+  onViewChange: import_prop_types89.default.func.isRequired,
   /**
    * Force rendering in particular orientation.
    */
-  orientation: import_prop_types87.default.oneOf(["landscape", "portrait"]),
-  readOnly: import_prop_types87.default.bool,
+  orientation: import_prop_types89.default.oneOf(["landscape", "portrait"]),
+  readOnly: import_prop_types89.default.bool,
   /**
    * The props used for each component slot.
    * @default {}
    */
-  slotProps: import_prop_types87.default.object,
+  slotProps: import_prop_types89.default.object,
   /**
    * Overridable component slots.
    * @default {}
    */
-  slots: import_prop_types87.default.object,
+  slots: import_prop_types89.default.object,
   /**
    * The system prop that allows defining system overrides as well as additional CSS styles.
    */
-  sx: import_prop_types87.default.oneOfType([import_prop_types87.default.arrayOf(import_prop_types87.default.oneOfType([import_prop_types87.default.func, import_prop_types87.default.object, import_prop_types87.default.bool])), import_prop_types87.default.func, import_prop_types87.default.object]),
-  value: import_prop_types87.default.any,
-  view: import_prop_types87.default.oneOf(["day", "hours", "meridiem", "minutes", "month", "seconds", "year"]),
-  views: import_prop_types87.default.arrayOf(import_prop_types87.default.oneOf(["day", "hours", "meridiem", "minutes", "month", "seconds", "year"]).isRequired).isRequired,
-  wrapperVariant: import_prop_types87.default.oneOf(["desktop", "mobile"])
+  sx: import_prop_types89.default.oneOfType([import_prop_types89.default.arrayOf(import_prop_types89.default.oneOfType([import_prop_types89.default.func, import_prop_types89.default.object, import_prop_types89.default.bool])), import_prop_types89.default.func, import_prop_types89.default.object]),
+  value: import_prop_types89.default.any,
+  view: import_prop_types89.default.oneOf(["day", "hours", "meridiem", "minutes", "month", "seconds", "year"]),
+  views: import_prop_types89.default.arrayOf(import_prop_types89.default.oneOf(["day", "hours", "meridiem", "minutes", "month", "seconds", "year"]).isRequired).isRequired,
+  wrapperVariant: import_prop_types89.default.oneOf(["desktop", "mobile"])
 } : void 0;
 
 // node_modules/@mui/x-date-pickers/internals/hooks/useDesktopPicker/useDesktopPicker.js
-import { jsx as _jsx106, jsxs as _jsxs36 } from "react/jsx-runtime";
+import { jsx as _jsx107, jsxs as _jsxs36 } from "react/jsx-runtime";
 var _excluded43 = ["props", "getOpenDialogAriaText"];
 var _excluded212 = ["ownerState"];
 var _excluded310 = ["ownerState"];
@@ -50494,8 +52079,8 @@ var useDesktopPicker = (_ref) => {
     localeText,
     reduceAnimations
   } = props;
-  const containerRef = React165.useRef(null);
-  const fieldRef = React165.useRef(null);
+  const containerRef = React167.useRef(null);
+  const fieldRef = React167.useRef(null);
   const labelId = useId();
   const isToolbarHidden = innerSlotProps?.toolbar?.hidden ?? false;
   const {
@@ -50572,9 +52157,9 @@ var useDesktopPicker = (_ref) => {
     fieldProps.InputProps = _extends({}, fieldProps.InputProps, {
       ref: containerRef
     }, !props.disableOpenPicker && {
-      [`${inputAdornmentProps.position}Adornment`]: /* @__PURE__ */ _jsx106(InputAdornment3, _extends({}, inputAdornmentProps, {
-        children: /* @__PURE__ */ _jsx106(OpenPickerButton, _extends({}, openPickerButtonProps, {
-          children: /* @__PURE__ */ _jsx106(OpenPickerIcon, _extends({}, openPickerIconProps))
+      [`${inputAdornmentProps.position}Adornment`]: /* @__PURE__ */ _jsx107(InputAdornment3, _extends({}, inputAdornmentProps, {
+        children: /* @__PURE__ */ _jsx107(OpenPickerButton, _extends({}, openPickerButtonProps, {
+          children: /* @__PURE__ */ _jsx107(OpenPickerIcon, _extends({}, openPickerIconProps))
         }))
       }))
     });
@@ -50605,11 +52190,11 @@ var useDesktopPicker = (_ref) => {
   const renderPicker = () => /* @__PURE__ */ _jsxs36(PickersProvider, {
     contextValue,
     localeText,
-    children: [/* @__PURE__ */ _jsx106(Field, _extends({}, fieldProps, {
+    children: [/* @__PURE__ */ _jsx107(Field, _extends({}, fieldProps, {
       slots: slotsForField,
       slotProps,
       unstableFieldRef: handleFieldRef
-    })), /* @__PURE__ */ _jsx106(PickersPopper, _extends({
+    })), /* @__PURE__ */ _jsx107(PickersPopper, _extends({
       role: "dialog",
       placement: "bottom-start",
       anchorEl: containerRef.current
@@ -50619,7 +52204,7 @@ var useDesktopPicker = (_ref) => {
       slotProps,
       shouldRestoreFocus,
       reduceAnimations,
-      children: /* @__PURE__ */ _jsx106(Layout, _extends({}, layoutProps, slotProps?.layout, {
+      children: /* @__PURE__ */ _jsx107(Layout, _extends({}, layoutProps, slotProps?.layout, {
         slots,
         slotProps,
         children: renderCurrentView()
@@ -50632,8 +52217,8 @@ var useDesktopPicker = (_ref) => {
 };
 
 // node_modules/@mui/x-date-pickers/dateViewRenderers/dateViewRenderers.js
-import * as React166 from "react";
-import { jsx as _jsx107 } from "react/jsx-runtime";
+import * as React168 from "react";
+import { jsx as _jsx108 } from "react/jsx-runtime";
 var renderDateViewCalendar = ({
   view,
   onViewChange,
@@ -50673,7 +52258,7 @@ var renderDateViewCalendar = ({
   fixedWeekNumber,
   displayWeekNumber,
   timezone
-}) => /* @__PURE__ */ _jsx107(DateCalendar, {
+}) => /* @__PURE__ */ _jsx108(DateCalendar, {
   view,
   onViewChange,
   views: views.filter(isDatePickerView),
@@ -50715,11 +52300,11 @@ var renderDateViewCalendar = ({
 });
 
 // node_modules/@mui/x-date-pickers/internals/hooks/useMobilePicker/useMobilePicker.js
-import * as React168 from "react";
+import * as React170 from "react";
 
 // node_modules/@mui/x-date-pickers/internals/components/PickersModalDialog.js
-import * as React167 from "react";
-import { jsx as _jsx108 } from "react/jsx-runtime";
+import * as React169 from "react";
+import { jsx as _jsx109 } from "react/jsx-runtime";
 var PickersModalDialogRoot = styled_default(Dialog_default)({
   [`& .${dialogClasses_default.container}`]: {
     outline: 0
@@ -50744,7 +52329,7 @@ function PickersModalDialog(props) {
   } = props;
   const Dialog3 = slots?.dialog ?? PickersModalDialogRoot;
   const Transition2 = slots?.mobileTransition ?? Fade_default;
-  return /* @__PURE__ */ _jsx108(Dialog3, _extends({
+  return /* @__PURE__ */ _jsx109(Dialog3, _extends({
     open,
     onClose: onDismiss
   }, slotProps?.dialog, {
@@ -50752,14 +52337,14 @@ function PickersModalDialog(props) {
     TransitionProps: slotProps?.mobileTransition,
     PaperComponent: slots?.mobilePaper,
     PaperProps: slotProps?.mobilePaper,
-    children: /* @__PURE__ */ _jsx108(PickersModalDialogContent, {
+    children: /* @__PURE__ */ _jsx109(PickersModalDialogContent, {
       children
     })
   }));
 }
 
 // node_modules/@mui/x-date-pickers/internals/hooks/useMobilePicker/useMobilePicker.js
-import { jsx as _jsx109, jsxs as _jsxs37 } from "react/jsx-runtime";
+import { jsx as _jsx110, jsxs as _jsxs37 } from "react/jsx-runtime";
 var _excluded44 = ["props", "getOpenDialogAriaText"];
 var useMobilePicker = (_ref) => {
   let {
@@ -50784,7 +52369,7 @@ var useMobilePicker = (_ref) => {
     disabled,
     localeText
   } = props;
-  const fieldRef = React168.useRef(null);
+  const fieldRef = React170.useRef(null);
   const labelId = useId();
   const isToolbarHidden = innerSlotProps?.toolbar?.hidden ?? false;
   const {
@@ -50855,15 +52440,15 @@ var useMobilePicker = (_ref) => {
   const renderPicker = () => /* @__PURE__ */ _jsxs37(PickersProvider, {
     contextValue,
     localeText,
-    children: [/* @__PURE__ */ _jsx109(Field, _extends({}, fieldProps, {
+    children: [/* @__PURE__ */ _jsx110(Field, _extends({}, fieldProps, {
       slots: slotsForField,
       slotProps,
       unstableFieldRef: handleFieldRef
-    })), /* @__PURE__ */ _jsx109(PickersModalDialog, _extends({}, actions, {
+    })), /* @__PURE__ */ _jsx110(PickersModalDialog, _extends({}, actions, {
       open,
       slots,
       slotProps,
-      children: /* @__PURE__ */ _jsx109(Layout, _extends({}, layoutProps, slotProps?.layout, {
+      children: /* @__PURE__ */ _jsx110(Layout, _extends({}, layoutProps, slotProps?.layout, {
         slots,
         slotProps,
         children: renderCurrentView()
@@ -50876,7 +52461,7 @@ var useMobilePicker = (_ref) => {
 };
 
 // node_modules/@mui/x-date-pickers/internals/components/PickersToolbarText.js
-import * as React169 from "react";
+import * as React171 from "react";
 
 // node_modules/@mui/x-date-pickers/internals/components/pickersToolbarTextClasses.js
 function getPickersToolbarTextUtilityClass(slot) {
@@ -50885,7 +52470,7 @@ function getPickersToolbarTextUtilityClass(slot) {
 var pickersToolbarTextClasses = generateUtilityClasses("MuiPickersToolbarText", ["root", "selected"]);
 
 // node_modules/@mui/x-date-pickers/internals/components/PickersToolbarText.js
-import { jsx as _jsx110 } from "react/jsx-runtime";
+import { jsx as _jsx111 } from "react/jsx-runtime";
 var _excluded45 = ["className", "selected", "value"];
 var useUtilityClasses70 = (ownerState) => {
   const {
@@ -50912,7 +52497,7 @@ var PickersToolbarTextRoot = styled_default(Typography_default, {
     color: (theme.vars || theme).palette.text.primary
   }
 }));
-var PickersToolbarText = /* @__PURE__ */ React169.forwardRef(function PickersToolbarText2(inProps, ref) {
+var PickersToolbarText = /* @__PURE__ */ React171.forwardRef(function PickersToolbarText2(inProps, ref) {
   const props = useThemeProps2({
     props: inProps,
     name: "MuiPickersToolbarText"
@@ -50922,7 +52507,7 @@ var PickersToolbarText = /* @__PURE__ */ React169.forwardRef(function PickersToo
     value
   } = props, other = _objectWithoutPropertiesLoose(props, _excluded45);
   const classes = useUtilityClasses70(props);
-  return /* @__PURE__ */ _jsx110(PickersToolbarTextRoot, _extends({
+  return /* @__PURE__ */ _jsx111(PickersToolbarTextRoot, _extends({
     ref,
     className: clsx_default(classes.root, className),
     component: "span"
@@ -50932,8 +52517,8 @@ var PickersToolbarText = /* @__PURE__ */ React169.forwardRef(function PickersToo
 });
 
 // node_modules/@mui/x-date-pickers/internals/components/PickersToolbarButton.js
-import * as React170 from "react";
-import { jsx as _jsx111 } from "react/jsx-runtime";
+import * as React172 from "react";
+import { jsx as _jsx112 } from "react/jsx-runtime";
 var _excluded46 = ["align", "className", "selected", "typographyClassName", "value", "variant", "width"];
 var useUtilityClasses71 = (ownerState) => {
   const {
@@ -50953,7 +52538,7 @@ var PickersToolbarButtonRoot = styled_default(Button_default, {
   minWidth: 16,
   textTransform: "none"
 });
-var PickersToolbarButton = /* @__PURE__ */ React170.forwardRef(function PickersToolbarButton2(inProps, ref) {
+var PickersToolbarButton = /* @__PURE__ */ React172.forwardRef(function PickersToolbarButton2(inProps, ref) {
   const props = useThemeProps2({
     props: inProps,
     name: "MuiPickersToolbarButton"
@@ -50965,19 +52550,19 @@ var PickersToolbarButton = /* @__PURE__ */ React170.forwardRef(function PickersT
     typographyClassName,
     value,
     variant,
-    width: width2
+    width: width3
   } = props, other = _objectWithoutPropertiesLoose(props, _excluded46);
   const classes = useUtilityClasses71(props);
-  return /* @__PURE__ */ _jsx111(PickersToolbarButtonRoot, _extends({
+  return /* @__PURE__ */ _jsx112(PickersToolbarButtonRoot, _extends({
     variant: "text",
     ref,
     className: clsx_default(classes.root, className)
-  }, width2 ? {
+  }, width3 ? {
     sx: {
-      width: width2
+      width: width3
     }
   } : {}, other, {
-    children: /* @__PURE__ */ _jsx111(PickersToolbarText, {
+    children: /* @__PURE__ */ _jsx112(PickersToolbarText, {
       align,
       className: typographyClassName,
       variant,
@@ -50988,8 +52573,8 @@ var PickersToolbarButton = /* @__PURE__ */ React170.forwardRef(function PickersT
 });
 
 // node_modules/@mui/x-date-pickers/timeViewRenderers/timeViewRenderers.js
-import * as React171 from "react";
-import { jsx as _jsx112 } from "react/jsx-runtime";
+import * as React173 from "react";
+import { jsx as _jsx113 } from "react/jsx-runtime";
 var renderTimeViewClock = ({
   view,
   onViewChange,
@@ -51019,7 +52604,7 @@ var renderTimeViewClock = ({
   showViewSwitcher,
   disableIgnoringDatePartForTimeValidation,
   timezone
-}) => /* @__PURE__ */ _jsx112(TimeClock, {
+}) => /* @__PURE__ */ _jsx113(TimeClock, {
   view,
   onViewChange,
   focusedView: focusedView && isTimeView(focusedView) ? focusedView : null,
@@ -51078,7 +52663,7 @@ var renderDigitalClockTimeView = ({
   timeSteps,
   skipDisabled,
   timezone
-}) => /* @__PURE__ */ _jsx112(DigitalClock, {
+}) => /* @__PURE__ */ _jsx113(DigitalClock, {
   view,
   onViewChange,
   focusedView,
@@ -51137,7 +52722,7 @@ var renderMultiSectionDigitalClockTimeView = ({
   timeSteps,
   skipDisabled,
   timezone
-}) => /* @__PURE__ */ _jsx112(MultiSectionDigitalClock, {
+}) => /* @__PURE__ */ _jsx113(MultiSectionDigitalClock, {
   view,
   onViewChange,
   focusedView,
@@ -51234,19 +52819,19 @@ function resolveTimeViewsResponse({
 }
 
 // node_modules/@mui/x-date-pickers/DateTimePicker/DateTimePicker.js
+var import_prop_types95 = __toESM(require_prop_types());
+import * as React180 from "react";
+
+// node_modules/@mui/x-date-pickers/DesktopDateTimePicker/DesktopDateTimePicker.js
 var import_prop_types93 = __toESM(require_prop_types());
 import * as React178 from "react";
 
-// node_modules/@mui/x-date-pickers/DesktopDateTimePicker/DesktopDateTimePicker.js
-var import_prop_types91 = __toESM(require_prop_types());
+// node_modules/@mui/x-date-pickers/DateTimePicker/shared.js
 import * as React176 from "react";
 
-// node_modules/@mui/x-date-pickers/DateTimePicker/shared.js
-import * as React174 from "react";
-
 // node_modules/@mui/x-date-pickers/DateTimePicker/DateTimePickerTabs.js
-import * as React172 from "react";
-var import_prop_types88 = __toESM(require_prop_types());
+import * as React174 from "react";
+var import_prop_types90 = __toESM(require_prop_types());
 
 // node_modules/@mui/x-date-pickers/DateTimePicker/dateTimePickerTabsClasses.js
 function getDateTimePickerTabsUtilityClass(slot) {
@@ -51255,7 +52840,7 @@ function getDateTimePickerTabsUtilityClass(slot) {
 var dateTimePickerTabsClasses = generateUtilityClasses("MuiDateTimePickerTabs", ["root"]);
 
 // node_modules/@mui/x-date-pickers/DateTimePicker/DateTimePickerTabs.js
-import { jsx as _jsx113, jsxs as _jsxs38 } from "react/jsx-runtime";
+import { jsx as _jsx114, jsxs as _jsxs38 } from "react/jsx-runtime";
 var viewToTab = (view) => {
   if (isDatePickerView(view)) {
     return "date";
@@ -51299,9 +52884,9 @@ var DateTimePickerTabs = function DateTimePickerTabs2(inProps) {
     name: "MuiDateTimePickerTabs"
   });
   const {
-    dateIcon = /* @__PURE__ */ _jsx113(DateRangeIcon, {}),
+    dateIcon = /* @__PURE__ */ _jsx114(DateRangeIcon, {}),
     onViewChange,
-    timeIcon = /* @__PURE__ */ _jsx113(TimeIcon, {}),
+    timeIcon = /* @__PURE__ */ _jsx114(TimeIcon, {}),
     view,
     hidden = typeof window === "undefined" || window.innerHeight < 667,
     className,
@@ -51322,16 +52907,16 @@ var DateTimePickerTabs = function DateTimePickerTabs2(inProps) {
     onChange: handleChange,
     className: clsx_default(className, classes.root),
     sx,
-    children: [/* @__PURE__ */ _jsx113(Tab_default, {
+    children: [/* @__PURE__ */ _jsx114(Tab_default, {
       value: "date",
       "aria-label": translations.dateTableLabel,
-      icon: /* @__PURE__ */ _jsx113(React172.Fragment, {
+      icon: /* @__PURE__ */ _jsx114(React174.Fragment, {
         children: dateIcon
       })
-    }), /* @__PURE__ */ _jsx113(Tab_default, {
+    }), /* @__PURE__ */ _jsx114(Tab_default, {
       value: "time",
       "aria-label": translations.timeTableLabel,
-      icon: /* @__PURE__ */ _jsx113(React172.Fragment, {
+      icon: /* @__PURE__ */ _jsx114(React174.Fragment, {
         children: timeIcon
       })
     })]
@@ -51345,42 +52930,42 @@ true ? DateTimePickerTabs.propTypes = {
   /**
    * Override or extend the styles applied to the component.
    */
-  classes: import_prop_types88.default.object,
-  className: import_prop_types88.default.string,
+  classes: import_prop_types90.default.object,
+  className: import_prop_types90.default.string,
   /**
    * Date tab icon.
    * @default DateRange
    */
-  dateIcon: import_prop_types88.default.node,
+  dateIcon: import_prop_types90.default.node,
   /**
    * Toggles visibility of the tabs allowing view switching.
    * @default `window.innerHeight < 667` for `DesktopDateTimePicker` and `MobileDateTimePicker`, `displayStaticWrapperAs === 'desktop'` for `StaticDateTimePicker`
    */
-  hidden: import_prop_types88.default.bool,
+  hidden: import_prop_types90.default.bool,
   /**
    * Callback called when a tab is clicked.
    * @template TView
    * @param {TView} view The view to open
    */
-  onViewChange: import_prop_types88.default.func.isRequired,
+  onViewChange: import_prop_types90.default.func.isRequired,
   /**
    * The system prop that allows defining system overrides as well as additional CSS styles.
    */
-  sx: import_prop_types88.default.oneOfType([import_prop_types88.default.arrayOf(import_prop_types88.default.oneOfType([import_prop_types88.default.func, import_prop_types88.default.object, import_prop_types88.default.bool])), import_prop_types88.default.func, import_prop_types88.default.object]),
+  sx: import_prop_types90.default.oneOfType([import_prop_types90.default.arrayOf(import_prop_types90.default.oneOfType([import_prop_types90.default.func, import_prop_types90.default.object, import_prop_types90.default.bool])), import_prop_types90.default.func, import_prop_types90.default.object]),
   /**
    * Time tab icon.
    * @default Time
    */
-  timeIcon: import_prop_types88.default.node,
+  timeIcon: import_prop_types90.default.node,
   /**
    * Currently visible picker view.
    */
-  view: import_prop_types88.default.oneOf(["day", "hours", "meridiem", "minutes", "month", "seconds", "year"]).isRequired
+  view: import_prop_types90.default.oneOf(["day", "hours", "meridiem", "minutes", "month", "seconds", "year"]).isRequired
 } : void 0;
 
 // node_modules/@mui/x-date-pickers/DateTimePicker/DateTimePickerToolbar.js
-var import_prop_types89 = __toESM(require_prop_types());
-import * as React173 from "react";
+var import_prop_types91 = __toESM(require_prop_types());
+import * as React175 from "react";
 
 // node_modules/@mui/x-date-pickers/DateTimePicker/dateTimePickerToolbarClasses.js
 function getDateTimePickerToolbarUtilityClass(slot) {
@@ -51389,7 +52974,7 @@ function getDateTimePickerToolbarUtilityClass(slot) {
 var dateTimePickerToolbarClasses = generateUtilityClasses("MuiDateTimePickerToolbar", ["root", "dateContainer", "timeContainer", "timeDigitsContainer", "separator", "timeLabelReverse", "ampmSelection", "ampmLandscape", "ampmLabel"]);
 
 // node_modules/@mui/x-date-pickers/DateTimePicker/DateTimePickerToolbar.js
-import { jsx as _jsx114, jsxs as _jsxs39 } from "react/jsx-runtime";
+import { jsx as _jsx115, jsxs as _jsxs39 } from "react/jsx-runtime";
 var _excluded48 = ["ampm", "ampmInClock", "value", "onChange", "view", "isLandscape", "onViewChange", "toolbarFormat", "toolbarPlaceholder", "views", "disabled", "readOnly", "toolbarVariant", "toolbarTitle", "className"];
 var useUtilityClasses73 = (ownerState) => {
   const {
@@ -51589,7 +53174,7 @@ function DateTimePickerToolbar(inProps) {
     toolbarTitle: inToolbarTitle,
     className
   } = props, other = _objectWithoutPropertiesLoose(props, _excluded48);
-  const isRtl = useRtl();
+  const isRtl = useRtl2();
   const ownerState = _extends({}, props, {
     isRtl
   });
@@ -51604,7 +53189,7 @@ function DateTimePickerToolbar(inProps) {
   const classes = useUtilityClasses73(ownerState);
   const toolbarTitle = inToolbarTitle ?? translations.dateTimePickerToolbarTitle;
   const formatHours = (time) => ampm ? utils2.format(time, "hours12h") : utils2.format(time, "hours24h");
-  const dateText = React173.useMemo(() => {
+  const dateText = React175.useMemo(() => {
     if (!value) {
       return toolbarPlaceholder;
     }
@@ -51622,13 +53207,13 @@ function DateTimePickerToolbar(inProps) {
     children: [/* @__PURE__ */ _jsxs39(DateTimePickerToolbarDateContainer, {
       className: classes.dateContainer,
       ownerState,
-      children: [views.includes("year") && /* @__PURE__ */ _jsx114(PickersToolbarButton, {
+      children: [views.includes("year") && /* @__PURE__ */ _jsx115(PickersToolbarButton, {
         tabIndex: -1,
         variant: "subtitle1",
         onClick: () => onViewChange("year"),
         selected: view === "year",
         value: value ? utils2.format(value, "year") : "\u2013"
-      }), views.includes("day") && /* @__PURE__ */ _jsx114(PickersToolbarButton, {
+      }), views.includes("day") && /* @__PURE__ */ _jsx115(PickersToolbarButton, {
         tabIndex: -1,
         variant: isDesktop ? "h5" : "h4",
         onClick: () => onViewChange("day"),
@@ -51641,19 +53226,19 @@ function DateTimePickerToolbar(inProps) {
       children: [/* @__PURE__ */ _jsxs39(DateTimePickerToolbarTimeDigitsContainer, {
         className: classes.timeDigitsContainer,
         ownerState,
-        children: [views.includes("hours") && /* @__PURE__ */ _jsxs39(React173.Fragment, {
-          children: [/* @__PURE__ */ _jsx114(PickersToolbarButton, {
+        children: [views.includes("hours") && /* @__PURE__ */ _jsxs39(React175.Fragment, {
+          children: [/* @__PURE__ */ _jsx115(PickersToolbarButton, {
             variant: isDesktop ? "h5" : "h3",
             width: isDesktop && !isLandscape ? MULTI_SECTION_CLOCK_SECTION_WIDTH : void 0,
             onClick: () => onViewChange("hours"),
             selected: view === "hours",
             value: value ? formatHours(value) : "--"
-          }), /* @__PURE__ */ _jsx114(DateTimePickerToolbarSeparator, {
+          }), /* @__PURE__ */ _jsx115(DateTimePickerToolbarSeparator, {
             variant: isDesktop ? "h5" : "h3",
             value: ":",
             className: classes.separator,
             ownerState
-          }), /* @__PURE__ */ _jsx114(PickersToolbarButton, {
+          }), /* @__PURE__ */ _jsx115(PickersToolbarButton, {
             variant: isDesktop ? "h5" : "h3",
             width: isDesktop && !isLandscape ? MULTI_SECTION_CLOCK_SECTION_WIDTH : void 0,
             onClick: () => onViewChange("minutes"),
@@ -51661,13 +53246,13 @@ function DateTimePickerToolbar(inProps) {
             value: value ? utils2.format(value, "minutes") : "--",
             disabled: !views.includes("minutes")
           })]
-        }), views.includes("seconds") && /* @__PURE__ */ _jsxs39(React173.Fragment, {
-          children: [/* @__PURE__ */ _jsx114(DateTimePickerToolbarSeparator, {
+        }), views.includes("seconds") && /* @__PURE__ */ _jsxs39(React175.Fragment, {
+          children: [/* @__PURE__ */ _jsx115(DateTimePickerToolbarSeparator, {
             variant: isDesktop ? "h5" : "h3",
             value: ":",
             className: classes.separator,
             ownerState
-          }), /* @__PURE__ */ _jsx114(PickersToolbarButton, {
+          }), /* @__PURE__ */ _jsx115(PickersToolbarButton, {
             variant: isDesktop ? "h5" : "h3",
             width: isDesktop && !isLandscape ? MULTI_SECTION_CLOCK_SECTION_WIDTH : void 0,
             onClick: () => onViewChange("seconds"),
@@ -51678,14 +53263,14 @@ function DateTimePickerToolbar(inProps) {
       }), showAmPmControl && !isDesktop && /* @__PURE__ */ _jsxs39(DateTimePickerToolbarAmPmSelection, {
         className: classes.ampmSelection,
         ownerState,
-        children: [/* @__PURE__ */ _jsx114(PickersToolbarButton, {
+        children: [/* @__PURE__ */ _jsx115(PickersToolbarButton, {
           variant: "subtitle2",
           selected: meridiemMode === "am",
           typographyClassName: classes.ampmLabel,
           value: formatMeridiem(utils2, "am"),
           onClick: readOnly ? void 0 : () => handleMeridiemChange("am"),
           disabled
-        }), /* @__PURE__ */ _jsx114(PickersToolbarButton, {
+        }), /* @__PURE__ */ _jsx115(PickersToolbarButton, {
           variant: "subtitle2",
           selected: meridiemMode === "pm",
           typographyClassName: classes.ampmLabel,
@@ -51693,7 +53278,7 @@ function DateTimePickerToolbar(inProps) {
           onClick: readOnly ? void 0 : () => handleMeridiemChange("pm"),
           disabled
         })]
-      }), ampm && isDesktop && /* @__PURE__ */ _jsx114(PickersToolbarButton, {
+      }), ampm && isDesktop && /* @__PURE__ */ _jsx115(PickersToolbarButton, {
         variant: "h5",
         onClick: () => onViewChange("meridiem"),
         selected: view === "meridiem",
@@ -51708,56 +53293,56 @@ true ? DateTimePickerToolbar.propTypes = {
   // | These PropTypes are generated from the TypeScript type definitions |
   // | To update them edit the TypeScript types and run "pnpm proptypes"  |
   // ----------------------------------------------------------------------
-  ampm: import_prop_types89.default.bool,
-  ampmInClock: import_prop_types89.default.bool,
+  ampm: import_prop_types91.default.bool,
+  ampmInClock: import_prop_types91.default.bool,
   /**
    * Override or extend the styles applied to the component.
    */
-  classes: import_prop_types89.default.object,
-  className: import_prop_types89.default.string,
-  disabled: import_prop_types89.default.bool,
+  classes: import_prop_types91.default.object,
+  className: import_prop_types91.default.string,
+  disabled: import_prop_types91.default.bool,
   /**
    * If `true`, show the toolbar even in desktop mode.
    * @default `true` for Desktop, `false` for Mobile.
    */
-  hidden: import_prop_types89.default.bool,
-  isLandscape: import_prop_types89.default.bool.isRequired,
-  onChange: import_prop_types89.default.func.isRequired,
+  hidden: import_prop_types91.default.bool,
+  isLandscape: import_prop_types91.default.bool.isRequired,
+  onChange: import_prop_types91.default.func.isRequired,
   /**
    * Callback called when a toolbar is clicked
    * @template TView
    * @param {TView} view The view to open
    */
-  onViewChange: import_prop_types89.default.func.isRequired,
-  readOnly: import_prop_types89.default.bool,
+  onViewChange: import_prop_types91.default.func.isRequired,
+  readOnly: import_prop_types91.default.bool,
   /**
    * The system prop that allows defining system overrides as well as additional CSS styles.
    */
-  sx: import_prop_types89.default.oneOfType([import_prop_types89.default.arrayOf(import_prop_types89.default.oneOfType([import_prop_types89.default.func, import_prop_types89.default.object, import_prop_types89.default.bool])), import_prop_types89.default.func, import_prop_types89.default.object]),
-  titleId: import_prop_types89.default.string,
+  sx: import_prop_types91.default.oneOfType([import_prop_types91.default.arrayOf(import_prop_types91.default.oneOfType([import_prop_types91.default.func, import_prop_types91.default.object, import_prop_types91.default.bool])), import_prop_types91.default.func, import_prop_types91.default.object]),
+  titleId: import_prop_types91.default.string,
   /**
    * Toolbar date format.
    */
-  toolbarFormat: import_prop_types89.default.string,
+  toolbarFormat: import_prop_types91.default.string,
   /**
    * Toolbar value placeholder—it is displayed when the value is empty.
    * @default "––"
    */
-  toolbarPlaceholder: import_prop_types89.default.node,
+  toolbarPlaceholder: import_prop_types91.default.node,
   /**
    * If provided, it will be used instead of `dateTimePickerToolbarTitle` from localization.
    */
-  toolbarTitle: import_prop_types89.default.node,
-  toolbarVariant: import_prop_types89.default.oneOf(["desktop", "mobile"]),
-  value: import_prop_types89.default.object,
+  toolbarTitle: import_prop_types91.default.node,
+  toolbarVariant: import_prop_types91.default.oneOf(["desktop", "mobile"]),
+  value: import_prop_types91.default.object,
   /**
    * Currently visible picker view.
    */
-  view: import_prop_types89.default.oneOf(["day", "hours", "meridiem", "minutes", "month", "seconds", "year"]),
+  view: import_prop_types91.default.oneOf(["day", "hours", "meridiem", "minutes", "month", "seconds", "year"]),
   /**
    * Available views.
    */
-  views: import_prop_types89.default.arrayOf(import_prop_types89.default.oneOf(["day", "hours", "meridiem", "minutes", "month", "seconds", "year"]).isRequired).isRequired
+  views: import_prop_types91.default.arrayOf(import_prop_types91.default.oneOf(["day", "hours", "meridiem", "minutes", "month", "seconds", "year"]).isRequired).isRequired
 } : void 0;
 
 // node_modules/@mui/x-date-pickers/DateTimePicker/shared.js
@@ -51769,7 +53354,7 @@ function useDateTimePickerDefaultizedProps(props, name) {
     name
   });
   const ampm = themeProps.ampm ?? utils2.is12HourCycleInCurrentLocale();
-  const localeText = React174.useMemo(() => {
+  const localeText = React176.useMemo(() => {
     if (themeProps.localeText?.toolbarTitle == null) {
       return themeProps.localeText;
     }
@@ -51808,11 +53393,11 @@ function useDateTimePickerDefaultizedProps(props, name) {
 }
 
 // node_modules/@mui/x-date-pickers/DesktopDateTimePicker/DesktopDateTimePickerLayout.js
-var import_prop_types90 = __toESM(require_prop_types());
-import * as React175 from "react";
-import { jsx as _jsx115, jsxs as _jsxs40 } from "react/jsx-runtime";
-var DesktopDateTimePickerLayout = /* @__PURE__ */ React175.forwardRef(function DesktopDateTimePickerLayout2(props, ref) {
-  const isRtl = useRtl();
+var import_prop_types92 = __toESM(require_prop_types());
+import * as React177 from "react";
+import { jsx as _jsx116, jsxs as _jsxs40 } from "react/jsx-runtime";
+var DesktopDateTimePickerLayout = /* @__PURE__ */ React177.forwardRef(function DesktopDateTimePickerLayout2(props, ref) {
+  const isRtl = useRtl2();
   const {
     toolbar,
     tabs,
@@ -51848,7 +53433,7 @@ var DesktopDateTimePickerLayout = /* @__PURE__ */ React175.forwardRef(function D
       sx: {
         display: "grid"
       },
-      children: [content, tabs, isActionBarVisible && /* @__PURE__ */ _jsx115(Divider_default, {
+      children: [content, tabs, isActionBarVisible && /* @__PURE__ */ _jsx116(Divider_default, {
         sx: {
           gridRow: 3,
           gridColumn: "1 / 4"
@@ -51862,56 +53447,56 @@ true ? DesktopDateTimePickerLayout.propTypes = {
   // | These PropTypes are generated from the TypeScript type definitions |
   // | To update them edit the TypeScript types and run "pnpm proptypes"  |
   // ----------------------------------------------------------------------
-  children: import_prop_types90.default.node,
+  children: import_prop_types92.default.node,
   /**
    * Override or extend the styles applied to the component.
    */
-  classes: import_prop_types90.default.object,
-  className: import_prop_types90.default.string,
-  disabled: import_prop_types90.default.bool,
-  isLandscape: import_prop_types90.default.bool.isRequired,
+  classes: import_prop_types92.default.object,
+  className: import_prop_types92.default.string,
+  disabled: import_prop_types92.default.bool,
+  isLandscape: import_prop_types92.default.bool.isRequired,
   /**
    * `true` if the application is in right-to-left direction.
    */
-  isRtl: import_prop_types90.default.bool.isRequired,
-  isValid: import_prop_types90.default.func.isRequired,
-  onAccept: import_prop_types90.default.func.isRequired,
-  onCancel: import_prop_types90.default.func.isRequired,
-  onChange: import_prop_types90.default.func.isRequired,
-  onClear: import_prop_types90.default.func.isRequired,
-  onClose: import_prop_types90.default.func.isRequired,
-  onDismiss: import_prop_types90.default.func.isRequired,
-  onOpen: import_prop_types90.default.func.isRequired,
-  onSelectShortcut: import_prop_types90.default.func.isRequired,
-  onSetToday: import_prop_types90.default.func.isRequired,
-  onViewChange: import_prop_types90.default.func.isRequired,
+  isRtl: import_prop_types92.default.bool.isRequired,
+  isValid: import_prop_types92.default.func.isRequired,
+  onAccept: import_prop_types92.default.func.isRequired,
+  onCancel: import_prop_types92.default.func.isRequired,
+  onChange: import_prop_types92.default.func.isRequired,
+  onClear: import_prop_types92.default.func.isRequired,
+  onClose: import_prop_types92.default.func.isRequired,
+  onDismiss: import_prop_types92.default.func.isRequired,
+  onOpen: import_prop_types92.default.func.isRequired,
+  onSelectShortcut: import_prop_types92.default.func.isRequired,
+  onSetToday: import_prop_types92.default.func.isRequired,
+  onViewChange: import_prop_types92.default.func.isRequired,
   /**
    * Force rendering in particular orientation.
    */
-  orientation: import_prop_types90.default.oneOf(["landscape", "portrait"]),
-  readOnly: import_prop_types90.default.bool,
+  orientation: import_prop_types92.default.oneOf(["landscape", "portrait"]),
+  readOnly: import_prop_types92.default.bool,
   /**
    * The props used for each component slot.
    * @default {}
    */
-  slotProps: import_prop_types90.default.object,
+  slotProps: import_prop_types92.default.object,
   /**
    * Overridable component slots.
    * @default {}
    */
-  slots: import_prop_types90.default.object,
+  slots: import_prop_types92.default.object,
   /**
    * The system prop that allows defining system overrides as well as additional CSS styles.
    */
-  sx: import_prop_types90.default.oneOfType([import_prop_types90.default.arrayOf(import_prop_types90.default.oneOfType([import_prop_types90.default.func, import_prop_types90.default.object, import_prop_types90.default.bool])), import_prop_types90.default.func, import_prop_types90.default.object]),
-  value: import_prop_types90.default.any,
-  view: import_prop_types90.default.oneOf(["day", "hours", "meridiem", "minutes", "month", "seconds", "year"]),
-  views: import_prop_types90.default.arrayOf(import_prop_types90.default.oneOf(["day", "hours", "meridiem", "minutes", "month", "seconds", "year"]).isRequired).isRequired,
-  wrapperVariant: import_prop_types90.default.oneOf(["desktop", "mobile"])
+  sx: import_prop_types92.default.oneOfType([import_prop_types92.default.arrayOf(import_prop_types92.default.oneOfType([import_prop_types92.default.func, import_prop_types92.default.object, import_prop_types92.default.bool])), import_prop_types92.default.func, import_prop_types92.default.object]),
+  value: import_prop_types92.default.any,
+  view: import_prop_types92.default.oneOf(["day", "hours", "meridiem", "minutes", "month", "seconds", "year"]),
+  views: import_prop_types92.default.arrayOf(import_prop_types92.default.oneOf(["day", "hours", "meridiem", "minutes", "month", "seconds", "year"]).isRequired).isRequired,
+  wrapperVariant: import_prop_types92.default.oneOf(["desktop", "mobile"])
 } : void 0;
 
 // node_modules/@mui/x-date-pickers/DesktopDateTimePicker/DesktopDateTimePicker.js
-import { jsx as _jsx116, jsxs as _jsxs41 } from "react/jsx-runtime";
+import { jsx as _jsx117, jsxs as _jsxs41 } from "react/jsx-runtime";
 var _excluded49 = ["openTo", "focusedView", "timeViewsCount"];
 var rendererInterceptor = function rendererInterceptor2(inViewRenderers, popperView, rendererProps) {
   const {
@@ -51931,7 +53516,7 @@ var rendererInterceptor = function rendererInterceptor2(inViewRenderers, popperV
     }]
   });
   const isTimeViewActive = isInternalTimeView(popperView);
-  return /* @__PURE__ */ _jsxs41(React176.Fragment, {
+  return /* @__PURE__ */ _jsxs41(React178.Fragment, {
     children: [inViewRenderers[!isTimeViewActive ? popperView : "day"]?.(_extends({}, rendererProps, {
       view: !isTimeViewActive ? popperView : "day",
       focusedView: focusedView && isDatePickerView(focusedView) ? focusedView : null,
@@ -51939,8 +53524,8 @@ var rendererInterceptor = function rendererInterceptor2(inViewRenderers, popperV
       sx: [{
         gridColumn: 1
       }, ...finalProps.sx]
-    })), timeViewsCount > 0 && /* @__PURE__ */ _jsxs41(React176.Fragment, {
-      children: [/* @__PURE__ */ _jsx116(Divider_default, {
+    })), timeViewsCount > 0 && /* @__PURE__ */ _jsxs41(React178.Fragment, {
+      children: [/* @__PURE__ */ _jsx117(Divider_default, {
         orientation: "vertical",
         sx: {
           gridColumn: 2
@@ -51957,7 +53542,7 @@ var rendererInterceptor = function rendererInterceptor2(inViewRenderers, popperV
     })]
   });
 };
-var DesktopDateTimePicker = /* @__PURE__ */ React176.forwardRef(function DesktopDateTimePicker2(inProps, ref) {
+var DesktopDateTimePicker = /* @__PURE__ */ React178.forwardRef(function DesktopDateTimePicker2(inProps, ref) {
   const translations = usePickersTranslations();
   const utils2 = useUtils();
   const defaultizedProps = useDateTimePickerDefaultizedProps(inProps, "MuiDesktopDateTimePicker");
@@ -52038,827 +53623,6 @@ DesktopDateTimePicker.propTypes = {
    * 12h/24h view for hour selection clock.
    * @default utils.is12HourCycleInCurrentLocale()
    */
-  ampm: import_prop_types91.default.bool,
-  /**
-   * Display ampm controls under the clock (instead of in the toolbar).
-   * @default true on desktop, false on mobile
-   */
-  ampmInClock: import_prop_types91.default.bool,
-  /**
-   * If `true`, the main element is focused during the first mount.
-   * This main element is:
-   * - the element chosen by the visible view if any (i.e: the selected day on the `day` view).
-   * - the `input` element if there is a field rendered.
-   */
-  autoFocus: import_prop_types91.default.bool,
-  className: import_prop_types91.default.string,
-  /**
-   * If `true`, the popover or modal will close after submitting the full date.
-   * @default `true` for desktop, `false` for mobile (based on the chosen wrapper and `desktopModeMediaQuery` prop).
-   */
-  closeOnSelect: import_prop_types91.default.bool,
-  /**
-   * Formats the day of week displayed in the calendar header.
-   * @param {TDate} date The date of the day of week provided by the adapter.
-   * @returns {string} The name to display.
-   * @default (date: TDate) => adapter.format(date, 'weekdayShort').charAt(0).toUpperCase()
-   */
-  dayOfWeekFormatter: import_prop_types91.default.func,
-  /**
-   * The default value.
-   * Used when the component is not controlled.
-   */
-  defaultValue: import_prop_types91.default.object,
-  /**
-   * If `true`, the picker and text field are disabled.
-   * @default false
-   */
-  disabled: import_prop_types91.default.bool,
-  /**
-   * If `true`, disable values after the current date for date components, time for time components and both for date time components.
-   * @default false
-   */
-  disableFuture: import_prop_types91.default.bool,
-  /**
-   * If `true`, today's date is rendering without highlighting with circle.
-   * @default false
-   */
-  disableHighlightToday: import_prop_types91.default.bool,
-  /**
-   * Do not ignore date part when validating min/max time.
-   * @default false
-   */
-  disableIgnoringDatePartForTimeValidation: import_prop_types91.default.bool,
-  /**
-   * If `true`, the open picker button will not be rendered (renders only the field).
-   * @default false
-   */
-  disableOpenPicker: import_prop_types91.default.bool,
-  /**
-   * If `true`, disable values before the current date for date components, time for time components and both for date time components.
-   * @default false
-   */
-  disablePast: import_prop_types91.default.bool,
-  /**
-   * If `true`, the week number will be display in the calendar.
-   */
-  displayWeekNumber: import_prop_types91.default.bool,
-  /**
-   * @default false
-   */
-  enableAccessibleFieldDOMStructure: import_prop_types91.default.any,
-  /**
-   * The day view will show as many weeks as needed after the end of the current month to match this value.
-   * Put it to 6 to have a fixed number of weeks in Gregorian calendars
-   */
-  fixedWeekNumber: import_prop_types91.default.number,
-  /**
-   * Format of the date when rendered in the input(s).
-   * Defaults to localized format based on the used `views`.
-   */
-  format: import_prop_types91.default.string,
-  /**
-   * Density of the format when rendered in the input.
-   * Setting `formatDensity` to `"spacious"` will add a space before and after each `/`, `-` and `.` character.
-   * @default "dense"
-   */
-  formatDensity: import_prop_types91.default.oneOf(["dense", "spacious"]),
-  /**
-   * Pass a ref to the `input` element.
-   */
-  inputRef: refType_default,
-  /**
-   * The label content.
-   */
-  label: import_prop_types91.default.node,
-  /**
-   * If `true`, calls `renderLoading` instead of rendering the day calendar.
-   * Can be used to preload information and show it in calendar.
-   * @default false
-   */
-  loading: import_prop_types91.default.bool,
-  /**
-   * Locale for components texts.
-   * Allows overriding texts coming from `LocalizationProvider` and `theme`.
-   */
-  localeText: import_prop_types91.default.object,
-  /**
-   * Maximal selectable date.
-   * @default 2099-12-31
-   */
-  maxDate: import_prop_types91.default.object,
-  /**
-   * Maximal selectable moment of time with binding to date, to set max time in each day use `maxTime`.
-   */
-  maxDateTime: import_prop_types91.default.object,
-  /**
-   * Maximal selectable time.
-   * The date part of the object will be ignored unless `props.disableIgnoringDatePartForTimeValidation === true`.
-   */
-  maxTime: import_prop_types91.default.object,
-  /**
-   * Minimal selectable date.
-   * @default 1900-01-01
-   */
-  minDate: import_prop_types91.default.object,
-  /**
-   * Minimal selectable moment of time with binding to date, to set min time in each day use `minTime`.
-   */
-  minDateTime: import_prop_types91.default.object,
-  /**
-   * Minimal selectable time.
-   * The date part of the object will be ignored unless `props.disableIgnoringDatePartForTimeValidation === true`.
-   */
-  minTime: import_prop_types91.default.object,
-  /**
-   * Step over minutes.
-   * @default 1
-   */
-  minutesStep: import_prop_types91.default.number,
-  /**
-   * Months rendered per row.
-   * @default 3
-   */
-  monthsPerRow: import_prop_types91.default.oneOf([3, 4]),
-  /**
-   * Name attribute used by the `input` element in the Field.
-   */
-  name: import_prop_types91.default.string,
-  /**
-   * Callback fired when the value is accepted.
-   * @template TValue The value type. It will be the same type as `value` or `null`. It can be in `[start, end]` format in case of range value.
-   * @template TError The validation error type. It will be either `string` or a `null`. It can be in `[start, end]` format in case of range value.
-   * @param {TValue} value The value that was just accepted.
-   * @param {FieldChangeHandlerContext<TError>} context The context containing the validation result of the current value.
-   */
-  onAccept: import_prop_types91.default.func,
-  /**
-   * Callback fired when the value changes.
-   * @template TValue The value type. It will be the same type as `value` or `null`. It can be in `[start, end]` format in case of range value.
-   * @template TError The validation error type. It will be either `string` or a `null`. It can be in `[start, end]` format in case of range value.
-   * @param {TValue} value The new value.
-   * @param {FieldChangeHandlerContext<TError>} context The context containing the validation result of the current value.
-   */
-  onChange: import_prop_types91.default.func,
-  /**
-   * Callback fired when the popup requests to be closed.
-   * Use in controlled mode (see `open`).
-   */
-  onClose: import_prop_types91.default.func,
-  /**
-   * Callback fired when the error associated with the current value changes.
-   * When a validation error is detected, the `error` parameter contains a non-null value.
-   * This can be used to render an appropriate form error.
-   * @template TError The validation error type. It will be either `string` or a `null`. It can be in `[start, end]` format in case of range value.
-   * @template TValue The value type. It will be the same type as `value` or `null`. It can be in `[start, end]` format in case of range value.
-   * @param {TError} error The reason why the current value is not valid.
-   * @param {TValue} value The value associated with the error.
-   */
-  onError: import_prop_types91.default.func,
-  /**
-   * Callback fired on month change.
-   * @template TDate
-   * @param {TDate} month The new month.
-   */
-  onMonthChange: import_prop_types91.default.func,
-  /**
-   * Callback fired when the popup requests to be opened.
-   * Use in controlled mode (see `open`).
-   */
-  onOpen: import_prop_types91.default.func,
-  /**
-   * Callback fired when the selected sections change.
-   * @param {FieldSelectedSections} newValue The new selected sections.
-   */
-  onSelectedSectionsChange: import_prop_types91.default.func,
-  /**
-   * Callback fired on view change.
-   * @template TView
-   * @param {TView} view The new view.
-   */
-  onViewChange: import_prop_types91.default.func,
-  /**
-   * Callback fired on year change.
-   * @template TDate
-   * @param {TDate} year The new year.
-   */
-  onYearChange: import_prop_types91.default.func,
-  /**
-   * Control the popup or dialog open state.
-   * @default false
-   */
-  open: import_prop_types91.default.bool,
-  /**
-   * The default visible view.
-   * Used when the component view is not controlled.
-   * Must be a valid option from `views` list.
-   */
-  openTo: import_prop_types91.default.oneOf(["day", "hours", "meridiem", "minutes", "month", "seconds", "year"]),
-  /**
-   * Force rendering in particular orientation.
-   */
-  orientation: import_prop_types91.default.oneOf(["landscape", "portrait"]),
-  readOnly: import_prop_types91.default.bool,
-  /**
-   * If `true`, disable heavy animations.
-   * @default `@media(prefers-reduced-motion: reduce)` || `navigator.userAgent` matches Android <10 or iOS <13
-   */
-  reduceAnimations: import_prop_types91.default.bool,
-  /**
-   * The date used to generate the new value when both `value` and `defaultValue` are empty.
-   * @default The closest valid date-time using the validation props, except callbacks like `shouldDisable<...>`.
-   */
-  referenceDate: import_prop_types91.default.object,
-  /**
-   * Component displaying when passed `loading` true.
-   * @returns {React.ReactNode} The node to render when loading.
-   * @default () => <span>...</span>
-   */
-  renderLoading: import_prop_types91.default.func,
-  /**
-   * The currently selected sections.
-   * This prop accepts four formats:
-   * 1. If a number is provided, the section at this index will be selected.
-   * 2. If a string of type `FieldSectionType` is provided, the first section with that name will be selected.
-   * 3. If `"all"` is provided, all the sections will be selected.
-   * 4. If `null` is provided, no section will be selected.
-   * If not provided, the selected sections will be handled internally.
-   */
-  selectedSections: import_prop_types91.default.oneOfType([import_prop_types91.default.oneOf(["all", "day", "empty", "hours", "meridiem", "minutes", "month", "seconds", "weekDay", "year"]), import_prop_types91.default.number]),
-  /**
-   * Disable specific date.
-   *
-   * Warning: This function can be called multiple times (for example when rendering date calendar, checking if focus can be moved to a certain date, etc.). Expensive computations can impact performance.
-   *
-   * @template TDate
-   * @param {TDate} day The date to test.
-   * @returns {boolean} If `true` the date will be disabled.
-   */
-  shouldDisableDate: import_prop_types91.default.func,
-  /**
-   * Disable specific month.
-   * @template TDate
-   * @param {TDate} month The month to test.
-   * @returns {boolean} If `true`, the month will be disabled.
-   */
-  shouldDisableMonth: import_prop_types91.default.func,
-  /**
-   * Disable specific time.
-   * @template TDate
-   * @param {TDate} value The value to check.
-   * @param {TimeView} view The clock type of the timeValue.
-   * @returns {boolean} If `true` the time will be disabled.
-   */
-  shouldDisableTime: import_prop_types91.default.func,
-  /**
-   * Disable specific year.
-   * @template TDate
-   * @param {TDate} year The year to test.
-   * @returns {boolean} If `true`, the year will be disabled.
-   */
-  shouldDisableYear: import_prop_types91.default.func,
-  /**
-   * If `true`, days outside the current month are rendered:
-   *
-   * - if `fixedWeekNumber` is defined, renders days to have the weeks requested.
-   *
-   * - if `fixedWeekNumber` is not defined, renders day to fill the first and last week of the current month.
-   *
-   * - ignored if `calendars` equals more than `1` on range pickers.
-   * @default false
-   */
-  showDaysOutsideCurrentMonth: import_prop_types91.default.bool,
-  /**
-   * If `true`, disabled digital clock items will not be rendered.
-   * @default false
-   */
-  skipDisabled: import_prop_types91.default.bool,
-  /**
-   * The props used for each component slot.
-   * @default {}
-   */
-  slotProps: import_prop_types91.default.object,
-  /**
-   * Overridable component slots.
-   * @default {}
-   */
-  slots: import_prop_types91.default.object,
-  /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */
-  sx: import_prop_types91.default.oneOfType([import_prop_types91.default.arrayOf(import_prop_types91.default.oneOfType([import_prop_types91.default.func, import_prop_types91.default.object, import_prop_types91.default.bool])), import_prop_types91.default.func, import_prop_types91.default.object]),
-  /**
-   * Amount of time options below or at which the single column time renderer is used.
-   * @default 24
-   */
-  thresholdToRenderTimeInASingleColumn: import_prop_types91.default.number,
-  /**
-   * The time steps between two time unit options.
-   * For example, if `timeStep.minutes = 8`, then the available minute options will be `[0, 8, 16, 24, 32, 40, 48, 56]`.
-   * When single column time renderer is used, only `timeStep.minutes` will be used.
-   * @default{ hours: 1, minutes: 5, seconds: 5 }
-   */
-  timeSteps: import_prop_types91.default.shape({
-    hours: import_prop_types91.default.number,
-    minutes: import_prop_types91.default.number,
-    seconds: import_prop_types91.default.number
-  }),
-  /**
-   * Choose which timezone to use for the value.
-   * Example: "default", "system", "UTC", "America/New_York".
-   * If you pass values from other timezones to some props, they will be converted to this timezone before being used.
-   * @see See the {@link https://mui.com/x/react-date-pickers/timezone/ timezones documentation} for more details.
-   * @default The timezone of the `value` or `defaultValue` prop is defined, 'default' otherwise.
-   */
-  timezone: import_prop_types91.default.string,
-  /**
-   * The selected value.
-   * Used when the component is controlled.
-   */
-  value: import_prop_types91.default.object,
-  /**
-   * The visible view.
-   * Used when the component view is controlled.
-   * Must be a valid option from `views` list.
-   */
-  view: import_prop_types91.default.oneOf(["day", "hours", "meridiem", "minutes", "month", "seconds", "year"]),
-  /**
-   * Define custom view renderers for each section.
-   * If `null`, the section will only have field editing.
-   * If `undefined`, internally defined view will be used.
-   */
-  viewRenderers: import_prop_types91.default.shape({
-    day: import_prop_types91.default.func,
-    hours: import_prop_types91.default.func,
-    meridiem: import_prop_types91.default.func,
-    minutes: import_prop_types91.default.func,
-    month: import_prop_types91.default.func,
-    seconds: import_prop_types91.default.func,
-    year: import_prop_types91.default.func
-  }),
-  /**
-   * Available views.
-   */
-  views: import_prop_types91.default.arrayOf(import_prop_types91.default.oneOf(["day", "hours", "minutes", "month", "seconds", "year"]).isRequired),
-  /**
-   * Years are displayed in ascending (chronological) order by default.
-   * If `desc`, years are displayed in descending order.
-   * @default 'asc'
-   */
-  yearsOrder: import_prop_types91.default.oneOf(["asc", "desc"]),
-  /**
-   * Years rendered per row.
-   * @default 4
-   */
-  yearsPerRow: import_prop_types91.default.oneOf([3, 4])
-};
-
-// node_modules/@mui/x-date-pickers/MobileDateTimePicker/MobileDateTimePicker.js
-var import_prop_types92 = __toESM(require_prop_types());
-import * as React177 from "react";
-var MobileDateTimePicker = /* @__PURE__ */ React177.forwardRef(function MobileDateTimePicker2(inProps, ref) {
-  const translations = usePickersTranslations();
-  const utils2 = useUtils();
-  const defaultizedProps = useDateTimePickerDefaultizedProps(inProps, "MuiMobileDateTimePicker");
-  const viewRenderers = _extends({
-    day: renderDateViewCalendar,
-    month: renderDateViewCalendar,
-    year: renderDateViewCalendar,
-    hours: renderTimeViewClock,
-    minutes: renderTimeViewClock,
-    seconds: renderTimeViewClock
-  }, defaultizedProps.viewRenderers);
-  const ampmInClock = defaultizedProps.ampmInClock ?? false;
-  const props = _extends({}, defaultizedProps, {
-    viewRenderers,
-    format: resolveDateTimeFormat(utils2, defaultizedProps),
-    ampmInClock,
-    slots: _extends({
-      field: DateTimeField
-    }, defaultizedProps.slots),
-    slotProps: _extends({}, defaultizedProps.slotProps, {
-      field: (ownerState) => _extends({}, resolveComponentProps_default(defaultizedProps.slotProps?.field, ownerState), extractValidationProps(defaultizedProps), {
-        ref
-      }),
-      toolbar: _extends({
-        hidden: false,
-        ampmInClock
-      }, defaultizedProps.slotProps?.toolbar),
-      tabs: _extends({
-        hidden: false
-      }, defaultizedProps.slotProps?.tabs)
-    })
-  });
-  const {
-    renderPicker
-  } = useMobilePicker({
-    props,
-    valueManager: singleItemValueManager,
-    valueType: "date-time",
-    getOpenDialogAriaText: buildGetOpenDialogAriaText({
-      utils: utils2,
-      formatKey: "fullDate",
-      contextTranslation: translations.openDatePickerDialogue,
-      propsTranslation: props.localeText?.openDatePickerDialogue
-    }),
-    validator: validateDateTime
-  });
-  return renderPicker();
-});
-MobileDateTimePicker.propTypes = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // | To update them edit the TypeScript types and run "pnpm proptypes"  |
-  // ----------------------------------------------------------------------
-  /**
-   * 12h/24h view for hour selection clock.
-   * @default utils.is12HourCycleInCurrentLocale()
-   */
-  ampm: import_prop_types92.default.bool,
-  /**
-   * Display ampm controls under the clock (instead of in the toolbar).
-   * @default true on desktop, false on mobile
-   */
-  ampmInClock: import_prop_types92.default.bool,
-  /**
-   * If `true`, the main element is focused during the first mount.
-   * This main element is:
-   * - the element chosen by the visible view if any (i.e: the selected day on the `day` view).
-   * - the `input` element if there is a field rendered.
-   */
-  autoFocus: import_prop_types92.default.bool,
-  className: import_prop_types92.default.string,
-  /**
-   * If `true`, the popover or modal will close after submitting the full date.
-   * @default `true` for desktop, `false` for mobile (based on the chosen wrapper and `desktopModeMediaQuery` prop).
-   */
-  closeOnSelect: import_prop_types92.default.bool,
-  /**
-   * Formats the day of week displayed in the calendar header.
-   * @param {TDate} date The date of the day of week provided by the adapter.
-   * @returns {string} The name to display.
-   * @default (date: TDate) => adapter.format(date, 'weekdayShort').charAt(0).toUpperCase()
-   */
-  dayOfWeekFormatter: import_prop_types92.default.func,
-  /**
-   * The default value.
-   * Used when the component is not controlled.
-   */
-  defaultValue: import_prop_types92.default.object,
-  /**
-   * If `true`, the picker and text field are disabled.
-   * @default false
-   */
-  disabled: import_prop_types92.default.bool,
-  /**
-   * If `true`, disable values after the current date for date components, time for time components and both for date time components.
-   * @default false
-   */
-  disableFuture: import_prop_types92.default.bool,
-  /**
-   * If `true`, today's date is rendering without highlighting with circle.
-   * @default false
-   */
-  disableHighlightToday: import_prop_types92.default.bool,
-  /**
-   * Do not ignore date part when validating min/max time.
-   * @default false
-   */
-  disableIgnoringDatePartForTimeValidation: import_prop_types92.default.bool,
-  /**
-   * If `true`, the open picker button will not be rendered (renders only the field).
-   * @default false
-   */
-  disableOpenPicker: import_prop_types92.default.bool,
-  /**
-   * If `true`, disable values before the current date for date components, time for time components and both for date time components.
-   * @default false
-   */
-  disablePast: import_prop_types92.default.bool,
-  /**
-   * If `true`, the week number will be display in the calendar.
-   */
-  displayWeekNumber: import_prop_types92.default.bool,
-  /**
-   * @default false
-   */
-  enableAccessibleFieldDOMStructure: import_prop_types92.default.any,
-  /**
-   * The day view will show as many weeks as needed after the end of the current month to match this value.
-   * Put it to 6 to have a fixed number of weeks in Gregorian calendars
-   */
-  fixedWeekNumber: import_prop_types92.default.number,
-  /**
-   * Format of the date when rendered in the input(s).
-   * Defaults to localized format based on the used `views`.
-   */
-  format: import_prop_types92.default.string,
-  /**
-   * Density of the format when rendered in the input.
-   * Setting `formatDensity` to `"spacious"` will add a space before and after each `/`, `-` and `.` character.
-   * @default "dense"
-   */
-  formatDensity: import_prop_types92.default.oneOf(["dense", "spacious"]),
-  /**
-   * Pass a ref to the `input` element.
-   */
-  inputRef: refType_default,
-  /**
-   * The label content.
-   */
-  label: import_prop_types92.default.node,
-  /**
-   * If `true`, calls `renderLoading` instead of rendering the day calendar.
-   * Can be used to preload information and show it in calendar.
-   * @default false
-   */
-  loading: import_prop_types92.default.bool,
-  /**
-   * Locale for components texts.
-   * Allows overriding texts coming from `LocalizationProvider` and `theme`.
-   */
-  localeText: import_prop_types92.default.object,
-  /**
-   * Maximal selectable date.
-   * @default 2099-12-31
-   */
-  maxDate: import_prop_types92.default.object,
-  /**
-   * Maximal selectable moment of time with binding to date, to set max time in each day use `maxTime`.
-   */
-  maxDateTime: import_prop_types92.default.object,
-  /**
-   * Maximal selectable time.
-   * The date part of the object will be ignored unless `props.disableIgnoringDatePartForTimeValidation === true`.
-   */
-  maxTime: import_prop_types92.default.object,
-  /**
-   * Minimal selectable date.
-   * @default 1900-01-01
-   */
-  minDate: import_prop_types92.default.object,
-  /**
-   * Minimal selectable moment of time with binding to date, to set min time in each day use `minTime`.
-   */
-  minDateTime: import_prop_types92.default.object,
-  /**
-   * Minimal selectable time.
-   * The date part of the object will be ignored unless `props.disableIgnoringDatePartForTimeValidation === true`.
-   */
-  minTime: import_prop_types92.default.object,
-  /**
-   * Step over minutes.
-   * @default 1
-   */
-  minutesStep: import_prop_types92.default.number,
-  /**
-   * Months rendered per row.
-   * @default 3
-   */
-  monthsPerRow: import_prop_types92.default.oneOf([3, 4]),
-  /**
-   * Name attribute used by the `input` element in the Field.
-   */
-  name: import_prop_types92.default.string,
-  /**
-   * Callback fired when the value is accepted.
-   * @template TValue The value type. It will be the same type as `value` or `null`. It can be in `[start, end]` format in case of range value.
-   * @template TError The validation error type. It will be either `string` or a `null`. It can be in `[start, end]` format in case of range value.
-   * @param {TValue} value The value that was just accepted.
-   * @param {FieldChangeHandlerContext<TError>} context The context containing the validation result of the current value.
-   */
-  onAccept: import_prop_types92.default.func,
-  /**
-   * Callback fired when the value changes.
-   * @template TValue The value type. It will be the same type as `value` or `null`. It can be in `[start, end]` format in case of range value.
-   * @template TError The validation error type. It will be either `string` or a `null`. It can be in `[start, end]` format in case of range value.
-   * @param {TValue} value The new value.
-   * @param {FieldChangeHandlerContext<TError>} context The context containing the validation result of the current value.
-   */
-  onChange: import_prop_types92.default.func,
-  /**
-   * Callback fired when the popup requests to be closed.
-   * Use in controlled mode (see `open`).
-   */
-  onClose: import_prop_types92.default.func,
-  /**
-   * Callback fired when the error associated with the current value changes.
-   * When a validation error is detected, the `error` parameter contains a non-null value.
-   * This can be used to render an appropriate form error.
-   * @template TError The validation error type. It will be either `string` or a `null`. It can be in `[start, end]` format in case of range value.
-   * @template TValue The value type. It will be the same type as `value` or `null`. It can be in `[start, end]` format in case of range value.
-   * @param {TError} error The reason why the current value is not valid.
-   * @param {TValue} value The value associated with the error.
-   */
-  onError: import_prop_types92.default.func,
-  /**
-   * Callback fired on month change.
-   * @template TDate
-   * @param {TDate} month The new month.
-   */
-  onMonthChange: import_prop_types92.default.func,
-  /**
-   * Callback fired when the popup requests to be opened.
-   * Use in controlled mode (see `open`).
-   */
-  onOpen: import_prop_types92.default.func,
-  /**
-   * Callback fired when the selected sections change.
-   * @param {FieldSelectedSections} newValue The new selected sections.
-   */
-  onSelectedSectionsChange: import_prop_types92.default.func,
-  /**
-   * Callback fired on view change.
-   * @template TView
-   * @param {TView} view The new view.
-   */
-  onViewChange: import_prop_types92.default.func,
-  /**
-   * Callback fired on year change.
-   * @template TDate
-   * @param {TDate} year The new year.
-   */
-  onYearChange: import_prop_types92.default.func,
-  /**
-   * Control the popup or dialog open state.
-   * @default false
-   */
-  open: import_prop_types92.default.bool,
-  /**
-   * The default visible view.
-   * Used when the component view is not controlled.
-   * Must be a valid option from `views` list.
-   */
-  openTo: import_prop_types92.default.oneOf(["day", "hours", "minutes", "month", "seconds", "year"]),
-  /**
-   * Force rendering in particular orientation.
-   */
-  orientation: import_prop_types92.default.oneOf(["landscape", "portrait"]),
-  readOnly: import_prop_types92.default.bool,
-  /**
-   * If `true`, disable heavy animations.
-   * @default `@media(prefers-reduced-motion: reduce)` || `navigator.userAgent` matches Android <10 or iOS <13
-   */
-  reduceAnimations: import_prop_types92.default.bool,
-  /**
-   * The date used to generate the new value when both `value` and `defaultValue` are empty.
-   * @default The closest valid date-time using the validation props, except callbacks like `shouldDisable<...>`.
-   */
-  referenceDate: import_prop_types92.default.object,
-  /**
-   * Component displaying when passed `loading` true.
-   * @returns {React.ReactNode} The node to render when loading.
-   * @default () => <span>...</span>
-   */
-  renderLoading: import_prop_types92.default.func,
-  /**
-   * The currently selected sections.
-   * This prop accepts four formats:
-   * 1. If a number is provided, the section at this index will be selected.
-   * 2. If a string of type `FieldSectionType` is provided, the first section with that name will be selected.
-   * 3. If `"all"` is provided, all the sections will be selected.
-   * 4. If `null` is provided, no section will be selected.
-   * If not provided, the selected sections will be handled internally.
-   */
-  selectedSections: import_prop_types92.default.oneOfType([import_prop_types92.default.oneOf(["all", "day", "empty", "hours", "meridiem", "minutes", "month", "seconds", "weekDay", "year"]), import_prop_types92.default.number]),
-  /**
-   * Disable specific date.
-   *
-   * Warning: This function can be called multiple times (for example when rendering date calendar, checking if focus can be moved to a certain date, etc.). Expensive computations can impact performance.
-   *
-   * @template TDate
-   * @param {TDate} day The date to test.
-   * @returns {boolean} If `true` the date will be disabled.
-   */
-  shouldDisableDate: import_prop_types92.default.func,
-  /**
-   * Disable specific month.
-   * @template TDate
-   * @param {TDate} month The month to test.
-   * @returns {boolean} If `true`, the month will be disabled.
-   */
-  shouldDisableMonth: import_prop_types92.default.func,
-  /**
-   * Disable specific time.
-   * @template TDate
-   * @param {TDate} value The value to check.
-   * @param {TimeView} view The clock type of the timeValue.
-   * @returns {boolean} If `true` the time will be disabled.
-   */
-  shouldDisableTime: import_prop_types92.default.func,
-  /**
-   * Disable specific year.
-   * @template TDate
-   * @param {TDate} year The year to test.
-   * @returns {boolean} If `true`, the year will be disabled.
-   */
-  shouldDisableYear: import_prop_types92.default.func,
-  /**
-   * If `true`, days outside the current month are rendered:
-   *
-   * - if `fixedWeekNumber` is defined, renders days to have the weeks requested.
-   *
-   * - if `fixedWeekNumber` is not defined, renders day to fill the first and last week of the current month.
-   *
-   * - ignored if `calendars` equals more than `1` on range pickers.
-   * @default false
-   */
-  showDaysOutsideCurrentMonth: import_prop_types92.default.bool,
-  /**
-   * The props used for each component slot.
-   * @default {}
-   */
-  slotProps: import_prop_types92.default.object,
-  /**
-   * Overridable component slots.
-   * @default {}
-   */
-  slots: import_prop_types92.default.object,
-  /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */
-  sx: import_prop_types92.default.oneOfType([import_prop_types92.default.arrayOf(import_prop_types92.default.oneOfType([import_prop_types92.default.func, import_prop_types92.default.object, import_prop_types92.default.bool])), import_prop_types92.default.func, import_prop_types92.default.object]),
-  /**
-   * Choose which timezone to use for the value.
-   * Example: "default", "system", "UTC", "America/New_York".
-   * If you pass values from other timezones to some props, they will be converted to this timezone before being used.
-   * @see See the {@link https://mui.com/x/react-date-pickers/timezone/ timezones documentation} for more details.
-   * @default The timezone of the `value` or `defaultValue` prop is defined, 'default' otherwise.
-   */
-  timezone: import_prop_types92.default.string,
-  /**
-   * The selected value.
-   * Used when the component is controlled.
-   */
-  value: import_prop_types92.default.object,
-  /**
-   * The visible view.
-   * Used when the component view is controlled.
-   * Must be a valid option from `views` list.
-   */
-  view: import_prop_types92.default.oneOf(["day", "hours", "minutes", "month", "seconds", "year"]),
-  /**
-   * Define custom view renderers for each section.
-   * If `null`, the section will only have field editing.
-   * If `undefined`, internally defined view will be used.
-   */
-  viewRenderers: import_prop_types92.default.shape({
-    day: import_prop_types92.default.func,
-    hours: import_prop_types92.default.func,
-    minutes: import_prop_types92.default.func,
-    month: import_prop_types92.default.func,
-    seconds: import_prop_types92.default.func,
-    year: import_prop_types92.default.func
-  }),
-  /**
-   * Available views.
-   */
-  views: import_prop_types92.default.arrayOf(import_prop_types92.default.oneOf(["day", "hours", "minutes", "month", "seconds", "year"]).isRequired),
-  /**
-   * Years are displayed in ascending (chronological) order by default.
-   * If `desc`, years are displayed in descending order.
-   * @default 'asc'
-   */
-  yearsOrder: import_prop_types92.default.oneOf(["asc", "desc"]),
-  /**
-   * Years rendered per row.
-   * @default 3
-   */
-  yearsPerRow: import_prop_types92.default.oneOf([3, 4])
-};
-
-// node_modules/@mui/x-date-pickers/DateTimePicker/DateTimePicker.js
-import { jsx as _jsx117 } from "react/jsx-runtime";
-var _excluded50 = ["desktopModeMediaQuery"];
-var DateTimePicker = /* @__PURE__ */ React178.forwardRef(function DateTimePicker2(inProps, ref) {
-  const props = useThemeProps2({
-    props: inProps,
-    name: "MuiDateTimePicker"
-  });
-  const {
-    desktopModeMediaQuery = DEFAULT_DESKTOP_MODE_MEDIA_QUERY
-  } = props, other = _objectWithoutPropertiesLoose(props, _excluded50);
-  const isDesktop = useMediaQuery_default(desktopModeMediaQuery, {
-    defaultMatches: true
-  });
-  if (isDesktop) {
-    return /* @__PURE__ */ _jsx117(DesktopDateTimePicker, _extends({
-      ref
-    }, other));
-  }
-  return /* @__PURE__ */ _jsx117(MobileDateTimePicker, _extends({
-    ref
-  }, other));
-});
-true ? DateTimePicker.propTypes = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // | To update them edit the TypeScript types and run "pnpm proptypes"  |
-  // ----------------------------------------------------------------------
-  /**
-   * 12h/24h view for hour selection clock.
-   * @default utils.is12HourCycleInCurrentLocale()
-   */
   ampm: import_prop_types93.default.bool,
   /**
    * Display ampm controls under the clock (instead of in the toolbar).
@@ -52890,12 +53654,6 @@ true ? DateTimePicker.propTypes = {
    * Used when the component is not controlled.
    */
   defaultValue: import_prop_types93.default.object,
-  /**
-   * CSS media query when `Mobile` mode will be changed to `Desktop`.
-   * @default '@media (pointer: fine)'
-   * @example '@media (min-width: 720px)' or theme.breakpoints.up("sm")
-   */
-  desktopModeMediaQuery: import_prop_types93.default.string,
   /**
    * If `true`, the picker and text field are disabled.
    * @default false
@@ -53235,9 +53993,836 @@ true ? DateTimePicker.propTypes = {
   yearsOrder: import_prop_types93.default.oneOf(["asc", "desc"]),
   /**
    * Years rendered per row.
-   * @default 4 on desktop, 3 on mobile
+   * @default 4
    */
   yearsPerRow: import_prop_types93.default.oneOf([3, 4])
+};
+
+// node_modules/@mui/x-date-pickers/MobileDateTimePicker/MobileDateTimePicker.js
+var import_prop_types94 = __toESM(require_prop_types());
+import * as React179 from "react";
+var MobileDateTimePicker = /* @__PURE__ */ React179.forwardRef(function MobileDateTimePicker2(inProps, ref) {
+  const translations = usePickersTranslations();
+  const utils2 = useUtils();
+  const defaultizedProps = useDateTimePickerDefaultizedProps(inProps, "MuiMobileDateTimePicker");
+  const viewRenderers = _extends({
+    day: renderDateViewCalendar,
+    month: renderDateViewCalendar,
+    year: renderDateViewCalendar,
+    hours: renderTimeViewClock,
+    minutes: renderTimeViewClock,
+    seconds: renderTimeViewClock
+  }, defaultizedProps.viewRenderers);
+  const ampmInClock = defaultizedProps.ampmInClock ?? false;
+  const props = _extends({}, defaultizedProps, {
+    viewRenderers,
+    format: resolveDateTimeFormat(utils2, defaultizedProps),
+    ampmInClock,
+    slots: _extends({
+      field: DateTimeField
+    }, defaultizedProps.slots),
+    slotProps: _extends({}, defaultizedProps.slotProps, {
+      field: (ownerState) => _extends({}, resolveComponentProps_default(defaultizedProps.slotProps?.field, ownerState), extractValidationProps(defaultizedProps), {
+        ref
+      }),
+      toolbar: _extends({
+        hidden: false,
+        ampmInClock
+      }, defaultizedProps.slotProps?.toolbar),
+      tabs: _extends({
+        hidden: false
+      }, defaultizedProps.slotProps?.tabs)
+    })
+  });
+  const {
+    renderPicker
+  } = useMobilePicker({
+    props,
+    valueManager: singleItemValueManager,
+    valueType: "date-time",
+    getOpenDialogAriaText: buildGetOpenDialogAriaText({
+      utils: utils2,
+      formatKey: "fullDate",
+      contextTranslation: translations.openDatePickerDialogue,
+      propsTranslation: props.localeText?.openDatePickerDialogue
+    }),
+    validator: validateDateTime
+  });
+  return renderPicker();
+});
+MobileDateTimePicker.propTypes = {
+  // ----------------------------- Warning --------------------------------
+  // | These PropTypes are generated from the TypeScript type definitions |
+  // | To update them edit the TypeScript types and run "pnpm proptypes"  |
+  // ----------------------------------------------------------------------
+  /**
+   * 12h/24h view for hour selection clock.
+   * @default utils.is12HourCycleInCurrentLocale()
+   */
+  ampm: import_prop_types94.default.bool,
+  /**
+   * Display ampm controls under the clock (instead of in the toolbar).
+   * @default true on desktop, false on mobile
+   */
+  ampmInClock: import_prop_types94.default.bool,
+  /**
+   * If `true`, the main element is focused during the first mount.
+   * This main element is:
+   * - the element chosen by the visible view if any (i.e: the selected day on the `day` view).
+   * - the `input` element if there is a field rendered.
+   */
+  autoFocus: import_prop_types94.default.bool,
+  className: import_prop_types94.default.string,
+  /**
+   * If `true`, the popover or modal will close after submitting the full date.
+   * @default `true` for desktop, `false` for mobile (based on the chosen wrapper and `desktopModeMediaQuery` prop).
+   */
+  closeOnSelect: import_prop_types94.default.bool,
+  /**
+   * Formats the day of week displayed in the calendar header.
+   * @param {TDate} date The date of the day of week provided by the adapter.
+   * @returns {string} The name to display.
+   * @default (date: TDate) => adapter.format(date, 'weekdayShort').charAt(0).toUpperCase()
+   */
+  dayOfWeekFormatter: import_prop_types94.default.func,
+  /**
+   * The default value.
+   * Used when the component is not controlled.
+   */
+  defaultValue: import_prop_types94.default.object,
+  /**
+   * If `true`, the picker and text field are disabled.
+   * @default false
+   */
+  disabled: import_prop_types94.default.bool,
+  /**
+   * If `true`, disable values after the current date for date components, time for time components and both for date time components.
+   * @default false
+   */
+  disableFuture: import_prop_types94.default.bool,
+  /**
+   * If `true`, today's date is rendering without highlighting with circle.
+   * @default false
+   */
+  disableHighlightToday: import_prop_types94.default.bool,
+  /**
+   * Do not ignore date part when validating min/max time.
+   * @default false
+   */
+  disableIgnoringDatePartForTimeValidation: import_prop_types94.default.bool,
+  /**
+   * If `true`, the open picker button will not be rendered (renders only the field).
+   * @default false
+   */
+  disableOpenPicker: import_prop_types94.default.bool,
+  /**
+   * If `true`, disable values before the current date for date components, time for time components and both for date time components.
+   * @default false
+   */
+  disablePast: import_prop_types94.default.bool,
+  /**
+   * If `true`, the week number will be display in the calendar.
+   */
+  displayWeekNumber: import_prop_types94.default.bool,
+  /**
+   * @default false
+   */
+  enableAccessibleFieldDOMStructure: import_prop_types94.default.any,
+  /**
+   * The day view will show as many weeks as needed after the end of the current month to match this value.
+   * Put it to 6 to have a fixed number of weeks in Gregorian calendars
+   */
+  fixedWeekNumber: import_prop_types94.default.number,
+  /**
+   * Format of the date when rendered in the input(s).
+   * Defaults to localized format based on the used `views`.
+   */
+  format: import_prop_types94.default.string,
+  /**
+   * Density of the format when rendered in the input.
+   * Setting `formatDensity` to `"spacious"` will add a space before and after each `/`, `-` and `.` character.
+   * @default "dense"
+   */
+  formatDensity: import_prop_types94.default.oneOf(["dense", "spacious"]),
+  /**
+   * Pass a ref to the `input` element.
+   */
+  inputRef: refType_default,
+  /**
+   * The label content.
+   */
+  label: import_prop_types94.default.node,
+  /**
+   * If `true`, calls `renderLoading` instead of rendering the day calendar.
+   * Can be used to preload information and show it in calendar.
+   * @default false
+   */
+  loading: import_prop_types94.default.bool,
+  /**
+   * Locale for components texts.
+   * Allows overriding texts coming from `LocalizationProvider` and `theme`.
+   */
+  localeText: import_prop_types94.default.object,
+  /**
+   * Maximal selectable date.
+   * @default 2099-12-31
+   */
+  maxDate: import_prop_types94.default.object,
+  /**
+   * Maximal selectable moment of time with binding to date, to set max time in each day use `maxTime`.
+   */
+  maxDateTime: import_prop_types94.default.object,
+  /**
+   * Maximal selectable time.
+   * The date part of the object will be ignored unless `props.disableIgnoringDatePartForTimeValidation === true`.
+   */
+  maxTime: import_prop_types94.default.object,
+  /**
+   * Minimal selectable date.
+   * @default 1900-01-01
+   */
+  minDate: import_prop_types94.default.object,
+  /**
+   * Minimal selectable moment of time with binding to date, to set min time in each day use `minTime`.
+   */
+  minDateTime: import_prop_types94.default.object,
+  /**
+   * Minimal selectable time.
+   * The date part of the object will be ignored unless `props.disableIgnoringDatePartForTimeValidation === true`.
+   */
+  minTime: import_prop_types94.default.object,
+  /**
+   * Step over minutes.
+   * @default 1
+   */
+  minutesStep: import_prop_types94.default.number,
+  /**
+   * Months rendered per row.
+   * @default 3
+   */
+  monthsPerRow: import_prop_types94.default.oneOf([3, 4]),
+  /**
+   * Name attribute used by the `input` element in the Field.
+   */
+  name: import_prop_types94.default.string,
+  /**
+   * Callback fired when the value is accepted.
+   * @template TValue The value type. It will be the same type as `value` or `null`. It can be in `[start, end]` format in case of range value.
+   * @template TError The validation error type. It will be either `string` or a `null`. It can be in `[start, end]` format in case of range value.
+   * @param {TValue} value The value that was just accepted.
+   * @param {FieldChangeHandlerContext<TError>} context The context containing the validation result of the current value.
+   */
+  onAccept: import_prop_types94.default.func,
+  /**
+   * Callback fired when the value changes.
+   * @template TValue The value type. It will be the same type as `value` or `null`. It can be in `[start, end]` format in case of range value.
+   * @template TError The validation error type. It will be either `string` or a `null`. It can be in `[start, end]` format in case of range value.
+   * @param {TValue} value The new value.
+   * @param {FieldChangeHandlerContext<TError>} context The context containing the validation result of the current value.
+   */
+  onChange: import_prop_types94.default.func,
+  /**
+   * Callback fired when the popup requests to be closed.
+   * Use in controlled mode (see `open`).
+   */
+  onClose: import_prop_types94.default.func,
+  /**
+   * Callback fired when the error associated with the current value changes.
+   * When a validation error is detected, the `error` parameter contains a non-null value.
+   * This can be used to render an appropriate form error.
+   * @template TError The validation error type. It will be either `string` or a `null`. It can be in `[start, end]` format in case of range value.
+   * @template TValue The value type. It will be the same type as `value` or `null`. It can be in `[start, end]` format in case of range value.
+   * @param {TError} error The reason why the current value is not valid.
+   * @param {TValue} value The value associated with the error.
+   */
+  onError: import_prop_types94.default.func,
+  /**
+   * Callback fired on month change.
+   * @template TDate
+   * @param {TDate} month The new month.
+   */
+  onMonthChange: import_prop_types94.default.func,
+  /**
+   * Callback fired when the popup requests to be opened.
+   * Use in controlled mode (see `open`).
+   */
+  onOpen: import_prop_types94.default.func,
+  /**
+   * Callback fired when the selected sections change.
+   * @param {FieldSelectedSections} newValue The new selected sections.
+   */
+  onSelectedSectionsChange: import_prop_types94.default.func,
+  /**
+   * Callback fired on view change.
+   * @template TView
+   * @param {TView} view The new view.
+   */
+  onViewChange: import_prop_types94.default.func,
+  /**
+   * Callback fired on year change.
+   * @template TDate
+   * @param {TDate} year The new year.
+   */
+  onYearChange: import_prop_types94.default.func,
+  /**
+   * Control the popup or dialog open state.
+   * @default false
+   */
+  open: import_prop_types94.default.bool,
+  /**
+   * The default visible view.
+   * Used when the component view is not controlled.
+   * Must be a valid option from `views` list.
+   */
+  openTo: import_prop_types94.default.oneOf(["day", "hours", "minutes", "month", "seconds", "year"]),
+  /**
+   * Force rendering in particular orientation.
+   */
+  orientation: import_prop_types94.default.oneOf(["landscape", "portrait"]),
+  readOnly: import_prop_types94.default.bool,
+  /**
+   * If `true`, disable heavy animations.
+   * @default `@media(prefers-reduced-motion: reduce)` || `navigator.userAgent` matches Android <10 or iOS <13
+   */
+  reduceAnimations: import_prop_types94.default.bool,
+  /**
+   * The date used to generate the new value when both `value` and `defaultValue` are empty.
+   * @default The closest valid date-time using the validation props, except callbacks like `shouldDisable<...>`.
+   */
+  referenceDate: import_prop_types94.default.object,
+  /**
+   * Component displaying when passed `loading` true.
+   * @returns {React.ReactNode} The node to render when loading.
+   * @default () => <span>...</span>
+   */
+  renderLoading: import_prop_types94.default.func,
+  /**
+   * The currently selected sections.
+   * This prop accepts four formats:
+   * 1. If a number is provided, the section at this index will be selected.
+   * 2. If a string of type `FieldSectionType` is provided, the first section with that name will be selected.
+   * 3. If `"all"` is provided, all the sections will be selected.
+   * 4. If `null` is provided, no section will be selected.
+   * If not provided, the selected sections will be handled internally.
+   */
+  selectedSections: import_prop_types94.default.oneOfType([import_prop_types94.default.oneOf(["all", "day", "empty", "hours", "meridiem", "minutes", "month", "seconds", "weekDay", "year"]), import_prop_types94.default.number]),
+  /**
+   * Disable specific date.
+   *
+   * Warning: This function can be called multiple times (for example when rendering date calendar, checking if focus can be moved to a certain date, etc.). Expensive computations can impact performance.
+   *
+   * @template TDate
+   * @param {TDate} day The date to test.
+   * @returns {boolean} If `true` the date will be disabled.
+   */
+  shouldDisableDate: import_prop_types94.default.func,
+  /**
+   * Disable specific month.
+   * @template TDate
+   * @param {TDate} month The month to test.
+   * @returns {boolean} If `true`, the month will be disabled.
+   */
+  shouldDisableMonth: import_prop_types94.default.func,
+  /**
+   * Disable specific time.
+   * @template TDate
+   * @param {TDate} value The value to check.
+   * @param {TimeView} view The clock type of the timeValue.
+   * @returns {boolean} If `true` the time will be disabled.
+   */
+  shouldDisableTime: import_prop_types94.default.func,
+  /**
+   * Disable specific year.
+   * @template TDate
+   * @param {TDate} year The year to test.
+   * @returns {boolean} If `true`, the year will be disabled.
+   */
+  shouldDisableYear: import_prop_types94.default.func,
+  /**
+   * If `true`, days outside the current month are rendered:
+   *
+   * - if `fixedWeekNumber` is defined, renders days to have the weeks requested.
+   *
+   * - if `fixedWeekNumber` is not defined, renders day to fill the first and last week of the current month.
+   *
+   * - ignored if `calendars` equals more than `1` on range pickers.
+   * @default false
+   */
+  showDaysOutsideCurrentMonth: import_prop_types94.default.bool,
+  /**
+   * The props used for each component slot.
+   * @default {}
+   */
+  slotProps: import_prop_types94.default.object,
+  /**
+   * Overridable component slots.
+   * @default {}
+   */
+  slots: import_prop_types94.default.object,
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: import_prop_types94.default.oneOfType([import_prop_types94.default.arrayOf(import_prop_types94.default.oneOfType([import_prop_types94.default.func, import_prop_types94.default.object, import_prop_types94.default.bool])), import_prop_types94.default.func, import_prop_types94.default.object]),
+  /**
+   * Choose which timezone to use for the value.
+   * Example: "default", "system", "UTC", "America/New_York".
+   * If you pass values from other timezones to some props, they will be converted to this timezone before being used.
+   * @see See the {@link https://mui.com/x/react-date-pickers/timezone/ timezones documentation} for more details.
+   * @default The timezone of the `value` or `defaultValue` prop is defined, 'default' otherwise.
+   */
+  timezone: import_prop_types94.default.string,
+  /**
+   * The selected value.
+   * Used when the component is controlled.
+   */
+  value: import_prop_types94.default.object,
+  /**
+   * The visible view.
+   * Used when the component view is controlled.
+   * Must be a valid option from `views` list.
+   */
+  view: import_prop_types94.default.oneOf(["day", "hours", "minutes", "month", "seconds", "year"]),
+  /**
+   * Define custom view renderers for each section.
+   * If `null`, the section will only have field editing.
+   * If `undefined`, internally defined view will be used.
+   */
+  viewRenderers: import_prop_types94.default.shape({
+    day: import_prop_types94.default.func,
+    hours: import_prop_types94.default.func,
+    minutes: import_prop_types94.default.func,
+    month: import_prop_types94.default.func,
+    seconds: import_prop_types94.default.func,
+    year: import_prop_types94.default.func
+  }),
+  /**
+   * Available views.
+   */
+  views: import_prop_types94.default.arrayOf(import_prop_types94.default.oneOf(["day", "hours", "minutes", "month", "seconds", "year"]).isRequired),
+  /**
+   * Years are displayed in ascending (chronological) order by default.
+   * If `desc`, years are displayed in descending order.
+   * @default 'asc'
+   */
+  yearsOrder: import_prop_types94.default.oneOf(["asc", "desc"]),
+  /**
+   * Years rendered per row.
+   * @default 3
+   */
+  yearsPerRow: import_prop_types94.default.oneOf([3, 4])
+};
+
+// node_modules/@mui/x-date-pickers/DateTimePicker/DateTimePicker.js
+import { jsx as _jsx118 } from "react/jsx-runtime";
+var _excluded50 = ["desktopModeMediaQuery"];
+var DateTimePicker = /* @__PURE__ */ React180.forwardRef(function DateTimePicker2(inProps, ref) {
+  const props = useThemeProps2({
+    props: inProps,
+    name: "MuiDateTimePicker"
+  });
+  const {
+    desktopModeMediaQuery = DEFAULT_DESKTOP_MODE_MEDIA_QUERY
+  } = props, other = _objectWithoutPropertiesLoose(props, _excluded50);
+  const isDesktop = useMediaQuery_default(desktopModeMediaQuery, {
+    defaultMatches: true
+  });
+  if (isDesktop) {
+    return /* @__PURE__ */ _jsx118(DesktopDateTimePicker, _extends({
+      ref
+    }, other));
+  }
+  return /* @__PURE__ */ _jsx118(MobileDateTimePicker, _extends({
+    ref
+  }, other));
+});
+true ? DateTimePicker.propTypes = {
+  // ----------------------------- Warning --------------------------------
+  // | These PropTypes are generated from the TypeScript type definitions |
+  // | To update them edit the TypeScript types and run "pnpm proptypes"  |
+  // ----------------------------------------------------------------------
+  /**
+   * 12h/24h view for hour selection clock.
+   * @default utils.is12HourCycleInCurrentLocale()
+   */
+  ampm: import_prop_types95.default.bool,
+  /**
+   * Display ampm controls under the clock (instead of in the toolbar).
+   * @default true on desktop, false on mobile
+   */
+  ampmInClock: import_prop_types95.default.bool,
+  /**
+   * If `true`, the main element is focused during the first mount.
+   * This main element is:
+   * - the element chosen by the visible view if any (i.e: the selected day on the `day` view).
+   * - the `input` element if there is a field rendered.
+   */
+  autoFocus: import_prop_types95.default.bool,
+  className: import_prop_types95.default.string,
+  /**
+   * If `true`, the popover or modal will close after submitting the full date.
+   * @default `true` for desktop, `false` for mobile (based on the chosen wrapper and `desktopModeMediaQuery` prop).
+   */
+  closeOnSelect: import_prop_types95.default.bool,
+  /**
+   * Formats the day of week displayed in the calendar header.
+   * @param {TDate} date The date of the day of week provided by the adapter.
+   * @returns {string} The name to display.
+   * @default (date: TDate) => adapter.format(date, 'weekdayShort').charAt(0).toUpperCase()
+   */
+  dayOfWeekFormatter: import_prop_types95.default.func,
+  /**
+   * The default value.
+   * Used when the component is not controlled.
+   */
+  defaultValue: import_prop_types95.default.object,
+  /**
+   * CSS media query when `Mobile` mode will be changed to `Desktop`.
+   * @default '@media (pointer: fine)'
+   * @example '@media (min-width: 720px)' or theme.breakpoints.up("sm")
+   */
+  desktopModeMediaQuery: import_prop_types95.default.string,
+  /**
+   * If `true`, the picker and text field are disabled.
+   * @default false
+   */
+  disabled: import_prop_types95.default.bool,
+  /**
+   * If `true`, disable values after the current date for date components, time for time components and both for date time components.
+   * @default false
+   */
+  disableFuture: import_prop_types95.default.bool,
+  /**
+   * If `true`, today's date is rendering without highlighting with circle.
+   * @default false
+   */
+  disableHighlightToday: import_prop_types95.default.bool,
+  /**
+   * Do not ignore date part when validating min/max time.
+   * @default false
+   */
+  disableIgnoringDatePartForTimeValidation: import_prop_types95.default.bool,
+  /**
+   * If `true`, the open picker button will not be rendered (renders only the field).
+   * @default false
+   */
+  disableOpenPicker: import_prop_types95.default.bool,
+  /**
+   * If `true`, disable values before the current date for date components, time for time components and both for date time components.
+   * @default false
+   */
+  disablePast: import_prop_types95.default.bool,
+  /**
+   * If `true`, the week number will be display in the calendar.
+   */
+  displayWeekNumber: import_prop_types95.default.bool,
+  /**
+   * @default false
+   */
+  enableAccessibleFieldDOMStructure: import_prop_types95.default.any,
+  /**
+   * The day view will show as many weeks as needed after the end of the current month to match this value.
+   * Put it to 6 to have a fixed number of weeks in Gregorian calendars
+   */
+  fixedWeekNumber: import_prop_types95.default.number,
+  /**
+   * Format of the date when rendered in the input(s).
+   * Defaults to localized format based on the used `views`.
+   */
+  format: import_prop_types95.default.string,
+  /**
+   * Density of the format when rendered in the input.
+   * Setting `formatDensity` to `"spacious"` will add a space before and after each `/`, `-` and `.` character.
+   * @default "dense"
+   */
+  formatDensity: import_prop_types95.default.oneOf(["dense", "spacious"]),
+  /**
+   * Pass a ref to the `input` element.
+   */
+  inputRef: refType_default,
+  /**
+   * The label content.
+   */
+  label: import_prop_types95.default.node,
+  /**
+   * If `true`, calls `renderLoading` instead of rendering the day calendar.
+   * Can be used to preload information and show it in calendar.
+   * @default false
+   */
+  loading: import_prop_types95.default.bool,
+  /**
+   * Locale for components texts.
+   * Allows overriding texts coming from `LocalizationProvider` and `theme`.
+   */
+  localeText: import_prop_types95.default.object,
+  /**
+   * Maximal selectable date.
+   * @default 2099-12-31
+   */
+  maxDate: import_prop_types95.default.object,
+  /**
+   * Maximal selectable moment of time with binding to date, to set max time in each day use `maxTime`.
+   */
+  maxDateTime: import_prop_types95.default.object,
+  /**
+   * Maximal selectable time.
+   * The date part of the object will be ignored unless `props.disableIgnoringDatePartForTimeValidation === true`.
+   */
+  maxTime: import_prop_types95.default.object,
+  /**
+   * Minimal selectable date.
+   * @default 1900-01-01
+   */
+  minDate: import_prop_types95.default.object,
+  /**
+   * Minimal selectable moment of time with binding to date, to set min time in each day use `minTime`.
+   */
+  minDateTime: import_prop_types95.default.object,
+  /**
+   * Minimal selectable time.
+   * The date part of the object will be ignored unless `props.disableIgnoringDatePartForTimeValidation === true`.
+   */
+  minTime: import_prop_types95.default.object,
+  /**
+   * Step over minutes.
+   * @default 1
+   */
+  minutesStep: import_prop_types95.default.number,
+  /**
+   * Months rendered per row.
+   * @default 3
+   */
+  monthsPerRow: import_prop_types95.default.oneOf([3, 4]),
+  /**
+   * Name attribute used by the `input` element in the Field.
+   */
+  name: import_prop_types95.default.string,
+  /**
+   * Callback fired when the value is accepted.
+   * @template TValue The value type. It will be the same type as `value` or `null`. It can be in `[start, end]` format in case of range value.
+   * @template TError The validation error type. It will be either `string` or a `null`. It can be in `[start, end]` format in case of range value.
+   * @param {TValue} value The value that was just accepted.
+   * @param {FieldChangeHandlerContext<TError>} context The context containing the validation result of the current value.
+   */
+  onAccept: import_prop_types95.default.func,
+  /**
+   * Callback fired when the value changes.
+   * @template TValue The value type. It will be the same type as `value` or `null`. It can be in `[start, end]` format in case of range value.
+   * @template TError The validation error type. It will be either `string` or a `null`. It can be in `[start, end]` format in case of range value.
+   * @param {TValue} value The new value.
+   * @param {FieldChangeHandlerContext<TError>} context The context containing the validation result of the current value.
+   */
+  onChange: import_prop_types95.default.func,
+  /**
+   * Callback fired when the popup requests to be closed.
+   * Use in controlled mode (see `open`).
+   */
+  onClose: import_prop_types95.default.func,
+  /**
+   * Callback fired when the error associated with the current value changes.
+   * When a validation error is detected, the `error` parameter contains a non-null value.
+   * This can be used to render an appropriate form error.
+   * @template TError The validation error type. It will be either `string` or a `null`. It can be in `[start, end]` format in case of range value.
+   * @template TValue The value type. It will be the same type as `value` or `null`. It can be in `[start, end]` format in case of range value.
+   * @param {TError} error The reason why the current value is not valid.
+   * @param {TValue} value The value associated with the error.
+   */
+  onError: import_prop_types95.default.func,
+  /**
+   * Callback fired on month change.
+   * @template TDate
+   * @param {TDate} month The new month.
+   */
+  onMonthChange: import_prop_types95.default.func,
+  /**
+   * Callback fired when the popup requests to be opened.
+   * Use in controlled mode (see `open`).
+   */
+  onOpen: import_prop_types95.default.func,
+  /**
+   * Callback fired when the selected sections change.
+   * @param {FieldSelectedSections} newValue The new selected sections.
+   */
+  onSelectedSectionsChange: import_prop_types95.default.func,
+  /**
+   * Callback fired on view change.
+   * @template TView
+   * @param {TView} view The new view.
+   */
+  onViewChange: import_prop_types95.default.func,
+  /**
+   * Callback fired on year change.
+   * @template TDate
+   * @param {TDate} year The new year.
+   */
+  onYearChange: import_prop_types95.default.func,
+  /**
+   * Control the popup or dialog open state.
+   * @default false
+   */
+  open: import_prop_types95.default.bool,
+  /**
+   * The default visible view.
+   * Used when the component view is not controlled.
+   * Must be a valid option from `views` list.
+   */
+  openTo: import_prop_types95.default.oneOf(["day", "hours", "meridiem", "minutes", "month", "seconds", "year"]),
+  /**
+   * Force rendering in particular orientation.
+   */
+  orientation: import_prop_types95.default.oneOf(["landscape", "portrait"]),
+  readOnly: import_prop_types95.default.bool,
+  /**
+   * If `true`, disable heavy animations.
+   * @default `@media(prefers-reduced-motion: reduce)` || `navigator.userAgent` matches Android <10 or iOS <13
+   */
+  reduceAnimations: import_prop_types95.default.bool,
+  /**
+   * The date used to generate the new value when both `value` and `defaultValue` are empty.
+   * @default The closest valid date-time using the validation props, except callbacks like `shouldDisable<...>`.
+   */
+  referenceDate: import_prop_types95.default.object,
+  /**
+   * Component displaying when passed `loading` true.
+   * @returns {React.ReactNode} The node to render when loading.
+   * @default () => <span>...</span>
+   */
+  renderLoading: import_prop_types95.default.func,
+  /**
+   * The currently selected sections.
+   * This prop accepts four formats:
+   * 1. If a number is provided, the section at this index will be selected.
+   * 2. If a string of type `FieldSectionType` is provided, the first section with that name will be selected.
+   * 3. If `"all"` is provided, all the sections will be selected.
+   * 4. If `null` is provided, no section will be selected.
+   * If not provided, the selected sections will be handled internally.
+   */
+  selectedSections: import_prop_types95.default.oneOfType([import_prop_types95.default.oneOf(["all", "day", "empty", "hours", "meridiem", "minutes", "month", "seconds", "weekDay", "year"]), import_prop_types95.default.number]),
+  /**
+   * Disable specific date.
+   *
+   * Warning: This function can be called multiple times (for example when rendering date calendar, checking if focus can be moved to a certain date, etc.). Expensive computations can impact performance.
+   *
+   * @template TDate
+   * @param {TDate} day The date to test.
+   * @returns {boolean} If `true` the date will be disabled.
+   */
+  shouldDisableDate: import_prop_types95.default.func,
+  /**
+   * Disable specific month.
+   * @template TDate
+   * @param {TDate} month The month to test.
+   * @returns {boolean} If `true`, the month will be disabled.
+   */
+  shouldDisableMonth: import_prop_types95.default.func,
+  /**
+   * Disable specific time.
+   * @template TDate
+   * @param {TDate} value The value to check.
+   * @param {TimeView} view The clock type of the timeValue.
+   * @returns {boolean} If `true` the time will be disabled.
+   */
+  shouldDisableTime: import_prop_types95.default.func,
+  /**
+   * Disable specific year.
+   * @template TDate
+   * @param {TDate} year The year to test.
+   * @returns {boolean} If `true`, the year will be disabled.
+   */
+  shouldDisableYear: import_prop_types95.default.func,
+  /**
+   * If `true`, days outside the current month are rendered:
+   *
+   * - if `fixedWeekNumber` is defined, renders days to have the weeks requested.
+   *
+   * - if `fixedWeekNumber` is not defined, renders day to fill the first and last week of the current month.
+   *
+   * - ignored if `calendars` equals more than `1` on range pickers.
+   * @default false
+   */
+  showDaysOutsideCurrentMonth: import_prop_types95.default.bool,
+  /**
+   * If `true`, disabled digital clock items will not be rendered.
+   * @default false
+   */
+  skipDisabled: import_prop_types95.default.bool,
+  /**
+   * The props used for each component slot.
+   * @default {}
+   */
+  slotProps: import_prop_types95.default.object,
+  /**
+   * Overridable component slots.
+   * @default {}
+   */
+  slots: import_prop_types95.default.object,
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: import_prop_types95.default.oneOfType([import_prop_types95.default.arrayOf(import_prop_types95.default.oneOfType([import_prop_types95.default.func, import_prop_types95.default.object, import_prop_types95.default.bool])), import_prop_types95.default.func, import_prop_types95.default.object]),
+  /**
+   * Amount of time options below or at which the single column time renderer is used.
+   * @default 24
+   */
+  thresholdToRenderTimeInASingleColumn: import_prop_types95.default.number,
+  /**
+   * The time steps between two time unit options.
+   * For example, if `timeStep.minutes = 8`, then the available minute options will be `[0, 8, 16, 24, 32, 40, 48, 56]`.
+   * When single column time renderer is used, only `timeStep.minutes` will be used.
+   * @default{ hours: 1, minutes: 5, seconds: 5 }
+   */
+  timeSteps: import_prop_types95.default.shape({
+    hours: import_prop_types95.default.number,
+    minutes: import_prop_types95.default.number,
+    seconds: import_prop_types95.default.number
+  }),
+  /**
+   * Choose which timezone to use for the value.
+   * Example: "default", "system", "UTC", "America/New_York".
+   * If you pass values from other timezones to some props, they will be converted to this timezone before being used.
+   * @see See the {@link https://mui.com/x/react-date-pickers/timezone/ timezones documentation} for more details.
+   * @default The timezone of the `value` or `defaultValue` prop is defined, 'default' otherwise.
+   */
+  timezone: import_prop_types95.default.string,
+  /**
+   * The selected value.
+   * Used when the component is controlled.
+   */
+  value: import_prop_types95.default.object,
+  /**
+   * The visible view.
+   * Used when the component view is controlled.
+   * Must be a valid option from `views` list.
+   */
+  view: import_prop_types95.default.oneOf(["day", "hours", "meridiem", "minutes", "month", "seconds", "year"]),
+  /**
+   * Define custom view renderers for each section.
+   * If `null`, the section will only have field editing.
+   * If `undefined`, internally defined view will be used.
+   */
+  viewRenderers: import_prop_types95.default.shape({
+    day: import_prop_types95.default.func,
+    hours: import_prop_types95.default.func,
+    meridiem: import_prop_types95.default.func,
+    minutes: import_prop_types95.default.func,
+    month: import_prop_types95.default.func,
+    seconds: import_prop_types95.default.func,
+    year: import_prop_types95.default.func
+  }),
+  /**
+   * Available views.
+   */
+  views: import_prop_types95.default.arrayOf(import_prop_types95.default.oneOf(["day", "hours", "minutes", "month", "seconds", "year"]).isRequired),
+  /**
+   * Years are displayed in ascending (chronological) order by default.
+   * If `desc`, years are displayed in descending order.
+   * @default 'asc'
+   */
+  yearsOrder: import_prop_types95.default.oneOf(["asc", "desc"]),
+  /**
+   * Years rendered per row.
+   * @default 4 on desktop, 3 on mobile
+   */
+  yearsPerRow: import_prop_types95.default.oneOf([3, 4])
 } : void 0;
 
 // node_modules/@mui/x-date-pickers/AdapterDayjs/AdapterDayjs.js
@@ -53748,7 +55333,7 @@ var DateTimePickerComp = ({ value, onChange, ...rest }) => {
 var DateTimePicker_default = DateTimePickerComp;
 
 // src/modules/TimePickerRange/TimePicker.js
-import React180, { useState as useState29 } from "react";
+import React182, { useState as useState29 } from "react";
 import { jsx as jsx12, jsxs as jsxs7 } from "react/jsx-runtime";
 var TimePicker = ({
   minStep = 1,
@@ -53916,7 +55501,7 @@ var TimePicker = ({
 var TimePicker_default = TimePicker;
 
 // src/modules/DatePickerRange/index.js
-import React182, { forwardRef as forwardRef77, useState as useState30, useEffect as useEffect39 } from "react";
+import React184, { forwardRef as forwardRef77, useState as useState30, useEffect as useEffect39 } from "react";
 import DatePicker2 from "react-datepicker";
 
 // node_modules/date-fns/esm/locale/mn/_lib/formatDistance/index.js
@@ -54301,7 +55886,7 @@ var locale2 = {
 var mn_default = locale2;
 
 // src/modules/DatePickerRange/CustomHeader.js
-import React181 from "react";
+import React183 from "react";
 import { jsx as jsx13, jsxs as jsxs8 } from "react/jsx-runtime";
 function CustomHeader2({
   monthDate,
@@ -54565,7 +56150,7 @@ var DatePickerRange_default = DatePickerRange;
 
 // src/modules/TimePickerRange/index.js
 var import_mn3 = __toESM(require_mn());
-import React183, { forwardRef as forwardRef78, useState as useState31, useEffect as useEffect40 } from "react";
+import React185, { forwardRef as forwardRef78, useState as useState31, useEffect as useEffect40 } from "react";
 import DatePicker3 from "react-datepicker";
 import { jsx as jsx15, jsxs as jsxs10 } from "react/jsx-runtime";
 var CustomIcon2 = forwardRef78(({ onClick, className = "" }, ref) => {
@@ -54658,7 +56243,7 @@ import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "ckeditor5-build-classic-mathtype";
 
 // src/components/RadioButton.js
-import React184 from "react";
+import React186 from "react";
 import { jsx as jsx16 } from "react/jsx-runtime";
 var RadioButton = ({ checked = false, onCheck, className, styleObj }) => {
   return /* @__PURE__ */ jsx16("div", { className: `radio cursor-pointer ${className || ""}`, onClick: onCheck, style: styleObj || {}, children: checked && /* @__PURE__ */ jsx16("div", { className: "radio-checked" }) });
@@ -54672,9 +56257,9 @@ import DayPickerInput from "react-day-picker/DayPickerInput";
 import { Fragment as Fragment22, jsx as jsx17, jsxs as jsxs11 } from "react/jsx-runtime";
 var Forms = ({ fields: paramFields = [], onSubmit, formStyle = {}, formClass = "" }, ref) => {
   const { t: t2 } = useTranslation5();
-  const fileUploaderRef = useRef51([]);
-  const textRef = useRef51([]);
-  const numberInputRef = useRef51([]);
+  const fileUploaderRef = useRef52([]);
+  const textRef = useRef52([]);
+  const numberInputRef = useRef52([]);
   useImperativeHandle10(ref, () => ({
     validate() {
       return validateFields();
@@ -54997,10 +56582,10 @@ var Forms = ({ fields: paramFields = [], onSubmit, formStyle = {}, formClass = "
     setFields(clone);
     field?.onChange?.(dates);
   };
-  const handleColorChange = (color2, index3) => {
+  const handleColorChange = (color3, index3) => {
     const clone = [...fields];
     const field = { ...clone[index3] };
-    field.value = color2.hex;
+    field.value = color3.hex;
     clone[index3] = field;
     setFields(clone);
     field?.onChange?.(values.hex);
@@ -55269,7 +56854,7 @@ var Forms = ({ fields: paramFields = [], onSubmit, formStyle = {}, formClass = "
           }
           if (field.type === "jsx") {
             if (field.value) {
-              if (React185.isValidElement(field.value)) {
+              if (React187.isValidElement(field.value)) {
                 if (!field.value.key) {
                 }
                 if (field.hidden) {
@@ -57096,7 +58681,7 @@ var Forms = ({ fields: paramFields = [], onSubmit, formStyle = {}, formClass = "
                                 SketchPicker,
                                 {
                                   color: field.value,
-                                  onChange: (color2) => handleColorChange(color2, index3)
+                                  onChange: (color3) => handleColorChange(color3, index3)
                                 }
                               )
                             ]
@@ -57130,10 +58715,10 @@ var Forms = ({ fields: paramFields = [], onSubmit, formStyle = {}, formClass = "
     }
   ) });
 };
-var Form_default = React185.forwardRef(Forms);
+var Form_default = React187.forwardRef(Forms);
 
 // src/modules/Tree/index.js
-import React224, { useEffect as useEffect55, useState as useState43 } from "react";
+import React226, { useEffect as useEffect55, useState as useState43 } from "react";
 import ReactDOM4 from "react-dom";
 
 // node_modules/@babel/runtime/helpers/esm/defineProperty.js
@@ -57844,18 +59429,18 @@ warningOnce.noteOnce = noteOnce;
 var warning_default = warningOnce;
 
 // node_modules/rc-tree/es/Tree.js
-import * as React223 from "react";
+import * as React225 from "react";
 
 // node_modules/rc-tree/es/contextTypes.js
-import * as React186 from "react";
-var TreeContext = /* @__PURE__ */ React186.createContext(null);
-var UnstableContext = /* @__PURE__ */ React186.createContext({});
+import * as React188 from "react";
+var TreeContext = /* @__PURE__ */ React188.createContext(null);
+var UnstableContext = /* @__PURE__ */ React188.createContext({});
 
 // node_modules/rc-tree/es/DropIndicator.js
-import React187 from "react";
+import React189 from "react";
 var DropIndicator = function DropIndicator2(props) {
   var dropPosition = props.dropPosition, dropLevelOffset = props.dropLevelOffset, indent = props.indent;
-  var style4 = {
+  var style6 = {
     pointerEvents: "none",
     position: "absolute",
     right: 0,
@@ -57864,20 +59449,20 @@ var DropIndicator = function DropIndicator2(props) {
   };
   switch (dropPosition) {
     case -1:
-      style4.top = 0;
-      style4.left = -dropLevelOffset * indent;
+      style6.top = 0;
+      style6.left = -dropLevelOffset * indent;
       break;
     case 1:
-      style4.bottom = 0;
-      style4.left = -dropLevelOffset * indent;
+      style6.bottom = 0;
+      style6.left = -dropLevelOffset * indent;
       break;
     case 0:
-      style4.bottom = 0;
-      style4.left = indent;
+      style6.bottom = 0;
+      style6.left = indent;
       break;
   }
-  return /* @__PURE__ */ React187.createElement("div", {
-    style: style4
+  return /* @__PURE__ */ React189.createElement("div", {
+    style: style6
   });
 };
 if (true) {
@@ -57940,7 +59525,7 @@ function _objectWithoutProperties(e2, t2) {
 }
 
 // node_modules/rc-util/es/hooks/useLayoutEffect.js
-import * as React188 from "react";
+import * as React190 from "react";
 
 // node_modules/rc-util/es/Dom/canUseDom.js
 function canUseDom() {
@@ -57948,9 +59533,9 @@ function canUseDom() {
 }
 
 // node_modules/rc-util/es/hooks/useLayoutEffect.js
-var useInternalLayoutEffect = canUseDom() ? React188.useLayoutEffect : React188.useEffect;
+var useInternalLayoutEffect = canUseDom() ? React190.useLayoutEffect : React190.useEffect;
 var useLayoutEffect3 = function useLayoutEffect4(callback, deps) {
-  var firstMountRef = React188.useRef(true);
+  var firstMountRef = React190.useRef(true);
   useInternalLayoutEffect(function() {
     return callback(firstMountRef.current);
   }, deps);
@@ -57967,7 +59552,7 @@ var useLayoutEffect_default = useLayoutEffect3;
 var import_classnames3 = __toESM(require_classnames());
 
 // node_modules/rc-resize-observer/es/index.js
-import * as React195 from "react";
+import * as React197 from "react";
 
 // node_modules/rc-util/es/React/isFragment.js
 var REACT_ELEMENT_TYPE_18 = Symbol.for("react.element");
@@ -57983,11 +59568,11 @@ function isFragment5(object) {
 }
 
 // node_modules/rc-util/es/Children/toArray.js
-import React189 from "react";
+import React191 from "react";
 function toArray(children) {
   var option = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
   var ret = [];
-  React189.Children.forEach(children, function(child) {
+  React191.Children.forEach(children, function(child) {
     if ((child === void 0 || child === null) && !option.keepEmpty) {
       return;
     }
@@ -58003,7 +59588,7 @@ function toArray(children) {
 }
 
 // node_modules/rc-util/es/Dom/findDOMNode.js
-import React190 from "react";
+import React192 from "react";
 import ReactDOM3 from "react-dom";
 function isDOM(node) {
   return node instanceof HTMLElement || node instanceof SVGElement;
@@ -58022,7 +59607,7 @@ function findDOMNode(node) {
   if (domNode) {
     return domNode;
   }
-  if (node instanceof React190.Component) {
+  if (node instanceof React192.Component) {
     var _ReactDOM$findDOMNode;
     return (_ReactDOM$findDOMNode = ReactDOM3.findDOMNode) === null || _ReactDOM$findDOMNode === void 0 ? void 0 : _ReactDOM$findDOMNode.call(ReactDOM3, node);
   }
@@ -58030,15 +59615,15 @@ function findDOMNode(node) {
 }
 
 // node_modules/rc-util/es/ref.js
-var import_react_is8 = __toESM(require_react_is3());
-import { isValidElement as isValidElement14, version as version3 } from "react";
+var import_react_is9 = __toESM(require_react_is3());
+import { isValidElement as isValidElement15, version as version3 } from "react";
 
 // node_modules/rc-util/es/hooks/useMemo.js
-import * as React191 from "react";
-function useMemo35(getValue2, condition, shouldUpdate) {
-  var cacheRef = React191.useRef({});
+import * as React193 from "react";
+function useMemo35(getValue3, condition, shouldUpdate) {
+  var cacheRef = React193.useRef({});
   if (!("value" in cacheRef.current) || shouldUpdate(cacheRef.current.condition, condition)) {
-    cacheRef.current.value = getValue2();
+    cacheRef.current.value = getValue3();
     cacheRef.current.condition = condition;
   }
   return cacheRef.current.value;
@@ -58087,17 +59672,17 @@ var supportRef = function supportRef2(nodeOrComponent) {
   if (isReactElement(nodeOrComponent) && ReactMajorVersion >= 19) {
     return true;
   }
-  var type = (0, import_react_is8.isMemo)(nodeOrComponent) ? nodeOrComponent.type.type : nodeOrComponent.type;
-  if (typeof type === "function" && !((_type$prototype = type.prototype) !== null && _type$prototype !== void 0 && _type$prototype.render) && type.$$typeof !== import_react_is8.ForwardRef) {
+  var type = (0, import_react_is9.isMemo)(nodeOrComponent) ? nodeOrComponent.type.type : nodeOrComponent.type;
+  if (typeof type === "function" && !((_type$prototype = type.prototype) !== null && _type$prototype !== void 0 && _type$prototype.render) && type.$$typeof !== import_react_is9.ForwardRef) {
     return false;
   }
-  if (typeof nodeOrComponent === "function" && !((_nodeOrComponent$prot = nodeOrComponent.prototype) !== null && _nodeOrComponent$prot !== void 0 && _nodeOrComponent$prot.render) && nodeOrComponent.$$typeof !== import_react_is8.ForwardRef) {
+  if (typeof nodeOrComponent === "function" && !((_nodeOrComponent$prot = nodeOrComponent.prototype) !== null && _nodeOrComponent$prot !== void 0 && _nodeOrComponent$prot.render) && nodeOrComponent.$$typeof !== import_react_is9.ForwardRef) {
     return false;
   }
   return true;
 };
 function isReactElement(node) {
-  return /* @__PURE__ */ isValidElement14(node) && !isFragment5(node);
+  return /* @__PURE__ */ isValidElement15(node) && !isFragment5(node);
 }
 var getNodeRef = function getNodeRef2(node) {
   if (node && isReactElement(node)) {
@@ -58108,17 +59693,17 @@ var getNodeRef = function getNodeRef2(node) {
 };
 
 // node_modules/rc-resize-observer/es/SingleObserver/index.js
-import * as React194 from "react";
+import * as React196 from "react";
 
 // node_modules/rc-resize-observer/es/Collection.js
-import * as React192 from "react";
-var CollectionContext = /* @__PURE__ */ React192.createContext(null);
+import * as React194 from "react";
+var CollectionContext = /* @__PURE__ */ React194.createContext(null);
 function Collection(_ref) {
   var children = _ref.children, onBatchResize = _ref.onBatchResize;
-  var resizeIdRef = React192.useRef(0);
-  var resizeInfosRef = React192.useRef([]);
-  var onCollectionResize = React192.useContext(CollectionContext);
-  var onResize2 = React192.useCallback(function(size, element, data) {
+  var resizeIdRef = React194.useRef(0);
+  var resizeInfosRef = React194.useRef([]);
+  var onCollectionResize = React194.useContext(CollectionContext);
+  var onResize2 = React194.useCallback(function(size, element, data) {
     resizeIdRef.current += 1;
     var currentId = resizeIdRef.current;
     resizeInfosRef.current.push({
@@ -58134,7 +59719,7 @@ function Collection(_ref) {
     });
     onCollectionResize === null || onCollectionResize === void 0 || onCollectionResize(size, element, data);
   }, [onBatchResize, onCollectionResize]);
-  return /* @__PURE__ */ React192.createElement(CollectionContext.Provider, {
+  return /* @__PURE__ */ React194.createElement(CollectionContext.Provider, {
     value: onResize2
   }, children);
 }
@@ -58419,26 +60004,26 @@ function getHTMLElementContentRect(target) {
   var paddings = getPaddings(styles5);
   var horizPad = paddings.left + paddings.right;
   var vertPad = paddings.top + paddings.bottom;
-  var width2 = toFloat(styles5.width), height2 = toFloat(styles5.height);
+  var width3 = toFloat(styles5.width), height3 = toFloat(styles5.height);
   if (styles5.boxSizing === "border-box") {
-    if (Math.round(width2 + horizPad) !== clientWidth) {
-      width2 -= getBordersSize(styles5, "left", "right") + horizPad;
+    if (Math.round(width3 + horizPad) !== clientWidth) {
+      width3 -= getBordersSize(styles5, "left", "right") + horizPad;
     }
-    if (Math.round(height2 + vertPad) !== clientHeight) {
-      height2 -= getBordersSize(styles5, "top", "bottom") + vertPad;
+    if (Math.round(height3 + vertPad) !== clientHeight) {
+      height3 -= getBordersSize(styles5, "top", "bottom") + vertPad;
     }
   }
   if (!isDocumentElement(target)) {
-    var vertScrollbar = Math.round(width2 + horizPad) - clientWidth;
-    var horizScrollbar = Math.round(height2 + vertPad) - clientHeight;
+    var vertScrollbar = Math.round(width3 + horizPad) - clientWidth;
+    var horizScrollbar = Math.round(height3 + vertPad) - clientHeight;
     if (Math.abs(vertScrollbar) !== 1) {
-      width2 -= vertScrollbar;
+      width3 -= vertScrollbar;
     }
     if (Math.abs(horizScrollbar) !== 1) {
-      height2 -= horizScrollbar;
+      height3 -= horizScrollbar;
     }
   }
-  return createRectInit(paddings.left, paddings.top, width2, height2);
+  return createRectInit(paddings.left, paddings.top, width3, height3);
 }
 var isSVGGraphicsElement = function() {
   if (typeof SVGGraphicsElement !== "undefined") {
@@ -58463,23 +60048,23 @@ function getContentRect(target) {
   return getHTMLElementContentRect(target);
 }
 function createReadOnlyRect(_a) {
-  var x2 = _a.x, y3 = _a.y, width2 = _a.width, height2 = _a.height;
+  var x2 = _a.x, y3 = _a.y, width3 = _a.width, height3 = _a.height;
   var Constr = typeof DOMRectReadOnly !== "undefined" ? DOMRectReadOnly : Object;
   var rect = Object.create(Constr.prototype);
   defineConfigurable(rect, {
     x: x2,
     y: y3,
-    width: width2,
-    height: height2,
+    width: width3,
+    height: height3,
     top: y3,
-    right: x2 + width2,
-    bottom: height2 + y3,
+    right: x2 + width3,
+    bottom: height3 + y3,
     left: x2
   });
   return rect;
 }
-function createRectInit(x2, y3, width2, height2) {
-  return { x: x2, y: y3, width: width2, height: height2 };
+function createRectInit(x2, y3, width3, height3) {
+  return { x: x2, y: y3, width: width3, height: height3 };
 }
 var ResizeObservation = (
   /** @class */
@@ -58664,7 +60249,7 @@ function unobserve(element, callback) {
 }
 
 // node_modules/rc-resize-observer/es/SingleObserver/DomWrapper.js
-import * as React193 from "react";
+import * as React195 from "react";
 var DomWrapper = /* @__PURE__ */ function(_React$Component) {
   _inherits(DomWrapper3, _React$Component);
   var _super = _createSuper(DomWrapper3);
@@ -58679,23 +60264,23 @@ var DomWrapper = /* @__PURE__ */ function(_React$Component) {
     }
   }]);
   return DomWrapper3;
-}(React193.Component);
+}(React195.Component);
 
 // node_modules/rc-resize-observer/es/SingleObserver/index.js
 function SingleObserver(props, ref) {
   var children = props.children, disabled = props.disabled;
-  var elementRef = React194.useRef(null);
-  var wrapperRef = React194.useRef(null);
-  var onCollectionResize = React194.useContext(CollectionContext);
+  var elementRef = React196.useRef(null);
+  var wrapperRef = React196.useRef(null);
+  var onCollectionResize = React196.useContext(CollectionContext);
   var isRenderProps = typeof children === "function";
   var mergedChildren = isRenderProps ? children(elementRef) : children;
-  var sizeRef = React194.useRef({
+  var sizeRef = React196.useRef({
     width: -1,
     height: -1,
     offsetWidth: -1,
     offsetHeight: -1
   });
-  var canRef = !isRenderProps && /* @__PURE__ */ React194.isValidElement(mergedChildren) && supportRef(mergedChildren);
+  var canRef = !isRenderProps && /* @__PURE__ */ React196.isValidElement(mergedChildren) && supportRef(mergedChildren);
   var originRef = canRef ? getNodeRef(mergedChildren) : null;
   var mergedRef = useComposeRef(originRef, elementRef);
   var getDom = function getDom2() {
@@ -58703,17 +60288,17 @@ function SingleObserver(props, ref) {
     return findDOMNode(elementRef.current) || // Support `nativeElement` format
     (elementRef.current && _typeof2(elementRef.current) === "object" ? findDOMNode((_elementRef$current = elementRef.current) === null || _elementRef$current === void 0 ? void 0 : _elementRef$current.nativeElement) : null) || findDOMNode(wrapperRef.current);
   };
-  React194.useImperativeHandle(ref, function() {
+  React196.useImperativeHandle(ref, function() {
     return getDom();
   });
-  var propsRef = React194.useRef(props);
+  var propsRef = React196.useRef(props);
   propsRef.current = props;
-  var onInternalResize = React194.useCallback(function(target) {
+  var onInternalResize = React196.useCallback(function(target) {
     var _propsRef$current = propsRef.current, onResize2 = _propsRef$current.onResize, data = _propsRef$current.data;
-    var _target$getBoundingCl = target.getBoundingClientRect(), width2 = _target$getBoundingCl.width, height2 = _target$getBoundingCl.height;
+    var _target$getBoundingCl = target.getBoundingClientRect(), width3 = _target$getBoundingCl.width, height3 = _target$getBoundingCl.height;
     var offsetWidth = target.offsetWidth, offsetHeight = target.offsetHeight;
-    var fixedWidth = Math.floor(width2);
-    var fixedHeight = Math.floor(height2);
+    var fixedWidth = Math.floor(width3);
+    var fixedHeight = Math.floor(height3);
     if (sizeRef.current.width !== fixedWidth || sizeRef.current.height !== fixedHeight || sizeRef.current.offsetWidth !== offsetWidth || sizeRef.current.offsetHeight !== offsetHeight) {
       var size = {
         width: fixedWidth,
@@ -58722,8 +60307,8 @@ function SingleObserver(props, ref) {
         offsetHeight
       };
       sizeRef.current = size;
-      var mergedOffsetWidth = offsetWidth === Math.round(width2) ? width2 : offsetWidth;
-      var mergedOffsetHeight = offsetHeight === Math.round(height2) ? height2 : offsetHeight;
+      var mergedOffsetWidth = offsetWidth === Math.round(width3) ? width3 : offsetWidth;
+      var mergedOffsetHeight = offsetHeight === Math.round(height3) ? height3 : offsetHeight;
       var sizeInfo = _objectSpread2(_objectSpread2({}, size), {}, {
         offsetWidth: mergedOffsetWidth,
         offsetHeight: mergedOffsetHeight
@@ -58736,7 +60321,7 @@ function SingleObserver(props, ref) {
       }
     }
   }, []);
-  React194.useEffect(function() {
+  React196.useEffect(function() {
     var currentElement = getDom();
     if (currentElement && !disabled) {
       observe(currentElement, onInternalResize);
@@ -58745,13 +60330,13 @@ function SingleObserver(props, ref) {
       return unobserve(currentElement, onInternalResize);
     };
   }, [elementRef.current, disabled]);
-  return /* @__PURE__ */ React194.createElement(DomWrapper, {
+  return /* @__PURE__ */ React196.createElement(DomWrapper, {
     ref: wrapperRef
-  }, canRef ? /* @__PURE__ */ React194.cloneElement(mergedChildren, {
+  }, canRef ? /* @__PURE__ */ React196.cloneElement(mergedChildren, {
     ref: mergedRef
   }) : mergedChildren);
 }
-var RefSingleObserver = /* @__PURE__ */ React194.forwardRef(SingleObserver);
+var RefSingleObserver = /* @__PURE__ */ React196.forwardRef(SingleObserver);
 if (true) {
   RefSingleObserver.displayName = "SingleObserver";
 }
@@ -58771,13 +60356,13 @@ function ResizeObserver3(props, ref) {
   }
   return childNodes.map(function(child, index3) {
     var key = (child === null || child === void 0 ? void 0 : child.key) || "".concat(INTERNAL_PREFIX_KEY, "-").concat(index3);
-    return /* @__PURE__ */ React195.createElement(SingleObserver_default, _extends({}, props, {
+    return /* @__PURE__ */ React197.createElement(SingleObserver_default, _extends({}, props, {
       key,
       ref: index3 === 0 ? ref : void 0
     }), child);
   });
 }
-var RefResizeObserver = /* @__PURE__ */ React195.forwardRef(ResizeObserver3);
+var RefResizeObserver = /* @__PURE__ */ React197.forwardRef(ResizeObserver3);
 if (true) {
   RefResizeObserver.displayName = "ResizeObserver";
 }
@@ -58785,11 +60370,11 @@ RefResizeObserver.Collection = Collection;
 var es_default = RefResizeObserver;
 
 // node_modules/rc-util/es/hooks/useEvent.js
-import * as React196 from "react";
+import * as React198 from "react";
 function useEvent(callback) {
-  var fnRef = React196.useRef();
+  var fnRef = React198.useRef();
   fnRef.current = callback;
-  var memoFn = React196.useCallback(function() {
+  var memoFn = React198.useCallback(function() {
     var _fnRef$current;
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
@@ -58800,11 +60385,11 @@ function useEvent(callback) {
 }
 
 // node_modules/rc-util/es/hooks/useState.js
-import * as React197 from "react";
+import * as React199 from "react";
 function useSafeState(defaultValue) {
-  var destroyRef = React197.useRef(false);
-  var _React$useState = React197.useState(defaultValue), _React$useState2 = _slicedToArray(_React$useState, 2), value = _React$useState2[0], setValue = _React$useState2[1];
-  React197.useEffect(function() {
+  var destroyRef = React199.useRef(false);
+  var _React$useState = React199.useState(defaultValue), _React$useState2 = _slicedToArray(_React$useState, 2), value = _React$useState2[0], setValue = _React$useState2[1];
+  React199.useEffect(function() {
     destroyRef.current = false;
     return function() {
       destroyRef.current = true;
@@ -58820,15 +60405,15 @@ function useSafeState(defaultValue) {
 }
 
 // node_modules/rc-virtual-list/es/List.js
-import * as React207 from "react";
-import { useRef as useRef64, useState as useState39 } from "react";
+import * as React209 from "react";
+import { useRef as useRef65, useState as useState39 } from "react";
 import { flushSync } from "react-dom";
 
 // node_modules/rc-virtual-list/es/Filler.js
-import * as React198 from "react";
+import * as React200 from "react";
 var import_classnames = __toESM(require_classnames());
-var Filler = /* @__PURE__ */ React198.forwardRef(function(_ref, ref) {
-  var height2 = _ref.height, offsetY = _ref.offsetY, offsetX = _ref.offsetX, children = _ref.children, prefixCls = _ref.prefixCls, onInnerResize = _ref.onInnerResize, innerProps = _ref.innerProps, rtl = _ref.rtl, extra = _ref.extra;
+var Filler = /* @__PURE__ */ React200.forwardRef(function(_ref, ref) {
+  var height3 = _ref.height, offsetY = _ref.offsetY, offsetX = _ref.offsetX, children = _ref.children, prefixCls = _ref.prefixCls, onInnerResize = _ref.onInnerResize, innerProps = _ref.innerProps, rtl = _ref.rtl, extra = _ref.extra;
   var outerStyle = {};
   var innerStyle = {
     display: "flex",
@@ -58836,7 +60421,7 @@ var Filler = /* @__PURE__ */ React198.forwardRef(function(_ref, ref) {
   };
   if (offsetY !== void 0) {
     outerStyle = {
-      height: height2,
+      height: height3,
       position: "relative",
       overflow: "hidden"
     };
@@ -58844,16 +60429,16 @@ var Filler = /* @__PURE__ */ React198.forwardRef(function(_ref, ref) {
       transform: "translateY(".concat(offsetY, "px)")
     }, rtl ? "marginRight" : "marginLeft", -offsetX), "position", "absolute"), "left", 0), "right", 0), "top", 0));
   }
-  return /* @__PURE__ */ React198.createElement("div", {
+  return /* @__PURE__ */ React200.createElement("div", {
     style: outerStyle
-  }, /* @__PURE__ */ React198.createElement(es_default, {
+  }, /* @__PURE__ */ React200.createElement(es_default, {
     onResize: function onResize2(_ref2) {
       var offsetHeight = _ref2.offsetHeight;
       if (offsetHeight && onInnerResize) {
         onInnerResize();
       }
     }
-  }, /* @__PURE__ */ React198.createElement("div", _extends({
+  }, /* @__PURE__ */ React200.createElement("div", _extends({
     style: innerStyle,
     className: (0, import_classnames.default)(_defineProperty({}, "".concat(prefixCls, "-holder-inner"), prefixCls)),
     ref
@@ -58863,16 +60448,16 @@ Filler.displayName = "Filler";
 var Filler_default = Filler;
 
 // node_modules/rc-virtual-list/es/hooks/useChildren.js
-import * as React200 from "react";
+import * as React202 from "react";
 
 // node_modules/rc-virtual-list/es/Item.js
-import * as React199 from "react";
+import * as React201 from "react";
 function Item(_ref) {
   var children = _ref.children, setRef2 = _ref.setRef;
-  var refFunc = React199.useCallback(function(node) {
+  var refFunc = React201.useCallback(function(node) {
     setRef2(node);
   }, []);
-  return /* @__PURE__ */ React199.cloneElement(children, {
+  return /* @__PURE__ */ React201.cloneElement(children, {
     ref: refFunc
   });
 }
@@ -58889,7 +60474,7 @@ function useChildren(list, startIndex, endIndex, scrollWidth, offsetX, setNodeRe
       offsetX
     });
     var key = getKey2(item);
-    return /* @__PURE__ */ React200.createElement(Item, {
+    return /* @__PURE__ */ React202.createElement(Item, {
       key,
       setRef: function setRef2(ele) {
         return setNodeRef(item, ele);
@@ -58899,7 +60484,7 @@ function useChildren(list, startIndex, endIndex, scrollWidth, offsetX, setNodeRe
 }
 
 // node_modules/rc-virtual-list/es/hooks/useDiffItem.js
-import * as React201 from "react";
+import * as React203 from "react";
 
 // node_modules/rc-virtual-list/es/utils/algorithmUtil.js
 function findListDiffIndex(originList, targetList, getKey2) {
@@ -58945,9 +60530,9 @@ function findListDiffIndex(originList, targetList, getKey2) {
 
 // node_modules/rc-virtual-list/es/hooks/useDiffItem.js
 function useDiffItem(data, getKey2, onDiff) {
-  var _React$useState = React201.useState(data), _React$useState2 = _slicedToArray(_React$useState, 2), prevData = _React$useState2[0], setPrevData = _React$useState2[1];
-  var _React$useState3 = React201.useState(null), _React$useState4 = _slicedToArray(_React$useState3, 2), diffItem = _React$useState4[0], setDiffItem = _React$useState4[1];
-  React201.useEffect(function() {
+  var _React$useState = React203.useState(data), _React$useState2 = _slicedToArray(_React$useState, 2), prevData = _React$useState2[0], setPrevData = _React$useState2[1];
+  var _React$useState3 = React203.useState(null), _React$useState4 = _slicedToArray(_React$useState3, 2), diffItem = _React$useState4[0], setDiffItem = _React$useState4[1];
+  React203.useEffect(function() {
     var diff = findListDiffIndex(prevData || [], data || [], getKey2);
     if ((diff === null || diff === void 0 ? void 0 : diff.index) !== void 0) {
       onDiff === null || onDiff === void 0 || onDiff(diff.index);
@@ -59009,17 +60594,17 @@ if (true) {
 var raf_default = wrapperRaf;
 
 // node_modules/rc-virtual-list/es/hooks/useFrameWheel.js
-import { useRef as useRef59 } from "react";
+import { useRef as useRef60 } from "react";
 
 // node_modules/rc-virtual-list/es/utils/isFirefox.js
 var isFF = (typeof navigator === "undefined" ? "undefined" : _typeof2(navigator)) === "object" && /Firefox/i.test(navigator.userAgent);
 var isFirefox_default = isFF;
 
 // node_modules/rc-virtual-list/es/hooks/useOriginScroll.js
-import { useRef as useRef58 } from "react";
+import { useRef as useRef59 } from "react";
 var useOriginScroll_default = function(isScrollAtTop, isScrollAtBottom, isScrollAtLeft, isScrollAtRight) {
-  var lockRef = useRef58(false);
-  var lockTimeoutRef = useRef58(null);
+  var lockRef = useRef59(false);
+  var lockTimeoutRef = useRef59(null);
   function lockScroll() {
     clearTimeout(lockTimeoutRef.current);
     lockRef.current = true;
@@ -59027,7 +60612,7 @@ var useOriginScroll_default = function(isScrollAtTop, isScrollAtBottom, isScroll
       lockRef.current = false;
     }, 50);
   }
-  var scrollPingRef = useRef58({
+  var scrollPingRef = useRef59({
     top: isScrollAtTop,
     bottom: isScrollAtBottom,
     left: isScrollAtLeft,
@@ -59057,10 +60642,10 @@ var useOriginScroll_default = function(isScrollAtTop, isScrollAtBottom, isScroll
 
 // node_modules/rc-virtual-list/es/hooks/useFrameWheel.js
 function useFrameWheel(inVirtual, isScrollAtTop, isScrollAtBottom, isScrollAtLeft, isScrollAtRight, horizontalScroll, onWheelDelta) {
-  var offsetRef = useRef59(0);
-  var nextFrameRef = useRef59(null);
-  var wheelValueRef = useRef59(null);
-  var isMouseScrollRef = useRef59(false);
+  var offsetRef = useRef60(0);
+  var nextFrameRef = useRef60(null);
+  var wheelValueRef = useRef60(null);
+  var isMouseScrollRef = useRef60(false);
   var originScroll = useOriginScroll_default(isScrollAtTop, isScrollAtBottom, isScrollAtLeft, isScrollAtRight);
   function onWheelY(e2, deltaY) {
     raf_default.cancel(nextFrameRef.current);
@@ -59088,8 +60673,8 @@ function useFrameWheel(inVirtual, isScrollAtTop, isScrollAtBottom, isScrollAtLef
       event.preventDefault();
     }
   }
-  var wheelDirectionRef = useRef59(null);
-  var wheelDirectionCleanRef = useRef59(null);
+  var wheelDirectionRef = useRef60(null);
+  var wheelDirectionCleanRef = useRef60(null);
   function onWheel(event) {
     if (!inVirtual) return;
     raf_default.cancel(wheelDirectionCleanRef.current);
@@ -59123,9 +60708,9 @@ function useFrameWheel(inVirtual, isScrollAtTop, isScrollAtBottom, isScrollAtLef
 }
 
 // node_modules/rc-virtual-list/es/hooks/useGetSize.js
-import * as React202 from "react";
+import * as React204 from "react";
 function useGetSize(mergedData, getKey2, heights, itemHeight) {
-  var _React$useMemo = React202.useMemo(function() {
+  var _React$useMemo = React204.useMemo(function() {
     return [/* @__PURE__ */ new Map(), []];
   }, [mergedData, heights.id, itemHeight]), _React$useMemo2 = _slicedToArray(_React$useMemo, 2), key2Index = _React$useMemo2[0], bottomList = _React$useMemo2[1];
   var getSize = function getSize2(startKey) {
@@ -59161,8 +60746,8 @@ function useGetSize(mergedData, getKey2, heights, itemHeight) {
 }
 
 // node_modules/rc-virtual-list/es/hooks/useHeights.js
-import * as React203 from "react";
-import { useEffect as useEffect46, useRef as useRef60 } from "react";
+import * as React205 from "react";
+import { useEffect as useEffect46, useRef as useRef61 } from "react";
 
 // node_modules/rc-virtual-list/es/utils/CacheMap.js
 var CacheMap = /* @__PURE__ */ function() {
@@ -59210,10 +60795,10 @@ function parseNumber(value) {
   return isNaN(num) ? 0 : num;
 }
 function useHeights(getKey2, onItemAdd, onItemRemove) {
-  var _React$useState = React203.useState(0), _React$useState2 = _slicedToArray(_React$useState, 2), updatedMark = _React$useState2[0], setUpdatedMark = _React$useState2[1];
-  var instanceRef = useRef60(/* @__PURE__ */ new Map());
-  var heightsRef = useRef60(new CacheMap_default());
-  var promiseIdRef = useRef60(0);
+  var _React$useState = React205.useState(0), _React$useState2 = _slicedToArray(_React$useState, 2), updatedMark = _React$useState2[0], setUpdatedMark = _React$useState2[1];
+  var instanceRef = useRef61(/* @__PURE__ */ new Map());
+  var heightsRef = useRef61(new CacheMap_default());
+  var promiseIdRef = useRef61(0);
   function cancelRaf() {
     promiseIdRef.current += 1;
   }
@@ -59224,9 +60809,8 @@ function useHeights(getKey2, onItemAdd, onItemRemove) {
       var changed = false;
       instanceRef.current.forEach(function(element, key) {
         if (element && element.offsetParent) {
-          var htmlElement = findDOMNode(element);
-          var offsetHeight = htmlElement.offsetHeight;
-          var _getComputedStyle = getComputedStyle(htmlElement), marginTop = _getComputedStyle.marginTop, marginBottom = _getComputedStyle.marginBottom;
+          var offsetHeight = element.offsetHeight;
+          var _getComputedStyle = getComputedStyle(element), marginTop = _getComputedStyle.marginTop, marginBottom = _getComputedStyle.marginBottom;
           var marginTopNum = parseNumber(marginTop);
           var marginBottomNum = parseNumber(marginBottom);
           var totalHeight = offsetHeight + marginTopNum + marginBottomNum;
@@ -59278,14 +60862,14 @@ function useHeights(getKey2, onItemAdd, onItemRemove) {
 }
 
 // node_modules/rc-virtual-list/es/hooks/useMobileTouchMove.js
-import { useRef as useRef61 } from "react";
+import { useRef as useRef62 } from "react";
 var SMOOTH_PTG = 14 / 15;
 function useMobileTouchMove(inVirtual, listRef, callback) {
-  var touchedRef = useRef61(false);
-  var touchXRef = useRef61(0);
-  var touchYRef = useRef61(0);
-  var elementRef = useRef61(null);
-  var intervalRef = useRef61(null);
+  var touchedRef = useRef62(false);
+  var touchXRef = useRef62(0);
+  var touchYRef = useRef62(0);
+  var elementRef = useRef62(null);
+  var intervalRef = useRef62(null);
   var cleanUpEvents;
   var onTouchMove = function onTouchMove2(e2) {
     if (touchedRef.current) {
@@ -59360,7 +60944,7 @@ function useMobileTouchMove(inVirtual, listRef, callback) {
 }
 
 // node_modules/rc-virtual-list/es/hooks/useScrollDrag.js
-import * as React204 from "react";
+import * as React206 from "react";
 function smoothScrollOffset(offset2) {
   return Math.floor(Math.pow(offset2, 0.5));
 }
@@ -59369,7 +60953,7 @@ function getPageXY(e2, horizontal) {
   return obj[horizontal ? "pageX" : "pageY"] - window[horizontal ? "scrollX" : "scrollY"];
 }
 function useScrollDrag(inVirtual, componentRef, onScrollOffset) {
-  React204.useEffect(function() {
+  React206.useEffect(function() {
     var ele = componentRef.current;
     if (inVirtual && ele) {
       var mouseDownLock = false;
@@ -59386,7 +60970,7 @@ function useScrollDrag(inVirtual, componentRef, onScrollOffset) {
         });
       };
       var onMouseDown = function onMouseDown2(e2) {
-        if (e2.target.draggable) {
+        if (e2.target.draggable || e2.button !== 0) {
           return;
         }
         var event = e2;
@@ -59430,11 +61014,11 @@ function useScrollDrag(inVirtual, componentRef, onScrollOffset) {
 }
 
 // node_modules/rc-virtual-list/es/hooks/useScrollTo.js
-import * as React205 from "react";
+import * as React207 from "react";
 var MAX_TIMES = 10;
 function useScrollTo(containerRef, data, heights, itemHeight, getKey2, collectHeight, syncScrollTop, triggerFlash) {
-  var scrollRef = React205.useRef();
-  var _React$useState = React205.useState(null), _React$useState2 = _slicedToArray(_React$useState, 2), syncState = _React$useState2[0], setSyncState = _React$useState2[1];
+  var scrollRef = React207.useRef();
+  var _React$useState = React207.useState(null), _React$useState2 = _slicedToArray(_React$useState, 2), syncState = _React$useState2[0], setSyncState = _React$useState2[1];
   useLayoutEffect_default(function() {
     if (syncState && syncState.times < MAX_TIMES) {
       if (!containerRef.current) {
@@ -59445,11 +61029,11 @@ function useScrollTo(containerRef, data, heights, itemHeight, getKey2, collectHe
       }
       collectHeight();
       var targetAlign = syncState.targetAlign, originAlign = syncState.originAlign, index3 = syncState.index, offset2 = syncState.offset;
-      var height2 = containerRef.current.clientHeight;
+      var height3 = containerRef.current.clientHeight;
       var needCollectHeight = false;
       var newTargetAlign = targetAlign;
       var targetTop = null;
-      if (height2) {
+      if (height3) {
         var mergedAlign = targetAlign || originAlign;
         var stackTop = 0;
         var itemTop = 0;
@@ -59462,7 +61046,7 @@ function useScrollTo(containerRef, data, heights, itemHeight, getKey2, collectHe
           itemBottom = itemTop + (cacheHeight === void 0 ? itemHeight : cacheHeight);
           stackTop = itemBottom;
         }
-        var leftHeight = mergedAlign === "top" ? offset2 : height2 - offset2;
+        var leftHeight = mergedAlign === "top" ? offset2 : height3 - offset2;
         for (var _i = maxLen; _i >= 0; _i -= 1) {
           var _key = getKey2(data[_i]);
           var _cacheHeight = heights.get(_key);
@@ -59480,11 +61064,11 @@ function useScrollTo(containerRef, data, heights, itemHeight, getKey2, collectHe
             targetTop = itemTop - offset2;
             break;
           case "bottom":
-            targetTop = itemBottom - height2 + offset2;
+            targetTop = itemBottom - height3 + offset2;
             break;
           default: {
             var scrollTop = containerRef.current.scrollTop;
-            var scrollBottom = scrollTop + height2;
+            var scrollBottom = scrollTop + height3;
             if (itemTop < scrollTop) {
               newTargetAlign = "top";
             } else if (itemBottom > scrollBottom) {
@@ -59541,17 +61125,17 @@ function useScrollTo(containerRef, data, heights, itemHeight, getKey2, collectHe
 
 // node_modules/rc-virtual-list/es/ScrollBar.js
 var import_classnames2 = __toESM(require_classnames());
-import * as React206 from "react";
-var ScrollBar = /* @__PURE__ */ React206.forwardRef(function(props, ref) {
-  var prefixCls = props.prefixCls, rtl = props.rtl, scrollOffset = props.scrollOffset, scrollRange = props.scrollRange, onStartMove = props.onStartMove, onStopMove = props.onStopMove, onScroll = props.onScroll, horizontal = props.horizontal, spinSize = props.spinSize, containerSize = props.containerSize, style4 = props.style, propsThumbStyle = props.thumbStyle, showScrollBar = props.showScrollBar;
-  var _React$useState = React206.useState(false), _React$useState2 = _slicedToArray(_React$useState, 2), dragging = _React$useState2[0], setDragging = _React$useState2[1];
-  var _React$useState3 = React206.useState(null), _React$useState4 = _slicedToArray(_React$useState3, 2), pageXY = _React$useState4[0], setPageXY = _React$useState4[1];
-  var _React$useState5 = React206.useState(null), _React$useState6 = _slicedToArray(_React$useState5, 2), startTop = _React$useState6[0], setStartTop = _React$useState6[1];
+import * as React208 from "react";
+var ScrollBar = /* @__PURE__ */ React208.forwardRef(function(props, ref) {
+  var prefixCls = props.prefixCls, rtl = props.rtl, scrollOffset = props.scrollOffset, scrollRange = props.scrollRange, onStartMove = props.onStartMove, onStopMove = props.onStopMove, onScroll = props.onScroll, horizontal = props.horizontal, spinSize = props.spinSize, containerSize = props.containerSize, style6 = props.style, propsThumbStyle = props.thumbStyle, showScrollBar = props.showScrollBar;
+  var _React$useState = React208.useState(false), _React$useState2 = _slicedToArray(_React$useState, 2), dragging = _React$useState2[0], setDragging = _React$useState2[1];
+  var _React$useState3 = React208.useState(null), _React$useState4 = _slicedToArray(_React$useState3, 2), pageXY = _React$useState4[0], setPageXY = _React$useState4[1];
+  var _React$useState5 = React208.useState(null), _React$useState6 = _slicedToArray(_React$useState5, 2), startTop = _React$useState6[0], setStartTop = _React$useState6[1];
   var isLTR = !rtl;
-  var scrollbarRef = React206.useRef();
-  var thumbRef = React206.useRef();
-  var _React$useState7 = React206.useState(showScrollBar), _React$useState8 = _slicedToArray(_React$useState7, 2), visible = _React$useState8[0], setVisible = _React$useState8[1];
-  var visibleTimeoutRef = React206.useRef();
+  var scrollbarRef = React208.useRef();
+  var thumbRef = React208.useRef();
+  var _React$useState7 = React208.useState(showScrollBar), _React$useState8 = _slicedToArray(_React$useState7, 2), visible = _React$useState8[0], setVisible = _React$useState8[1];
+  var visibleTimeoutRef = React208.useRef();
   var delayHidden = function delayHidden2() {
     if (showScrollBar === true || showScrollBar === false) return;
     clearTimeout(visibleTimeoutRef.current);
@@ -59562,7 +61146,7 @@ var ScrollBar = /* @__PURE__ */ React206.forwardRef(function(props, ref) {
   };
   var enableScrollRange = scrollRange - containerSize || 0;
   var enableOffsetRange = containerSize - spinSize || 0;
-  var top2 = React206.useMemo(function() {
+  var top2 = React208.useMemo(function() {
     if (scrollOffset === 0 || enableScrollRange === 0) {
       return 0;
     }
@@ -59573,7 +61157,7 @@ var ScrollBar = /* @__PURE__ */ React206.forwardRef(function(props, ref) {
     e2.stopPropagation();
     e2.preventDefault();
   };
-  var stateRef = React206.useRef({
+  var stateRef = React208.useRef({
     top: top2,
     dragging,
     pageY: pageXY,
@@ -59593,7 +61177,7 @@ var ScrollBar = /* @__PURE__ */ React206.forwardRef(function(props, ref) {
     e2.stopPropagation();
     e2.preventDefault();
   };
-  React206.useEffect(function() {
+  React208.useEffect(function() {
     var onScrollbarTouchStart = function onScrollbarTouchStart2(e2) {
       e2.preventDefault();
     };
@@ -59610,11 +61194,11 @@ var ScrollBar = /* @__PURE__ */ React206.forwardRef(function(props, ref) {
       thumbEle.removeEventListener("touchstart", onThumbMouseDown);
     };
   }, []);
-  var enableScrollRangeRef = React206.useRef();
+  var enableScrollRangeRef = React208.useRef();
   enableScrollRangeRef.current = enableScrollRange;
-  var enableOffsetRangeRef = React206.useRef();
+  var enableOffsetRangeRef = React208.useRef();
   enableOffsetRangeRef.current = enableOffsetRange;
-  React206.useEffect(function() {
+  React208.useEffect(function() {
     if (dragging) {
       var moveRafId;
       var onMouseMove = function onMouseMove2(e2) {
@@ -59666,13 +61250,13 @@ var ScrollBar = /* @__PURE__ */ React206.forwardRef(function(props, ref) {
       };
     }
   }, [dragging]);
-  React206.useEffect(function() {
+  React208.useEffect(function() {
     delayHidden();
     return function() {
       clearTimeout(visibleTimeoutRef.current);
     };
   }, [scrollOffset]);
-  React206.useImperativeHandle(ref, function() {
+  React208.useImperativeHandle(ref, function() {
     return {
       delayHidden
     };
@@ -59714,13 +61298,13 @@ var ScrollBar = /* @__PURE__ */ React206.forwardRef(function(props, ref) {
     thumbStyle.height = spinSize;
     thumbStyle.top = top2;
   }
-  return /* @__PURE__ */ React206.createElement("div", {
+  return /* @__PURE__ */ React208.createElement("div", {
     ref: scrollbarRef,
     className: (0, import_classnames2.default)(scrollbarPrefixCls, _defineProperty(_defineProperty(_defineProperty({}, "".concat(scrollbarPrefixCls, "-horizontal"), horizontal), "".concat(scrollbarPrefixCls, "-vertical"), !horizontal), "".concat(scrollbarPrefixCls, "-visible"), visible)),
-    style: _objectSpread2(_objectSpread2({}, containerStyle), style4),
+    style: _objectSpread2(_objectSpread2({}, containerStyle), style6),
     onMouseDown: onContainerMouseDown,
     onMouseMove: delayHidden
-  }, /* @__PURE__ */ React206.createElement("div", {
+  }, /* @__PURE__ */ React208.createElement("div", {
     ref: thumbRef,
     className: (0, import_classnames2.default)("".concat(scrollbarPrefixCls, "-thumb"), _defineProperty({}, "".concat(scrollbarPrefixCls, "-thumb-moving"), dragging)),
     style: _objectSpread2(_objectSpread2({}, thumbStyle), propsThumbStyle),
@@ -59753,27 +61337,27 @@ var ScrollStyle = {
   overflowAnchor: "none"
 };
 function RawList(props, ref) {
-  var _props$prefixCls = props.prefixCls, prefixCls = _props$prefixCls === void 0 ? "rc-virtual-list" : _props$prefixCls, className = props.className, height2 = props.height, itemHeight = props.itemHeight, _props$fullHeight = props.fullHeight, fullHeight = _props$fullHeight === void 0 ? true : _props$fullHeight, style4 = props.style, data = props.data, children = props.children, itemKey2 = props.itemKey, virtual = props.virtual, direction = props.direction, scrollWidth = props.scrollWidth, _props$component = props.component, Component5 = _props$component === void 0 ? "div" : _props$component, onScroll = props.onScroll, onVirtualScroll = props.onVirtualScroll, onVisibleChange = props.onVisibleChange, innerProps = props.innerProps, extraRender = props.extraRender, styles5 = props.styles, _props$showScrollBar = props.showScrollBar, showScrollBar = _props$showScrollBar === void 0 ? "optional" : _props$showScrollBar, restProps = _objectWithoutProperties(props, _excluded51);
-  var getKey2 = React207.useCallback(function(item) {
+  var _props$prefixCls = props.prefixCls, prefixCls = _props$prefixCls === void 0 ? "rc-virtual-list" : _props$prefixCls, className = props.className, height3 = props.height, itemHeight = props.itemHeight, _props$fullHeight = props.fullHeight, fullHeight = _props$fullHeight === void 0 ? true : _props$fullHeight, style6 = props.style, data = props.data, children = props.children, itemKey2 = props.itemKey, virtual = props.virtual, direction = props.direction, scrollWidth = props.scrollWidth, _props$component = props.component, Component5 = _props$component === void 0 ? "div" : _props$component, onScroll = props.onScroll, onVirtualScroll = props.onVirtualScroll, onVisibleChange = props.onVisibleChange, innerProps = props.innerProps, extraRender = props.extraRender, styles5 = props.styles, _props$showScrollBar = props.showScrollBar, showScrollBar = _props$showScrollBar === void 0 ? "optional" : _props$showScrollBar, restProps = _objectWithoutProperties(props, _excluded51);
+  var getKey2 = React209.useCallback(function(item) {
     if (typeof itemKey2 === "function") {
       return itemKey2(item);
     }
     return item === null || item === void 0 ? void 0 : item[itemKey2];
   }, [itemKey2]);
   var _useHeights = useHeights(getKey2, null, null), _useHeights2 = _slicedToArray(_useHeights, 4), setInstanceRef = _useHeights2[0], collectHeight = _useHeights2[1], heights = _useHeights2[2], heightUpdatedMark = _useHeights2[3];
-  var useVirtual = !!(virtual !== false && height2 && itemHeight);
-  var containerHeight = React207.useMemo(function() {
+  var useVirtual = !!(virtual !== false && height3 && itemHeight);
+  var containerHeight = React209.useMemo(function() {
     return Object.values(heights.maps).reduce(function(total, curr) {
       return total + curr;
     }, 0);
   }, [heights.id, heights.maps]);
-  var inVirtual = useVirtual && data && (Math.max(itemHeight * data.length, containerHeight) > height2 || !!scrollWidth);
+  var inVirtual = useVirtual && data && (Math.max(itemHeight * data.length, containerHeight) > height3 || !!scrollWidth);
   var isRTL = direction === "rtl";
   var mergedClassName = (0, import_classnames3.default)(prefixCls, _defineProperty({}, "".concat(prefixCls, "-rtl"), isRTL), className);
   var mergedData = data || EMPTY_DATA;
-  var componentRef = useRef64();
-  var fillerInnerRef = useRef64();
-  var containerRef = useRef64();
+  var componentRef = useRef65();
+  var fillerInnerRef = useRef65();
+  var containerRef = useRef65();
   var _useState = useState39(0), _useState2 = _slicedToArray(_useState, 2), offsetTop = _useState2[0], setOffsetTop = _useState2[1];
   var _useState3 = useState39(0), _useState4 = _slicedToArray(_useState3, 2), offsetLeft = _useState4[0], setOffsetLeft = _useState4[1];
   var _useState5 = useState39(false), _useState6 = _slicedToArray(_useState5, 2), scrollMoving = _useState6[0], setScrollMoving = _useState6[1];
@@ -59799,14 +61383,14 @@ function RawList(props, ref) {
       return alignedTop;
     });
   }
-  var rangeRef = useRef64({
+  var rangeRef = useRef65({
     start: 0,
     end: mergedData.length
   });
-  var diffItemRef = useRef64();
+  var diffItemRef = useRef65();
   var _useDiffItem = useDiffItem(mergedData, getKey2), _useDiffItem2 = _slicedToArray(_useDiffItem, 1), diffItem = _useDiffItem2[0];
   diffItemRef.current = diffItem;
-  var _React$useMemo = React207.useMemo(function() {
+  var _React$useMemo = React209.useMemo(function() {
     if (!useVirtual) {
       return {
         scrollHeight: void 0,
@@ -59838,7 +61422,7 @@ function RawList(props, ref) {
         startIndex = i2;
         startOffset = itemTop;
       }
-      if (currentItemBottom > offsetTop + height2 && endIndex === void 0) {
+      if (currentItemBottom > offsetTop + height3 && endIndex === void 0) {
         endIndex = i2;
       }
       itemTop = currentItemBottom;
@@ -59846,7 +61430,7 @@ function RawList(props, ref) {
     if (startIndex === void 0) {
       startIndex = 0;
       startOffset = 0;
-      endIndex = Math.ceil(height2 / itemHeight);
+      endIndex = Math.ceil(height3 / itemHeight);
     }
     if (endIndex === void 0) {
       endIndex = mergedData.length - 1;
@@ -59858,27 +61442,30 @@ function RawList(props, ref) {
       end: endIndex,
       offset: startOffset
     };
-  }, [inVirtual, useVirtual, offsetTop, mergedData, heightUpdatedMark, height2]), scrollHeight = _React$useMemo.scrollHeight, start2 = _React$useMemo.start, end2 = _React$useMemo.end, fillerOffset = _React$useMemo.offset;
+  }, [inVirtual, useVirtual, offsetTop, mergedData, heightUpdatedMark, height3]), scrollHeight = _React$useMemo.scrollHeight, start2 = _React$useMemo.start, end2 = _React$useMemo.end, fillerOffset = _React$useMemo.offset;
   rangeRef.current.start = start2;
   rangeRef.current.end = end2;
-  React207.useLayoutEffect(function() {
+  React209.useLayoutEffect(function() {
     var changedRecord = heights.getRecord();
     if (changedRecord.size === 1) {
       var recordKey = Array.from(changedRecord)[0];
-      var startIndexKey = getKey2(mergedData[start2]);
-      if (startIndexKey === recordKey) {
-        var realStartHeight = heights.get(recordKey);
-        var diffHeight = realStartHeight - itemHeight;
-        syncScrollTop(function(ori) {
-          return ori + diffHeight;
-        });
+      var startItem = mergedData[start2];
+      if (startItem) {
+        var startIndexKey = getKey2(startItem);
+        if (startIndexKey === recordKey) {
+          var realStartHeight = heights.get(recordKey);
+          var diffHeight = realStartHeight - itemHeight;
+          syncScrollTop(function(ori) {
+            return ori + diffHeight;
+          });
+        }
       }
     }
     heights.resetRecord();
   }, [scrollHeight]);
-  var _React$useState = React207.useState({
+  var _React$useState = React209.useState({
     width: 0,
-    height: height2
+    height: height3
   }), _React$useState2 = _slicedToArray(_React$useState, 2), size = _React$useState2[0], setSize = _React$useState2[1];
   var onHolderResize = function onHolderResize2(sizeInfo) {
     setSize({
@@ -59886,16 +61473,16 @@ function RawList(props, ref) {
       height: sizeInfo.offsetHeight
     });
   };
-  var verticalScrollBarRef = useRef64();
-  var horizontalScrollBarRef = useRef64();
-  var horizontalScrollBarSpinSize = React207.useMemo(function() {
+  var verticalScrollBarRef = useRef65();
+  var horizontalScrollBarRef = useRef65();
+  var horizontalScrollBarSpinSize = React209.useMemo(function() {
     return getSpinSize(size.width, scrollWidth);
   }, [size.width, scrollWidth]);
-  var verticalScrollBarSpinSize = React207.useMemo(function() {
+  var verticalScrollBarSpinSize = React209.useMemo(function() {
     return getSpinSize(size.height, scrollHeight);
   }, [size.height, scrollHeight]);
-  var maxScrollHeight = scrollHeight - height2;
-  var maxScrollHeightRef = useRef64(maxScrollHeight);
+  var maxScrollHeight = scrollHeight - height3;
+  var maxScrollHeightRef = useRef65(maxScrollHeight);
   maxScrollHeightRef.current = maxScrollHeight;
   function keepInRange(newScrollTop) {
     var newTop = newScrollTop;
@@ -59916,7 +61503,7 @@ function RawList(props, ref) {
       y: offsetTop
     };
   };
-  var lastVirtualScrollInfoRef = useRef64(getVirtualScrollInfo());
+  var lastVirtualScrollInfoRef = useRef65(getVirtualScrollInfo());
   var triggerScroll = useEvent(function(params) {
     if (onVirtualScroll) {
       var nextInfo = _objectSpread2(_objectSpread2({}, getVirtualScrollInfo()), params);
@@ -60034,7 +61621,7 @@ function RawList(props, ref) {
   var _scrollTo = useScrollTo(componentRef, mergedData, heights, itemHeight, getKey2, function() {
     return collectHeight(true);
   }, syncScrollTop, delayHideScrollBar);
-  React207.useImperativeHandle(ref, function() {
+  React209.useImperativeHandle(ref, function() {
     return {
       nativeElement: containerRef.current,
       getScrollInfo: getVirtualScrollInfo,
@@ -60071,8 +61658,8 @@ function RawList(props, ref) {
   });
   var listChildren = useChildren(mergedData, start2, end2, scrollWidth, offsetLeft, setInstanceRef, children, sharedConfig);
   var componentStyle = null;
-  if (height2) {
-    componentStyle = _objectSpread2(_defineProperty({}, fullHeight ? "height" : "maxHeight", height2), ScrollStyle);
+  if (height3) {
+    componentStyle = _objectSpread2(_defineProperty({}, fullHeight ? "height" : "maxHeight", height3), ScrollStyle);
     if (useVirtual) {
       componentStyle.overflowY = "hidden";
       if (scrollWidth) {
@@ -60087,21 +61674,21 @@ function RawList(props, ref) {
   if (isRTL) {
     containerProps.dir = "rtl";
   }
-  return /* @__PURE__ */ React207.createElement("div", _extends({
+  return /* @__PURE__ */ React209.createElement("div", _extends({
     ref: containerRef,
-    style: _objectSpread2(_objectSpread2({}, style4), {}, {
+    style: _objectSpread2(_objectSpread2({}, style6), {}, {
       position: "relative"
     }),
     className: mergedClassName
-  }, containerProps, restProps), /* @__PURE__ */ React207.createElement(es_default, {
+  }, containerProps, restProps), /* @__PURE__ */ React209.createElement(es_default, {
     onResize: onHolderResize
-  }, /* @__PURE__ */ React207.createElement(Component5, {
+  }, /* @__PURE__ */ React209.createElement(Component5, {
     className: "".concat(prefixCls, "-holder"),
     style: componentStyle,
     ref: componentRef,
     onScroll: onFallbackScroll,
     onMouseEnter: delayHideScrollBar
-  }, /* @__PURE__ */ React207.createElement(Filler_default, {
+  }, /* @__PURE__ */ React209.createElement(Filler_default, {
     prefixCls,
     height: scrollHeight,
     offsetX: offsetLeft,
@@ -60112,7 +61699,7 @@ function RawList(props, ref) {
     innerProps,
     rtl: isRTL,
     extra: extraContent
-  }, listChildren))), inVirtual && scrollHeight > height2 && /* @__PURE__ */ React207.createElement(ScrollBar_default, {
+  }, listChildren))), inVirtual && scrollHeight > height3 && /* @__PURE__ */ React209.createElement(ScrollBar_default, {
     ref: verticalScrollBarRef,
     prefixCls,
     scrollOffset: offsetTop,
@@ -60126,7 +61713,7 @@ function RawList(props, ref) {
     style: styles5 === null || styles5 === void 0 ? void 0 : styles5.verticalScrollBar,
     thumbStyle: styles5 === null || styles5 === void 0 ? void 0 : styles5.verticalScrollBarThumb,
     showScrollBar
-  }), inVirtual && scrollWidth > size.width && /* @__PURE__ */ React207.createElement(ScrollBar_default, {
+  }), inVirtual && scrollWidth > size.width && /* @__PURE__ */ React209.createElement(ScrollBar_default, {
     ref: horizontalScrollBarRef,
     prefixCls,
     scrollOffset: offsetLeft,
@@ -60143,30 +61730,30 @@ function RawList(props, ref) {
     showScrollBar
   }));
 }
-var List3 = /* @__PURE__ */ React207.forwardRef(RawList);
-List3.displayName = "List";
-var List_default2 = List3;
+var List4 = /* @__PURE__ */ React209.forwardRef(RawList);
+List4.displayName = "List";
+var List_default2 = List4;
 
 // node_modules/rc-virtual-list/es/index.js
 var es_default2 = List_default2;
 
 // node_modules/rc-tree/es/NodeList.js
-import * as React221 from "react";
+import * as React223 from "react";
 
 // node_modules/rc-tree/es/MotionTreeNode.js
 var import_classnames7 = __toESM(require_classnames());
 
 // node_modules/rc-motion/es/CSSMotion.js
 var import_classnames4 = __toESM(require_classnames());
-import * as React215 from "react";
-import { useRef as useRef71 } from "react";
+import * as React217 from "react";
+import { useRef as useRef72 } from "react";
 
 // node_modules/rc-motion/es/context.js
-import * as React208 from "react";
-var Context = /* @__PURE__ */ React208.createContext({});
+import * as React210 from "react";
+var Context = /* @__PURE__ */ React210.createContext({});
 
 // node_modules/rc-motion/es/DomWrapper.js
-import * as React209 from "react";
+import * as React211 from "react";
 var DomWrapper2 = /* @__PURE__ */ function(_React$Component) {
   _inherits(DomWrapper3, _React$Component);
   var _super = _createSuper(DomWrapper3);
@@ -60181,29 +61768,29 @@ var DomWrapper2 = /* @__PURE__ */ function(_React$Component) {
     }
   }]);
   return DomWrapper3;
-}(React209.Component);
+}(React211.Component);
 var DomWrapper_default = DomWrapper2;
 
 // node_modules/rc-util/es/hooks/useSyncState.js
-import * as React210 from "react";
+import * as React212 from "react";
 function useSyncState(defaultValue) {
-  var _React$useReducer = React210.useReducer(function(x2) {
+  var _React$useReducer = React212.useReducer(function(x2) {
     return x2 + 1;
   }, 0), _React$useReducer2 = _slicedToArray(_React$useReducer, 2), forceUpdate = _React$useReducer2[1];
-  var currentValueRef = React210.useRef(defaultValue);
-  var getValue2 = useEvent(function() {
+  var currentValueRef = React212.useRef(defaultValue);
+  var getValue3 = useEvent(function() {
     return currentValueRef.current;
   });
   var setValue = useEvent(function(updater) {
     currentValueRef.current = typeof updater === "function" ? updater(currentValueRef.current) : updater;
     forceUpdate();
   });
-  return [getValue2, setValue];
+  return [getValue3, setValue];
 }
 
 // node_modules/rc-motion/es/hooks/useStatus.js
-import * as React214 from "react";
-import { useEffect as useEffect53, useRef as useRef69 } from "react";
+import * as React216 from "react";
+import { useEffect as useEffect53, useRef as useRef70 } from "react";
 
 // node_modules/rc-motion/es/interface.js
 var STATUS_NONE = "none";
@@ -60218,8 +61805,8 @@ var STEP_ACTIVATED = "end";
 var STEP_PREPARED = "prepared";
 
 // node_modules/rc-motion/es/hooks/useDomMotionEvents.js
-import * as React211 from "react";
-import { useRef as useRef66 } from "react";
+import * as React213 from "react";
+import { useRef as useRef67 } from "react";
 
 // node_modules/rc-motion/es/util/motion.js
 function makePrefixMap(styleProp, eventName) {
@@ -60247,10 +61834,10 @@ function getVendorPrefixes(domSupport, win) {
   return prefixes;
 }
 var vendorPrefixes = getVendorPrefixes(canUseDom(), typeof window !== "undefined" ? window : {});
-var style3 = {};
+var style5 = {};
 if (canUseDom()) {
   _document$createEleme = document.createElement("div");
-  style3 = _document$createEleme.style;
+  style5 = _document$createEleme.style;
 }
 var _document$createEleme;
 var prefixedEventNames = {};
@@ -60264,7 +61851,7 @@ function getVendorPrefixedEventName(eventName) {
     var len = stylePropList.length;
     for (var i2 = 0; i2 < len; i2 += 1) {
       var styleProp = stylePropList[i2];
-      if (Object.prototype.hasOwnProperty.call(prefixMap, styleProp) && styleProp in style3) {
+      if (Object.prototype.hasOwnProperty.call(prefixMap, styleProp) && styleProp in style5) {
         prefixedEventNames[eventName] = prefixMap[styleProp];
         return prefixedEventNames[eventName];
       }
@@ -60290,7 +61877,7 @@ function getTransitionName(transitionName, transitionType) {
 
 // node_modules/rc-motion/es/hooks/useDomMotionEvents.js
 var useDomMotionEvents_default = function(onInternalMotionEnd) {
-  var cacheElementRef = useRef66();
+  var cacheElementRef = useRef67();
   function removeMotionEvents(element) {
     if (element) {
       element.removeEventListener(transitionEndName, onInternalMotionEnd);
@@ -60307,7 +61894,7 @@ var useDomMotionEvents_default = function(onInternalMotionEnd) {
       cacheElementRef.current = element;
     }
   }
-  React211.useEffect(function() {
+  React213.useEffect(function() {
     return function() {
       removeMotionEvents(cacheElementRef.current);
     };
@@ -60321,12 +61908,12 @@ var useIsomorphicLayoutEffect = canUseDom() ? useLayoutEffect6 : useEffect50;
 var useIsomorphicLayoutEffect_default = useIsomorphicLayoutEffect;
 
 // node_modules/rc-motion/es/hooks/useStepQueue.js
-import * as React213 from "react";
+import * as React215 from "react";
 
 // node_modules/rc-motion/es/hooks/useNextFrame.js
-import * as React212 from "react";
+import * as React214 from "react";
 var useNextFrame_default = function() {
-  var nextFrameRef = React212.useRef(null);
+  var nextFrameRef = React214.useRef(null);
   function cancelNextFrame() {
     raf_default.cancel(nextFrameRef.current);
   }
@@ -60346,7 +61933,7 @@ var useNextFrame_default = function() {
     });
     nextFrameRef.current = nextFrameId;
   }
-  React212.useEffect(function() {
+  React214.useEffect(function() {
     return function() {
       cancelNextFrame();
     };
@@ -60391,7 +61978,7 @@ var useStepQueue_default = function(status, prepareOnly, callback) {
       }
     }
   }, [status, step]);
-  React213.useEffect(function() {
+  React215.useEffect(function() {
     return function() {
       cancelNextFrame();
     };
@@ -60404,14 +61991,14 @@ function useStatus(supportMotion, visible, getElement, _ref) {
   var _ref$motionEnter = _ref.motionEnter, motionEnter = _ref$motionEnter === void 0 ? true : _ref$motionEnter, _ref$motionAppear = _ref.motionAppear, motionAppear = _ref$motionAppear === void 0 ? true : _ref$motionAppear, _ref$motionLeave = _ref.motionLeave, motionLeave = _ref$motionLeave === void 0 ? true : _ref$motionLeave, motionDeadline = _ref.motionDeadline, motionLeaveImmediately = _ref.motionLeaveImmediately, onAppearPrepare = _ref.onAppearPrepare, onEnterPrepare = _ref.onEnterPrepare, onLeavePrepare = _ref.onLeavePrepare, onAppearStart = _ref.onAppearStart, onEnterStart = _ref.onEnterStart, onLeaveStart = _ref.onLeaveStart, onAppearActive = _ref.onAppearActive, onEnterActive = _ref.onEnterActive, onLeaveActive = _ref.onLeaveActive, onAppearEnd = _ref.onAppearEnd, onEnterEnd = _ref.onEnterEnd, onLeaveEnd = _ref.onLeaveEnd, onVisibleChanged = _ref.onVisibleChanged;
   var _useState = useSafeState(), _useState2 = _slicedToArray(_useState, 2), asyncVisible = _useState2[0], setAsyncVisible = _useState2[1];
   var _useSyncState = useSyncState(STATUS_NONE), _useSyncState2 = _slicedToArray(_useSyncState, 2), getStatus = _useSyncState2[0], setStatus = _useSyncState2[1];
-  var _useState3 = useSafeState(null), _useState4 = _slicedToArray(_useState3, 2), style4 = _useState4[0], setStyle = _useState4[1];
+  var _useState3 = useSafeState(null), _useState4 = _slicedToArray(_useState3, 2), style6 = _useState4[0], setStyle = _useState4[1];
   var currentStatus = getStatus();
-  var mountedRef = useRef69(false);
-  var deadlineRef = useRef69(null);
+  var mountedRef = useRef70(false);
+  var deadlineRef = useRef70(null);
   function getDomElement() {
     return getElement();
   }
-  var activeRef = useRef69(false);
+  var activeRef = useRef70(false);
   function updateMotionEndStatus() {
     setStatus(STATUS_NONE);
     setStyle(null, true);
@@ -60451,7 +62038,7 @@ function useStatus(supportMotion, visible, getElement, _ref) {
         return {};
     }
   };
-  var eventHandlers = React214.useMemo(function() {
+  var eventHandlers = React216.useMemo(function() {
     return getEventHandlers(currentStatus);
   }, [currentStatus]);
   var _useStepQueue = useStepQueue_default(currentStatus, !supportMotion, function(newStep) {
@@ -60484,7 +62071,7 @@ function useStatus(supportMotion, visible, getElement, _ref) {
   }), _useStepQueue2 = _slicedToArray(_useStepQueue, 2), startStep = _useStepQueue2[0], step = _useStepQueue2[1];
   var active = isActive(step);
   activeRef.current = active;
-  var visibleRef = useRef69(null);
+  var visibleRef = useRef70(null);
   useIsomorphicLayoutEffect_default(function() {
     if (mountedRef.current && visibleRef.current === visible) {
       return;
@@ -60527,7 +62114,7 @@ function useStatus(supportMotion, visible, getElement, _ref) {
       clearTimeout(deadlineRef.current);
     };
   }, []);
-  var firstMountChangeRef = React214.useRef(false);
+  var firstMountChangeRef = React216.useRef(false);
   useEffect53(function() {
     if (asyncVisible) {
       firstMountChangeRef.current = true;
@@ -60539,7 +62126,7 @@ function useStatus(supportMotion, visible, getElement, _ref) {
       firstMountChangeRef.current = true;
     }
   }, [asyncVisible, currentStatus]);
-  var mergedStyle = style4;
+  var mergedStyle = style6;
   if (eventHandlers[STEP_PREPARE] && step === STEP_START) {
     mergedStyle = _objectSpread2({
       transition: "none"
@@ -60557,12 +62144,12 @@ function genCSSMotion(config) {
   function isSupportTransition(props, contextMotion) {
     return !!(props.motionName && transitionSupport && contextMotion !== false);
   }
-  var CSSMotion = /* @__PURE__ */ React215.forwardRef(function(props, ref) {
+  var CSSMotion = /* @__PURE__ */ React217.forwardRef(function(props, ref) {
     var _props$visible = props.visible, visible = _props$visible === void 0 ? true : _props$visible, _props$removeOnLeave = props.removeOnLeave, removeOnLeave = _props$removeOnLeave === void 0 ? true : _props$removeOnLeave, forceRender = props.forceRender, children = props.children, motionName = props.motionName, leavedClassName = props.leavedClassName, eventProps = props.eventProps;
-    var _React$useContext = React215.useContext(Context), contextMotion = _React$useContext.motion;
+    var _React$useContext = React217.useContext(Context), contextMotion = _React$useContext.motion;
     var supportMotion = isSupportTransition(props, contextMotion);
-    var nodeRef = useRef71();
-    var wrapperNodeRef = useRef71();
+    var nodeRef = useRef72();
+    var wrapperNodeRef = useRef72();
     function getDomElement() {
       try {
         return nodeRef.current instanceof HTMLElement ? nodeRef.current : findDOMNode(wrapperNodeRef.current);
@@ -60571,11 +62158,11 @@ function genCSSMotion(config) {
       }
     }
     var _useStatus = useStatus(supportMotion, visible, getDomElement, props), _useStatus2 = _slicedToArray(_useStatus, 4), status = _useStatus2[0], statusStep = _useStatus2[1], statusStyle = _useStatus2[2], mergedVisible = _useStatus2[3];
-    var renderedRef = React215.useRef(mergedVisible);
+    var renderedRef = React217.useRef(mergedVisible);
     if (mergedVisible) {
       renderedRef.current = true;
     }
-    var setNodeRef = React215.useCallback(function(node) {
+    var setNodeRef = React217.useCallback(function(node) {
       nodeRef.current = node;
       fillRef(ref, node);
     }, [ref]);
@@ -60616,15 +62203,15 @@ function genCSSMotion(config) {
         style: statusStyle
       }), setNodeRef);
     }
-    if (/* @__PURE__ */ React215.isValidElement(motionChildren) && supportRef(motionChildren)) {
+    if (/* @__PURE__ */ React217.isValidElement(motionChildren) && supportRef(motionChildren)) {
       var originNodeRef = getNodeRef(motionChildren);
       if (!originNodeRef) {
-        motionChildren = /* @__PURE__ */ React215.cloneElement(motionChildren, {
+        motionChildren = /* @__PURE__ */ React217.cloneElement(motionChildren, {
           ref: setNodeRef
         });
       }
     }
-    return /* @__PURE__ */ React215.createElement(DomWrapper_default, {
+    return /* @__PURE__ */ React217.createElement(DomWrapper_default, {
       ref: wrapperNodeRef
     }, motionChildren);
   });
@@ -60634,7 +62221,7 @@ function genCSSMotion(config) {
 var CSSMotion_default = genCSSMotion(supportTransition);
 
 // node_modules/rc-motion/es/CSSMotionList.js
-import * as React216 from "react";
+import * as React218 from "react";
 
 // node_modules/rc-motion/es/util/diff.js
 var STATUS_ADD = "add";
@@ -60771,17 +62358,17 @@ function genCSSMotionList(transitionSupport) {
         var _this2 = this;
         var keyEntities = this.state.keyEntities;
         var _this$props = this.props, component = _this$props.component, children = _this$props.children, _onVisibleChanged = _this$props.onVisibleChanged, onAllRemoved = _this$props.onAllRemoved, restProps = _objectWithoutProperties(_this$props, _excluded52);
-        var Component5 = component || React216.Fragment;
+        var Component5 = component || React218.Fragment;
         var motionProps = {};
         MOTION_PROP_NAMES.forEach(function(prop) {
           motionProps[prop] = restProps[prop];
           delete restProps[prop];
         });
         delete restProps.keys;
-        return /* @__PURE__ */ React216.createElement(Component5, restProps, keyEntities.map(function(_ref2, index3) {
+        return /* @__PURE__ */ React218.createElement(Component5, restProps, keyEntities.map(function(_ref2, index3) {
           var status = _ref2.status, eventProps = _objectWithoutProperties(_ref2, _excluded213);
           var visible = status === STATUS_ADD || status === STATUS_KEEP;
-          return /* @__PURE__ */ React216.createElement(CSSMotion, _extends({}, motionProps, {
+          return /* @__PURE__ */ React218.createElement(CSSMotion, _extends({}, motionProps, {
             key: eventProps.key,
             visible,
             eventProps,
@@ -60822,7 +62409,7 @@ function genCSSMotionList(transitionSupport) {
       }
     }]);
     return CSSMotionList2;
-  }(React216.Component);
+  }(React218.Component);
   _defineProperty(CSSMotionList, "defaultProps", {
     component: "div"
   });
@@ -60834,31 +62421,31 @@ var CSSMotionList_default = genCSSMotionList(supportTransition);
 var es_default3 = CSSMotion_default;
 
 // node_modules/rc-tree/es/MotionTreeNode.js
-import * as React220 from "react";
+import * as React222 from "react";
 
 // node_modules/rc-tree/es/TreeNode.js
 var import_classnames6 = __toESM(require_classnames());
-import React218 from "react";
+import React220 from "react";
 
 // node_modules/rc-tree/es/Indent.js
 var import_classnames5 = __toESM(require_classnames());
-import * as React217 from "react";
+import * as React219 from "react";
 var Indent = function Indent2(_ref) {
   var prefixCls = _ref.prefixCls, level = _ref.level, isStart = _ref.isStart, isEnd = _ref.isEnd;
   var baseClassName = "".concat(prefixCls, "-indent-unit");
   var list = [];
   for (var i2 = 0; i2 < level; i2 += 1) {
-    list.push(/* @__PURE__ */ React217.createElement("span", {
+    list.push(/* @__PURE__ */ React219.createElement("span", {
       key: i2,
       className: (0, import_classnames5.default)(baseClassName, _defineProperty(_defineProperty({}, "".concat(baseClassName, "-start"), isStart[i2]), "".concat(baseClassName, "-end"), isEnd[i2]))
     }));
   }
-  return /* @__PURE__ */ React217.createElement("span", {
+  return /* @__PURE__ */ React219.createElement("span", {
     "aria-hidden": "true",
     className: "".concat(prefixCls, "-indent")
   }, list);
 };
-var Indent_default = /* @__PURE__ */ React217.memo(Indent);
+var Indent_default = /* @__PURE__ */ React219.memo(Indent);
 
 // node_modules/rc-tree/es/utils/keyUtil.js
 function getEntity(keyEntities, key) {
@@ -61135,17 +62722,14 @@ var ICON_OPEN = "open";
 var ICON_CLOSE = "close";
 var defaultTitle = "---";
 var TreeNode = function TreeNode2(props) {
-  var _context$filterTreeNo, _classNames4;
-  var eventKey = props.eventKey, className = props.className, style4 = props.style, dragOver = props.dragOver, dragOverGapTop = props.dragOverGapTop, dragOverGapBottom = props.dragOverGapBottom, isLeaf = props.isLeaf, isStart = props.isStart, isEnd = props.isEnd, expanded = props.expanded, selected = props.selected, checked = props.checked, halfChecked = props.halfChecked, loading = props.loading, domRef = props.domRef, active = props.active, data = props.data, onMouseMove = props.onMouseMove, selectable = props.selectable, otherProps = _objectWithoutProperties(props, _excluded54);
-  var context = React218.useContext(TreeContext);
-  var unstableContext = React218.useContext(UnstableContext);
-  var selectHandleRef = React218.useRef(null);
-  var _React$useState = React218.useState(false), _React$useState2 = _slicedToArray(_React$useState, 2), dragNodeHighlight = _React$useState2[0], setDragNodeHighlight = _React$useState2[1];
-  var isDisabled = React218.useMemo(function() {
-    var _unstableContext$node;
-    return !!(context.disabled || props.disabled || (_unstableContext$node = unstableContext.nodeDisabled) !== null && _unstableContext$node !== void 0 && _unstableContext$node.call(unstableContext, data));
-  }, [context.disabled, props.disabled, unstableContext.nodeDisabled, data]);
-  var isCheckable = React218.useMemo(function() {
+  var _unstableContext$node, _context$filterTreeNo, _classNames4;
+  var eventKey = props.eventKey, className = props.className, style6 = props.style, dragOver = props.dragOver, dragOverGapTop = props.dragOverGapTop, dragOverGapBottom = props.dragOverGapBottom, isLeaf = props.isLeaf, isStart = props.isStart, isEnd = props.isEnd, expanded = props.expanded, selected = props.selected, checked = props.checked, halfChecked = props.halfChecked, loading = props.loading, domRef = props.domRef, active = props.active, data = props.data, onMouseMove = props.onMouseMove, selectable = props.selectable, otherProps = _objectWithoutProperties(props, _excluded54);
+  var context = React220.useContext(TreeContext);
+  var unstableContext = React220.useContext(UnstableContext);
+  var selectHandleRef = React220.useRef(null);
+  var _React$useState = React220.useState(false), _React$useState2 = _slicedToArray(_React$useState, 2), dragNodeHighlight = _React$useState2[0], setDragNodeHighlight = _React$useState2[1];
+  var isDisabled = !!(context.disabled || props.disabled || (_unstableContext$node = unstableContext.nodeDisabled) !== null && _unstableContext$node !== void 0 && _unstableContext$node.call(unstableContext, data));
+  var isCheckable = React220.useMemo(function() {
     if (!context.checkable || props.checkable === false) {
       return false;
     }
@@ -61166,7 +62750,7 @@ var TreeNode = function TreeNode2(props) {
     }
     context.onNodeCheck(e2, convertNodePropsToEventData(props), !checked);
   };
-  var isSelectable = React218.useMemo(function() {
+  var isSelectable = React220.useMemo(function() {
     if (typeof selectable === "boolean") {
       return selectable;
     }
@@ -61192,7 +62776,7 @@ var TreeNode = function TreeNode2(props) {
   var onContextMenu = function onContextMenu2(e2) {
     context.onNodeContextMenu(e2, convertNodePropsToEventData(props));
   };
-  var isDraggable = React218.useMemo(function() {
+  var isDraggable = React220.useMemo(function() {
     return !!(context.draggable && (!context.draggable.nodeDraggable || context.draggable.nodeDraggable(data)));
   }, [context.draggable, data]);
   var onDragStart = function onDragStart2(e2) {
@@ -61235,17 +62819,17 @@ var TreeNode = function TreeNode2(props) {
     }
     context.onNodeExpand(e2, convertNodePropsToEventData(props));
   };
-  var hasChildren = React218.useMemo(function() {
+  var hasChildren = React220.useMemo(function() {
     var _ref = getEntity(context.keyEntities, eventKey) || {}, children = _ref.children;
     return Boolean((children || []).length);
   }, [context.keyEntities, eventKey]);
-  var memoizedIsLeaf = React218.useMemo(function() {
+  var memoizedIsLeaf = React220.useMemo(function() {
     if (isLeaf === false) {
       return false;
     }
     return isLeaf || !context.loadData && !hasChildren || context.loadData && props.loaded && !hasChildren;
   }, [isLeaf, context.loadData, hasChildren, props.loaded]);
-  React218.useEffect(function() {
+  React220.useEffect(function() {
     if (loading) {
       return;
     }
@@ -61253,12 +62837,12 @@ var TreeNode = function TreeNode2(props) {
       context.onNodeLoad(convertNodePropsToEventData(props));
     }
   }, [loading, context.loadData, context.onNodeLoad, expanded, memoizedIsLeaf, props]);
-  var dragHandlerNode = React218.useMemo(function() {
+  var dragHandlerNode = React220.useMemo(function() {
     var _context$draggable;
     if (!((_context$draggable = context.draggable) !== null && _context$draggable !== void 0 && _context$draggable.icon)) {
       return null;
     }
-    return /* @__PURE__ */ React218.createElement("span", {
+    return /* @__PURE__ */ React220.createElement("span", {
       className: "".concat(context.prefixCls, "-draggable-icon")
     }, context.draggable.icon);
   }, [context.draggable]);
@@ -61274,22 +62858,22 @@ var TreeNode = function TreeNode2(props) {
   var renderSwitcher = function renderSwitcher2() {
     if (memoizedIsLeaf) {
       var _switcherIconDom = renderSwitcherIconDom(true);
-      return _switcherIconDom !== false ? /* @__PURE__ */ React218.createElement("span", {
+      return _switcherIconDom !== false ? /* @__PURE__ */ React220.createElement("span", {
         className: (0, import_classnames6.default)("".concat(context.prefixCls, "-switcher"), "".concat(context.prefixCls, "-switcher-noop"))
       }, _switcherIconDom) : null;
     }
     var switcherIconDom = renderSwitcherIconDom(false);
-    return switcherIconDom !== false ? /* @__PURE__ */ React218.createElement("span", {
+    return switcherIconDom !== false ? /* @__PURE__ */ React220.createElement("span", {
       onClick: onExpand,
       className: (0, import_classnames6.default)("".concat(context.prefixCls, "-switcher"), "".concat(context.prefixCls, "-switcher_").concat(expanded ? ICON_OPEN : ICON_CLOSE))
     }, switcherIconDom) : null;
   };
-  var checkboxNode = React218.useMemo(function() {
+  var checkboxNode = React220.useMemo(function() {
     if (!isCheckable) {
       return null;
     }
     var $custom = typeof isCheckable !== "boolean" ? isCheckable : null;
-    return /* @__PURE__ */ React218.createElement("span", {
+    return /* @__PURE__ */ React220.createElement("span", {
       className: (0, import_classnames6.default)("".concat(context.prefixCls, "-checkbox"), _defineProperty(_defineProperty(_defineProperty({}, "".concat(context.prefixCls, "-checkbox-checked"), checked), "".concat(context.prefixCls, "-checkbox-indeterminate"), !checked && halfChecked), "".concat(context.prefixCls, "-checkbox-disabled"), isDisabled || props.disableCheckbox)),
       onClick: onCheck,
       role: "checkbox",
@@ -61298,18 +62882,18 @@ var TreeNode = function TreeNode2(props) {
       "aria-label": "Select ".concat(typeof props.title === "string" ? props.title : "tree node")
     }, $custom);
   }, [isCheckable, checked, halfChecked, isDisabled, props.disableCheckbox, props.title]);
-  var nodeState = React218.useMemo(function() {
+  var nodeState = React220.useMemo(function() {
     if (memoizedIsLeaf) {
       return null;
     }
     return expanded ? ICON_OPEN : ICON_CLOSE;
   }, [memoizedIsLeaf, expanded]);
-  var iconNode = React218.useMemo(function() {
-    return /* @__PURE__ */ React218.createElement("span", {
+  var iconNode = React220.useMemo(function() {
+    return /* @__PURE__ */ React220.createElement("span", {
       className: (0, import_classnames6.default)("".concat(context.prefixCls, "-iconEle"), "".concat(context.prefixCls, "-icon__").concat(nodeState || "docu"), _defineProperty({}, "".concat(context.prefixCls, "-icon_loading"), loading))
     });
   }, [context.prefixCls, nodeState, loading]);
-  var dropIndicatorNode = React218.useMemo(function() {
+  var dropIndicatorNode = React220.useMemo(function() {
     var rootDraggable = Boolean(context.draggable);
     var showIndicator = !props.disabled && rootDraggable && context.dragOverNodeKey === eventKey;
     if (!showIndicator) {
@@ -61323,13 +62907,13 @@ var TreeNode = function TreeNode2(props) {
       direction: context.direction
     });
   }, [context.dropPosition, context.dropLevelOffset, context.indent, context.prefixCls, context.direction, context.draggable, context.dragOverNodeKey, context.dropIndicatorRender]);
-  var selectorNode = React218.useMemo(function() {
+  var selectorNode = React220.useMemo(function() {
     var _props$title = props.title, title = _props$title === void 0 ? defaultTitle : _props$title;
     var wrapClass = "".concat(context.prefixCls, "-node-content-wrapper");
     var $icon;
     if (context.showIcon) {
       var currentIcon = props.icon || context.icon;
-      $icon = currentIcon ? /* @__PURE__ */ React218.createElement("span", {
+      $icon = currentIcon ? /* @__PURE__ */ React220.createElement("span", {
         className: (0, import_classnames6.default)("".concat(context.prefixCls, "-iconEle"), "".concat(context.prefixCls, "-icon__customize"))
       }, typeof currentIcon === "function" ? currentIcon(props) : currentIcon) : iconNode;
     } else if (context.loadData && loading) {
@@ -61343,7 +62927,7 @@ var TreeNode = function TreeNode2(props) {
     } else {
       titleNode = title;
     }
-    return /* @__PURE__ */ React218.createElement("span", {
+    return /* @__PURE__ */ React220.createElement("span", {
       ref: selectHandleRef,
       title: typeof title === "string" ? title : "",
       className: (0, import_classnames6.default)(wrapClass, "".concat(wrapClass, "-").concat(nodeState || "normal"), _defineProperty({}, "".concat(context.prefixCls, "-node-selected"), !isDisabled && (selected || dragNodeHighlight))),
@@ -61352,7 +62936,7 @@ var TreeNode = function TreeNode2(props) {
       onContextMenu,
       onClick: onSelectorClick,
       onDoubleClick: onSelectorDoubleClick
-    }, $icon, /* @__PURE__ */ React218.createElement("span", {
+    }, $icon, /* @__PURE__ */ React220.createElement("span", {
       className: "".concat(context.prefixCls, "-title")
     }, titleNode), dropIndicatorNode);
   }, [context.prefixCls, context.showIcon, props, context.icon, iconNode, context.titleRender, data, nodeState, onMouseEnter, onMouseLeave, onContextMenu, onSelectorClick, onSelectorDoubleClick]);
@@ -61367,12 +62951,12 @@ var TreeNode = function TreeNode2(props) {
   var ariaSelected = selectable !== void 0 ? {
     "aria-selected": !!selectable
   } : void 0;
-  return /* @__PURE__ */ React218.createElement("div", _extends({
+  return /* @__PURE__ */ React220.createElement("div", _extends({
     ref: domRef,
     role: "treeitem",
     "aria-expanded": isLeaf ? void 0 : expanded,
     className: (0, import_classnames6.default)(className, "".concat(context.prefixCls, "-treenode"), (_classNames4 = {}, _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_classNames4, "".concat(context.prefixCls, "-treenode-disabled"), isDisabled), "".concat(context.prefixCls, "-treenode-switcher-").concat(expanded ? "open" : "close"), !isLeaf), "".concat(context.prefixCls, "-treenode-checkbox-checked"), checked), "".concat(context.prefixCls, "-treenode-checkbox-indeterminate"), halfChecked), "".concat(context.prefixCls, "-treenode-selected"), selected), "".concat(context.prefixCls, "-treenode-loading"), loading), "".concat(context.prefixCls, "-treenode-active"), active), "".concat(context.prefixCls, "-treenode-leaf-last"), isEndNode), "".concat(context.prefixCls, "-treenode-draggable"), isDraggable), "dragging", dragging), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_classNames4, "drop-target", context.dropTargetKey === eventKey), "drop-container", context.dropContainerKey === eventKey), "drag-over", !isDisabled && dragOver), "drag-over-gap-top", !isDisabled && dragOverGapTop), "drag-over-gap-bottom", !isDisabled && dragOverGapBottom), "filter-node", (_context$filterTreeNo = context.filterTreeNode) === null || _context$filterTreeNo === void 0 ? void 0 : _context$filterTreeNo.call(context, convertNodePropsToEventData(props))), "".concat(context.prefixCls, "-treenode-leaf"), memoizedIsLeaf))),
-    style: style4,
+    style: style6,
     draggable: draggableWithoutDisabled,
     onDragStart: draggableWithoutDisabled ? onDragStart : void 0,
     onDragEnter: isDraggable ? onDragEnter : void 0,
@@ -61381,7 +62965,7 @@ var TreeNode = function TreeNode2(props) {
     onDrop: isDraggable ? onDrop : void 0,
     onDragEnd: isDraggable ? onDragEnd : void 0,
     onMouseMove
-  }, ariaSelected, dataOrAriaAttributeProps), /* @__PURE__ */ React218.createElement(Indent_default, {
+  }, ariaSelected, dataOrAriaAttributeProps), /* @__PURE__ */ React220.createElement(Indent_default, {
     prefixCls: context.prefixCls,
     level,
     isStart,
@@ -61395,9 +62979,9 @@ if (true) {
 var TreeNode_default = TreeNode;
 
 // node_modules/rc-tree/es/useUnmount.js
-import * as React219 from "react";
+import * as React221 from "react";
 function useUnmount(triggerStart, triggerEnd) {
-  var _React$useState = React219.useState(false), _React$useState2 = _slicedToArray(_React$useState, 2), firstMount = _React$useState2[0], setFirstMount = _React$useState2[1];
+  var _React$useState = React221.useState(false), _React$useState2 = _slicedToArray(_React$useState, 2), firstMount = _React$useState2[0], setFirstMount = _React$useState2[1];
   useLayoutEffect_default(function() {
     if (firstMount) {
       triggerStart();
@@ -61417,10 +63001,10 @@ var useUnmount_default = useUnmount;
 
 // node_modules/rc-tree/es/MotionTreeNode.js
 var _excluded55 = ["className", "style", "motion", "motionNodes", "motionType", "onMotionStart", "onMotionEnd", "active", "treeNodeRequiredProps"];
-var MotionTreeNode = /* @__PURE__ */ React220.forwardRef(function(oriProps, ref) {
-  var className = oriProps.className, style4 = oriProps.style, motion = oriProps.motion, motionNodes = oriProps.motionNodes, motionType = oriProps.motionType, onOriginMotionStart = oriProps.onMotionStart, onOriginMotionEnd = oriProps.onMotionEnd, active = oriProps.active, treeNodeRequiredProps = oriProps.treeNodeRequiredProps, props = _objectWithoutProperties(oriProps, _excluded55);
-  var _React$useState = React220.useState(true), _React$useState2 = _slicedToArray(_React$useState, 2), visible = _React$useState2[0], setVisible = _React$useState2[1];
-  var _React$useContext = React220.useContext(TreeContext), prefixCls = _React$useContext.prefixCls;
+var MotionTreeNode = /* @__PURE__ */ React222.forwardRef(function(oriProps, ref) {
+  var className = oriProps.className, style6 = oriProps.style, motion = oriProps.motion, motionNodes = oriProps.motionNodes, motionType = oriProps.motionType, onOriginMotionStart = oriProps.onMotionStart, onOriginMotionEnd = oriProps.onMotionEnd, active = oriProps.active, treeNodeRequiredProps = oriProps.treeNodeRequiredProps, props = _objectWithoutProperties(oriProps, _excluded55);
+  var _React$useState = React222.useState(true), _React$useState2 = _slicedToArray(_React$useState, 2), visible = _React$useState2[0], setVisible = _React$useState2[1];
+  var _React$useContext = React222.useContext(TreeContext), prefixCls = _React$useContext.prefixCls;
   var targetVisible = motionNodes && motionType !== "hide";
   useLayoutEffect_default(function() {
     if (motionNodes) {
@@ -61434,7 +63018,7 @@ var MotionTreeNode = /* @__PURE__ */ React220.forwardRef(function(oriProps, ref)
       onOriginMotionStart();
     }
   };
-  var triggerMotionEndRef = React220.useRef(false);
+  var triggerMotionEndRef = React222.useRef(false);
   var triggerMotionEnd = function triggerMotionEnd2() {
     if (motionNodes && !triggerMotionEndRef.current) {
       triggerMotionEndRef.current = true;
@@ -61448,7 +63032,7 @@ var MotionTreeNode = /* @__PURE__ */ React220.forwardRef(function(oriProps, ref)
     }
   };
   if (motionNodes) {
-    return /* @__PURE__ */ React220.createElement(es_default3, _extends({
+    return /* @__PURE__ */ React222.createElement(es_default3, _extends({
       ref,
       visible
     }, motion, {
@@ -61456,7 +63040,7 @@ var MotionTreeNode = /* @__PURE__ */ React220.forwardRef(function(oriProps, ref)
       onVisibleChanged
     }), function(_ref, motionRef) {
       var motionClassName = _ref.className, motionStyle = _ref.style;
-      return /* @__PURE__ */ React220.createElement("div", {
+      return /* @__PURE__ */ React222.createElement("div", {
         ref: motionRef,
         className: (0, import_classnames7.default)("".concat(prefixCls, "-treenode-motion"), motionClassName),
         style: motionStyle
@@ -61464,7 +63048,7 @@ var MotionTreeNode = /* @__PURE__ */ React220.forwardRef(function(oriProps, ref)
         var restProps = Object.assign({}, (_objectDestructuringEmpty(treeNode.data), treeNode.data)), title = treeNode.title, key = treeNode.key, isStart = treeNode.isStart, isEnd = treeNode.isEnd;
         delete restProps.children;
         var treeNodeProps = getTreeNodeProps(key, treeNodeRequiredProps);
-        return /* @__PURE__ */ React220.createElement(TreeNode_default, _extends({}, restProps, treeNodeProps, {
+        return /* @__PURE__ */ React222.createElement(TreeNode_default, _extends({}, restProps, treeNodeProps, {
           title,
           active,
           data: treeNode.data,
@@ -61475,10 +63059,10 @@ var MotionTreeNode = /* @__PURE__ */ React220.forwardRef(function(oriProps, ref)
       }));
     });
   }
-  return /* @__PURE__ */ React220.createElement(TreeNode_default, _extends({
+  return /* @__PURE__ */ React222.createElement(TreeNode_default, _extends({
     domRef: ref,
     className,
-    style: style4
+    style: style6
   }, props, {
     active
   }));
@@ -61575,11 +63159,11 @@ var MotionFlattenData = {
   isStart: [],
   isEnd: []
 };
-function getMinimumRangeTransitionRange(list, virtual, height2, itemHeight) {
-  if (virtual === false || !height2) {
+function getMinimumRangeTransitionRange(list, virtual, height3, itemHeight) {
+  if (virtual === false || !height3) {
     return list;
   }
-  return list.slice(0, Math.ceil(height2 / itemHeight) + 1);
+  return list.slice(0, Math.ceil(height3 / itemHeight) + 1);
 }
 function itemKey(item) {
   var key = item.key, pos = item.pos;
@@ -61594,11 +63178,11 @@ function getAccessibilityPath(item) {
   }
   return path;
 }
-var NodeList = /* @__PURE__ */ React221.forwardRef(function(props, ref) {
-  var prefixCls = props.prefixCls, data = props.data, selectable = props.selectable, checkable = props.checkable, expandedKeys = props.expandedKeys, selectedKeys = props.selectedKeys, checkedKeys = props.checkedKeys, loadedKeys = props.loadedKeys, loadingKeys = props.loadingKeys, halfCheckedKeys = props.halfCheckedKeys, keyEntities = props.keyEntities, disabled = props.disabled, dragging = props.dragging, dragOverNodeKey = props.dragOverNodeKey, dropPosition = props.dropPosition, motion = props.motion, height2 = props.height, itemHeight = props.itemHeight, virtual = props.virtual, scrollWidth = props.scrollWidth, focusable = props.focusable, activeItem = props.activeItem, focused = props.focused, tabIndex = props.tabIndex, onKeyDown = props.onKeyDown, onFocus = props.onFocus, onBlur = props.onBlur, onActiveChange = props.onActiveChange, onListChangeStart = props.onListChangeStart, onListChangeEnd = props.onListChangeEnd, domProps = _objectWithoutProperties(props, _excluded56);
-  var listRef = React221.useRef(null);
-  var indentMeasurerRef = React221.useRef(null);
-  React221.useImperativeHandle(ref, function() {
+var NodeList = /* @__PURE__ */ React223.forwardRef(function(props, ref) {
+  var prefixCls = props.prefixCls, data = props.data, selectable = props.selectable, checkable = props.checkable, expandedKeys = props.expandedKeys, selectedKeys = props.selectedKeys, checkedKeys = props.checkedKeys, loadedKeys = props.loadedKeys, loadingKeys = props.loadingKeys, halfCheckedKeys = props.halfCheckedKeys, keyEntities = props.keyEntities, disabled = props.disabled, dragging = props.dragging, dragOverNodeKey = props.dragOverNodeKey, dropPosition = props.dropPosition, motion = props.motion, height3 = props.height, itemHeight = props.itemHeight, virtual = props.virtual, scrollWidth = props.scrollWidth, focusable = props.focusable, activeItem = props.activeItem, focused = props.focused, tabIndex = props.tabIndex, onKeyDown = props.onKeyDown, onFocus = props.onFocus, onBlur = props.onBlur, onActiveChange = props.onActiveChange, onListChangeStart = props.onListChangeStart, onListChangeEnd = props.onListChangeEnd, domProps = _objectWithoutProperties(props, _excluded56);
+  var listRef = React223.useRef(null);
+  var indentMeasurerRef = React223.useRef(null);
+  React223.useImperativeHandle(ref, function() {
     return {
       scrollTo: function scrollTo(scroll) {
         listRef.current.scrollTo(scroll);
@@ -61608,12 +63192,12 @@ var NodeList = /* @__PURE__ */ React221.forwardRef(function(props, ref) {
       }
     };
   });
-  var _React$useState = React221.useState(expandedKeys), _React$useState2 = _slicedToArray(_React$useState, 2), prevExpandedKeys = _React$useState2[0], setPrevExpandedKeys = _React$useState2[1];
-  var _React$useState3 = React221.useState(data), _React$useState4 = _slicedToArray(_React$useState3, 2), prevData = _React$useState4[0], setPrevData = _React$useState4[1];
-  var _React$useState5 = React221.useState(data), _React$useState6 = _slicedToArray(_React$useState5, 2), transitionData = _React$useState6[0], setTransitionData = _React$useState6[1];
-  var _React$useState7 = React221.useState([]), _React$useState8 = _slicedToArray(_React$useState7, 2), transitionRange = _React$useState8[0], setTransitionRange = _React$useState8[1];
-  var _React$useState9 = React221.useState(null), _React$useState10 = _slicedToArray(_React$useState9, 2), motionType = _React$useState10[0], setMotionType = _React$useState10[1];
-  var dataRef = React221.useRef(data);
+  var _React$useState = React223.useState(expandedKeys), _React$useState2 = _slicedToArray(_React$useState, 2), prevExpandedKeys = _React$useState2[0], setPrevExpandedKeys = _React$useState2[1];
+  var _React$useState3 = React223.useState(data), _React$useState4 = _slicedToArray(_React$useState3, 2), prevData = _React$useState4[0], setPrevData = _React$useState4[1];
+  var _React$useState5 = React223.useState(data), _React$useState6 = _slicedToArray(_React$useState5, 2), transitionData = _React$useState6[0], setTransitionData = _React$useState6[1];
+  var _React$useState7 = React223.useState([]), _React$useState8 = _slicedToArray(_React$useState7, 2), transitionRange = _React$useState8[0], setTransitionRange = _React$useState8[1];
+  var _React$useState9 = React223.useState(null), _React$useState10 = _slicedToArray(_React$useState9, 2), motionType = _React$useState10[0], setMotionType = _React$useState10[1];
+  var dataRef = React223.useRef(data);
   dataRef.current = data;
   function onMotionEnd() {
     var latestData = dataRef.current;
@@ -61632,7 +63216,7 @@ var NodeList = /* @__PURE__ */ React221.forwardRef(function(props, ref) {
           var key = _ref.key;
           return key === diffExpanded.key;
         });
-        var rangeNodes = getMinimumRangeTransitionRange(getExpandRange(prevData, data, diffExpanded.key), virtual, height2, itemHeight);
+        var rangeNodes = getMinimumRangeTransitionRange(getExpandRange(prevData, data, diffExpanded.key), virtual, height3, itemHeight);
         var newTransitionData = prevData.slice();
         newTransitionData.splice(keyIndex + 1, 0, MotionFlattenData);
         setTransitionData(newTransitionData);
@@ -61643,7 +63227,7 @@ var NodeList = /* @__PURE__ */ React221.forwardRef(function(props, ref) {
           var key = _ref2.key;
           return key === diffExpanded.key;
         });
-        var _rangeNodes = getMinimumRangeTransitionRange(getExpandRange(data, prevData, diffExpanded.key), virtual, height2, itemHeight);
+        var _rangeNodes = getMinimumRangeTransitionRange(getExpandRange(data, prevData, diffExpanded.key), virtual, height3, itemHeight);
         var _newTransitionData = data.slice();
         _newTransitionData.splice(_keyIndex + 1, 0, MotionFlattenData);
         setTransitionData(_newTransitionData);
@@ -61655,7 +63239,7 @@ var NodeList = /* @__PURE__ */ React221.forwardRef(function(props, ref) {
       setTransitionData(data);
     }
   }, [expandedKeys, data]);
-  React221.useEffect(function() {
+  React223.useEffect(function() {
     if (!dragging) {
       onMotionEnd();
     }
@@ -61672,10 +63256,10 @@ var NodeList = /* @__PURE__ */ React221.forwardRef(function(props, ref) {
     dropPosition,
     keyEntities
   };
-  return /* @__PURE__ */ React221.createElement(React221.Fragment, null, focused && activeItem && /* @__PURE__ */ React221.createElement("span", {
+  return /* @__PURE__ */ React223.createElement(React223.Fragment, null, focused && activeItem && /* @__PURE__ */ React223.createElement("span", {
     style: HIDDEN_STYLE,
     "aria-live": "assertive"
-  }, getAccessibilityPath(activeItem)), /* @__PURE__ */ React221.createElement("div", null, /* @__PURE__ */ React221.createElement("input", {
+  }, getAccessibilityPath(activeItem)), /* @__PURE__ */ React223.createElement("div", null, /* @__PURE__ */ React223.createElement("input", {
     style: HIDDEN_STYLE,
     disabled: focusable === false || disabled,
     tabIndex: focusable !== false ? tabIndex : null,
@@ -61685,7 +63269,7 @@ var NodeList = /* @__PURE__ */ React221.forwardRef(function(props, ref) {
     value: "",
     onChange: noop4,
     "aria-label": "for screen reader"
-  })), /* @__PURE__ */ React221.createElement("div", {
+  })), /* @__PURE__ */ React223.createElement("div", {
     className: "".concat(prefixCls, "-treenode"),
     "aria-hidden": true,
     style: {
@@ -61697,15 +63281,15 @@ var NodeList = /* @__PURE__ */ React221.forwardRef(function(props, ref) {
       border: 0,
       padding: 0
     }
-  }, /* @__PURE__ */ React221.createElement("div", {
+  }, /* @__PURE__ */ React223.createElement("div", {
     className: "".concat(prefixCls, "-indent")
-  }, /* @__PURE__ */ React221.createElement("div", {
+  }, /* @__PURE__ */ React223.createElement("div", {
     ref: indentMeasurerRef,
     className: "".concat(prefixCls, "-indent-unit")
-  }))), /* @__PURE__ */ React221.createElement(es_default2, _extends({}, domProps, {
+  }))), /* @__PURE__ */ React223.createElement(es_default2, _extends({}, domProps, {
     data: mergedData,
     itemKey,
-    height: height2,
+    height: height3,
     fullHeight: false,
     virtual,
     itemHeight,
@@ -61726,7 +63310,7 @@ var NodeList = /* @__PURE__ */ React221.forwardRef(function(props, ref) {
     delete restProps.key;
     delete restProps.children;
     var treeNodeProps = getTreeNodeProps(mergedKey, treeNodeRequiredProps);
-    return /* @__PURE__ */ React221.createElement(MotionTreeNode_default, _extends({}, restProps, treeNodeProps, {
+    return /* @__PURE__ */ React223.createElement(MotionTreeNode_default, _extends({}, restProps, treeNodeProps, {
       title,
       active: !!activeItem && key === activeItem.key,
       pos,
@@ -61751,7 +63335,7 @@ if (true) {
 var NodeList_default = NodeList;
 
 // node_modules/rc-tree/es/util.js
-import React222 from "react";
+import React224 from "react";
 function arrDel(list, value) {
   if (!list) return [];
   var clone = list.slice();
@@ -61799,7 +63383,7 @@ function isFirstChild(treeNodeEntity) {
 function calcDropPosition(event, dragNodeProps, targetNodeProps, indent, startMousePosition, allowDrop2, flattenedNodes, keyEntities, expandKeys, direction) {
   var _abstractDropNodeEnti;
   var clientX = event.clientX, clientY = event.clientY;
-  var _getBoundingClientRec = event.target.getBoundingClientRect(), top2 = _getBoundingClientRec.top, height2 = _getBoundingClientRec.height;
+  var _getBoundingClientRec = event.target.getBoundingClientRect(), top2 = _getBoundingClientRec.top, height3 = _getBoundingClientRec.height;
   var horizontalMouseOffset = (direction === "rtl" ? -1 : 1) * (((startMousePosition === null || startMousePosition === void 0 ? void 0 : startMousePosition.x) || 0) - clientX);
   var rawDropLevelOffset = (horizontalMouseOffset - 12) / indent;
   var filteredExpandKeys = expandKeys.filter(function(key) {
@@ -61807,7 +63391,7 @@ function calcDropPosition(event, dragNodeProps, targetNodeProps, indent, startMo
     return (_keyEntities$key = keyEntities[key]) === null || _keyEntities$key === void 0 || (_keyEntities$key = _keyEntities$key.children) === null || _keyEntities$key === void 0 ? void 0 : _keyEntities$key.length;
   });
   var abstractDropNodeEntity = getEntity(keyEntities, targetNodeProps.eventKey);
-  if (clientY < top2 + height2 / 2) {
+  if (clientY < top2 + height3 / 2) {
     var nodeIndex = flattenedNodes.findIndex(function(flattenedNode) {
       return flattenedNode.key === abstractDropNodeEntity.key;
     });
@@ -61833,7 +63417,7 @@ function calcDropPosition(event, dragNodeProps, targetNodeProps, indent, startMo
   var abstractDragDataNode = dragNodeProps.data;
   var abstractDropDataNode = abstractDropNodeEntity.node;
   var dropAllowed = true;
-  if (isFirstChild(abstractDropNodeEntity) && abstractDropNodeEntity.level === 0 && clientY < top2 + height2 / 2 && allowDrop2({
+  if (isFirstChild(abstractDropNodeEntity) && abstractDropNodeEntity.level === 0 && clientY < top2 + height3 / 2 && allowDrop2({
     dragNode: abstractDragDataNode,
     dropNode: abstractDropDataNode,
     dropPosition: -1
@@ -62171,7 +63755,7 @@ var Tree = /* @__PURE__ */ function(_React$Component) {
     _defineProperty(_assertThisInitialized(_this), "dragStartMousePosition", null);
     _defineProperty(_assertThisInitialized(_this), "dragNodeProps", null);
     _defineProperty(_assertThisInitialized(_this), "currentMouseOverDroppableNodeKey", null);
-    _defineProperty(_assertThisInitialized(_this), "listRef", /* @__PURE__ */ React223.createRef());
+    _defineProperty(_assertThisInitialized(_this), "listRef", /* @__PURE__ */ React225.createRef());
     _defineProperty(_assertThisInitialized(_this), "onNodeDragStart", function(event, nodeProps) {
       var _this$state = _this.state, expandedKeys = _this$state.expandedKeys, keyEntities = _this$state.keyEntities;
       var onDragStart = _this.props.onDragStart;
@@ -62834,7 +64418,7 @@ var Tree = /* @__PURE__ */ function(_React$Component) {
     key: "render",
     value: function render() {
       var _this$state14 = this.state, focused = _this$state14.focused, flattenNodes = _this$state14.flattenNodes, keyEntities = _this$state14.keyEntities, draggingNodeKey = _this$state14.draggingNodeKey, activeKey = _this$state14.activeKey, dropLevelOffset = _this$state14.dropLevelOffset, dropContainerKey = _this$state14.dropContainerKey, dropTargetKey = _this$state14.dropTargetKey, dropPosition = _this$state14.dropPosition, dragOverNodeKey = _this$state14.dragOverNodeKey, indent = _this$state14.indent;
-      var _this$props12 = this.props, prefixCls = _this$props12.prefixCls, className = _this$props12.className, style4 = _this$props12.style, showLine = _this$props12.showLine, focusable = _this$props12.focusable, _this$props12$tabInde = _this$props12.tabIndex, tabIndex = _this$props12$tabInde === void 0 ? 0 : _this$props12$tabInde, selectable = _this$props12.selectable, showIcon = _this$props12.showIcon, icon = _this$props12.icon, switcherIcon = _this$props12.switcherIcon, draggable = _this$props12.draggable, checkable = _this$props12.checkable, checkStrictly = _this$props12.checkStrictly, disabled = _this$props12.disabled, motion = _this$props12.motion, loadData = _this$props12.loadData, filterTreeNode = _this$props12.filterTreeNode, height2 = _this$props12.height, itemHeight = _this$props12.itemHeight, scrollWidth = _this$props12.scrollWidth, virtual = _this$props12.virtual, titleRender = _this$props12.titleRender, dropIndicatorRender = _this$props12.dropIndicatorRender, onContextMenu = _this$props12.onContextMenu, onScroll = _this$props12.onScroll, direction = _this$props12.direction, rootClassName = _this$props12.rootClassName, rootStyle = _this$props12.rootStyle;
+      var _this$props12 = this.props, prefixCls = _this$props12.prefixCls, className = _this$props12.className, style6 = _this$props12.style, showLine = _this$props12.showLine, focusable = _this$props12.focusable, _this$props12$tabInde = _this$props12.tabIndex, tabIndex = _this$props12$tabInde === void 0 ? 0 : _this$props12$tabInde, selectable = _this$props12.selectable, showIcon = _this$props12.showIcon, icon = _this$props12.icon, switcherIcon = _this$props12.switcherIcon, draggable = _this$props12.draggable, checkable = _this$props12.checkable, checkStrictly = _this$props12.checkStrictly, disabled = _this$props12.disabled, motion = _this$props12.motion, loadData = _this$props12.loadData, filterTreeNode = _this$props12.filterTreeNode, height3 = _this$props12.height, itemHeight = _this$props12.itemHeight, scrollWidth = _this$props12.scrollWidth, virtual = _this$props12.virtual, titleRender = _this$props12.titleRender, dropIndicatorRender = _this$props12.dropIndicatorRender, onContextMenu = _this$props12.onContextMenu, onScroll = _this$props12.onScroll, direction = _this$props12.direction, rootClassName = _this$props12.rootClassName, rootStyle = _this$props12.rootStyle;
       var domProps = pickAttrs(this.props, {
         aria: true,
         data: true
@@ -62890,22 +64474,22 @@ var Tree = /* @__PURE__ */ function(_React$Component) {
         onNodeDragEnd: this.onNodeDragEnd,
         onNodeDrop: this.onNodeDrop
       };
-      return /* @__PURE__ */ React223.createElement(TreeContext.Provider, {
+      return /* @__PURE__ */ React225.createElement(TreeContext.Provider, {
         value: contextValue
-      }, /* @__PURE__ */ React223.createElement("div", {
+      }, /* @__PURE__ */ React225.createElement("div", {
         className: (0, import_classnames8.default)(prefixCls, className, rootClassName, _defineProperty(_defineProperty(_defineProperty({}, "".concat(prefixCls, "-show-line"), showLine), "".concat(prefixCls, "-focused"), focused), "".concat(prefixCls, "-active-focused"), activeKey !== null)),
         style: rootStyle
-      }, /* @__PURE__ */ React223.createElement(NodeList_default, _extends({
+      }, /* @__PURE__ */ React225.createElement(NodeList_default, _extends({
         ref: this.listRef,
         prefixCls,
-        style: style4,
+        style: style6,
         data: flattenNodes,
         disabled,
         selectable,
         checkable: !!checkable,
         motion,
         dragging: draggingNodeKey !== null,
-        height: height2,
+        height: height3,
         itemHeight,
         virtual,
         focusable,
@@ -63016,7 +64600,7 @@ var Tree = /* @__PURE__ */ function(_React$Component) {
     }
   }]);
   return Tree3;
-}(React223.Component);
+}(React225.Component);
 _defineProperty(Tree, "defaultProps", {
   prefixCls: "rc-tree",
   showLine: false,
@@ -63245,7 +64829,7 @@ react-is/cjs/react-is.development.js:
 
 @mui/styled-engine/index.js:
   (**
-   * @mui/styled-engine v6.4.3
+   * @mui/styled-engine v6.4.9
    *
    * @license MIT
    * This source code is licensed under the MIT license found in the
@@ -63254,7 +64838,7 @@ react-is/cjs/react-is.development.js:
 
 @mui/material/index.js:
   (**
-   * @mui/material v6.4.4
+   * @mui/material v6.4.10
    *
    * @license MIT
    * This source code is licensed under the MIT license found in the
@@ -63272,7 +64856,7 @@ jss/dist/jss.esm.js:
 
 @mui/styles/index.js:
   (**
-   * @mui/styles v5.16.14
+   * @mui/styles v5.17.1
    *
    * @license MIT
    * This source code is licensed under the MIT license found in the
