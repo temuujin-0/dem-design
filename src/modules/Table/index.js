@@ -384,20 +384,14 @@ const Table = ({
             </button>
         );
     };
-    const pgOptions = {
+    let pgOptions = {
         custom: true,
         paginationSize: 5,
-        sizePerPageList: config.defaultPageOptions.sizePerPageList || [10, 25, 50, 100],
-        totalSize: remote ? totalDataSize : data && data.length > 0 ? data.length : 0,
-        page: currentPage,
+        sizePerPageList: [10, 25, 50, 100],
+        page: pageNumber || config?.defaultPageOptions?.page,
         sizePerPage,
-        // custom: true,
-        // paginationSize: 5,
-        // sizePerPageList: config.defaultPageOptions.sizePerPageList || [10, 25, 50, 100],
-        // totalSize: remote ? totalDataSize : data && data.length > 0 ? data.length : 0,
-        // page: config?.defaultPageOptions?.page ? config.defaultPageOptions.page : pageNumber,
-        // sizePerPage: config?.defaultPageOptions?.sizePerPage || sizePerPage,
-        // search: config?.defaultPageOptions?.search || '',
+        setCurrentPage: config?.defaultPageOptions?.setCurrentPage,
+        totalSize: remote ? totalDataSize : data && data.length > 0 ? data.length : 0,
     };
 
     useEffect(() => {
