@@ -210,14 +210,15 @@ const Table = ({
     // const config = { ...defaultConfig, ...propsConfig };
     const tableRef = useRef(null);
     const anchorRef = useRef(null);
+    const cmWrapperRoot = useRef(null);
+
     const { ExportCSVButton } = CSVExport;
     const { ToggleList } = ColumnToggle;
 
     const unMountContextMenus = () => {
         const wrapper = getWrapper();
         if (wrapper) {
-            const root = createRoot(wrapper);
-            root.unmount();
+            cmWrapperRoot.current?.unmount()
         }
     };
 
@@ -589,32 +590,39 @@ const Table = ({
             const wrapper = getWrapper();
             const menu = (
                 <ClickAwayListener onClickAway={unMountContextMenus}>
-                    <div
-                        className="dt-cm-wrapper"
-                        style={{ top: e.pageY, left: e.pageX }}
-                    >
+                    <div className="dt-cm-wrapper" style={{ top: e.pageY, left: e.pageX }}>
                         {availableContextMenus.map((menu) => {
+                            if (menu.key == 'line') {
+                                return (
+                                    <div key={menu.key}>
+                                        <div className="line"></div>
+                                    </div>
+                                );
+                            }
+
                             return (
-                                <div
-                                    style={menu?.style ? menu.style : (menu.key == 'view' ? { position: 'relative', right: 1 } : {})}
-                                    className="dt-cm-item"
-                                    onClick={(event) => {
-                                        event.stopPropagation();
-                                        unMountContextMenus();
-                                        onContextMenuItemClick?.(row.id, menu.key, row, event);
-                                    }}
-                                    key={menu.key}
-                                >
-                                    <div style={{ transform: 'translate(0px, -2px)' }}>{menu.icon ? menu.icon : null}</div>
-                                    <span className="black-color">{menu.title}</span>
+                                <div key={menu.key}>
+                                    <div
+                                        className="dt-cm-item"
+                                        onClick={(event) => {
+                                            event.stopPropagation();
+                                            unMountContextMenus();
+                                            onContextMenuItemClick?.(row.id, menu.key, row, event);
+                                        }}
+                                    >
+                                        <div>{menu.icon ? menu.icon : null}</div>
+                                        <div>{menu.title}</div>
+                                    </div>
                                 </div>
                             );
                         })}
                     </div>
                 </ClickAwayListener>
             );
-            const root = createRoot(wrapper);
-            root.render(menu);
+            cmWrapperRoot.current = createRoot(wrapper)
+			if (cmWrapperRoot?.current) {				
+				cmWrapperRoot.current?.render(menu)
+			}
         }
     };
 
