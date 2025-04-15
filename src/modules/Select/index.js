@@ -24,7 +24,6 @@ const Select = ({
     labelEntity = false,
     isArrow = true,
     defaultColor = false,
-    style,
     ...rest
 }) => {
     const { t } = useTranslation();
@@ -100,12 +99,13 @@ const Select = ({
         matchFrom: "any",
     };
 
-    const colourStyles = {
+    const styles = {
         option: (base, state) => ({
             ...base,
             cursor: 'pointer',
             color: '#575962',
             backgroundColor: 'white',
+            borderRadius: 8,
             ':active': {
                 color: '#FF7900',
             },
@@ -116,6 +116,7 @@ const Select = ({
         control: (baseStyles, state) => ({
             ...baseStyles,
             color: defaultColor ? '#575962' : '',
+            borderRadius: 8,
             justifyContent: 'end',
             borderColor: '#0000001F',
             boxShadow: 'none',
@@ -145,7 +146,7 @@ const Select = ({
     return (
         <>
             <ReactSelect
-                styles={colourStyles}
+                styles={styles}
                 className={`eschool-select ${className}`}
                 isDisabled={disabled}
                 isClearable={clearable}

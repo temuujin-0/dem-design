@@ -35557,20 +35557,14 @@ var Table = ({
       }
     );
   };
-  const pgOptions = {
+  let pgOptions = {
     custom: true,
     paginationSize: 5,
-    sizePerPageList: config.defaultPageOptions.sizePerPageList || [10, 25, 50, 100],
-    totalSize: remote ? totalDataSize : data && data.length > 0 ? data.length : 0,
-    page: currentPage,
-    sizePerPage
-    // custom: true,
-    // paginationSize: 5,
-    // sizePerPageList: config.defaultPageOptions.sizePerPageList || [10, 25, 50, 100],
-    // totalSize: remote ? totalDataSize : data && data.length > 0 ? data.length : 0,
-    // page: config?.defaultPageOptions?.page ? config.defaultPageOptions.page : pageNumber,
-    // sizePerPage: config?.defaultPageOptions?.sizePerPage || sizePerPage,
-    // search: config?.defaultPageOptions?.search || '',
+    sizePerPageList: [10, 25, 50, 100],
+    page: pageNumber || config?.defaultPageOptions?.page,
+    sizePerPage,
+    setCurrentPage: config?.defaultPageOptions?.setCurrentPage,
+    totalSize: remote ? totalDataSize : data && data.length > 0 ? data.length : 0
   };
   useEffect19(() => {
     setLocalColumns(columns || []);
@@ -36433,7 +36427,6 @@ var Select3 = ({
   labelEntity = false,
   isArrow = true,
   defaultColor = false,
-  style: style6,
   ...rest
 }) => {
   const { t: t2 } = useTranslation3();
@@ -36498,12 +36491,13 @@ var Select3 = ({
     trim: true,
     matchFrom: "any"
   };
-  const colourStyles = {
+  const styles5 = {
     option: (base, state) => ({
       ...base,
       cursor: "pointer",
       color: "#575962",
       backgroundColor: "white",
+      borderRadius: 8,
       ":active": {
         color: "#FF7900"
       },
@@ -36514,6 +36508,7 @@ var Select3 = ({
     control: (baseStyles, state) => ({
       ...baseStyles,
       color: defaultColor ? "#575962" : "",
+      borderRadius: 8,
       justifyContent: "end",
       borderColor: "#0000001F",
       boxShadow: "none",
@@ -36542,7 +36537,7 @@ var Select3 = ({
   return /* @__PURE__ */ jsx6(Fragment12, { children: /* @__PURE__ */ jsx6(
     ReactSelect,
     {
-      styles: colourStyles,
+      styles: styles5,
       className: `eschool-select ${className}`,
       isDisabled: disabled,
       isClearable: clearable,
