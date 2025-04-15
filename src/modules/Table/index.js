@@ -557,8 +557,10 @@ const Table = ({
                 </ClickAwayListener>
             );
 
-            const root = createRoot(wrapper);
-            root.render(menu);
+            cmWrapperRoot.current = createRoot(wrapper)
+			if (cmWrapperRoot?.current) {				
+				cmWrapperRoot.current?.render(menu)
+			}
         }
     };
 

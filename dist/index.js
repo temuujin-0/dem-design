@@ -35710,8 +35710,10 @@ var Table = ({
           })
         }
       ) });
-      const root = createRoot(wrapper2);
-      root.render(menu);
+      cmWrapperRoot.current = createRoot(wrapper2);
+      if (cmWrapperRoot?.current) {
+        cmWrapperRoot.current?.render(menu);
+      }
     }
   };
   const onClickMore = (e2, row) => {
@@ -36497,7 +36499,7 @@ var Select3 = ({
       cursor: "pointer",
       color: "#575962",
       backgroundColor: "white",
-      borderRadius: 8,
+      // borderRadius: 8,
       ":active": {
         color: "#FF7900"
       },
@@ -36508,7 +36510,7 @@ var Select3 = ({
     control: (baseStyles, state) => ({
       ...baseStyles,
       color: defaultColor ? "#575962" : "",
-      borderRadius: 8,
+      // borderRadius: 8,
       justifyContent: "end",
       borderColor: "#0000001F",
       boxShadow: "none",
